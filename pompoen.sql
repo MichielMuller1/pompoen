@@ -117,8 +117,8 @@ INSERT INTO `serre` (`ID`, `tijd`, `deur 1`, `deur 2`, `raam 1`, `raam 2`, `lich
 -- Tabelstructuur voor tabel `threashhold`
 --
 
-DROP TABLE IF EXISTS `threashhold`;
-CREATE TABLE IF NOT EXISTS `threashhold` (
+DROP TABLE IF EXISTS `threshold`;
+CREATE TABLE IF NOT EXISTS `threshold` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `tijd` datetime NOT NULL,
   `temp ventilator 1` int(11) NOT NULL,
@@ -134,10 +134,10 @@ CREATE TABLE IF NOT EXISTS `threashhold` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `threashhold`
+-- Gegevens worden geëxporteerd voor tabel `threshold`
 --
 
-INSERT INTO `threashhold` (`ID`, `tijd`, `temp ventilator 1`, `temp ventilator 2`, `temp raam/deur`, `min vat 1`, `max vat 1`, `min vat 2`, `max vat 2`, `grondvochtigheid 1`, `grondvochtigheid 2`) VALUES
+INSERT INTO `threshold` (`ID`, `tijd`, `temp ventilator 1`, `temp ventilator 2`, `temp raam/deur`, `min vat 1`, `max vat 1`, `min vat 2`, `max vat 2`, `grondvochtigheid 1`, `grondvochtigheid 2`) VALUES
 (1, '2022-03-03', 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
