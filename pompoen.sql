@@ -117,7 +117,7 @@ INSERT INTO `serre` (`ID`, `tijd`, `deur 1`, `deur 2`, `raam 1`, `raam 2`, `lich
 -- Tabelstructuur voor tabel `threashhold`
 --
 
-DROP TABLE IF EXISTS `threashhold`;
+DROP TABLE IF EXISTS `threshold`;
 CREATE TABLE IF NOT EXISTS `threashhold` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `tijd` datetime NOT NULL,
