@@ -32,7 +32,7 @@ USE `pompoen`;
 DROP TABLE IF EXISTS `gewicht`;
 CREATE TABLE IF NOT EXISTS `gewicht` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `tijd` date NOT NULL,
+  `tijd` datetime NOT NULL,
   `gewicht p1` int(11) NOT NULL,
   `gewicht p2` int(11) NOT NULL,
   PRIMARY KEY (`ID`)
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `gewicht` (
 DROP TABLE IF EXISTS `log`;
 CREATE TABLE IF NOT EXISTS `log` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `tijd` date NOT NULL,
+  `tijd` datetime NOT NULL,
   `temperatuur` int(11) NOT NULL,
   `grondvochtigheid` int(11) NOT NULL,
   `lichtsterkte` int(11) NOT NULL,
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `log` (
 DROP TABLE IF EXISTS `pompoen 1`;
 CREATE TABLE IF NOT EXISTS `pompoen 1` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `tijd` date NOT NULL,
+  `tijd` datetime NOT NULL,
   `temperatuur` int(11) NOT NULL,
   `grondvochtigheid` int(11) NOT NULL,
   PRIMARY KEY (`ID`)
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `pompoen 1` (
 DROP TABLE IF EXISTS `pompoen 2`;
 CREATE TABLE IF NOT EXISTS `pompoen 2` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `tijd` date NOT NULL,
+  `tijd` datetime NOT NULL,
   `temperatuur` int(11) NOT NULL,
   `grondvochtigheid` int(11) NOT NULL,
   PRIMARY KEY (`ID`)
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `pompoen 2` (
 DROP TABLE IF EXISTS `serre`;
 CREATE TABLE IF NOT EXISTS `serre` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `tijd` date NOT NULL,
+  `tijd` datetime NOT NULL,
   `deur 1` tinyint(1) NOT NULL,
   `deur 2` tinyint(1) NOT NULL,
   `raam 1` tinyint(1) NOT NULL,
@@ -120,7 +120,7 @@ INSERT INTO `serre` (`ID`, `tijd`, `deur 1`, `deur 2`, `raam 1`, `raam 2`, `lich
 DROP TABLE IF EXISTS `threashhold`;
 CREATE TABLE IF NOT EXISTS `threashhold` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `tijd` date NOT NULL,
+  `tijd` datetime NOT NULL,
   `temp ventilator 1` int(11) NOT NULL,
   `temp ventilator 2` int(11) NOT NULL,
   `temp raam/deur` int(11) NOT NULL,
@@ -149,7 +149,7 @@ INSERT INTO `threashhold` (`ID`, `tijd`, `temp ventilator 1`, `temp ventilator 2
 DROP TABLE IF EXISTS `water`;
 CREATE TABLE IF NOT EXISTS `water` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `tijd` date NOT NULL,
+  `tijd` datetime NOT NULL,
   `vat 1` int(11) NOT NULL,
   `vat 2` int(11) NOT NULL,
   `vat 3` int(11) NOT NULL,
