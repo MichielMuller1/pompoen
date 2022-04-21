@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $api_key = test_input($_POST["api_key"]);
     if($api_key == $api_key_value) {
         $temperatuur = test_input($_POST["temperatuur"]);
-        $grondvochtigheid = test_input($_POST["vochtigheid"]);
+        $vochtigheid = test_input($_POST["vochtigheid"]);
 
         
         // Create connection
