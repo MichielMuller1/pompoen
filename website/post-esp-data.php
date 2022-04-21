@@ -1,15 +1,6 @@
 <?php
 
-/*
-  Rui Santos
-  Complete project details at https://RandomNerdTutorials.com/esp32-esp8266-mysql-database-php/
-  
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files.
-  
-  The above copyright notice and this permission notice shall be included in all
-  copies or substantial portions of the Software.
-*/
+
 
 $servername = "localhost";
 
@@ -24,14 +15,14 @@ $password = "raspberry";
 // If you change this value, the ESP32 sketch needs to match
 $api_key_value = "tPmAT5Ab3j7F9";
 
-$api_key= $ID = $tijd = $temperatuur = $grondvochtigheid "";
+$api_key= $temperatuur = $vochtigheid "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $api_key = test_input($_POST["api_key"]);
     if($api_key == $api_key_value) {
         $tijd = test_input($_POST["location"]);
         $temperatuur = test_input($_POST["temperatuur"]);
-        $grondvochtigheid = test_input($_POST["grondvochtigheid"]);
+        $grondvochtigheid = test_input($_POST["vochtigheid"]);
 
         
         // Create connection
@@ -41,8 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Connection failed: " . $conn->connect_error);
         } 
         
-        $sql = "INSERT INTO pompoen 1 (temperatuur, grondvochtigheid)
-        VALUES ('" . &temperatuur . "', '" . $grondvochtigheid . "')";
+        $sql = "INSERT INTO 'pompoen 1' (temperatuur, grondvochtigheid)
+        VALUES ('" . &temperatuur . "', '" . $vochtigheid . "')";
         
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
