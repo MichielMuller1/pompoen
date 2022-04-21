@@ -61,7 +61,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                             <input type="number" name="ventilator1" id="ventilator1" class="col-9">
 
                             <label class="switch col-3 d-flex align-items-center">
-                                <input type="checkbox" id="ventilator1Automatic">
+                                <input type="checkbox" id="ventilator1Automatic" name="ventilator1Automatic" value="0">
+                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">
                             </label>
                         </div>
 
@@ -70,7 +71,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                         <label for="ventilator2">ventilator 2</label>
                         <input type="number" name="ventilator2" id="ventilator2">
                         <label class="switch">
-                            <input type="checkbox" id="ventilator2Automatic">
+                            <input type="checkbox" id="ventilator2Automatic" name="ventilator2Automatic" value="0">
+                            <input type="checkbox" id="ventilator2_onOff" name="ventilator1_onOff" value="0" class="onOff">
                         </label>
                     </div>
                 </div>
@@ -79,77 +81,92 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                     <label for="raam1">raam 1</label>
                     <input type="number" name="raam1" id="raam1">
                     <label class="switch">
-                        <input type="checkbox" id="raam1Automatic">
+                        <input type="checkbox" id="raam1Automatic" name="raam1Automatic" value="0">
+                        <input type="checkbox" id="raam1_onOff" name="raam1_onOff" value="0" class="onOff">
                     </label>
                 </div>
                 <div class="form-group">
                     <label for="raam2">raam 2</label>
                     <input type="number" name="raam2" id="raam2">
                     <label class="switch">
-                        <input type="checkbox" id="raam2Automatic">
+                        <input type="checkbox" id="raam2Automatic" name="raam2Automatic" value="0">
+                        <input type="checkbox" id="raam2_onOff" name="raam2_onOff" value="0" class="onOff">
                     </label>
                 </div>
                 <div class="form-group">
                     <label for="deur1">deur 1</label>
                     <input type="number" name="deur1" id="deur1">
                     <label class="switch">
-                        <input type="checkbox" id="deur1Automatic">
+                        <input type="checkbox" id="deur1Automatic" name="deur1Automatic" value="0">
+                        <input type="checkbox" id="deur1_onOff" name="deur1_onOff" value="0" class="onOff">
                     </label>
                 </div>
                 <div class="form-group">
                     <label for="deur2"> deur 2</label>
                     <input type="number" name="deur2" id="deur2">
                     <label class="switch">
-                        <input type="checkbox" id="deur2Automatic">
+                        <input type="checkbox" id="deur2Automatic" name="deur2Automatic" value="0">
+                        <input type="checkbox" id="deur2_onOff" name="deur2_onOff" value="0" class="onOff">
                     </label>
                 </div>
                 <div class="form-group">
                     <label for="vat1MIN">vat 1 min</label>
                     <input type="number" name="vat1MIN" id="vat1MIN">
-                    <label class="switch">
-                        <input type="checkbox" id="vat1MINAutomatic">
-                    </label>
-                </div>
-                <div class="form-group">
                     <label for="vat1MAX">vat 1 max</label>
                     <input type="number" name="vat1MAX" id="vat1MAX">
                     <label class="switch">
-                        <input type="checkbox" id="vat1MAXAutomatic">
+                        <input type="checkbox" id="vat1Automatic" name="vat1Automatic" value="0">
+                        <input type="checkbox" id="vat1_bijvullen_onOff" name="vat1_bijvullen_onOff" value="0" class="onOff">
+                        <input type="checkbox" id="vat1_watergeven_onOff" name="vat1_watergeven_onOff" value="0" class="onOff">
                     </label>
                 </div>
                 <div class="form-group">
                     <label for="vat2MIN">vat 2 min</label>
                     <input type="number" name="vat2MIN" id="vat2MIN">
-                    <label class="switch">
-                        <input type="checkbox" id="vat2MINAutomatic">
-                    </label>
-                </div>
-                <div class="form-group">
                     <label for="vat2MAX">vat 2 max</label>
                     <input type="number" name="vat2MAX" id="vat2MAX">
                     <label class="switch">
-                        <input type="checkbox" id="vat2Automatic">
+                        <input type="checkbox" id="vat2Automatic" name="vat2Automatic" value="0">
+                        <input type="checkbox" id="vat2_bijvullen_onOff" name="vat2_bijvullen_onOff" value="0" class="onOff">
+                        <input type="checkbox" id="vat2_watergeven_onOff" name="vat2_watergeven_onOff" value="0" class="onOff">
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="vat3MIN">vat 3 min</label>
+                    <input type="number" name="vat3MIN" id="vat3MIN">
+                    <label for="vat3MAX">vat 3 max</label>
+                    <input type="number" name="vat3MAX" id="vat3MAX">
+                    <label class="switch">
+                        <input type="checkbox" id="vat3Automatic" name="vat3Automatic" value="0">
+                        <input type="checkbox" id="vat3_bijvullen_onOff" name="vat3_bijvullen_onOff" value="0" class="onOff">
+                        <input type="checkbox" id="vat3_watergeven_onOff" name="vat3_watergeven_onOff" value="0" class="onOff">
                     </label>
                 </div>
                 <div class="form-group">
-                    <label for="grondvochtigheid1">grondvochtigheid 1</label>
-                    <input type="number" name="grondvochtigheid1" id="grondvochtigheid1">
-                    <label class="switch">
-                        <input type="checkbox" id="grondvochtigheid1Automatic">
-                    </label>
+                    <label for="grondvochtigheid1Laag1">grondvochtigheid 1 laag 1</label>
+                    <input type="number" name="grondvochtigheid1Laag1" id="grondvochtigheid1Laag1">
                 </div>
                 <div class="form-group">
-                    <label for="grondvochtigheid2">grondvochtigheid 2</label>
-                    <input type="number" name="grondvochtigheid2" id="grondvochtigheid2">
-                    <label class="switch">
-                        <input type="checkbox" id="grondvochtigheid2Automatic">
-                    </label>
+                    <label for="grondvochtigheid1Laag2">grondvochtigheid 1 laag 2</label>
+                    <input type="number" name="grondvochtigheid1Laag2" id="grondvochtigheid1Laag2">
+                </div>
+                <div class="form-group">
+                    <label for="grondvochtigheid2Laag1">grondvochtigheid 2 laag 1</label>
+                    <input type="number" name="grondvochtigheid2Laag1" id="grondvochtigheid2Laag1">
+                </div>
+                <div class="form-group">
+                    <label for="grondvochtigheid2Laag2">grondvochtigheid 2 laag 2</label>
+                    <input type="number" name="grondvochtigheid2Laag2" id="grondvochtigheid2Laag2">
                 </div>
                 <div class="form-group">
                     <label for="licht">licht</label>
                     <input type="number" name="licht" id="licht">
+                    <label for="lichtKleur">licht kleur</label>
+                    <input type="number" name="lichtKleur" id="lichtKleur">
                     <label class="switch">
-                        <input type="checkbox" id="lichtAutomatic">
+                        <input type="checkbox" id="lichtAutomatic" name="lichtAutomatic" value="0">
+                        <input type="checkbox" id="licht_onOff" name="licht_onOff" value="0" class="onOff">
                     </label>
                 </div>
                 <button type="submit" class="btn btn-primary">Kiezen</button>

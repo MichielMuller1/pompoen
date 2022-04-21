@@ -39,3 +39,7 @@ input[type="checkbox"]:checked::before {
     transform: scale(1);
 }
 
+.onOff {
+    border-color: deeppink!important;
+}
+
