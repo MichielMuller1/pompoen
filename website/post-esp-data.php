@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } 
         
         $sql = "INSERT INTO 'pompoen 1' (tijd, temperatuur, grondvochtigheid)
-        VALUES ('"2022-04-21 15:20:38"', '" . &temperatuur . "', '" . $vochtigheid . "')";
+        VALUES ('"2022-04-21 15:20:38"', '0', '0')";
         
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
