@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } 
         
         $sql = "INSERT INTO pompoen 1 (temperatuur, grondvochtigheid	)
-        VALUES ()";
+        VALUES ('" . $temperatuur . "', '" . $vochtigheid . "')";
         
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
