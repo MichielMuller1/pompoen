@@ -1,5 +1,5 @@
 #include "DHT.h"
-#define DHTPIN 4    
+#define DHTPIN A4    
 
 
 #define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
