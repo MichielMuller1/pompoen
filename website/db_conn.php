@@ -1,5 +1,5 @@
 <?php
-$sName = "192.168.56.5";
+$sName = "192.168.137.5";
 $uName = "root";
 $pass = "ITF";
 $db_name = "pompoen";
