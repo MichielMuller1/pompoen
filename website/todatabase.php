@@ -67,9 +67,13 @@ try {
     }
 
     $tijd = date('Y-m-d H:i:s');
+    echo $tijd;
+
+
+    //'2022-02-01 15:30:15'
 
     //insert all the values into the database
-    $sql = "INSERT INTO threshold (ID,tijd,'temp ventilator 1', 'temp ventilator 2','temp raam 1','temp raam 2','temp deur 1','temp deur 2','min vat 1','max vat 1','min vat 2','max vat 2','grondvochtigheid 1','grondvochtigheid 2',licht) VALUES (1,$tijd,$ventilator1, $ventilator2,$raam1,$raam2,$deur1,$deur2,$vat1MIN,$vat1MAX,$vat2MIN,$vat2MAX,$grondvochtigheid1,$grondvochtigheid2,$licht)";
+    $sql = "INSERT INTO `threshold` (`ID`, `tijd`, `temp ventilator 1`, `temp ventilator 2`, `temp raam 1`, `temp raam 2`, `temp deur 1`, `temp deur 2`, `min vat 1`, `max vat 1`, `min vat 2`, `max vat 2`, `grondvochtigheid 1`, `grondvochtigheid 2`, `licht`) VALUES (1,'$tijd',$ventilator1, $ventilator2,$raam1,$raam2,$deur1,$deur2,$vat1MIN,$vat1MAX,$vat2MIN,$vat2MAX,$grondvochtigheid1,$grondvochtigheid2,$licht)";
     $conn->exec($sql);
 
 
