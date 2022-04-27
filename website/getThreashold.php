@@ -12,8 +12,35 @@ try {
     $stmt = $conn->prepare("select * from threshold");
     $stmt->execute();
     $result = $stmt->fetchAll();
-//    print_r($result);
+
+    $stmt = $conn->prepare("select * from automatisch");
+    $stmt->execute();
+    $result2 = $stmt->fetchAll();
+    print_r($result2);
 //    echo $result[0][1] . "   " . $result[0][2];
+    if (!empty($result2)){
+        $_SESSION['ventilator1Auto'] = $result2[0][2];
+        $_SESSION['ventilator2Auto'] = $result2[0][3];
+        $_SESSION['raam1Auto'] = $result2[0][4];
+        $_SESSION['raam2Auto'] = $result2[0][5];
+        $_SESSION['deur1Auto'] = $result2[0][6];
+        $_SESSION['deur2Auto'] = $result2[0][7];
+        $_SESSION['vat1Auto'] = $result2[0][8];
+        $_SESSION['vat2Auto'] = $result2[0][9];
+        $_SESSION['vat3Auto'] = $result2[0][10];
+        $_SESSION['lichtAuto'] = $result2[0][11];
+    }else{
+        $_SESSION['ventilator1Auto'] = 0;
+        $_SESSION['ventilator2Auto'] = 0;
+        $_SESSION['raam1Auto'] = 0;
+        $_SESSION['raam2Auto'] = 0;
+        $_SESSION['deur1Auto'] = 0;
+        $_SESSION['deur2Auto'] = 0;
+        $_SESSION['vat1Auto'] = 0;
+        $_SESSION['vat2Auto'] = 0;
+        $_SESSION['vat3Auto'] = 0;
+        $_SESSION['lichtAuto'] = 0;
+    }
 
     if (!empty($result)){
         //waardes in variablen steken

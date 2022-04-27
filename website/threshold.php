@@ -174,6 +174,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
         </div>
     </div>
     <script>
+        //waardes uit de database standaard in de input velden zetten.
         var ventilator1Input = document.getElementById("ventilator1");
         var ventilator2Input = document.getElementById("ventilator2");
         var raam1Input = document.getElementById("raam1");
@@ -211,6 +212,30 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
         grond2laag2Input.value = <?= $_SESSION['grond2laag2'] ?>;
         lichtInput.value = <?= $_SESSION['licht'] ?>;
         lichtKleurInput.value = <?= $_SESSION['lichtkleur'] ?>;
+
+
+        //automatisch checkboxen juist zetten
+        var ventilator1Auto = document.getElementById("ventilator1Automatic");
+        var ventilator2Auto = document.getElementById("ventilator2Automatic");
+        var raam1Auto = document.getElementById("raam1Automatic");
+        var raam2Auto = document.getElementById("raam2Automatic");
+        var deur1Auto = document.getElementById("deur1Automatic");
+        var deur2Auto = document.getElementById("deur2Automatic");
+        var vat1Auto = document.getElementById("vat1Automatic");
+        var vat2Auto = document.getElementById("vat2Automatic");
+        var vat3Auto = document.getElementById("vat3Automatic");
+        var lichtAuto = document.getElementById("lichtAutomatic");
+
+        ventilator1Auto.checked =  <?= $_SESSION['ventilator1Auto'] ?>;
+        ventilator2Auto.checked =  <?= $_SESSION['ventilator2Auto'] ?>;
+        raam1Auto.checked = <?= $_SESSION['raam1Auto'] ?>;
+        raam2Auto.checked = <?= $_SESSION['raam2Auto'] ?>;
+        deur1Auto.checked = <?= $_SESSION['deur1Auto'] ?>;
+        deur2Auto.checked = <?= $_SESSION['deur2Auto'] ?>;
+        vat1Auto.checked = <?= $_SESSION['vat1Auto'] ?>;
+        vat2Auto.checked = <?= $_SESSION['vat2Auto'] ?>;
+        vat3Auto.checked = <?= $_SESSION['vat3Auto'] ?>;
+        lichtAuto.checked = <?= $_SESSION['lichtAuto'] ?>;
 
 
     </script>
