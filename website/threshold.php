@@ -175,11 +175,43 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
     </div>
     <script>
         var ventilator1Input = document.getElementById("ventilator1");
-        ventilator1Input.value = <?= $_SESSION['ventilator1'] ?>;
         var ventilator2Input = document.getElementById("ventilator2");
-        ventilator2Input.value = <?= $_SESSION['ventilator2'] ?>;
         var raam1Input = document.getElementById("raam1");
+        var raam2Input = document.getElementById("raam2");
+        var deur1Input = document.getElementById("deur1");
+        var deur2Input = document.getElementById("deur2");
+        var vat1minInput = document.getElementById("vat1MIN");
+        var vat1maxInput = document.getElementById("vat1MAX");
+        var vat2minInput = document.getElementById("vat2MIN");
+        var vat2maxInput = document.getElementById("vat2MAX");
+        var vat3minInput = document.getElementById("vat3MIN");
+        var vat3maxInput = document.getElementById("vat3MAX");
+        var grond1laag1Input = document.getElementById("grondvochtigheid1Laag1");
+        var grond1laag2Input = document.getElementById("grondvochtigheid1Laag2");
+        var grond2laag1Input = document.getElementById("grondvochtigheid2Laag1");
+        var grond2laag2Input = document.getElementById("grondvochtigheid2Laag2");
+        var lichtInput = document.getElementById("licht");
+        var lichtKleurInput = document.getElementById("lichtKleur");
+
+        ventilator1Input.value = <?= $_SESSION['ventilator1'] ?>;
+        ventilator2Input.value = <?= $_SESSION['ventilator2'] ?>;
         raam1Input.value = <?= $_SESSION['raam1'] ?>;
+        raam2Input.value = <?= $_SESSION['raam2'] ?>;
+        deur1Input.value = <?= $_SESSION['deur1'] ?>;
+        deur2Input.value = <?= $_SESSION['deur2'] ?>;
+        vat1minInput.value = <?= $_SESSION['vat1min'] ?>;
+        vat1maxInput.value = <?= $_SESSION['vat1max'] ?>;
+        vat2minInput.value = <?= $_SESSION['vat2min'] ?>;
+        vat2maxInput.value = <?= $_SESSION['vat2max'] ?>;
+        vat3minInput.value = <?= $_SESSION['vat3min'] ?>;
+        vat3maxInput.value = <?= $_SESSION['vat3max'] ?>;
+        grond1laag1Input.value = <?= $_SESSION['grond1laag1'] ?>;
+        grond1laag2Input.value = <?= $_SESSION['grond1laag2'] ?>;
+        grond2laag1Input.value = <?= $_SESSION['grond2laag1'] ?>;
+        grond2laag2Input.value = <?= $_SESSION['grond2laag2'] ?>;
+        lichtInput.value = <?= $_SESSION['licht'] ?>;
+        lichtKleurInput.value = <?= $_SESSION['lichtkleur'] ?>;
+
 
     </script>
     </body>
