@@ -98,7 +98,7 @@ try {
         $sql3 = "DELETE FROM control WHERE id=1";
         $conn->exec($sql3);
     }
-
+    date_default_timezone_set("Europe/Brussels");
     $tijd = date('Y-m-d H:i:s');
     echo $tijd;
 
@@ -122,4 +122,7 @@ try {
 } catch (PDOException $e) {
     echo " database error " . $e->getMessage();
 }
+header("Location: threshold.php");
+
+
 

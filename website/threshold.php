@@ -14,22 +14,19 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>pompoenen</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-              integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-              crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
 
     </head>
     <body>
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light ">
-            <div class="container-fluid">
                 <a class="navbar-brand" href="#">Pompoen</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" href="status.php">current</a>
@@ -44,7 +41,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                     <p><?= $_SESSION['user_full_name'] ?></p>
                     <a href="logout.php" class="btn btn-warning">LOGOUT</a>
                 </div>
-            </div>
         </nav>
 
 
@@ -55,7 +51,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
 
                 <div class="form-group">
                     <label for="ventilator1">ventilator 1</label>
-                    <input type="number" name="ventilator1" id="ventilator1">
+                    <input type="number" name="ventilator1" id="ventilator1" required>
                     <label class="switch">
                         <input type="checkbox" id="ventilator1Automatic" name="ventilator1Automatic" value="0">
                         <!--                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">-->
@@ -67,7 +63,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                 </div>
                 <div class="form-group">
                     <label for="ventilator2">ventilator 2</label>
-                    <input type="number" name="ventilator2" id="ventilator2">
+                    <input type="number" name="ventilator2" id="ventilator2" required>
                     <label class="switch">
                         <input type="checkbox" id="ventilator2Automatic" name="ventilator2Automatic" value="0">
                         <!--                            <input type="checkbox" id="ventilator2_onOff" name="ventilator2_onOff" value="0" class="onOff">-->
@@ -81,7 +77,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
 
                 <div class="form-group">
                     <label for="raam1">raam 1</label>
-                    <input type="number" name="raam1" id="raam1">
+                    <input type="number" name="raam1" id="raam1" required>
                     <label class="switch">
                         <input type="checkbox" id="raam1Automatic" name="raam1Automatic" value="0">
                         <!--                        <input type="checkbox" id="raam1_onOff" name="raam1_onOff" value="0" class="onOff">-->
@@ -93,7 +89,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                 </div>
                 <div class="form-group">
                     <label for="raam2">raam 2</label>
-                    <input type="number" name="raam2" id="raam2">
+                    <input type="number" name="raam2" id="raam2" required>
                     <label class="switch">
                         <input type="checkbox" id="raam2Automatic" name="raam2Automatic" value="0">
                         <!--                        <input type="checkbox" id="raam2_onOff" name="raam2_onOff" value="0" class="onOff">-->
@@ -105,7 +101,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                 </div>
                 <div class="form-group">
                     <label for="deur1">deur 1</label>
-                    <input type="number" name="deur1" id="deur1">
+                    <input type="number" name="deur1" id="deur1" required>
                     <label class="switch">
                         <input type="checkbox" id="deur1Automatic" name="deur1Automatic" value="0">
                         <!--                        <input type="checkbox" id="deur1_onOff" name="deur1_onOff" value="0" class="onOff">-->
@@ -117,7 +113,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                 </div>
                 <div class="form-group">
                     <label for="deur2"> deur 2</label>
-                    <input type="number" name="deur2" id="deur2">
+                    <input type="number" name="deur2" id="deur2" required>
                     <label class="switch">
                         <input type="checkbox" id="deur2Automatic" name="deur2Automatic" value="0">
                         <!--                        <input type="checkbox" id="deur2_onOff" name="deur2_onOff" value="0" class="onOff">-->
@@ -129,9 +125,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                 </div>
                 <div class="form-group">
                     <label for="vat1MIN">vat 1 min</label>
-                    <input type="number" name="vat1MIN" id="vat1MIN">
+                    <input type="number" name="vat1MIN" id="vat1MIN" required>
                     <label for="vat1MAX">vat 1 max</label>
-                    <input type="number" name="vat1MAX" id="vat1MAX">
+                    <input type="number" name="vat1MAX" id="vat1MAX" required>
                     <label class="switch">
                         <input type="checkbox" id="vat1Automatic" name="vat1Automatic" value="0">
                         <!--                        <input type="checkbox" id="vat1_bijvullen_onOff" name="vat1_bijvullen_onOff" value="0" class="onOff">-->
@@ -150,9 +146,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                 </div>
                 <div class="form-group">
                     <label for="vat2MIN">vat 2 min</label>
-                    <input type="number" name="vat2MIN" id="vat2MIN">
+                    <input type="number" name="vat2MIN" id="vat2MIN" required>
                     <label for="vat2MAX">vat 2 max</label>
-                    <input type="number" name="vat2MAX" id="vat2MAX">
+                    <input type="number" name="vat2MAX" id="vat2MAX" required>
                     <label class="switch">
                         <input type="checkbox" id="vat2Automatic" name="vat2Automatic" value="0">
                         <!--                        <input type="checkbox" id="vat2_bijvullen_onOff" name="vat2_bijvullen_onOff" value="0" class="onOff">-->
@@ -172,9 +168,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
 
                 <div class="form-group">
                     <label for="vat3MIN">vat 3 min</label>
-                    <input type="number" name="vat3MIN" id="vat3MIN">
+                    <input type="number" name="vat3MIN" id="vat3MIN" required>
                     <label for="vat3MAX">vat 3 max</label>
-                    <input type="number" name="vat3MAX" id="vat3MAX">
+                    <input type="number" name="vat3MAX" id="vat3MAX" required>
                     <label class="switch">
                         <input type="checkbox" id="vat3Automatic" name="vat3Automatic" value="0">
                         <!--                        <input type="checkbox" id="vat3_bijvullen_onOff" name="vat3_bijvullen_onOff" value="0" class="onOff">-->
@@ -193,25 +189,25 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                 </div>
                 <div class="form-group">
                     <label for="grondvochtigheid1Laag1">grondvochtigheid 1 laag 1</label>
-                    <input type="number" name="grondvochtigheid1Laag1" id="grondvochtigheid1Laag1">
+                    <input type="number" name="grondvochtigheid1Laag1" id="grondvochtigheid1Laag1" required>
                 </div>
                 <div class="form-group">
                     <label for="grondvochtigheid1Laag2">grondvochtigheid 1 laag 2</label>
-                    <input type="number" name="grondvochtigheid1Laag2" id="grondvochtigheid1Laag2">
+                    <input type="number" name="grondvochtigheid1Laag2" id="grondvochtigheid1Laag2" required>
                 </div>
                 <div class="form-group">
                     <label for="grondvochtigheid2Laag1">grondvochtigheid 2 laag 1</label>
-                    <input type="number" name="grondvochtigheid2Laag1" id="grondvochtigheid2Laag1">
+                    <input type="number" name="grondvochtigheid2Laag1" id="grondvochtigheid2Laag1" required>
                 </div>
                 <div class="form-group">
                     <label for="grondvochtigheid2Laag2">grondvochtigheid 2 laag 2</label>
-                    <input type="number" name="grondvochtigheid2Laag2" id="grondvochtigheid2Laag2">
+                    <input type="number" name="grondvochtigheid2Laag2" id="grondvochtigheid2Laag2" required>
                 </div>
                 <div class="form-group">
                     <label for="licht">licht</label>
-                    <input type="number" name="licht" id="licht">
+                    <input type="number" name="licht" id="licht" required>
                     <label for="lichtKleur">licht kleur</label>
-                    <input type="number" name="lichtKleur" id="lichtKleur">
+                    <input type="number" name="lichtKleur" id="lichtKleur" required>
                     <label class="switch">
                         <input type="checkbox" id="lichtAutomatic" name="lichtAutomatic" value="0">
                         <!--                        <input type="checkbox" id="licht_onOff" name="licht_onOff" value="0" class="onOff">-->
@@ -225,6 +221,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
             </form>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
         //waardes uit de database standaard in de input velden zetten.
         var ventilator1Input = document.getElementById("ventilator1");
