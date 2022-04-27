@@ -52,42 +52,43 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
 
         <div>
             <form action="todatabase.php" method="post">
-                <div class="row">
-                    <div class="form-group col-6">
-                        <div class="p-0 mb-2">
-                            <label for="ventilator1" class="d-flex justify-content-center">ventilator 1</label>
-                        </div>
-                        <div class="row">
-                            <input type="number" name="ventilator1" id="ventilator1" class="col-9">
 
-                            <label class="switch col-3 d-flex align-items-center">
-                                <input type="checkbox" id="ventilator1Automatic" name="ventilator1Automatic" value="0">
-<!--                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">-->
-                            </label>
-                            <label class="switchSlider">
-                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">
-                                <span class="slider round"></span>
-                            </label>
-
-                        </div>
-
-                    </div>
-                    <div class="form-group col-6">
-                        <label for="ventilator2">ventilator 2</label>
-                        <input type="number" name="ventilator2" id="ventilator2">
-                        <label class="switch">
-                            <input type="checkbox" id="ventilator2Automatic" name="ventilator2Automatic" value="0">
-                            <input type="checkbox" id="ventilator2_onOff" name="ventilator1_onOff" value="0" class="onOff">
-                        </label>
-                    </div>
+                <div class="form-group">
+                    <label for="ventilator1">ventilator 1</label>
+                    <input type="number" name="ventilator1" id="ventilator1">
+                    <label class="switch">
+                        <input type="checkbox" id="ventilator1Automatic" name="ventilator1Automatic" value="0">
+                        <!--                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">-->
+                    </label>
+                    <label class="switchSlider">
+                        <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">
+                        <span class="slider round"></span>
+                    </label>
                 </div>
+                <div class="form-group">
+                    <label for="ventilator2">ventilator 2</label>
+                    <input type="number" name="ventilator2" id="ventilator2">
+                    <label class="switch">
+                        <input type="checkbox" id="ventilator2Automatic" name="ventilator2Automatic" value="0">
+                        <!--                            <input type="checkbox" id="ventilator2_onOff" name="ventilator2_onOff" value="0" class="onOff">-->
+                    </label>
+                    <label class="switchSlider">
+                        <input type="checkbox" id="ventilator2_onOff" name="ventilator2_onOff" value="0" class="onOff">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
 
                 <div class="form-group">
                     <label for="raam1">raam 1</label>
                     <input type="number" name="raam1" id="raam1">
                     <label class="switch">
                         <input type="checkbox" id="raam1Automatic" name="raam1Automatic" value="0">
+                        <!--                        <input type="checkbox" id="raam1_onOff" name="raam1_onOff" value="0" class="onOff">-->
+                    </label>
+                    <label class="switchSlider">
                         <input type="checkbox" id="raam1_onOff" name="raam1_onOff" value="0" class="onOff">
+                        <span class="slider round"></span>
                     </label>
                 </div>
                 <div class="form-group">
@@ -95,7 +96,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                     <input type="number" name="raam2" id="raam2">
                     <label class="switch">
                         <input type="checkbox" id="raam2Automatic" name="raam2Automatic" value="0">
+                        <!--                        <input type="checkbox" id="raam2_onOff" name="raam2_onOff" value="0" class="onOff">-->
+                    </label>
+                    <label class="switchSlider">
                         <input type="checkbox" id="raam2_onOff" name="raam2_onOff" value="0" class="onOff">
+                        <span class="slider round"></span>
                     </label>
                 </div>
                 <div class="form-group">
@@ -103,7 +108,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                     <input type="number" name="deur1" id="deur1">
                     <label class="switch">
                         <input type="checkbox" id="deur1Automatic" name="deur1Automatic" value="0">
+                        <!--                        <input type="checkbox" id="deur1_onOff" name="deur1_onOff" value="0" class="onOff">-->
+                    </label>
+                    <label class="switchSlider">
                         <input type="checkbox" id="deur1_onOff" name="deur1_onOff" value="0" class="onOff">
+                        <span class="slider round"></span>
                     </label>
                 </div>
                 <div class="form-group">
@@ -111,7 +120,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                     <input type="number" name="deur2" id="deur2">
                     <label class="switch">
                         <input type="checkbox" id="deur2Automatic" name="deur2Automatic" value="0">
+                        <!--                        <input type="checkbox" id="deur2_onOff" name="deur2_onOff" value="0" class="onOff">-->
+                    </label>
+                    <label class="switchSlider">
                         <input type="checkbox" id="deur2_onOff" name="deur2_onOff" value="0" class="onOff">
+                        <span class="slider round"></span>
                     </label>
                 </div>
                 <div class="form-group">
@@ -121,8 +134,18 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                     <input type="number" name="vat1MAX" id="vat1MAX">
                     <label class="switch">
                         <input type="checkbox" id="vat1Automatic" name="vat1Automatic" value="0">
-                        <input type="checkbox" id="vat1_bijvullen_onOff" name="vat1_bijvullen_onOff" value="0" class="onOff">
-                        <input type="checkbox" id="vat1_watergeven_onOff" name="vat1_watergeven_onOff" value="0" class="onOff">
+                        <!--                        <input type="checkbox" id="vat1_bijvullen_onOff" name="vat1_bijvullen_onOff" value="0" class="onOff">-->
+                        <!--                        <input type="checkbox" id="vat1_watergeven_onOff" name="vat1_watergeven_onOff" value="0" class="onOff">-->
+                    </label>
+                    <label class="switchSlider">
+                        <input type="checkbox" id="vat1_bijvullen_onOff" name="vat1_bijvullen_onOff" value="0"
+                               class="onOff">
+                        <span class="slider round"></span>
+                    </label>
+                    <label class="switchSlider">
+                        <input type="checkbox" id="vat1_watergeven_onOff" name="vat1_watergeven_onOff" value="0"
+                               class="onOff">
+                        <span class="slider round"></span>
                     </label>
                 </div>
                 <div class="form-group">
@@ -132,8 +155,18 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                     <input type="number" name="vat2MAX" id="vat2MAX">
                     <label class="switch">
                         <input type="checkbox" id="vat2Automatic" name="vat2Automatic" value="0">
-                        <input type="checkbox" id="vat2_bijvullen_onOff" name="vat2_bijvullen_onOff" value="0" class="onOff">
-                        <input type="checkbox" id="vat2_watergeven_onOff" name="vat2_watergeven_onOff" value="0" class="onOff">
+                        <!--                        <input type="checkbox" id="vat2_bijvullen_onOff" name="vat2_bijvullen_onOff" value="0" class="onOff">-->
+                        <!--                        <input type="checkbox" id="vat2_watergeven_onOff" name="vat2_watergeven_onOff" value="0" class="onOff">-->
+                    </label>
+                    <label class="switchSlider">
+                        <input type="checkbox" id="vat2_bijvullen_onOff" name="vat2_bijvullen_onOff" value="0"
+                               class="onOff">
+                        <span class="slider round"></span>
+                    </label>
+                    <label class="switchSlider">
+                        <input type="checkbox" id="vat2_watergeven_onOff" name="vat2_watergeven_onOff" value="0"
+                               class="onOff">
+                        <span class="slider round"></span>
                     </label>
                 </div>
 
@@ -144,8 +177,18 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                     <input type="number" name="vat3MAX" id="vat3MAX">
                     <label class="switch">
                         <input type="checkbox" id="vat3Automatic" name="vat3Automatic" value="0">
-                        <input type="checkbox" id="vat3_bijvullen_onOff" name="vat3_bijvullen_onOff" value="0" class="onOff">
-                        <input type="checkbox" id="vat3_watergeven_onOff" name="vat3_watergeven_onOff" value="0" class="onOff">
+                        <!--                        <input type="checkbox" id="vat3_bijvullen_onOff" name="vat3_bijvullen_onOff" value="0" class="onOff">-->
+                        <!--                        <input type="checkbox" id="vat3_watergeven_onOff" name="vat3_watergeven_onOff" value="0" class="onOff">-->
+                    </label>
+                    <label class="switchSlider">
+                        <input type="checkbox" id="vat3_bijvullen_onOff" name="vat3_bijvullen_onOff" value="0"
+                               class="onOff">
+                        <span class="slider round"></span>
+                    </label>
+                    <label class="switchSlider">
+                        <input type="checkbox" id="vat3_watergeven_onOff" name="vat3_watergeven_onOff" value="0"
+                               class="onOff">
+                        <span class="slider round"></span>
                     </label>
                 </div>
                 <div class="form-group">
@@ -171,7 +214,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                     <input type="number" name="lichtKleur" id="lichtKleur">
                     <label class="switch">
                         <input type="checkbox" id="lichtAutomatic" name="lichtAutomatic" value="0">
+                        <!--                        <input type="checkbox" id="licht_onOff" name="licht_onOff" value="0" class="onOff">-->
+                    </label>
+                    <label class="switchSlider">
                         <input type="checkbox" id="licht_onOff" name="licht_onOff" value="0" class="onOff">
+                        <span class="slider round"></span>
                     </label>
                 </div>
                 <button type="submit" class="btn btn-primary">Kiezen</button>
@@ -231,8 +278,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
         var vat3Auto = document.getElementById("vat3Automatic");
         var lichtAuto = document.getElementById("lichtAutomatic");
 
-        ventilator1Auto.checked =  <?= $_SESSION['ventilator1Auto'] ?>;
-        ventilator2Auto.checked =  <?= $_SESSION['ventilator2Auto'] ?>;
+        ventilator1Auto.checked = <?= $_SESSION['ventilator1Auto'] ?>;
+        ventilator2Auto.checked = <?= $_SESSION['ventilator2Auto'] ?>;
         raam1Auto.checked = <?= $_SESSION['raam1Auto'] ?>;
         raam2Auto.checked = <?= $_SESSION['raam2Auto'] ?>;
         deur1Auto.checked = <?= $_SESSION['deur1Auto'] ?>;
@@ -241,6 +288,36 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
         vat2Auto.checked = <?= $_SESSION['vat2Auto'] ?>;
         vat3Auto.checked = <?= $_SESSION['vat3Auto'] ?>;
         lichtAuto.checked = <?= $_SESSION['lichtAuto'] ?>;
+
+
+        //controls juistzetten met wat er in de database staat
+        var ventilator1ONOFF = document.getElementById("ventilator1_onOff");
+        var ventilator2ONOFF = document.getElementById("ventilator2_onOff");
+        var raam1ONOFF = document.getElementById("raam1_onOff");
+        var raam2ONOFF = document.getElementById("raam2_onOff");
+        var deur1ONOFF = document.getElementById("deur1_onOff");
+        var deur2ONOFF = document.getElementById("deur2_onOff");
+        var vat1bijvullen = document.getElementById("vat1_bijvullen_onOff");
+        var vat1wateren = document.getElementById("vat1_watergeven_onOff");
+        var vat2bijvullen = document.getElementById("vat2_bijvullen_onOff");
+        var vat2wateren = document.getElementById("vat2_watergeven_onOff");
+        var vat3bijvullen = document.getElementById("vat3_bijvullen_onOff");
+        var vat3wateren = document.getElementById("vat3_watergeven_onOff");
+        var lichtONOFF = document.getElementById("licht_onOff");
+
+        ventilator1ONOFF.checked = <?= $_SESSION['ventilator1ONOFF'] ?>;
+        ventilator2ONOFF.checked = <?= $_SESSION['ventilator2ONOFF'] ?>;
+        raam1ONOFF.checked = <?= $_SESSION['raam1ONOFF'] ?>;
+        raam2ONOFF.checked = <?= $_SESSION['raam2ONOFF'] ?>;
+        deur1ONOFF.checked = <?= $_SESSION['deur1ONOFF'] ?>;
+        deur2ONOFF.checked = <?= $_SESSION['deur2ONOFF'] ?>;
+        vat1bijvullen.checked = <?= $_SESSION['vat1bijvullen'] ?>;
+        vat1wateren.checked = <?= $_SESSION['vat1wateren'] ?>;
+        vat2bijvullen.checked = <?= $_SESSION['vat2bijvullen'] ?>;
+        vat2wateren.checked = <?= $_SESSION['vat2wateren'] ?>;
+        vat3bijvullen.checked = <?= $_SESSION['vat3bijvullen'] ?>;
+        vat3wateren.checked = <?= $_SESSION['vat3wateren'] ?>;
+        lichtONOFF.checked = <?= $_SESSION['lichtONOFF'] ?>;
 
 
     </script>

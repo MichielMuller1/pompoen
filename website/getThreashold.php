@@ -16,8 +16,42 @@ try {
     $stmt = $conn->prepare("select * from automatisch");
     $stmt->execute();
     $result2 = $stmt->fetchAll();
-    print_r($result2);
+
+    $stmt = $conn->prepare("select * from control");
+    $stmt->execute();
+    $result3 = $stmt->fetchAll();
+//    print_r($result3);
 //    echo $result[0][1] . "   " . $result[0][2];
+    if (!empty($result3)){
+        $_SESSION['ventilator1ONOFF'] = $result3[0][2];
+        $_SESSION['ventilator2ONOFF'] = $result3[0][3];
+        $_SESSION['raam1ONOFF'] = $result3[0][4];
+        $_SESSION['raam2ONOFF'] = $result3[0][5];
+        $_SESSION['deur1ONOFF'] = $result3[0][6];
+        $_SESSION['deur2ONOFF'] = $result3[0][7];
+        $_SESSION['vat1bijvullen'] = $result3[0][8];
+        $_SESSION['vat1wateren'] = $result3[0][9];
+        $_SESSION['vat2bijvullen'] = $result3[0][10];
+        $_SESSION['vat2wateren'] = $result3[0][11];
+        $_SESSION['vat3bijvullen'] = $result3[0][12];
+        $_SESSION['vat3wateren'] = $result3[0][13];
+        $_SESSION['lichtONOFF'] = $result3[0][14];
+    }else{
+        $_SESSION['ventilator1ONOFF'] = 0;
+        $_SESSION['ventilator2ONOFF'] = 0;
+        $_SESSION['raam1ONOFF'] = 0;
+        $_SESSION['raam2ONOFF'] = 0;
+        $_SESSION['deur1ONOFF'] = 0;
+        $_SESSION['deur2ONOFF'] = 0;
+        $_SESSION['vat1bijvullen'] = 0;
+        $_SESSION['vat1wateren'] = 0;
+        $_SESSION['vat2bijvullen'] = 0;
+        $_SESSION['vat2wateren'] = 0;
+        $_SESSION['vat3bijvullen'] = 0;
+        $_SESSION['vat3wateren'] = 0;
+        $_SESSION['lichtONOFF'] = 0;
+    }
+
     if (!empty($result2)){
         $_SESSION['ventilator1Auto'] = $result2[0][2];
         $_SESSION['ventilator2Auto'] = $result2[0][3];
