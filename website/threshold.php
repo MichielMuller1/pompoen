@@ -62,8 +62,13 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
 
                             <label class="switch col-3 d-flex align-items-center">
                                 <input type="checkbox" id="ventilator1Automatic" name="ventilator1Automatic" value="0">
-                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">
+<!--                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">-->
                             </label>
+                            <label class="switchSlider">
+                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">
+                                <span class="slider round"></span>
+                            </label>
+
                         </div>
 
                     </div>

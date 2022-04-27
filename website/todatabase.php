@@ -94,7 +94,9 @@ try {
         $sql = "DELETE FROM threshold WHERE id=1";
         $conn->exec($sql);
         $sql2 = "DELETE FROM automatisch WHERE id=1";
-        $conn->exec(($sql2));
+        $conn->exec($sql2);
+        $sql3 = "DELETE FROM control WHERE id=1";
+        $conn->exec($sql3);
     }
 
     $tijd = date('Y-m-d H:i:s');
@@ -107,6 +109,8 @@ try {
     $sql2 = "INSERT INTO `automatisch` (`ID`, `tijd`,`ventilator1`,`ventilator2`,`raam 1`,`raam 2`,`deur 1`,`deur 2`,`vat 1`,`vat 2`,`vat 3`,`licht`) VALUES (1,'$tijd',$ventilator1Automatic,$ventilator2Automatic,$raam1Automatic,$raam2Automatic,$deur1Automatic,$deur2Automatic,$vat1Automatic,$vat2Automatic,$vat3Automatic,$lichtAutomatic)";
     $conn->exec($sql2);
 
+    $sql3 = "INSERT INTO `control` (`ID`, `tijd`, `ventilator1`, `ventilator2`, `raam1`, `raam2`, `deur1`, `deur2`, `vat1bijvullen`, `vat1wateren`, `vat2bijvullen`, `vat2wateren`, `vat3bijvullen`, `vat3wateren`, `licht`) VALUES ('1', '$tijd', $ventilator1ONOFF, $ventilator2ONOFF, $raam1ONOFF, $raam2ONOFF, $deur1ONOFF, $deur2ONOFF, $vat1_bijvullenONOFF, $vat1_watergevenONOFF, $vat2_bijvullenONOFF, $vat2_watergevenONOFF, $vat3_bijvullenONOFF, $vat3_watergevenONOFF, $lichtONOFF)";
+    $conn->exec($sql3);
     //$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
 
