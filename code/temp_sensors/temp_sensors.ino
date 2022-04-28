@@ -19,7 +19,7 @@
 const char* ssid     = "pompoen";
 const char* password = "IoTpompoen";
 
-const char* serverName = "http://192.168./post-esp-data.php";
+const char* serverName = "http://192.168.137.244/post-esp-data.php";
 
 String apiKeyValue = "tPmAT5Ab3j7F9";
 
