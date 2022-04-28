@@ -103,9 +103,20 @@ void setup() {
 
 void loop() {
   // Delay between measurements
+  int temptot = 0;
+  int humtot = 0;
   delay(delayMS);
   // Get temperature event and print its value.
-  sensors_event_t event;
+
+
+  if (WiFi.status() == WL_CONNECTED) {
+    WiFiClient client;
+    HTTPClient http;
+
+    // Your Domain name with URL path or IP address with path
+    http.begin(client, serverName);
+
+      sensors_event_t event;
   dht.temperature().getEvent(&event);
   int temp1 = event.temperature;
   dht.humidity().getEvent(&event);
@@ -127,20 +138,12 @@ void loop() {
   dht3.humidity().getEvent(&event);
   int hum4 = event.relative_humidity;
 
-  int temptot = (temp1 + temp2 + temp3 + temp4) / 4;
-  int humtot = (hum1 + hum2 + hum3 + hum4) / 4;
+  temptot = (temp1 + temp2 + temp3 + temp4) / 4;
+  humtot = (hum1 + hum2 + hum3 + hum4) / 4;
   Serial.print("temp ");
   Serial.println(temptot);
   Serial.print("hum ");
   Serial.println(humtot);
-
-  if (WiFi.status() == WL_CONNECTED) {
-    WiFiClient client;
-    HTTPClient http;
-
-    // Your Domain name with URL path or IP address with path
-    http.begin(client, serverName);
-
 
     http.addHeader("Content-Type", "application/x-www-form-urlencoded");
     String httpRequestData = "api_key=" + apiKeyValue + "&temp=" + temptot
@@ -161,5 +164,5 @@ void loop() {
     // Free resources
     http.end();
   }
-  delay(10000);
+  delay(1000);
 }
