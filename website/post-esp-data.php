@@ -20,8 +20,8 @@ $api_key= $temperatuur = $vochtigheid = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $api_key = test_input($_POST["api_key"]);
     if($api_key == $api_key_value) {
-        $temperatuur = test_input($_POST["temperatuur"]);
-        $vochtigheid = test_input($_POST["vochtigheid"]);
+        $temperatuur = test_input($_POST["temp"]);
+        $vochtigheid = test_input($_POST["hum"]);
 
         
         // Create connection
