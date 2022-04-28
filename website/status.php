@@ -41,8 +41,21 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
         </div>
     </nav>
 
+    <h2>algemeen</h2>
+    <p>CO2</p>
+    <p>luchtvochtigheid</p>
+    <p>lichtsterkte</p>
+
+    <h2>pompoen1</h2>
     <p>temperatuur: <?= $_SESSION['ventilator1'] ?></p>
-    <p>luchtvochtigheid <?= $_SESSION['ventilator2'] ?></p>
+    <p>grondvochtigheid laag 1<?= $_SESSION['ventilator2'] ?></p>
+    <p>grondvochtigheid laag 2</p>
+
+    <h2>pompoen2</h2>
+    <p>temperatuur: <?= $_SESSION['ventilator1'] ?></p>
+    <p>grondvochtigheid laag 1<?= $_SESSION['ventilator2'] ?></p>
+    <p>grondvochtigheid laag 2</p>
+
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
