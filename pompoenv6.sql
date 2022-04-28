@@ -94,7 +94,7 @@ CREATE TABLE `gewicht` (
   `tijd` datetime NOT NULL,
   `gewicht p1` int NOT NULL,
   `gewicht p2` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `gewicht`
@@ -122,7 +122,7 @@ CREATE TABLE `log` (
   `grondvochtigheid` int NOT NULL,
   `lichtsterkte` int NOT NULL,
   `co2` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -137,7 +137,7 @@ CREATE TABLE `pompoen 1` (
   `temperatuur` int NOT NULL,
   `grondvochtigheid laag 1` int NOT NULL,
   `grondvochtigheid laag 2` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `pompoen 1`
@@ -159,7 +159,7 @@ CREATE TABLE `pompoen 2` (
   `temperatuur` int NOT NULL,
   `grondvochtigheid laag 1` int NOT NULL,
   `grondvochtigheid laag 2` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `pompoen 2`
@@ -184,7 +184,7 @@ CREATE TABLE `serre` (
   `lichtsterkte` int NOT NULL,
   `co2` int NOT NULL,
   `luchtvochtigheid` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `serre`
@@ -220,7 +220,7 @@ CREATE TABLE `threshold` (
   `grondvochtigheid 2 laag 2` int NOT NULL,
   `licht` int NOT NULL,
   `lichtkleur` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `threshold`
@@ -268,7 +268,7 @@ CREATE TABLE `water` (
   `uit_vat 2.1` tinyint(1) NOT NULL,
   `uit_vat 2.2` tinyint(1) NOT NULL,
   `roerder` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `water`
