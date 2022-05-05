@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Connection failed: " . $conn->connect_error);
         } 
         
-
+        $sql = "INSERT INTO pompoen1 (temperatuur, grondvochtigheidlaag1, grondvochtigheidlaag2) VALUES ('" .$temp. ", " .$hum.", ".$hum."')";
         
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
