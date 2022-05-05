@@ -76,7 +76,7 @@ $lichtAutomatic = isset($_POST["lichtAutomatic"]) ? 1 : 0;
 $lichtONOFF = isset($_POST["licht_onOff"]) ? 1 : 0;
 echo $licht . "\n";
 
-$sName = "192.168.227.251";
+$sName = "localhost";
 $uName = "pi";
 $pass = "raspberry";
 $db_name = "pompoen";

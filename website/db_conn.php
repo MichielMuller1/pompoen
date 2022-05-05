@@ -1,5 +1,5 @@
 <?php
-$sName = "192.168.227.251";
+$sName = "localhost";
 $uName = "pi";
 $pass = "raspberry";
 $db_name = "pompoen";
