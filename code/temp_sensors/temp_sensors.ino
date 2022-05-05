@@ -19,7 +19,7 @@
 const char* ssid     = "pompoen";
 const char* password = "IoTpompoen";
 
-const char* serverName = "http://192.168.137.244/post-esp-data.php";
+const char* serverName = "http://192.168.227.251/post-esp-data.php";
 
 String apiKeyValue = "tPmAT5Ab3j7F9";
 
@@ -29,8 +29,8 @@ String apiKeyValue = "tPmAT5Ab3j7F9";
 
 #define DHTPIN 4     // Digital pin connected to the DHT sensor 
 #define DHTPIN1 5
-#define DHTPIN2 12
-#define DHTPIN3 13
+#define DHTPIN2 33
+#define DHTPIN3 27
 // Feather HUZZAH ESP8266 note: use pins 3, 4, 5, 12, 13 or 14 --
 // Pin 15 can work but DHT must be disconnected during program upload.
 
