@@ -17,16 +17,12 @@ $api_key_value = "tPmAT5Ab3j7F9";
 
 $api_key= $temp = $hum = "";
 
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//     $api_key = test_input($_POST["api_key"]);
-//     if($api_key == $api_key_value) {
-//         $temp = test_input($_POST["temp"]);
-//         $hum = test_input($_POST["hum"]);
-    $temp=555;
-    $hum=5456;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $api_key = test_input($_POST["api_key"]);
+    if($api_key == $api_key_value) {
+        $temp = test_input($_POST["temp"]);
+        $hum = test_input($_POST["hum"]);
 
-
-        
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
         // Check connection
@@ -44,15 +40,15 @@ $api_key= $temp = $hum = "";
         }
     
         $conn->close();
-//     }
-//     else {
-//         echo "Wrong API Key provided.";
-//     }
+    }
+    else {
+        echo "Wrong API Key provided.";
+    }
 
-// }
-// else {
-//     echo "No data posted with HTTP POST.";
-// }
+}
+else {
+    echo "No data posted with HTTP POST.";
+}
 
 function test_input($data) {
     $data = trim($data);
