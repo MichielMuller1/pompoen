@@ -33,7 +33,7 @@ $temp = 155;
             die("Connection failed: " . $conn->connect_error);
         } 
         
-        $sql = "INSERT INTO pompoen1 (ID, tijd, temperatuur, grondvochtigheidlaag1, grondvochtigheidlaag2) VALUES ('','','" .$temp. "', '" .$hum."', '".$hum."')";
+        $sql = "INSERT INTO pompoen1 (tijd, temperatuur, grondvochtigheidlaag1, grondvochtigheidlaag2) VALUES (,'" .$temp. "', '" .$hum."', '".$hum."')";
         
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
