@@ -34,7 +34,7 @@ $api_key= $temp = $hum = "";
             die("Connection failed: " . $conn->connect_error);
         } 
         
-        $sql = "UPDATE pompoen1 SET (temperatuur, grondvochtigheidlaag1, grondvochtigheidlaag2) VALUES ('" .$temp. "', '" .$hum."', '".$hum."') WHERE id = '1'";
+        $sql = "UPDATE pompoen1 SET temperatuur = '" .$temp. "', grondvochtigheidlaag1 = '" .$hum."', grondvochtigheidlaag2 = '" .$hum."' WHERE id = '1'";
         
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
