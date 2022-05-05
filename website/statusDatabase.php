@@ -41,7 +41,7 @@ try {
 
 
     if (isset($_POST['gewicht1'])){
-        $sql = "INSERT INTO `gewicht` (`tijd`,`gewicht p1`,`gewicht p2`) VALUES ('$tijd', $gewicht1,$gewicht2)";
+        $sql = "INSERT INTO `gewicht` (`tijd`,`gewichtp1`,`gewichtp2`) VALUES ('$tijd', $gewicht1,$gewicht2)";
         $conn->exec($sql);
     }
 //    if (isset($_POST['gewicht2'])){

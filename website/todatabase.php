@@ -76,9 +76,9 @@ $lichtAutomatic = isset($_POST["lichtAutomatic"]) ? 1 : 0;
 $lichtONOFF = isset($_POST["licht_onOff"]) ? 1 : 0;
 echo $licht . "\n";
 
-$sName = "192.168.56.5";
-$uName = "root";
-$pass = "ITF";
+$sName = "192.168.227.251";
+$uName = "pi";
+$pass = "raspberry";
 $db_name = "pompoen";
 $port = 3306;
 
@@ -103,10 +103,10 @@ try {
     echo $tijd;
 
     //insert all the values into the database
-    $sql = "INSERT INTO `threshold` (`ID`, `tijd`, `temp ventilator 1`, `temp ventilator 2`, `temp raam 1`, `temp raam 2`, `temp deur 1`, `temp deur 2`, `min vat 1`, `max vat 1`, `min vat 2`, `max vat 2`, `min vat 3`, `max vat 3`, `grondvochtigheid 1 laag 1`,`grondvochtigheid 1 laag 2`, `grondvochtigheid 2 laag 1`,`grondvochtigheid 2 laag 2`, `licht`, `lichtkleur`) VALUES (1,'$tijd',$ventilator1, $ventilator2,$raam1,$raam2,$deur1,$deur2,$vat1MIN,$vat1MAX,$vat2MIN,$vat2MAX,$vat3MIN,$vat3MAX,$grondvochtigheid1Laag1,$grondvochtigheid1Laag2,$grondvochtigheid2Laag1,$grondvochtigheid2Laag2,$licht,$lichtKleur)";
+    $sql = "INSERT INTO `threshold` (`ID`, `tijd`, `tempventilator1`, `tempventilator2`, `tempraam1`, `tempraam2`, `tempdeur1`, `tempdeur2`, `minvat1`, `maxvat1`, `minvat2`, `maxvat2`, `minvat3`, `maxvat3`, `grondvochtigheid1laag1`,`grondvochtigheid1laag2`, `grondvochtigheid2laag1`,`grondvochtigheid2laag2`, `licht`, `lichtkleur`) VALUES (1,'$tijd',$ventilator1, $ventilator2,$raam1,$raam2,$deur1,$deur2,$vat1MIN,$vat1MAX,$vat2MIN,$vat2MAX,$vat3MIN,$vat3MAX,$grondvochtigheid1Laag1,$grondvochtigheid1Laag2,$grondvochtigheid2Laag1,$grondvochtigheid2Laag2,$licht,$lichtKleur)";
     $conn->exec($sql);
 
-    $sql2 = "INSERT INTO `automatisch` (`ID`, `tijd`,`ventilator1`,`ventilator2`,`raam 1`,`raam 2`,`deur 1`,`deur 2`,`vat 1`,`vat 2`,`vat 3`,`licht`) VALUES (1,'$tijd',$ventilator1Automatic,$ventilator2Automatic,$raam1Automatic,$raam2Automatic,$deur1Automatic,$deur2Automatic,$vat1Automatic,$vat2Automatic,$vat3Automatic,$lichtAutomatic)";
+    $sql2 = "INSERT INTO `automatisch` (`ID`, `tijd`,`ventilator1`,`ventilator2`,`raam1`,`raam2`,`deur1`,`deur2`,`vat1`,`vat2`,`vat3`,`licht`) VALUES (1,'$tijd',$ventilator1Automatic,$ventilator2Automatic,$raam1Automatic,$raam2Automatic,$deur1Automatic,$deur2Automatic,$vat1Automatic,$vat2Automatic,$vat3Automatic,$lichtAutomatic)";
     $conn->exec($sql2);
 
     $sql3 = "INSERT INTO `control` (`ID`, `tijd`, `ventilator1`, `ventilator2`, `raam1`, `raam2`, `deur1`, `deur2`, `vat1bijvullen`, `vat1wateren`, `vat2bijvullen`, `vat2wateren`, `vat3bijvullen`, `vat3wateren`, `licht`) VALUES ('1', '$tijd', $ventilator1ONOFF, $ventilator2ONOFF, $raam1ONOFF, $raam2ONOFF, $deur1ONOFF, $deur2ONOFF, $vat1_bijvullenONOFF, $vat1_watergevenONOFF, $vat2_bijvullenONOFF, $vat2_watergevenONOFF, $vat3_bijvullenONOFF, $vat3_watergevenONOFF, $lichtONOFF)";
