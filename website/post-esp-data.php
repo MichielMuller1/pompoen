@@ -20,8 +20,8 @@ $api_key= $temp = $hum = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $api_key = test_input($_POST["api_key"]);
     if($api_key == $api_key_value) {
-        $temperatuur = test_input($_POST["temp"]);
-        $vochtigheid = test_input($_POST["hum"]);
+        $temp = test_input($_POST["temp"]);
+        $hum = test_input($_POST["hum"]);
 
         
         // Create connection
@@ -31,8 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Connection failed: " . $conn->connect_error);
         } 
         
-        $sql = "INSERT INTO pompoen1 (temperatuur, grondvochtigheid	)
-        VALUES ('" . $temperatuur . "', '" . $vochtigheid . "')";
+        $sql = "INSERT INTO pompoen1 (temperatuur)
+        VALUES ('" . $temp . "')";
         
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
