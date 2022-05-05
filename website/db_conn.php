@@ -1,7 +1,7 @@
 <?php
-$sName = "192.168.56.5";
-$uName = "root";
-$pass = "ITF";
+$sName = "192.168.227.251";
+$uName = "pi";
+$pass = "raspberry";
 $db_name = "pompoen";
 $port = 3306;
 
