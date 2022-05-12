@@ -16,11 +16,11 @@ unsigned long lastTime = 0;
 unsigned long timerDelay = 5000;
 
 String sensorReadings;
-float sensorReadingsArr[5];
+String sensorReadingsArr[5];
 
 void setup() {
   Serial.begin(115200);
-
+  pinMode(13, OUTPUT); 
   WiFi.begin(ssid, password);
   Serial.println("Connecting");
   while(WiFi.status() != WL_CONNECTED) {
@@ -58,10 +58,21 @@ void loop() {
     
       for (int i = 0; i < keys.length(); i++) {
         JSONVar value = myObject[keys[i]];
+        String jsonString = JSON.stringify(value);
         Serial.print(keys[i]);
         Serial.print(" = ");
         Serial.println(value);
-        sensorReadingsArr[i] = double(value);
+        sensorReadingsArr[i] = jsonString;
+      }
+      String sub_S = sensorReadingsArr[2].substring(1,3);
+      Serial.println(sub_S);
+      if (sub_S.toInt() >= 13){
+        digitalWrite(13, HIGH);
+        Serial.println("hoog");
+      }
+      else{
+        digitalWrite(13, LOW);
+        Serial.println("laag");
       }
     }
     else {
