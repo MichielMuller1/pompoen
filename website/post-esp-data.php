@@ -29,8 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         } 
+        $t=time();
         
-        $sql = "UPDATE pompoen1 SET temperatuur = '" .$temp. "', grondvochtigheidlaag1 = '" .$hum."', grondvochtigheidlaag2 = '" .$hum."' WHERE id = '1'";
+        $sql = "UPDATE pompoen1 SET tijd = '".date("Y-m-d H:i:s",$t)."', temperatuur = '" .$temp. "', grondvochtigheidlaag1 = '" .$hum."', grondvochtigheidlaag2 = '" .$hum."' WHERE id = '1'";
         
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
@@ -56,3 +57,4 @@ function test_input($data) {
     $data = htmlspecialchars($data);
     return $data;
 }
+

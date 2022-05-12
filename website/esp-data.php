@@ -19,7 +19,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT ID, tijd, temperatuur, grondvochtigheidslaag1, grondvochtigheidslaag1 FROM pompoen1";
+$sql = "SELECT * FROM pompoen1 WHERE id = '1'";
 
 echo '<table cellspacing="5" cellpadding="5">
       <tr> 
@@ -41,8 +41,8 @@ if ($result = $conn->query($sql)) {
         $row_ID = $row["ID"];
         $row_tijd = $row["tijd"];
         $row_temperatuur = $row["temperatuur"];
-        $row_grondvochtigheidslaag1 = $row["grondvochtigheidslaag1"];
-        $row_grondvochtigheidslaag2 = $row["grondvochtigheidslaag2"]; 
+        $row_grondvochtigheidslaag1 = $row["grondvochtigheidlaag1"];
+        $row_grondvochtigheidslaag2 = $row["grondvochtigheidlaag2"]; 
 
         // Uncomment to set timezone to - 1 hour (you can change 1 to any number)
         //$row_reading_time = date("Y-m-d H:i:s", strtotime("$row_reading_time - 1 hours"));
