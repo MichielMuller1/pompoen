@@ -7,10 +7,6 @@
 //     }
 // });
 
-
-
-
-
 ////////////////
 //charts////////
 ////////////////
@@ -18,8 +14,6 @@ let myChart = document.getElementById('myChart').getContext('2d');
 let myChart2 = document.getElementById('myChart2').getContext('2d');
 
 //global options for all charts
-
-
 
 let gewichtChart = new Chart(myChart, {
     type: 'line',

@@ -1,4 +1,8 @@
 <?php
+//$sName = "192.168.56.5";
+//$uName = "root";
+//$pass = "ITF";
+
 $sName = "localhost";
 $uName = "pi";
 $pass = "raspberry";
