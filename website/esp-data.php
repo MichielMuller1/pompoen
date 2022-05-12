@@ -29,13 +29,31 @@ if ($result = $conn->query($sql)) {
         $row_grondvochtigheidslaag1 = $row["grondvochtigheidlaag1"];
         $row_grondvochtigheidslaag2 = $row["grondvochtigheidlaag2"]; 
 
-        // Uncomment to set timezone to - 1 hour (you can change 1 to any number)
-        //$row_reading_time = date("Y-m-d H:i:s", strtotime("$row_reading_time - 1 hours"));
-      
-        // Uncomment to set timezone to + 4 hours (you can change 4 to any number)
-        //$row_reading_time = date("Y-m-d H:i:s", strtotime("$row_reading_time + 4 hours"));
       
 		$data = array('ID' => $row_ID, 'tijd' => $row_tijd, 'temperatuur' => $row_temperatuur, 'grondvochtigheidslaag1' => $row_grondvochtigheidslaag1, 'grondvochtigheidslaag2' => $row_grondvochtigheidslaag1);
+		header('Content-type: text/javascript');
+		echo json_encode($data);
+    }
+    $result->free();
+}
+
+$sql = "SELECT * FROM serre WHERE id = '1'";
+
+
+ 
+if ($result = $conn->query($sql)) {
+    while ($row = $result->fetch_assoc()) {
+        $row_ID = $row["ID"];
+        $row_tijd = $row["tijd"];
+        $row_deur1 = $row["deur1"];
+        $row_deur2 = $row["deur2"];
+        $row_raam1 = $row["raam1"]; 
+		$row_raam2 = $row["raam2"]; 
+		$row_lichtsterkte = $row["lichtsterkte"]; 
+		$row_co2 = $row["co2"]; 
+		$row_luchtvochtigheid = $row["luchtvochtigheid"];
+		
+		$data = array('ID' => $row_ID, 'tijd' => $row_tijd, 'deur1' => $deur1, 'deur2' => $row_deur2, 'raam1' => $row_raam1, 'raam2' => $row_raam2, 'lichtsterkte' => $row_lichtsterkte, 'co2' => $row_co2, 'luchtvochtigheid' => $row_luchtvochtigheid);
 		header('Content-type: text/javascript');
 		echo json_encode($data);
     }
