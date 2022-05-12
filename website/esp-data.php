@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html><body>
 <?php
 
 
@@ -21,16 +19,6 @@ if ($conn->connect_error) {
 
 $sql = "SELECT * FROM pompoen1 WHERE id = '1'";
 
-echo '<table cellspacing="5" cellpadding="5">
-      <tr> 
-        <td>ID</td> 
-        <td>tijd</td> 
-        <td>temperatuur</td> 
-        <td>grondvochtigheidslaag1</td> 
-        <td>grondvochtigheidslaag2</td>
-
-      </tr>';
- 
 
  
 if ($result = $conn->query($sql)) {
@@ -56,6 +44,4 @@ if ($result = $conn->query($sql)) {
 
 $conn->close();
 ?> 
-</table>
-</body>
-</html>
+
