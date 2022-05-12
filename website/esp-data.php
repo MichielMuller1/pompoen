@@ -31,10 +31,7 @@ echo '<table cellspacing="5" cellpadding="5">
 
       </tr>';
  
- 
-$data = array('ID' => 'apple', 'b' => 'banana', 'c' => 'catnip');
-header('Content-type: text/javascript');
-echo json_encode($data);
+
  
 if ($result = $conn->query($sql)) {
     while ($row = $result->fetch_assoc()) {
