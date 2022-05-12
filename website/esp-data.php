@@ -32,9 +32,7 @@ echo '<table cellspacing="5" cellpadding="5">
       </tr>';
  
 if ($result = $conn->query($sql)) {
-    echo("test");
     while ($row = $result->fetch_assoc()) {
-      echo("test2");
         $row_ID = $row["ID"];
         $row_tijd = $row["tijd"];
         $row_temperatuur = $row["temperatuur"];
