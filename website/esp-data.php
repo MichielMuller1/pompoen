@@ -31,7 +31,6 @@ if ($result = $conn->query($sql)) {
         $row_grondvochtigheidslaag2 = $row["grondvochtigheidlaag2"]; 
 		
 		//pompoen2
-        $row_tijd = $row["tijd"];
         $row_temperatuur2 = $row["temperatuur2"];
         $row_grondvochtigheidslaag12 = $row["grondvochtigheidlaag12"];
         $row_grondvochtigheidslaag22 = $row["grondvochtigheidlaag22"]; 
