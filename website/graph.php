@@ -1,7 +1,7 @@
 <?php
 session_start();
 //include "graphDate.php";
-
+//test
 if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
     ?>
 
