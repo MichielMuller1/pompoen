@@ -41,7 +41,7 @@ if ($result = $conn->query($sql)) {
 
       
 		$data = array('tijd' => $row_tijd,
-		'temperatuur' => $row_temperatuur, 'grondvochtigheidslaag1' => $row_grondvochtigheidslaag1, 'grondvochtigheidslaag2' => $row_grondvochtigheidslaag1,
+		'temperatuur' => $row_temperatuur, 'grondvochtigheidslaag1' => $row_grondvochtigheidslaag1, 'grondvochtigheidslaag2' => $row_grondvochtigheidslaag2,
 		'temperatuur2' => $row_temperatuur2, 'grondvochtigheidslaag12' => $row_grondvochtigheidslaag12, 'grondvochtigheidslaag22' => $row_grondvochtigheidslaag22
 		);
 		header('Content-type: text/javascript');
