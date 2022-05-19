@@ -1,12 +1,12 @@
 <?php
 
-$sName = "192.168.56.5";
-$uName = "root";
-$pass = "ITF";
+//$sName = "192.168.56.5";
+//$uName = "root";
+//$pass = "ITF";
 
-//$sName = "localhost";
-//$uName = "pi";
-//$pass = "raspberry";
+$sName = "localhost";
+$uName = "pi";
+$pass = "raspberry";
 $db_name = "pompoen";
 $port = 3306;
 
