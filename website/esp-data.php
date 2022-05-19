@@ -23,37 +23,39 @@ $sql = "SELECT * FROM pompoen1 WHERE id = '1'";
  
 if ($result = $conn->query($sql)) {
     while ($row = $result->fetch_assoc()) {
-        $row_ID = $row["ID"];
         $row_tijd = $row["tijd"];
         $row_temperatuur = $row["temperatuur"];
         $row_grondvochtigheidslaag1 = $row["grondvochtigheidlaag1"];
         $row_grondvochtigheidslaag2 = $row["grondvochtigheidlaag2"]; 
 
       
-		$data = array('ID' => $row_ID, 'tijd' => $row_tijd, 'temperatuur' => $row_temperatuur, 'grondvochtigheidslaag1' => $row_grondvochtigheidslaag1, 'grondvochtigheidslaag2' => $row_grondvochtigheidslaag1);
+		$data = array('tijd' => $row_tijd, 'temperatuur' => $row_temperatuur, 'grondvochtigheidslaag1' => $row_grondvochtigheidslaag1, 'grondvochtigheidslaag2' => $row_grondvochtigheidslaag1);
 		header('Content-type: text/javascript');
 		echo json_encode($data);
     }
     $result->free();
 }
 
-$sql = "SELECT * FROM serre WHERE id = '1'";
+$sql = "SELECT * FROM automatisch WHERE id = '1'";
 
 
  
 if ($result = $conn->query($sql)) {
     while ($row = $result->fetch_assoc()) {
         $row_ID = $row["ID"];
-        $row_tijd = $row["tijd"];
-        $row_deur1 = $row["deur1"];
-        $row_deur2 = $row["deur2"];
-        $row_raam1 = $row["raam1"]; 
-		$row_raam2 = $row["raam2"]; 
-		$row_lichtsterkte = $row["lichtsterkte"]; 
-		$row_co2 = $row["co2"]; 
-		$row_luchtvochtigheid = $row["luchtvochtigheid"];
+        $row_ventilator1 = $row["ventilator1"];
+        $row_ventilator2 = $row["ventilator2"];
+        $row_raam1 = $row["raam1"];
+        $row_raam2 = $row["raam2"]; 
+		$row_deur1 = $row["deur1"]; 
+		$row_deur2 = $row["deur2"]; 
+		$row_vat1 = $row["vat1"];
+        $row_vat2 = $row["vat2"]; 
+		$row_vat3 = $row["vat3"]; 
+		$row_licht = $row["licht"]; 
+
 		
-		$data = array('ID' => $row_ID, 'tijd' => $row_tijd, 'deur1' => $deur1, 'deur2' => $row_deur2, 'raam1' => $row_raam1, 'raam2' => $row_raam2, 'lichtsterkte' => $row_lichtsterkte, 'co2' => $row_co2, 'luchtvochtigheid' => $row_luchtvochtigheid);
+		$data = array('ID' => $row_ID, 'ventilator1' => $row_ventilator1, 'ventilator2' => $row_ventilator2, 'raam1' => $row_raam1, 'raam2' => $row_raam2, 'deur1' => $row_deur1, 'deur2' => $row_deur2, 'vat1' => $row_vat1, 'vat2' => $row_vat2, 'vat3' => $row_vat3, 'licht' => $row_licht);
 		header('Content-type: text/javascript');
 		echo json_encode($data);
     }
