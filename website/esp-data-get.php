@@ -63,6 +63,7 @@ if ($result = $conn->query($sql)) {
 		
 
       
+<<<<<<< HEAD
 		$data = array('tijd' => $row_tijd,
 		'control' => "control",
 		'ventilator1' => $row_ventilator1, 'ventilator2' => $row_ventilator2, 'raam1' => $row_raam1, 'raam2' => $row_raam2, 'deur1' => $row_deur1,
@@ -79,6 +80,11 @@ if ($result = $conn->query($sql)) {
 		'pompoen2' => "pompoen2",
 		'temperatuur' => $row_temperatuur, 'grondvochtigheidslaag1' => $row_grondvochtigheidslaag1, 'grondvochtigheidslaag2' => $row_grondvochtigheidslaag1
 		);
+=======
+		$data = array('tijd' => $row_tijd, 'temperatuur' => $row_temperatuur, 'grondvochtigheidslaag1' => $row_grondvochtigheidslaag1, 'grondvochtigheidslaag2' => $row_grondvochtigheidslaag1,
+		 'ventilator1' => $row_ventilator1, 'ventilator2' => $row_ventilator2, 'raam1' => $row_raam1, 'raam2' => $row_raam2, 'deur1' => $row_deur1, 'deur2' => $row_deur2, 'vat1' => $row_vat1, 
+		 'vat2' => $row_vat2, 'vat3' => $row_vat3, 'licht' => $row_licht);
+>>>>>>> 6e55a523640dd4440ab6df349e2bb6b6c2e9ccac
 		header('Content-type: text/javascript');
 		echo json_encode($data);
     }
