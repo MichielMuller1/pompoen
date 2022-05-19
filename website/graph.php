@@ -42,7 +42,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                 </div>
             </nav>
 
-            <iframe src="http://192.168.137.25:3000/d-solo/g0zTQ0ZRk/new-dashboard?from=1652939471542&to=1652968271542&orgId=1&panelId=2" width="450" height="200" frameborder="0"></iframe>
+            <iframe src="http://localhost:3000/d-solo/g0zTQ0ZRk/new-dashboard?from=1652939471542&to=1652968271542&orgId=1&panelId=2" width="450" height="200" frameborder="0"></iframe>
 
         </div>
 
