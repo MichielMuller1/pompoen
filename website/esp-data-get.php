@@ -44,10 +44,7 @@ if ($result = $conn->query($sql)) {
         $row_raam2 = $row["raam2"]; 
 		$row_deur1 = $row["deur1"]; 
 		$row_deur2 = $row["deur2"]; 
-		$row_vat1 = $row["vat1"];
-        $row_vat2 = $row["vat2"]; 
-		$row_vat3 = $row["vat3"]; 
-		$row_licht = $row["licht"]; 
+
 		
 		//automatisch
 		$row_ventilator1A = $row["ventilator1A"];
@@ -65,7 +62,7 @@ if ($result = $conn->query($sql)) {
       
 		$data = array('tijd' => $row_tijd,
 		'ventilator1' => $row_ventilator1, 'ventilator2' => $row_ventilator2, 'raam1' => $row_raam1, 'raam2' => $row_raam2, 'deur1' => $row_deur1,
-		'deur2' => $row_deur2, 'vat1' => $row_vat1,'vat2' => $row_vat2, 'vat3' => $row_vat3, 'licht' => $row_licht,
+		'deur2' => $row_deur2,
 		'ventilator1A' => $row_ventilator1A, 'ventilator2A' => $row_ventilator2A, 'raam1A' => $row_raam1A, 'raam2A' => $row_raam2A, 'deur1A' => $row_deur1A,
 		'deur2A' => $row_deur2A, 'vat1A' => $row_vat1A,'vat2A' => $row_vat2A, 'vat3A' => $row_vat3A, 'lichtA' => $row_lichtA,
 		'temperatuur' => $row_temperatuur, 'grondvochtigheidslaag1' => $row_grondvochtigheidslaag1, 'grondvochtigheidslaag2' => $row_grondvochtigheidslaag1,
