@@ -66,7 +66,7 @@ if ($result = $conn->query($sql)) {
 		'ventilator1A' => $row_ventilator1A, 'ventilator2A' => $row_ventilator2A, 'raam1A' => $row_raam1A, 'raam2A' => $row_raam2A, 'deur1A' => $row_deur1A,
 		'deur2A' => $row_deur2A, 'vat1A' => $row_vat1A,'vat2A' => $row_vat2A, 'vat3A' => $row_vat3A, 'lichtA' => $row_lichtA,
 		'temperatuur' => $row_temperatuur, 'grondvochtigheidslaag1' => $row_grondvochtigheidslaag1, 'grondvochtigheidslaag2' => $row_grondvochtigheidslaag1,
-		'temperatuur' => $row_temperatuur, 'grondvochtigheidslaag1' => $row_grondvochtigheidslaag1, 'grondvochtigheidslaag2' => $row_grondvochtigheidslaag1
+		'temperatuur2' => $row_temperatuur2, 'grondvochtigheidslaag12' => $row_grondvochtigheidslaag12, 'grondvochtigheidslaag22' => $row_grondvochtigheidslaag22
 		);
 		header('Content-type: text/javascript');
 		echo json_encode($data);
