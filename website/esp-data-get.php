@@ -17,7 +17,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT * FROM automatisch, control, pompoen1, pompoen2";
+$sql = "SELECT * FROM automatisch, control, pompoen1, pompoen2, treshold";
 
 
  
@@ -56,6 +56,27 @@ if ($result = $conn->query($sql)) {
         $row_vat2A = $row["vat2A"]; 
 		$row_vat3A = $row["vat3A"]; 
 		$row_lichtA = $row["lichtA"]; 
+	    
+	    //tresholds
+	    	$row_tempventilator1T = $row["tempventilator1T"];
+	    	$row_tempventilator2T = $row["tempventilator2T"];
+	    	$row_tempraam1T = $row["tempraam1T"];
+	    	$row_tempraam2T = $row["tempraam2T"];
+	    	$row_tempdeur1T = $row["tempdeur1T"];
+	    	$row_tempdeur2T = $row["tempdeur2T"];
+	    	$row_minvat1T = $row["minvat1T"];
+	    	$row_maxvat1T = $row["maxvat1T"];
+	    	$row_minvat2T = $row["minvat2T"];
+	    	$row_maxvat2T = $row["maxvat2T"];
+	    	$row_minvat3T = $row["minvat3T"];
+	    	$row_maxvat3T = $row["maxvat3T"];
+	    	$row_grondvochtigheid1laag1T = $row["grondvochtigheid1laag1T"];
+	    	$row_grondvochtigheid1laag2T = $row["grondvochtigheid1laag2T"];
+	    	$row_grondvochtigheid2laag12T = $row["grondvochtigheid2laag12T"];
+	    	$row_grondvochtigheid2laag22T = $row["grondvochtigheid2laag22T"];
+	    	$row_lichtT = $row["lichtT"];
+	    	$row_lichtkleurT = $row["lichtkleurT"];
+	    	
 		
 
       
@@ -66,7 +87,10 @@ if ($result = $conn->query($sql)) {
 		'deur2A' => $row_deur2A, 'vat1A' => $row_vat1A,'vat2A' => $row_vat2A, 'vat3A' => $row_vat3A, 'lichtA' => $row_lichtA,
 		'temperatuur' => $row_temperatuur, 'grondvochtigheidslaag1' => $row_grondvochtigheidslaag1, 'grondvochtigheidslaag2' => $row_grondvochtigheidslaag1,
 		'temperatuur2' => $row_temperatuur2, 'grondvochtigheidslaag12' => $row_grondvochtigheidslaag12, 'grondvochtigheidslaag22' => $row_grondvochtigheidslaag22
-		);
+		
+			     
+			     
+			     );
 		header('Content-type: text/javascript');
 		echo json_encode($data);
     }
