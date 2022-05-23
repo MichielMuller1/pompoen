@@ -1,7 +1,4 @@
-from ast import While
-from hashlib import new
 from time import sleep
-from turtle import delay
 import requests
 import json
 from datetime import datetime, timedelta
