@@ -141,6 +141,6 @@ try {
 } catch (PDOException $e) {
     echo " database error " . $e->getMessage();
 }
-//header("Location: threshold.php");
+header("Location: threshold.php");
 
 
