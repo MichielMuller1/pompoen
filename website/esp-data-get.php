@@ -89,7 +89,7 @@ if ($result = $conn->query($sql)) {
       
 		$data = array('tijd' => $row_tijd,
 		'ventilator1' => $row_ventilator1, 'ventilator2' => $row_ventilator2, 'raam1' => $row_raam1, 'raam2' => $row_raam2, 'deur1' => $row_deur1,
-		'deur2' => $row_deur2, 'vat1BC' => $row_vat1BC, 'vat1WC' => $row_vat1WC, 'vat2BC' => $row_vat2BC, 'vat2WC' => $row_vat2WC, 'vat3BC' => $row_vat3BC, 'vat3WC' => $row_vat3WC, 'licht' => $row_licht,
+		'deur2' => $row_deur2,
 		'ventilator1A' => $row_ventilator1A, 'ventilator2A' => $row_ventilator2A, 'raam1A' => $row_raam1A, 'raam2A' => $row_raam2A, 'deur1A' => $row_deur1A,
 		'deur2A' => $row_deur2A, 'vat1A' => $row_vat1A,'vat2A' => $row_vat2A, 'vat3A' => $row_vat3A, 'lichtA' => $row_lichtA,
 		'temperatuur' => $row_temperatuur, 'grondvochtigheidslaag1' => $row_grondvochtigheidslaag1, 'grondvochtigheidslaag2' => $row_grondvochtigheidslaag1,
