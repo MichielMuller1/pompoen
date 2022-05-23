@@ -317,7 +317,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         var vat3bijvullen = document.getElementById("vat3_bijvullen_onOff");
         var vat3wateren = document.getElementById("vat3_watergeven_onOff");
         var lichtONOFF = document.getElementById("licht_onOff");
-        var lichtkleur
 
         ventilator1ONOFF.checked = <?= $_SESSION['ventilator1ONOFF'] ?>;
         ventilator2ONOFF.checked = <?= $_SESSION['ventilator2ONOFF'] ?>;
