@@ -43,8 +43,13 @@ if ($result = $conn->query($sql)) {
         $row_raam2 = $row["raam2"]; 
 		$row_deur1 = $row["deur1"]; 
 		$row_deur2 = $row["deur2"]; 
-		
-
+		$row_vat1bijvullen = $row["vat1bijvallen"];
+		$row_vat1wateren = $row["vat1wateren"];
+		$row_vat2bijvullen = $row["vat2bijvallen"];
+		$row_vat2wateren = $row["vat2wateren"];
+		$row_vat3bijvullen = $row["vat3bijvallen"];
+		$row_vat3wateren = $row["vat3wateren"];
+		$row_licht = $row["licht"]; 
 
 		
 		//automatisch
@@ -89,8 +94,15 @@ if ($result = $conn->query($sql)) {
 		'raam2' => $row_raam2, 
 		'deur1' => $row_deur1,
 		'deur2' => $row_deur2,
+		'vat1bijvullen' => $row_vat1bijvullen,
+		'vat1wateren' => $row_vat1wateren,
+		'vat2bijvullen' => $row_vat2bijvullen,
+		'vat2wateren' => $row_vat2wateren,
+		'vat2bijvullen' => $row_vat2bijvullen,
+		'vat2wateren' => $row_vat2wateren,
 		'ventilator1A' => $row_ventilator1A, 
 		'ventilator2A' => $row_ventilator2A, 
+		'licht' => $row_licht,
 		'raam1A' => $row_raam1A, 
 		'raam2A' => $row_raam2A, 
 		'deur1A' => $row_deur1A,
@@ -122,7 +134,8 @@ if ($result = $conn->query($sql)) {
 		'grondvochtigheid1laag2T' => $row_grondvochtigheid1laag2T,
 		'grondvochtigheid1laag12T' => $row_grondvochtigheid1laag12T, 
 		'grondvochtigheid1laag22T' => $row_grondvochtigheid1laag22T,
-		'lichtT' = $row_lichtT, 'lichtkleurT' = $row_lichtkleurT
+		'lichtT' = $row_lichtT, 
+		'lichtkleurT' => $row_lichtkleurT
 			     
 			     
 			     );
