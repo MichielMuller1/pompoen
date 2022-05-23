@@ -43,11 +43,11 @@ if ($result = $conn->query($sql)) {
     $row_raam2 = $row["raam2"]; 
 	$row_deur1 = $row["deur1"]; 
 	$row_deur2 = $row["deur2"]; 
-	$row_vat1bijvullen = $row["vat1bijvallen"];
+	$row_vat1bijvullen = $row["vat1bijvullen"];
 	$row_vat1wateren = $row["vat1wateren"];
-	$row_vat2bijvullen = $row["vat2bijvallen"];
+	$row_vat2bijvullen = $row["vat2bijvullen"];
 	$row_vat2wateren = $row["vat2wateren"];
-	$row_vat3bijvullen = $row["vat3bijvallen"];
+	$row_vat3bijvullen = $row["vat3bijvullen"];
 	$row_vat3wateren = $row["vat3wateren"];
 	$row_licht = $row["licht"]; 
 
