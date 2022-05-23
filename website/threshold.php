@@ -2,7 +2,7 @@
 session_start();
 include "getThreashold.php";
 
-if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
+if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
     ?>
 
 
@@ -35,7 +35,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                             <a class="nav-link active" aria-current="page" href="#">threashold</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="graph.php">graph</a>
+                            <a class="nav-link" href="camera.php">camera</a>
                         </li>
                     </ul>
                     <p><?= $_SESSION['user_full_name'] ?></p>
@@ -74,6 +74,10 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                     </label>
                 </div>
 
+                <div class="form-group">
+                    <label for="regen">regen</label>
+                    <input type="number" name="regen" id="regen" required>
+                </div>
 
                 <div class="form-group">
                     <label for="raam1">raam 1</label>
@@ -244,6 +248,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
         var grond2laag2Input = document.getElementById("grondvochtigheid2Laag2");
         var lichtInput = document.getElementById("licht");
         var lichtKleurInput = document.getElementById("lichtKleur");
+        var regenInput = document.getElementById("regen");
 
         ventilator1Input.value = <?= $_SESSION['ventilator1'] ?>;
         ventilator2Input.value = <?= $_SESSION['ventilator2'] ?>;
@@ -263,6 +268,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
         grond2laag2Input.value = <?= $_SESSION['grond2laag2'] ?>;
         lichtInput.value = <?= $_SESSION['licht'] ?>;
         lichtKleurInput.value = <?= $_SESSION['lichtkleur'] ?>;
+        regenInput.value = <?= $_SESSION['regen'] ?>;
 
 
         //automatisch checkboxen juist zetten

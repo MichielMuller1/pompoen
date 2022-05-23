@@ -1,4 +1,8 @@
 <?php
+//$sName = "192.168.56.5";
+//$uName = "root";
+//$pass = "ITF";
+
 $sName = "localhost";
 $uName = "pi";
 $pass = "raspberry";
@@ -13,6 +17,7 @@ try {
     $stmt->execute();
     $result = $stmt->fetchAll();
 
+
     $stmt = $conn->prepare("select * from automatisch");
     $stmt->execute();
     $result2 = $stmt->fetchAll();
@@ -20,7 +25,7 @@ try {
     $stmt = $conn->prepare("select * from control");
     $stmt->execute();
     $result3 = $stmt->fetchAll();
-//    print_r($result3);
+//    print_r($result);
 //    echo $result[0][1] . "   " . $result[0][2];
     if (!empty($result3)){
         $_SESSION['ventilator1ONOFF'] = $result3[0][2];
@@ -97,6 +102,7 @@ try {
         $_SESSION['grond2laag2'] = $result[0][17];
         $_SESSION['licht'] = $result[0][18];
         $_SESSION['lichtkleur'] = $result[0][19];
+        $_SESSION['regen'] = $result[0][20];
 
     }else{
         $_SESSION['ventilator1'] = 0;
@@ -115,9 +121,10 @@ try {
         $_SESSION['grond1laag1'] = 0;
         $_SESSION['grond1laag2'] = 0;
         $_SESSION['grond2laag1'] = 0;
-        $_SESSION['grond2laag1'] = 0;
+        $_SESSION['grond2laag2'] = 0;
         $_SESSION['licht'] = 0;
         $_SESSION['lichtkleur'] = 0;
+        $_SESSION['regen'] = 0;
     }
 
 

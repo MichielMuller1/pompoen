@@ -2,7 +2,7 @@
 session_start();
 include "getStatus.php";
 
-if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
+if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 ?>
 
 
@@ -33,7 +33,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                     <a class="nav-link" href="threshold.php">threashold</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="graph.php">graph</a>
+                    <a class="nav-link" href="camera.php">camera</a>
                 </li>
             </ul>
             <p><?= $_SESSION['user_full_name'] ?></p>
@@ -46,6 +46,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
     <p>luchtvochtigheid: <span id="luchtvochtigheid"></span> </p>
     <p>lichtsterkte: <span id="lichtsterkte"></span> </p>
     <p>laatste gewicht input <?= $_SESSION['gewichtTijd'] ?></p>
+    <p>regen: <?= $_SESSION['regen'] ?></p>
 
     <h2>pompoen1</h2>
     <p>temperatuur: <span id="temp1"></span> </p>

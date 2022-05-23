@@ -5,7 +5,7 @@ session_start();
 $hashed_password = password_hash('ITF', PASSWORD_DEFAULT);
 echo $hashed_password;
 
-if(!isset($_SESSION['user_id']) && !isset($_SESSION['user_email'])){//only let user go to login if he isn't already logged in
+if(!isset($_SESSION['user_id']) && !isset($_SESSION['user_username'])){//only let user go to login if he isn't already logged in
 ?>
 
 <!doctype html>
@@ -30,8 +30,8 @@ if(!isset($_SESSION['user_id']) && !isset($_SESSION['user_email'])){//only let u
             </div>
             <?php } ?>
             <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">
 
             </div>
             <div class="mb-3">
