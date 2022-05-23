@@ -22,7 +22,7 @@ try {
     $stmt->execute();
     $result2 = $stmt->fetchAll();
 
-    $stmt = $conn->prepare("select * from control");
+    $stmt = $conn->prepare("select * from controls");
     $stmt->execute();
     $result3 = $stmt->fetchAll();
 //    print_r($result);
@@ -101,8 +101,10 @@ try {
         $_SESSION['grond2laag1'] = $result[0][16];
         $_SESSION['grond2laag2'] = $result[0][17];
         $_SESSION['licht'] = $result[0][18];
-        $_SESSION['lichtkleur'] = $result[0][19];
-        $_SESSION['regen'] = $result[0][20];
+        $_SESSION['regen'] = $result[0][19];
+        $_SESSION['rood'] = $result[0][20];
+        $_SESSION['groen'] = $result[0][21];
+        $_SESSION['blauw'] = $result[0][22];
 
     }else{
         $_SESSION['ventilator1'] = 0;
@@ -125,6 +127,9 @@ try {
         $_SESSION['licht'] = 0;
         $_SESSION['lichtkleur'] = 0;
         $_SESSION['regen'] = 0;
+        $_SESSION['rood'] = 0;
+        $_SESSION['groen'] = 0;
+        $_SESSION['blauw'] = 0;
     }
 
 

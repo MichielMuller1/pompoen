@@ -77,6 +77,19 @@ $lichtONOFF = isset($_POST["licht_onOff"]) ? 1 : 0;
 echo $licht . "\n";
 $regen = $_POST["regen"];
 
+
+$kleur = $_POST["kleur"];
+$_SESSION['kleur'] = $kleur;
+echo $kleur."-----------------";
+
+list($r, $g, $b) = sscanf($kleur, "#%02x%02x%02x");
+echo $r;
+echo $g;
+echo $b;
+
+echo "--------------!!!!!!!!!!)----------";
+
+
 //$sName = "192.168.56.5";
 //$uName = "root";
 //$pass = "ITF";
@@ -101,7 +114,7 @@ try {
         $conn->exec($sql);
         $sql2 = "DELETE FROM automatisch WHERE id=1";
         $conn->exec($sql2);
-        $sql3 = "DELETE FROM control WHERE id=1";
+        $sql3 = "DELETE FROM controls WHERE id=1";
         $conn->exec($sql3);
     }
     date_default_timezone_set("Europe/Brussels");
@@ -109,13 +122,13 @@ try {
     echo $tijd;
 
     //insert all the values into the database
-    $sql = "INSERT INTO `threshold` (`ID`, `tijd`, `tempventilator1T`, `tempventilator2T`, `tempraam1T`, `tempraam2T`, `tempdeur1T`, `tempdeur2T`, `minvat1T`, `maxvat1T`, `minvat2T`, `maxvat2T`, `minvat3T`, `maxvat3T`, `grondvochtigheid1laag1T`,`grondvochtigheid1laag2T`, `grondvochtigheid2laag12T`,`grondvochtigheid2laag22T`, `lichtT`, `lichtkleurT`,`regen`) VALUES (1,'$tijd',33, $ventilator2,$raam1,$raam2,$deur1,$deur2,$vat1MIN,$vat1MAX,$vat2MIN,$vat2MAX,$vat3MIN,$vat3MAX,$grondvochtigheid1Laag1,$grondvochtigheid1Laag2,$grondvochtigheid2Laag1,$grondvochtigheid2Laag2,$licht,$lichtKleur,$regen)";
+    $sql = "INSERT INTO `threshold` (`ID`, `tijd`, `tempventilator1T`, `tempventilator2T`, `tempraam1T`, `tempraam2T`, `tempdeur1T`, `tempdeur2T`, `minvat1T`, `maxvat1T`, `minvat2T`, `maxvat2T`, `minvat3T`, `maxvat3T`, `grondvochtigheid1laag1T`,`grondvochtigheid1laag2T`, `grondvochtigheid2laag12T`,`grondvochtigheid2laag22T`, `lichtT`, `regen`,`rood`,`groen`,`blauw`) VALUES (1,'$tijd',33, $ventilator2,$raam1,$raam2,$deur1,$deur2,$vat1MIN,$vat1MAX,$vat2MIN,$vat2MAX,$vat3MIN,$vat3MAX,$grondvochtigheid1Laag1,$grondvochtigheid1Laag2,$grondvochtigheid2Laag1,$grondvochtigheid2Laag2,$licht,$regen,$r,$g,$b)";
     $conn->exec($sql);
 
     $sql2 = "INSERT INTO `automatisch` (`ID`, `tijd`,`ventilator1A`,`ventilator2A`,`raam1A`,`raam2A`,`deur1A`,`deur2A`,`vat1A`,`vat2A`,`vat3A`,`lichtA`) VALUES (1,'$tijd',$ventilator1Automatic,$ventilator2Automatic,$raam1Automatic,$raam2Automatic,$deur1Automatic,$deur2Automatic,$vat1Automatic,$vat2Automatic,$vat3Automatic,$lichtAutomatic)";
     $conn->exec($sql2);
 
-    $sql3 = "INSERT INTO `control` (`ID`, `tijd`, `ventilator1`, `ventilator2`, `raam1`, `raam2`, `deur1`, `deur2`, `vat1bijvullen`, `vat1wateren`, `vat2bijvullen`, `vat2wateren`, `vat3bijvullen`, `vat3wateren`, `licht`) VALUES ('1', '$tijd', $ventilator1ONOFF, $ventilator2ONOFF, $raam1ONOFF, $raam2ONOFF, $deur1ONOFF, $deur2ONOFF, $vat1_bijvullenONOFF, $vat1_watergevenONOFF, $vat2_bijvullenONOFF, $vat2_watergevenONOFF, $vat3_bijvullenONOFF, $vat3_watergevenONOFF, $lichtONOFF)";
+    $sql3 = "INSERT INTO `controls` (`ID`, `tijd`, `ventilator1`, `ventilator2`, `raam1`, `raam2`, `deur1`, `deur2`, `vat1bijvullen`, `vat1wateren`, `vat2bijvullen`, `vat2wateren`, `vat3bijvullen`, `vat3wateren`, `licht`) VALUES ('1', '$tijd', $ventilator1ONOFF, $ventilator2ONOFF, $raam1ONOFF, $raam2ONOFF, $deur1ONOFF, $deur2ONOFF, $vat1_bijvullenONOFF, $vat1_watergevenONOFF, $vat2_bijvullenONOFF, $vat2_watergevenONOFF, $vat3_bijvullenONOFF, $vat3_watergevenONOFF, $lichtONOFF)";
     $conn->exec($sql3);
     //$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
 

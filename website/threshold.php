@@ -221,6 +221,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <span class="slider round"></span>
                     </label>
                 </div>
+                <div class="form-group">
+                    <label for="kleur">Lichtkleur</label>
+                    <input type="color" id="kleur" name="kleur" onchange="clickColor(0, -1, -1, 5)" value="#ff0000" style="width: 50%">
+                </div>
+
                 <button type="submit" class="btn btn-primary">Kiezen</button>
             </form>
         </div>
@@ -249,6 +254,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         var lichtInput = document.getElementById("licht");
         var lichtKleurInput = document.getElementById("lichtKleur");
         var regenInput = document.getElementById("regen");
+        var kleur = document.getElementById("kleur");
+
 
         ventilator1Input.value = <?= $_SESSION['ventilator1'] ?>;
         ventilator2Input.value = <?= $_SESSION['ventilator2'] ?>;
@@ -269,6 +276,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         lichtInput.value = <?= $_SESSION['licht'] ?>;
         lichtKleurInput.value = <?= $_SESSION['lichtkleur'] ?>;
         regenInput.value = <?= $_SESSION['regen'] ?>;
+        kleur.value = <?='"'. $_SESSION['kleur'] .'"'?>;
 
 
         //automatisch checkboxen juist zetten
@@ -309,6 +317,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         var vat3bijvullen = document.getElementById("vat3_bijvullen_onOff");
         var vat3wateren = document.getElementById("vat3_watergeven_onOff");
         var lichtONOFF = document.getElementById("licht_onOff");
+        var lichtkleur
 
         ventilator1ONOFF.checked = <?= $_SESSION['ventilator1ONOFF'] ?>;
         ventilator2ONOFF.checked = <?= $_SESSION['ventilator2ONOFF'] ?>;
@@ -323,7 +332,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         vat3bijvullen.checked = <?= $_SESSION['vat3bijvullen'] ?>;
         vat3wateren.checked = <?= $_SESSION['vat3wateren'] ?>;
         lichtONOFF.checked = <?= $_SESSION['lichtONOFF'] ?>;
-
 
     </script>
     </body>
