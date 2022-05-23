@@ -43,6 +43,7 @@ if ($result = $conn->query($sql)) {
         $row_raam2 = $row["raam2"]; 
 		$row_deur1 = $row["deur1"]; 
 		$row_deur2 = $row["deur2"]; 
+		
 
 
 		
@@ -82,17 +83,45 @@ if ($result = $conn->query($sql)) {
 
       
 		$data = array('tijd' => $row_tijd,
-		'ventilator1' => $row_ventilator1, 'ventilator2' => $row_ventilator2, 'raam1' => $row_raam1, 'raam2' => $row_raam2, 'deur1' => $row_deur1,
+		'ventilator1' => $row_ventilator1, 
+		'ventilator2' => $row_ventilator2, 
+		'raam1' => $row_raam1, 
+		'raam2' => $row_raam2, 
+		'deur1' => $row_deur1,
 		'deur2' => $row_deur2,
-		'ventilator1A' => $row_ventilator1A, 'ventilator2A' => $row_ventilator2A, 'raam1A' => $row_raam1A, 'raam2A' => $row_raam2A, 'deur1A' => $row_deur1A,
-		'deur2A' => $row_deur2A, 'vat1A' => $row_vat1A,'vat2A' => $row_vat2A, 'vat3A' => $row_vat3A, 'lichtA' => $row_lichtA,
-		'temperatuur' => $row_temperatuur, 'grondvochtigheidslaag1' => $row_grondvochtigheidslaag1, 'grondvochtigheidslaag2' => $row_grondvochtigheidslaag1,
-		'temperatuur2' => $row_temperatuur2, 'grondvochtigheidslaag12' => $row_grondvochtigheidslaag12, 'grondvochtigheidslaag22' => $row_grondvochtigheidslaag22,
+		'ventilator1A' => $row_ventilator1A, 
+		'ventilator2A' => $row_ventilator2A, 
+		'raam1A' => $row_raam1A, 
+		'raam2A' => $row_raam2A, 
+		'deur1A' => $row_deur1A,
+		'deur2A' => $row_deur2A, 
+		'vat1A' => $row_vat1A,
+		'vat2A' => $row_vat2A, 
+		'vat3A' => $row_vat3A, 
+		'lichtA' => $row_lichtA,
+		'temperatuur' => $row_temperatuur, 
+		'grondvochtigheidslaag1' => $row_grondvochtigheidslaag1, 
+		'grondvochtigheidslaag2' => $row_grondvochtigheidslaag1,
+		'temperatuur2' => $row_temperatuur2, 
+		'grondvochtigheidslaag12' => $row_grondvochtigheidslaag12, 
+		'grondvochtigheidslaag22' => $row_grondvochtigheidslaag22,
 			      
-		'tempventilator1T' => $row_tempventilator1T, 'tempventilator2T' => $row_tempventilator2T, 'tempraam1T' => $row_tempraam1T, 'tempraam2T' =>  $row_tempraam2T,
-		'tempdeur1T' => $row_tempdeur1T, 'tempdeur2T' => $row_tempdeur2T, 'minvat1T' => $minvat1T, 'maxvat1T' => $row_maxvat1T, 'minvat2T' => $row_minvat2T, 'rmaxvat2T' => $row_maxvat2T    
-		, 'row_minvat3T' => $row_minvat3T, 'maxvat3T' => $row_maxvat3T, 'grondvochtigheid1laag1T' => $row_grondvochtigheid1laag1T, 'grondvochtigheid1laag2T' => $row_grondvochtigheid1laag2T,
-		'grondvochtigheid1laag12T' => $row_grondvochtigheid1laag12T, 'grondvochtigheid1laag22T' => $row_grondvochtigheid1laag22T,
+		'tempventilator1T' => $row_tempventilator1T, 
+		'tempventilator2T' => $row_tempventilator2T, 
+		'tempraam1T' => $row_tempraam1T, 
+		'tempraam2T' =>  $row_tempraam2T,
+		'tempdeur1T' => $row_tempdeur1T, 
+		'tempdeur2T' => $row_tempdeur2T, 
+		'minvat1T' => $minvat1T, 
+		'maxvat1T' => $row_maxvat1T, 
+		'minvat2T' => $row_minvat2T, 
+		'rmaxvat2T' => $row_maxvat2T, 
+		'row_minvat3T' => $row_minvat3T, 
+		'maxvat3T' => $row_maxvat3T, 
+		'grondvochtigheid1laag1T' => $row_grondvochtigheid1laag1T, 
+		'grondvochtigheid1laag2T' => $row_grondvochtigheid1laag2T,
+		'grondvochtigheid1laag12T' => $row_grondvochtigheid1laag12T, 
+		'grondvochtigheid1laag22T' => $row_grondvochtigheid1laag22T,
 		'lichtT' = $row_lichtT, 'lichtkleurT' = $row_lichtkleurT
 			     
 			     
