@@ -17,7 +17,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT * FROM automatisch, control, pompoen1, pompoen2, treshold";
+$sql = "SELECT * FROM automatisch, controls, pompoen1, pompoen2, treshold";
 
 
  
@@ -38,9 +38,9 @@ if ($result = $conn->query($sql)) {
 		
 		//control
 	$row_ventilator1 = $row["ventilator1"];
-        $row_ventilator2 = $row["ventilator2"];
-        $row_raam1 = $row["raam1"];
-        $row_raam2 = $row["raam2"]; 
+    $row_ventilator2 = $row["ventilator2"];
+    $row_raam1 = $row["raam1"];
+    $row_raam2 = $row["raam2"]; 
 	$row_deur1 = $row["deur1"]; 
 	$row_deur2 = $row["deur2"]; 
 	$row_vat1bijvullen = $row["vat1bijvallen"];
@@ -54,13 +54,13 @@ if ($result = $conn->query($sql)) {
 		
 		//automatisch
 	$row_ventilator1A = $row["ventilator1A"];
-        $row_ventilator2A = $row["ventilator2A"];
-        $row_raam1A = $row["raam1A"];
-        $row_raam2A = $row["raam2A"]; 
+    $row_ventilator2A = $row["ventilator2A"];
+    $row_raam1A = $row["raam1A"];
+    $row_raam2A = $row["raam2A"]; 
 	$row_deur1A = $row["deur1A"]; 
 	$row_deur2A = $row["deur2A"]; 
 	$row_vat1A = $row["vat1A"];
-        $row_vat2A = $row["vat2A"]; 
+    $row_vat2A = $row["vat2A"]; 
 	$row_vat3A = $row["vat3A"]; 
 	$row_lichtA = $row["lichtA"]; 
 	    
@@ -128,7 +128,7 @@ if ($result = $conn->query($sql)) {
 		'minvat2T' => $row_minvat2T, 
 		'rmaxvat2T' => $row_maxvat2T, 
 		'minvat3T' => $row_minvat3T, 
-		'maxvat3T' => $row_maxvat3T, 
+		'maxvat3T' => $row_maxvat3T,
 		'grondvochtigheid1laag1T' => $row_grondvochtigheid1laag1T, 
 		'grondvochtigheid1laag2T' => $row_grondvochtigheid1laag2T,
 		'grondvochtigheid1laag12T' => $row_grondvochtigheid1laag12T, 
@@ -146,5 +146,3 @@ if ($result = $conn->query($sql)) {
 
 
 $conn->close();
-?> 
-
