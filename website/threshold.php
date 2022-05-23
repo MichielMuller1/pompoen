@@ -210,8 +210,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                 <div class="form-group">
                     <label for="licht">licht</label>
                     <input type="number" name="licht" id="licht" required>
-                    <label for="lichtKleur">licht kleur</label>
-                    <input type="number" name="lichtKleur" id="lichtKleur" required>
+<!--                    <label for="lichtKleur">licht kleur</label>-->
+<!--                    <input type="number" name="lichtKleur" id="lichtKleur" required>-->
                     <label class="switch">
                         <input type="checkbox" id="lichtAutomatic" name="lichtAutomatic" value="0">
                         <!--                        <input type="checkbox" id="licht_onOff" name="licht_onOff" value="0" class="onOff">-->
@@ -252,7 +252,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         var grond2laag1Input = document.getElementById("grondvochtigheid2Laag1");
         var grond2laag2Input = document.getElementById("grondvochtigheid2Laag2");
         var lichtInput = document.getElementById("licht");
-        var lichtKleurInput = document.getElementById("lichtKleur");
+        // var lichtKleurInput = document.getElementById("lichtKleur");
         var regenInput = document.getElementById("regen");
         var kleur = document.getElementById("kleur");
 
@@ -274,7 +274,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         grond2laag1Input.value = <?= $_SESSION['grond2laag1'] ?>;
         grond2laag2Input.value = <?= $_SESSION['grond2laag2'] ?>;
         lichtInput.value = <?= $_SESSION['licht'] ?>;
-        lichtKleurInput.value = <?= $_SESSION['lichtkleur'] ?>;
+        //lichtKleurInput.value = <?//= $_SESSION['lichtkleur'] ?>//;
         regenInput.value = <?= $_SESSION['regen'] ?>;
         kleur.value = <?='"'. $_SESSION['kleur'] .'"'?>;
 
@@ -317,6 +317,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         var vat3bijvullen = document.getElementById("vat3_bijvullen_onOff");
         var vat3wateren = document.getElementById("vat3_watergeven_onOff");
         var lichtONOFF = document.getElementById("licht_onOff");
+
 
         ventilator1ONOFF.checked = <?= $_SESSION['ventilator1ONOFF'] ?>;
         ventilator2ONOFF.checked = <?= $_SESSION['ventilator2ONOFF'] ?>;
