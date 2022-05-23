@@ -1,0 +1,265 @@
+#include <WiFi.h>
+#include <HTTPClient.h>
+#include <Arduino_JSON.h>
+
+const int relay = 22;
+const int relay1 = 23;
+int stateraamopenA = LOW;
+int stateraamtoeA = LOW;
+int stateraamopen = LOW;
+int stateraamtoe = LOW;
+
+const int relay2 = 21;
+const int relay3 = 19;
+int stateraamopen2A = LOW;
+int stateraamtoe2A = LOW;
+int stateraamopen2 = LOW;
+int stateraamtoe2 = LOW;
+
+const int relay4 = 4;
+const int relay5 = 27;
+int statedeuropen = LOW;
+int statedeurtoe = LOW;
+int statedeuropen2 = LOW;
+int statedeurtoe2 = LOW;
+
+const char* ssid     = "pompoen";
+const char* password = "IoTpompoen";
+String stringOne = "1";
+const char* serverName = "http://192.168.137.253/esp-data-get.php";
+
+// the following variables are unsigned longs because the time, measured in
+// milliseconds, will quickly become a bigger number than can be stored in an int.
+unsigned long lastTime = 0;
+// Timer set to 10 minutes (600000)
+//unsigned long timerDelay = 600000;
+// Set timer to 5 seconds (5000)
+unsigned long timerDelay = 5000;
+
+String sensorReadings;
+String sensorReadingsArr[50];
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(relay, OUTPUT);
+  pinMode(relay1, OUTPUT);
+  pinMode(relay2, OUTPUT);
+  pinMode(relay3, OUTPUT);
+    pinMode(relay4, OUTPUT);
+  pinMode(relay5, OUTPUT);
+  pinMode(13, OUTPUT); 
+  WiFi.begin(ssid, password);
+  Serial.println("Connecting");
+  while(WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("");
+  Serial.print("Connected to WiFi network with IP Address: ");
+  Serial.println(WiFi.localIP());
+ 
+  Serial.println("Timer set to 5 seconds (timerDelay variable), it will take 5 seconds before publishing the first reading.");
+}
+
+void loop() {
+  //Send an HTTP POST request every 10 minutes
+  if ((millis() - lastTime) > timerDelay) {
+    //Check WiFi connection status
+    if(WiFi.status()== WL_CONNECTED){
+              
+      sensorReadings = httpGETRequest(serverName);
+      Serial.println(sensorReadings);
+      JSONVar myObject = JSON.parse(sensorReadings);
+  
+      // JSON.typeof(jsonVar) can be used to get the type of the var
+      if (JSON.typeof(myObject) == "undefined") {
+        Serial.println("Parsing input failed!");
+        return;
+      }
+    
+      Serial.print("JSON object = ");
+      Serial.println(myObject);
+    
+      // myObject.keys() can be used to get an array of all the keys in the object
+      JSONVar keys = myObject.keys();
+    
+      for (int i = 0; i < keys.length(); i++) {
+        JSONVar value = myObject[keys[i]];
+        String jsonString = JSON.stringify(value);
+        Serial.print(keys[i]);
+        Serial.print(" = ");
+        Serial.println(value);
+        sensorReadingsArr[i] = value;
+      }
+
+      Serial.println("tijd" + sensorReadingsArr[0]);
+      //ventilator1
+      if (sensorReadingsArr[7] == "1"){
+        Serial.println("ventilator1 automatisch");
+      }
+      else{
+        Serial.println("ventilator1 control");
+      }
+      
+
+      //raam1
+      if (sensorReadingsArr[16] == "1"){
+        Serial.println("raam1 automatisch");
+        if (sensorReadingsArr[24].toInt() >= sensorReadingsArr[32].toInt() && stateraamopenA == LOW){
+          digitalWrite(relay, HIGH);
+          delay(5000);
+          digitalWrite(relay, LOW);
+          Serial.println("raam1 omhoog");
+          stateraamopenA = HIGH;
+          stateraamtoeA = LOW;
+        }
+        else if (sensorReadingsArr[24].toInt() <= sensorReadingsArr[32].toInt() &&stateraamtoeA == LOW){
+           digitalWrite(relay1, HIGH);
+           delay(5000);
+           digitalWrite(relay1, LOW);
+           Serial.println("raam1 omlaag");
+           stateraamtoeA = HIGH;
+           stateraamopenA = LOW;
+        }
+      }
+      else{
+        if ( sensorReadingsArr[3] == "1" && stateraamopen == LOW){
+          digitalWrite(relay, HIGH);
+          delay(5000);
+          digitalWrite(relay, LOW);
+          Serial.println("raam1 omhoog");
+          stateraamopen = HIGH;
+          stateraamtoe = LOW;
+        }
+        else if (sensorReadingsArr[3] == "0" && stateraamtoe == LOW){
+           digitalWrite(relay1, HIGH);
+           delay(5000);
+           digitalWrite(relay1, LOW);
+           Serial.println("raam1 omlaag");
+           stateraamtoe = HIGH;
+           stateraamopen = LOW;
+        }
+      }
+      
+      
+      //raam2
+      if (sensorReadingsArr[17] == "1"){
+        Serial.println("raam2 automatisch");
+        if (sensorReadingsArr[24].toInt() >= sensorReadingsArr[33].toInt() && stateraamopen2A == LOW){
+          digitalWrite(relay2, HIGH);
+          delay(5000);
+          digitalWrite(relay2, LOW);
+          Serial.println("raam2 omhoog");
+          stateraamopen2A = HIGH;
+          stateraamtoe2A = LOW;
+        }
+        else if (sensorReadingsArr[24].toInt() <= sensorReadingsArr[33].toInt() && stateraamtoe2A == LOW){
+           digitalWrite(relay3, HIGH);
+           delay(5000);
+           digitalWrite(relay3, LOW);
+           Serial.println("raam2 omlaag");
+           stateraamtoe2A = HIGH;
+           stateraamopen2A = LOW;
+        }
+      }
+      else{
+        if ( sensorReadingsArr[4] == "1" && stateraamopen2 == LOW){
+          digitalWrite(relay2, HIGH);
+          delay(5000);
+          digitalWrite(relay2, LOW);
+          Serial.println("raam2 omhoog");
+          stateraamopen2 = HIGH;
+          stateraamtoe2 = LOW;
+        }
+        else if (sensorReadingsArr[4] == "0" && stateraamtoe2 == LOW){
+           digitalWrite(relay3, HIGH);
+           delay(5000);
+           digitalWrite(relay3, LOW);
+           Serial.println("raam2 omlaag");
+           stateraamtoe2 = HIGH;
+           stateraamopen2 = LOW;
+        }
+   
+      }
+
+
+
+
+      //deur1
+      if (sensorReadingsArr[18] == "1"){
+       Serial.println("deur1 automatisch");
+        if (sensorReadingsArr[24].toInt() >= sensorReadingsArr[34].toInt() && statedeuropen == LOW){
+          digitalWrite(relay4, HIGH);
+          delay(5000);
+          digitalWrite(relay4, LOW);
+          Serial.println("deur1 omhoog");
+          statedeuropen = HIGH;
+          statedeurtoe = LOW;
+        }
+        else if (sensorReadingsArr[24].toInt() <= sensorReadingsArr[34].toInt() && statedeurtoe == LOW){
+           digitalWrite(relay5, HIGH);
+           delay(5000);
+           digitalWrite(relay5, LOW);
+           Serial.println("deur1 omlaag");
+           statedeurtoe = HIGH;
+           statedeuropen = LOW;
+        }
+      }
+      else{
+        if ( sensorReadingsArr[5] == "1" && statedeuropen2 == LOW){
+          digitalWrite(relay4, HIGH);
+          delay(5000);
+          digitalWrite(relay4, LOW);
+          Serial.println("deur omhoog");
+          statedeuropen2 = HIGH;
+          statedeurtoe2 = LOW;
+        }
+        else if (sensorReadingsArr[5] == "0" && statedeurtoe2 == LOW){
+           digitalWrite(relay5, HIGH);
+           delay(5000);
+           digitalWrite(relay5, LOW);
+           Serial.println("deur omlaag");
+           statedeurtoe2 = HIGH;
+           statedeuropen2 = LOW;
+        }
+   
+      }
+
+      
+      
+    }
+    else {
+      Serial.println("WiFi Disconnected");
+    }
+    lastTime = millis();
+  }
+}
+
+
+
+String httpGETRequest(const char* serverName) {
+  WiFiClient client;
+  HTTPClient http;
+    
+  // Your Domain name with URL path or IP address with path
+  http.begin(client, serverName);
+  
+  // Send HTTP POST request
+  int httpResponseCode = http.GET();
+  
+  String payload = "{}"; 
+  
+  if (httpResponseCode>0) {
+    Serial.print("HTTP Response code: ");
+    Serial.println(httpResponseCode);
+    payload = http.getString();
+  }
+  else {
+    Serial.print("Error code: ");
+    Serial.println(httpResponseCode);
+  }
+  // Free resources
+  http.end();
+
+  return payload;
+}
