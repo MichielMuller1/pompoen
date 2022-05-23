@@ -43,13 +43,7 @@ if ($result = $conn->query($sql)) {
         $row_raam2 = $row["raam2"]; 
 		$row_deur1 = $row["deur1"]; 
 		$row_deur2 = $row["deur2"]; 
-		$row_vat1BC = $row["vat1bijvullen"];
-		$row_vat1WC = $row["vat1wateren"];
-		$row_vat2BC = $row["vat2bijvullen"];
-		$row_vat2WC = $row["vat2wateren"];
-		$row_vat3BC = $row["vat3bijvullen"];
-		$row_vat3WC = $row["vat3wateren"];
-		$row_licht = $row["licht"]; 
+
 
 		
 		//automatisch
