@@ -134,7 +134,7 @@ if ($result = $conn->query($sql)) {
 		'grondvochtigheid1laag2T' => $row_grondvochtigheid1laag2T,
 		'grondvochtigheid1laag12T' => $row_grondvochtigheid1laag12T, 
 		'grondvochtigheid1laag22T' => $row_grondvochtigheid1laag22T,
-		'lichtT' = $row_lichtT, 
+		'lichtT' => $row_lichtT, 
 		'lichtkleurT' => $row_lichtkleurT
 			     
 			     
