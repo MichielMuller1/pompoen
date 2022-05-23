@@ -19,7 +19,7 @@
 const char* ssid     = "pompoen";
 const char* password = "IoTpompoen";
 
-const char* serverName = "http://192.168.137.25/post-esp-data.php";
+const char* serverName = "http://192.168.227.251/post-esp-data.php";
 
 String apiKeyValue = "tPmAT5Ab3j7F9";
 
@@ -28,9 +28,9 @@ String apiKeyValue = "tPmAT5Ab3j7F9";
 #include <DHT_U.h>
 
 #define DHTPIN 4     // Digital pin connected to the DHT sensor 
-#define DHTPIN1 5
+#define DHTPIN1 32
 #define DHTPIN2 33
-#define DHTPIN3 27
+#define DHTPIN3 15
 // Feather HUZZAH ESP8266 note: use pins 3, 4, 5, 12, 13 or 14 --
 // Pin 15 can work but DHT must be disconnected during program upload.
 
@@ -51,7 +51,8 @@ uint32_t delayMS;
 
 void setup() {
   Serial.begin(9600);
-
+  int temptot = 0;
+  int humtot = 0;
   WiFi.begin(ssid, password);
   Serial.println("Connecting");
   while (WiFi.status() != WL_CONNECTED) {
@@ -119,24 +120,32 @@ void loop() {
       sensors_event_t event;
   dht.temperature().getEvent(&event);
   int temp1 = event.temperature;
+  Serial.println(temp1);
   dht.humidity().getEvent(&event);
   int hum1 = event.relative_humidity;
+  Serial.println(hum1);
 
 
   dht1.temperature().getEvent(&event);
   int temp2 = event.temperature;
+  Serial.println(temp2);
   dht1.humidity().getEvent(&event);
   int hum2 = event.relative_humidity;
+  Serial.println(hum2);
 
   dht2.temperature().getEvent(&event);
   int temp3 = event.temperature;
+  Serial.println(temp3);
   dht2.humidity().getEvent(&event);
   int hum3 = event.relative_humidity;
+  Serial.println(hum3);
 
   dht3.temperature().getEvent(&event);
   int temp4 = event.temperature;
+  Serial.println(temp4);
   dht3.humidity().getEvent(&event);
   int hum4 = event.relative_humidity;
+  Serial.println(hum4);
 
   temptot = (temp1 + temp2 + temp3 + temp4) / 4;
   humtot = (hum1 + hum2 + hum3 + hum4) / 4;
@@ -165,4 +174,5 @@ void loop() {
     http.end();
   }
   delay(1000);
+
 }

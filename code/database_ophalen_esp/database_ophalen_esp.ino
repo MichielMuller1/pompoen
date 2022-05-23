@@ -4,8 +4,8 @@
 
 const char* ssid     = "pompoen";
 const char* password = "IoTpompoen";
-
-const char* serverName = "http://192.168.227.251/esp-data.php";
+String stringOne = "1";
+const char* serverName = "http://192.168.137.25/esp-data-get.php";
 
 // the following variables are unsigned longs because the time, measured in
 // milliseconds, will quickly become a bigger number than can be stored in an int.
@@ -16,7 +16,7 @@ unsigned long lastTime = 0;
 unsigned long timerDelay = 5000;
 
 String sensorReadings;
-String sensorReadingsArr[5];
+String sensorReadingsArr[23];
 
 void setup() {
   Serial.begin(115200);
@@ -62,18 +62,90 @@ void loop() {
         Serial.print(keys[i]);
         Serial.print(" = ");
         Serial.println(value);
-        sensorReadingsArr[i] = jsonString;
+        sensorReadingsArr[i] = value;
       }
-      String sub_S = sensorReadingsArr[2].substring(1,3);
-      Serial.println(sub_S);
-      if (sub_S.toInt() >= 13){
-        digitalWrite(13, HIGH);
-        Serial.println("hoog");
+
+      Serial.println("tijd" + sensorReadingsArr[0]);
+      //ventilator1
+      if (sensorReadingsArr[7] == "1"){
+        Serial.println("ventilator1 automatisch");
       }
       else{
-        digitalWrite(13, LOW);
-        Serial.println("laag");
+        Serial.println("ventilator1 control");
       }
+      
+      //ventilator2
+      if (sensorReadingsArr[8] == "1"){
+        Serial.println("ventilator2 automatisch");
+      }
+      else{
+        Serial.println("ventilator2 control");
+      }
+
+      //raam1
+      if (sensorReadingsArr[9] == "1"){
+        Serial.println("raam1 automatisch");
+      }
+      else{
+        Serial.println("raam1 control");
+      }
+      
+      //raam2
+      if (sensorReadingsArr[10] == "1"){
+        Serial.println("raam2 automatisch");
+      }
+      else{
+        Serial.println("raam2 control");
+      }
+
+      //raam1
+      if (sensorReadingsArr[11] == "1"){
+        Serial.println("deur1 automatisch");
+      }
+      else{
+        Serial.println("deur1 control");
+      }
+      
+      //raam2
+      if (sensorReadingsArr[12] == "1"){
+        Serial.println("deur2 automatisch");
+      }
+      else{
+        Serial.println("deur2 control");
+      }
+
+      //vat1
+      if (sensorReadingsArr[13] == "1"){
+        Serial.println("vat1 automatisch");
+      }
+      else{
+        Serial.println("vat1 control");
+      }
+      
+      //vat2
+      if (sensorReadingsArr[14] == "1"){
+        Serial.println("vat2 automatisch");
+      }
+      else{
+        Serial.println("vat2 control");
+      }
+
+      //vat3
+      if (sensorReadingsArr[15] == "1"){
+        Serial.println("vat3 automatisch");
+      }
+      else{
+        Serial.println("vat3 control");
+      }
+
+      //licht
+      if (sensorReadingsArr[16] == "1"){
+        Serial.println("licht automatisch");
+      }
+      else{
+        Serial.println("licht control");
+      }
+      
     }
     else {
       Serial.println("WiFi Disconnected");
@@ -81,6 +153,28 @@ void loop() {
     lastTime = millis();
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 String httpGETRequest(const char* serverName) {
   WiFiClient client;
