@@ -17,7 +17,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT * FROM automatisch, controls, pompoen1, pompoen2, treshold";
+$sql = "SELECT * FROM automatisch, pompoen1, pompoen2, treshold";
 
 
  
@@ -37,19 +37,19 @@ if ($result = $conn->query($sql)) {
 		
 		
 		//control
-	$row_ventilator1 = $row["ventilator1"];
-    $row_ventilator2 = $row["ventilator2"];
-    $row_raam1 = $row["raam1"];
-    $row_raam2 = $row["raam2"]; 
-	$row_deur1 = $row["deur1"]; 
-	$row_deur2 = $row["deur2"]; 
-	$row_vat1bijvullenc = $row["vat1bijvullen"];
-	$row_vat1waterenc = $row["vat1wateren"];
-	$row_vat2bijvullenc = $row["vat2bijvullen"];
-	$row_vat2waterenc = $row["vat2wateren"];
-	$row_vat3bijvullenc = $row["vat3bijvullen"];
-	$row_vat3waterenc = $row["vat3wateren"];
-	$row_lichtc = $row["licht"]; 
+	//$row_ventilator1 = $row["ventilator1"];
+    //$row_ventilator2 = $row["ventilator2"];
+    //$row_raam1 = $row["raam1"];
+    //$row_raam2 = $row["raam2"]; 
+	//$row_deur1 = $row["deur1"]; 
+	//$row_deur2 = $row["deur2"]; 
+	//$row_vat1bijvullenc = $row["vat1bijvullen"];
+	//$row_vat1waterenc = $row["vat1wateren"];
+	//$row_vat2bijvullenc = $row["vat2bijvullen"];
+	//$row_vat2waterenc = $row["vat2wateren"];
+	//$row_vat3bijvullenc = $row["vat3bijvullen"];
+	//$row_vat3waterenc = $row["vat3wateren"];
+	//$row_lichtc = $row["licht"]; 
 
 		
 		//automatisch
@@ -88,19 +88,19 @@ if ($result = $conn->query($sql)) {
 
       
 		$data = array('tijd' => $row_tijd,
-		'ventilator1' => $row_ventilator1, 
-		'ventilator2' => $row_ventilator2, 
-		'raam1' => $row_raam1, 
-		'raam2' => $row_raam2, 
-		'deur1' => $row_deur1,
-		'deur2' => $row_deur2,
-		'vat1bijvullen' => $row_vat1bijvullenc,
-		'vat1wateren' => $row_vat1waterenc,
-		'vat2bijvullen' => $row_vat2bijvullenc,
-		'vat2wateren' => $row_vat2waterenc,
-		'vat3bijvullen' => $row_vat3bijvullenc,
-		'vat3wateren' => $row_vat3waterenc,
-		'licht' => $row_lichtc,
+		//'ventilator1' => $row_ventilator1, 
+		//'ventilator2' => $row_ventilator2, 
+		//'raam1' => $row_raam1, 
+		//'raam2' => $row_raam2, 
+		//'deur1' => $row_deur1,
+		//'deur2' => $row_deur2,
+		//'vat1bijvullen' => $row_vat1bijvullenc,
+		//'vat1wateren' => $row_vat1waterenc,
+		//'vat2bijvullen' => $row_vat2bijvullenc,
+		//'vat2wateren' => $row_vat2waterenc,
+		//'vat3bijvullen' => $row_vat3bijvullenc,
+		//'vat3wateren' => $row_vat3waterenc,
+		//'licht' => $row_lichtc,
 		'ventilator1A' => $row_ventilator1A, 
 		'ventilator2A' => $row_ventilator2A, 
 		'raam1A' => $row_raam1A, 
