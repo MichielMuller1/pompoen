@@ -1,0 +1,16 @@
+POMPOEN 1
+A2 -> vochtigheid
+A3 -> vochtigheid
+A4 -> vochtigheid
+A7 -> vochtigheid
+
+A9 -> tempsensor
+
+POMPOEN 2
+A2 -> vochtigheid
+A3 -> vochtigheid
+A4 -> vochtigheid
+A7 -> vochtigheid
+
+A9 -> tempsensor
+
