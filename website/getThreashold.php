@@ -105,6 +105,9 @@ try {
         $_SESSION['rood'] = $result[0][20];
         $_SESSION['groen'] = $result[0][21];
         $_SESSION['blauw'] = $result[0][22];
+        $_SESSION['apiTemp'] = $result[0][23];
+        $_SESSION['apiMinuten'] = $result[0][24];
+        $_SESSION['kleur'] = sprintf("#%02x%02x%02x", $_SESSION['rood'],  $_SESSION['groen'], $_SESSION['blauw']);
 
     }else{
         $_SESSION['ventilator1'] = 0;
@@ -130,6 +133,9 @@ try {
         $_SESSION['rood'] = 0;
         $_SESSION['groen'] = 0;
         $_SESSION['blauw'] = 0;
+        $_SESSION['apiTemp'] = 0;
+        $_SESSION['apiMinuten'] = 0;
+
     }
 
 

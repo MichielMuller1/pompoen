@@ -71,7 +71,7 @@ $grondvochtigheid2Laag2 = $_POST["grondvochtigheid2Laag2"];
 echo $grondvochtigheid2Laag2 . "\n";
 
 $licht = $_POST["licht"];
-$lichtKleur = $_POST["lichtKleur"];
+//$lichtKleur = $_POST["lichtKleur"];
 $lichtAutomatic = isset($_POST["lichtAutomatic"]) ? 1 : 0;
 $lichtONOFF = isset($_POST["licht_onOff"]) ? 1 : 0;
 echo $licht . "\n";
@@ -83,11 +83,10 @@ $_SESSION['kleur'] = $kleur;
 echo $kleur."-----------------";
 
 list($r, $g, $b) = sscanf($kleur, "#%02x%02x%02x");
-echo $r;
-echo $g;
-echo $b;
 
-echo "--------------!!!!!!!!!!)----------";
+
+$apiTemp = $_POST["api"];
+$minuten = $_POST["minuten"];
 
 
 //$sName = "192.168.56.5";
@@ -122,7 +121,7 @@ try {
     echo $tijd;
 
     //insert all the values into the database
-    $sql = "INSERT INTO `threshold` (`ID`, `tijd`, `tempventilator1T`, `tempventilator2T`, `tempraam1T`, `tempraam2T`, `tempdeur1T`, `tempdeur2T`, `minvat1T`, `maxvat1T`, `minvat2T`, `maxvat2T`, `minvat3T`, `maxvat3T`, `grondvochtigheid1laag1T`,`grondvochtigheid1laag2T`, `grondvochtigheid2laag12T`,`grondvochtigheid2laag22T`, `lichtT`, `regen`,`rood`,`groen`,`blauw`) VALUES (1,'$tijd',33, $ventilator2,$raam1,$raam2,$deur1,$deur2,$vat1MIN,$vat1MAX,$vat2MIN,$vat2MAX,$vat3MIN,$vat3MAX,$grondvochtigheid1Laag1,$grondvochtigheid1Laag2,$grondvochtigheid2Laag1,$grondvochtigheid2Laag2,$licht,$regen,$r,$g,$b)";
+    $sql = "INSERT INTO `threshold` (`ID`, `tijd`, `tempventilator1T`, `tempventilator2T`, `tempraam1T`, `tempraam2T`, `tempdeur1T`, `tempdeur2T`, `minvat1T`, `maxvat1T`, `minvat2T`, `maxvat2T`, `minvat3T`, `maxvat3T`, `grondvochtigheid1laag1T`,`grondvochtigheid1laag2T`, `grondvochtigheid2laag12T`,`grondvochtigheid2laag22T`, `lichtT`, `regen`,`rood`,`groen`,`blauw`,`apiTemperatuur`,`apiMinuten`) VALUES (1,'$tijd',33, $ventilator2,$raam1,$raam2,$deur1,$deur2,$vat1MIN,$vat1MAX,$vat2MIN,$vat2MAX,$vat3MIN,$vat3MAX,$grondvochtigheid1Laag1,$grondvochtigheid1Laag2,$grondvochtigheid2Laag1,$grondvochtigheid2Laag2,$licht,$regen,$r,$g,$b,$apiTemp,$minuten)";
     $conn->exec($sql);
 
     $sql2 = "INSERT INTO `automatisch` (`ID`, `tijd`,`ventilator1A`,`ventilator2A`,`raam1A`,`raam2A`,`deur1A`,`deur2A`,`vat1A`,`vat2A`,`vat3A`,`lichtA`) VALUES (1,'$tijd',$ventilator1Automatic,$ventilator2Automatic,$raam1Automatic,$raam2Automatic,$deur1Automatic,$deur2Automatic,$vat1Automatic,$vat2Automatic,$vat3Automatic,$lichtAutomatic)";

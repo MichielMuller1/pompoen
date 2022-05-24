@@ -68,12 +68,12 @@ try {
         $_SESSION['lichtsterkte'] = $result4[0][6];
         $_SESSION['co2'] = $result4[0][7];
         $_SESSION['luchtvochtigheid'] = $result4[0][8];
-        $_SESSION['regen'] = $result4[0][9];
+        $_SESSION['regenStatus'] = $result4[0][9];
     }else{
         $_SESSION['lichtsterkte'] = 0;
         $_SESSION['co2'] = 0;
         $_SESSION['luchtvochtigheid'] = 0;
-        $_SESSION['regen'] = 0;
+        $_SESSION['regenStatus'] = 0;
     }
 
 
