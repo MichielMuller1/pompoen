@@ -3,7 +3,6 @@ A2 -> vochtigheid
 A3 -> vochtigheid
 A4 -> vochtigheid
 A7 -> vochtigheid
-
 A9 -> tempsensor
 
 POMPOEN 2
@@ -11,6 +10,33 @@ A2 -> vochtigheid
 A3 -> vochtigheid
 A4 -> vochtigheid
 A7 -> vochtigheid
-
 A9 -> tempsensor
+
+
+ESP RAAM 2X DEUR + VENT
+SCL -> raam1 open
+SDA -> raam1 toe
+21 -> raam2 open
+MISO -> raam2 toe
+MOSI -> deur1 open
+36/A4 -> deur1 toe
+
+eventueel
+32/A7 -> vochtigheidssensor
+33/A9 -> vochtigheidssensor
+39/A3 -> vochtigheidssensor
+34/A2 -> vochtigheidssensor
+
+
+ESP DEUR + VENT
+SCL -> deur1 open
+SDA -> deur1 toe
+21 -> vent open
+19 -> vent toe
+
+eventueel
+32/A7 -> vochtigheidssensor
+33/A9 -> vochtigheidssensor
+39/A3 -> vochtigheidssensor
+34/A2 -> vochtigheidssensor
 

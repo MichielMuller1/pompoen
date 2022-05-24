@@ -2,6 +2,7 @@
 #include <HTTPClient.h>
 #include <Arduino_JSON.h>
 
+//raam1
 const int relay = 22;
 const int relay1 = 23;
 int stateraamopenA = LOW;
@@ -9,6 +10,7 @@ int stateraamtoeA = LOW;
 int stateraamopen = LOW;
 int stateraamtoe = LOW;
 
+//raam2
 const int relay2 = 21;
 const int relay3 = 19;
 int stateraamopen2A = LOW;
@@ -16,8 +18,9 @@ int stateraamtoe2A = LOW;
 int stateraamopen2 = LOW;
 int stateraamtoe2 = LOW;
 
-const int relay4 = 4;
-const int relay5 = 27;
+//deur1
+const int relay4 = 18;
+const int relay5 = 36;
 int statedeuropen = LOW;
 int statedeurtoe = LOW;
 int statedeuropen2 = LOW;
