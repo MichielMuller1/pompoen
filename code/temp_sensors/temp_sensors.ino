@@ -28,9 +28,7 @@ String apiKeyValue = "tPmAT5Ab3j7F9";
 #include <DHT_U.h>
 
 #define DHTPIN 4     // Digital pin connected to the DHT sensor 
-#define DHTPIN1 32
-#define DHTPIN2 33
-#define DHTPIN3 15
+
 // Feather HUZZAH ESP8266 note: use pins 3, 4, 5, 12, 13 or 14 --
 // Pin 15 can work but DHT must be disconnected during program upload.
 
@@ -43,9 +41,7 @@ String apiKeyValue = "tPmAT5Ab3j7F9";
 //   https://learn.adafruit.com/dht/overview
 
 DHT_Unified dht(DHTPIN, DHTTYPE);
-DHT_Unified dht1(DHTPIN1, DHTTYPE);
-DHT_Unified dht2(DHTPIN2, DHTTYPE);
-DHT_Unified dht3(DHTPIN3, DHTTYPE);
+
 
 uint32_t delayMS;
 
@@ -66,16 +62,12 @@ void setup() {
 
   // Initialize device.
   dht.begin();
-  dht1.begin();
-  dht2.begin();
-  dht3.begin();
+
   Serial.println(F("DHTxx Unified Sensor Example"));
   // Print temperature sensor details.
   sensor_t sensor;
   dht.temperature().getSensor(&sensor);
-  dht1.temperature().getSensor(&sensor);
-  dht2.temperature().getSensor(&sensor);
-  dht3.temperature().getSensor(&sensor);
+
   Serial.println(F("------------------------------------"));
   Serial.println(F("Temperature Sensor"));
   Serial.print  (F("Sensor Type: ")); Serial.println(sensor.name);
@@ -87,9 +79,7 @@ void setup() {
   Serial.println(F("------------------------------------"));
   // Print humidity sensor details.
   dht.humidity().getSensor(&sensor);
-  dht1.humidity().getSensor(&sensor);
-  dht2.humidity().getSensor(&sensor);
-  dht3.humidity().getSensor(&sensor);
+
   Serial.println(F("Humidity Sensor"));
   Serial.print  (F("Sensor Type: ")); Serial.println(sensor.name);
   Serial.print  (F("Driver Ver:  ")); Serial.println(sensor.version);
@@ -104,8 +94,7 @@ void setup() {
 
 void loop() {
   // Delay between measurements
-  int temptot = 0;
-  int humtot = 0;
+
   delay(delayMS);
   // Get temperature event and print its value.
 
@@ -126,37 +115,11 @@ void loop() {
   Serial.println(hum1);
 
 
-  dht1.temperature().getEvent(&event);
-  int temp2 = event.temperature;
-  Serial.println(temp2);
-  dht1.humidity().getEvent(&event);
-  int hum2 = event.relative_humidity;
-  Serial.println(hum2);
 
-  dht2.temperature().getEvent(&event);
-  int temp3 = event.temperature;
-  Serial.println(temp3);
-  dht2.humidity().getEvent(&event);
-  int hum3 = event.relative_humidity;
-  Serial.println(hum3);
-
-  dht3.temperature().getEvent(&event);
-  int temp4 = event.temperature;
-  Serial.println(temp4);
-  dht3.humidity().getEvent(&event);
-  int hum4 = event.relative_humidity;
-  Serial.println(hum4);
-
-  temptot = (temp1 + temp2 + temp3 + temp4) / 4;
-  humtot = (hum1 + hum2 + hum3 + hum4) / 4;
-  Serial.print("temp ");
-  Serial.println(temptot);
-  Serial.print("hum ");
-  Serial.println(humtot);
 
     http.addHeader("Content-Type", "application/x-www-form-urlencoded");
-    String httpRequestData = "api_key=" + apiKeyValue + "&temp=" + temptot
-                             + "&hum=" + humtot + "";
+    String httpRequestData = "api_key=" + apiKeyValue + "&temp=" + temp1
+                             + "&hum=" + hum1 + "";
     Serial.print("httpRequestData: ");
     Serial.println(httpRequestData);
 
