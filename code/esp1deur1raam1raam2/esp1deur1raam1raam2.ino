@@ -92,6 +92,8 @@ void loop() {
         sensorReadingsArr[i] = value;
       }
 
+      int temptot = (sensorReadingsArr[24].toInt() + sensorReadingsArr[27].toInt());
+
       Serial.println("tijd" + sensorReadingsArr[0]);
       //ventilator1
       if (sensorReadingsArr[7] == "1"){
@@ -105,7 +107,7 @@ void loop() {
       //raam1
       if (sensorReadingsArr[16] == "1"){
         Serial.println("raam1 automatisch");
-        if (sensorReadingsArr[24].toInt() >= sensorReadingsArr[32].toInt() && stateraamopenA == LOW){
+        if (temptot >= sensorReadingsArr[32].toInt() && stateraamopenA == LOW){
           digitalWrite(relay, HIGH);
           delay(5000);
           digitalWrite(relay, LOW);
@@ -113,7 +115,7 @@ void loop() {
           stateraamopenA = HIGH;
           stateraamtoeA = LOW;
         }
-        else if (sensorReadingsArr[24].toInt() <= sensorReadingsArr[32].toInt() &&stateraamtoeA == LOW){
+        else if (temptot <= sensorReadingsArr[32].toInt() &&stateraamtoeA == LOW){
            digitalWrite(relay1, HIGH);
            delay(5000);
            digitalWrite(relay1, LOW);
@@ -145,7 +147,7 @@ void loop() {
       //raam2
       if (sensorReadingsArr[17] == "1"){
         Serial.println("raam2 automatisch");
-        if (sensorReadingsArr[24].toInt() >= sensorReadingsArr[33].toInt() && stateraamopen2A == LOW){
+        if (temptot >= sensorReadingsArr[33].toInt() && stateraamopen2A == LOW){
           digitalWrite(relay2, HIGH);
           delay(5000);
           digitalWrite(relay2, LOW);
@@ -153,7 +155,7 @@ void loop() {
           stateraamopen2A = HIGH;
           stateraamtoe2A = LOW;
         }
-        else if (sensorReadingsArr[24].toInt() <= sensorReadingsArr[33].toInt() && stateraamtoe2A == LOW){
+        else if (temptot <= sensorReadingsArr[33].toInt() && stateraamtoe2A == LOW){
            digitalWrite(relay3, HIGH);
            delay(5000);
            digitalWrite(relay3, LOW);
@@ -188,7 +190,7 @@ void loop() {
       //deur1
       if (sensorReadingsArr[18] == "1"){
        Serial.println("deur1 automatisch");
-        if (sensorReadingsArr[24].toInt() >= sensorReadingsArr[34].toInt() && statedeuropen == LOW){
+        if (temptot >= sensorReadingsArr[34].toInt() && statedeuropen == LOW){
           digitalWrite(relay4, HIGH);
           delay(5000);
           digitalWrite(relay4, LOW);
@@ -196,7 +198,7 @@ void loop() {
           statedeuropen = HIGH;
           statedeurtoe = LOW;
         }
-        else if (sensorReadingsArr[24].toInt() <= sensorReadingsArr[34].toInt() && statedeurtoe == LOW){
+        else if (temptot <= sensorReadingsArr[34].toInt() && statedeurtoe == LOW){
            digitalWrite(relay5, HIGH);
            delay(5000);
            digitalWrite(relay5, LOW);
