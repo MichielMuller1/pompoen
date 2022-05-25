@@ -158,12 +158,14 @@ void loop()
         sensorReadingsArr[i] = value;
       }
 
-      int mini = sensorReadingsArr[36].toInt();
-      int maxi = sensorReadingsArr[38].toInt();
+      int mini1 = sensorReadingsArr[36].toInt();
+      int maxi1 = sensorReadingsArr[37].toInt();
+      int mini2 = sensorReadingsArr[38].toInt();
+      int maxi2 = sensorReadingsArr[39].toInt();
 
       Serial.println("tijd" + sensorReadingsArr[0]);
       //vat1 bijvullen
-      if (sensorReadingsArr[7] == "1") {
+      if (sensorReadingsArr[7] == "1" && mini1 >= sensorReadingsArr[]) {
         Serial.println("vat1 bijvullen automatisch");
         digitalWrite(relay, LOW);
       }
@@ -172,7 +174,7 @@ void loop()
       }
 
       //vat2 bijvullen
-      if (sensorReadingsArr[9] == "1") {
+      if (sensorReadingsArr[9] == "1" && mini2 >= sensorReadingsArr[]) {
         Serial.println("vat2 bijvullen automatisch");
         digitalWrite(relay2, LOW);
       }
