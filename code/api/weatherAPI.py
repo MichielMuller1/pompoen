@@ -103,6 +103,8 @@ def apiToDatabase(aanOfAf):
         
         cnx.close()
 
+databaseTemp,databaseMinuten = getTreshold()
+startUur,eindUur = getstartAndEndHour(databaseTemp,databaseMinuten)
 
 #####code#####
 while True:
