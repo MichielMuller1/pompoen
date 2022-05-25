@@ -3,6 +3,14 @@
 #include <Arduino_JSON.h>
 
 //raam1
+const int relay6 = 5;
+const int relay7 = 32;
+int stateventaanA = LOW;
+int stateventuitA = LOW;
+int stateventaan = LOW;
+int stateventuit = LOW;
+
+//raam1
 const int relay = 22;
 const int relay1 = 23;
 int stateraamopenA = LOW;
@@ -98,12 +106,42 @@ void loop() {
       int temptot = (sensorReadingsArr[24].toInt() + sensorReadingsArr[27].toInt());
 
       Serial.println("tijd" + sensorReadingsArr[0]);
-      //ventilator1
-      if (sensorReadingsArr[7] == "1"){
-        Serial.println("ventilator1 automatisch");
+      if (sensorReadingsArr[14] == "1"){
+        Serial.println("ventilator automatisch");
+        if (temptot >= sensorReadingsArr[30].toInt() && stateventaanA == LOW){
+          digitalWrite(relay6, HIGH);
+          delay(5000);
+          digitalWrite(relay6, LOW);
+          Serial.println("ventilator 1 aan");
+          stateventaanA = HIGH;
+          stateventuitA = LOW;
+        }
+        else if (temptot <= sensorReadingsArr[30].toInt() &&stateventuitA == LOW){
+           digitalWrite(relay7, HIGH);
+           delay(5000);
+           digitalWrite(relay7, LOW);
+           Serial.println("ventilator 1 uit");
+           stateventuitA = HIGH;
+           stateventaanA = LOW;
+        }
       }
       else{
-        Serial.println("ventilator1 control");
+          if ( sensorReadingsArr[1] == "1" && stateventaan == LOW){
+          digitalWrite(relay6, HIGH);
+          delay(5000);
+          digitalWrite(relay6, LOW);
+          Serial.println("ventilator 1 aan");
+          stateventaan = HIGH;
+          stateventuit = LOW;
+        }
+        else if (sensorReadingsArr[2] == "0" && stateventuit == LOW){
+           digitalWrite(relay7, HIGH);
+           delay(5000);
+           digitalWrite(relay7, LOW);
+           Serial.println("ventilator 1 uit");
+           stateventuit = HIGH;
+           stateventaan = LOW;
+        }
       }
       
 

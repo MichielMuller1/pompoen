@@ -20,9 +20,9 @@ SDA -> raam1 toe
 MISO -> raam2 toe
 MOSI -> deur1 open
 36/A4 -> deur1 toe
-
+5/SDK -> ventilator aan
+32/A7 -> ventilator uit
 eventueel
-32/A7 -> vochtigheidssensor
 33/A9 -> vochtigheidssensor
 39/A3 -> vochtigheidssensor
 34/A2 -> vochtigheidssensor
@@ -33,7 +33,6 @@ SCL -> deur1 open
 SDA -> deur1 toe
 21 -> vent open
 19 -> vent toe
-
 eventueel
 32/A7 -> vochtigheidssensor
 33/A9 -> vochtigheidssensor
