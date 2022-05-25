@@ -2,9 +2,20 @@
 session_start();
 //include "graphDate.php";
 //test
+
+
 if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
     ?>
+    <!--
+      Rui Santos
+      Complete project details at https://RandomNerdTutorials.com/esp32-cam-post-image-photo-server/
 
+      Permission is hereby granted, free of charge, to any person obtaining a copy
+      of this software and associated documentation files.
+
+      The above copyright notice and this permission notice shall be included in all
+      copies or substantial portions of the Software.
+    -->
 
     <!doctype html>
     <html lang="en">
@@ -20,7 +31,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
     </head>
     <body>
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light ">
+            <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="#">Pompoen</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -31,20 +42,30 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <a class="nav-link" href="status.php">current</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="threshold.php">threashold</a>
+                            <a class="nav-link" href="threshold.php">threshold</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="camera.php" aria-current="page">camera</a>
                         </li>
                     </ul>
-                    <p><?= $_SESSION['user_full_name'] ?></p>
-                    <a href="logout.php" class="btn btn-warning">LOGOUT</a>
+
+                    <a href="logout.php" class="btn btn-warning ml-auto">LOGOUT</a>
                 </div>
             </nav>
-
-
+            <h2 class="geleAchtergrond text-center my-3">pompoen 1</h2>
+            <img src="uploads/pompoen1.jpg" alt="pompoen1" class="responsive">
+            <h2 class="geleAchtergrond text-center my-3">pompoen 2</h2>
+            <img src="uploads/pompoen2.jpg" alt="pompoen2" class="responsive">
         </div>
 
+
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
     </html>
 

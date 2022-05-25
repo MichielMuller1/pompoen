@@ -32,47 +32,53 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <a class="nav-link" href="status.php">current</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">threashold</a>
+                            <a class="nav-link active" aria-current="page" href="#">threshold</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="camera.php">camera</a>
                         </li>
                     </ul>
-                    <p><?= $_SESSION['user_full_name'] ?></p>
-                    <a href="logout.php" class="btn btn-warning">LOGOUT</a>
+
+                    <a href="logout.php" class="btn btn-warning ml-auto">LOGOUT</a>
                 </div>
         </nav>
 
 
-        <h2>threasholds/automatic</h2>
+        <h2>thresholds and controls</h2>
 
         <div>
             <form action="todatabase.php" method="post">
+                <div>
+                    <p>boven deze temperatuur gaat de ventilator aan</p>
+                    <div class="row">
+                        <div class="form-group col-6">
+                            <label for="ventilator1">ventilator 1</label>
+                            <input type="number" name="ventilator1" id="ventilator1" required>
+                            <label class="switch">
+                                <input type="checkbox" id="ventilator1Automatic" name="ventilator1Automatic" value="0">
+                                <!--                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">-->
+                            </label>
+                            <label class="switchSlider">
+                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="ventilator2">ventilator 2</label>
+                            <input type="number" name="ventilator2" id="ventilator2" required>
+                            <label class="switch">
+                                <input type="checkbox" id="ventilator2Automatic" name="ventilator2Automatic" value="0">
+                                <!--                            <input type="checkbox" id="ventilator2_onOff" name="ventilator2_onOff" value="0" class="onOff">-->
+                            </label>
+                            <label class="switchSlider">
+                                <input type="checkbox" id="ventilator2_onOff" name="ventilator2_onOff" value="0" class="onOff">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
 
-                <div class="form-group">
-                    <label for="ventilator1">ventilator 1</label>
-                    <input type="number" name="ventilator1" id="ventilator1" required>
-                    <label class="switch">
-                        <input type="checkbox" id="ventilator1Automatic" name="ventilator1Automatic" value="0">
-                        <!--                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">-->
-                    </label>
-                    <label class="switchSlider">
-                        <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">
-                        <span class="slider round"></span>
-                    </label>
                 </div>
-                <div class="form-group">
-                    <label for="ventilator2">ventilator 2</label>
-                    <input type="number" name="ventilator2" id="ventilator2" required>
-                    <label class="switch">
-                        <input type="checkbox" id="ventilator2Automatic" name="ventilator2Automatic" value="0">
-                        <!--                            <input type="checkbox" id="ventilator2_onOff" name="ventilator2_onOff" value="0" class="onOff">-->
-                    </label>
-                    <label class="switchSlider">
-                        <input type="checkbox" id="ventilator2_onOff" name="ventilator2_onOff" value="0" class="onOff">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
+
 
                 <div class="form-group">
                     <label for="regen">regen</label>
@@ -137,7 +143,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <!--                        <input type="checkbox" id="vat1_bijvullen_onOff" name="vat1_bijvullen_onOff" value="0" class="onOff">-->
                         <!--                        <input type="checkbox" id="vat1_watergeven_onOff" name="vat1_watergeven_onOff" value="0" class="onOff">-->
                     </label>
-                    <label class="switchSlider">
+                    <label class="switchSlider"> bijvullen
                         <input type="checkbox" id="vat1_bijvullen_onOff" name="vat1_bijvullen_onOff" value="0"
                                class="onOff">
                         <span class="slider round"></span>
@@ -223,7 +229,14 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                 </div>
                 <div class="form-group">
                     <label for="kleur">Lichtkleur</label>
-                    <input type="color" id="kleur" name="kleur" onchange="clickColor(0, -1, -1, 5)" value="#ff0000" style="width: 50%">
+                    <input type="color" id="kleur" name="kleur" onchange="clickColor(0, -1, -1, 5)" style="width: 50%">
+                </div>
+
+                <div class="form-group">
+                    <label for="api">weersvoorspelling temperatuur</label>
+                    <input type="api" name="api" id="api" required>
+                    <label for="minuten">minuten vooraf ramen open zetten</label>
+                    <input type="minuten" name="minuten" id="minuten" required>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Kiezen</button>
@@ -255,6 +268,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         // var lichtKleurInput = document.getElementById("lichtKleur");
         var regenInput = document.getElementById("regen");
         var kleur = document.getElementById("kleur");
+        var apiTempInput = document.getElementById("api");
+        var apiMinutesInput = document.getElementById("minuten");
 
 
         ventilator1Input.value = <?= $_SESSION['ventilator1'] ?>;
@@ -277,6 +292,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         //lichtKleurInput.value = <?//= $_SESSION['lichtkleur'] ?>//;
         regenInput.value = <?= $_SESSION['regen'] ?>;
         kleur.value = <?='"'. $_SESSION['kleur'] .'"'?>;
+        apiTempInput.value = <?= $_SESSION['apiTemp'] ?>;
+        apiMinutesInput.value = <?= $_SESSION['apiMinuten'] ?>;
 
 
         //automatisch checkboxen juist zetten

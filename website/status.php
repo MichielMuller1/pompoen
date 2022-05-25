@@ -19,7 +19,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 </head>
 <body>
 <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light ">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="#">Pompoen</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -30,45 +30,63 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                     <a class="nav-link active" aria-current="page" href="#">current</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="threshold.php">threashold</a>
+                    <a class="nav-link" href="threshold.php">threshold</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="camera.php">camera</a>
                 </li>
             </ul>
-            <p><?= $_SESSION['user_full_name'] ?></p>
-            <a href="logout.php" class="btn btn-warning">LOGOUT</a>
+
+            <a href="logout.php" class="btn btn-warning ml-auto">LOGOUT</a>
         </div>
     </nav>
 
-    <h2>algemeen</h2>
-    <p>CO2: <span id="co2"></span> </p>
-    <p>luchtvochtigheid: <span id="luchtvochtigheid"></span> </p>
-    <p>lichtsterkte: <span id="lichtsterkte"></span> </p>
-    <p>laatste gewicht input <?= $_SESSION['gewichtTijd'] ?></p>
-    <p>regen: <?= $_SESSION['regen'] ?></p>
 
-    <h2>pompoen1</h2>
-    <p>temperatuur: <span id="temp1"></span> </p>
-    <p>grondvochtigheid laag 1: <span id="grondVocht1L1"></span> </p>
-    <p>grondvochtigheid laag 2: <span id="grondVocht1L2"></span></p>
-
-    <form action="statusDatabase.php" method="post">
-        <div class="form-group">
-            <label for="gewicht1">gewicht1</label>
-            <input type="number" name="gewicht1" id="gewicht1" required>
+        <div class="mt-3 statusDiv">
+            <h2 class="text-center geleAchtergrond">algemeen</h2>
+            <p class="d-flex">CO2: <span id="co2" class="statusValue ml-auto"></span> </p>
+            <p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid" class="statusValue ml-auto"></span> </p>
+            <p class="d-flex">lichtsterkte: <span id="lichtsterkte" class="statusValue ml-auto"></span> </p>
+            <p class="d-flex">laatste gewicht input <span class="statusValue ml-auto"> <?= $_SESSION['gewichtTijd'] ?></span></p>
+            <p class="d-flex">regen: <span class="statusValue ml-auto"><?= $_SESSION['regenStatus'] ?></span></p>
         </div>
 
-        <h2>pompoen2</h2>
-        <p>temperatuur: <span id="temp2"></span> </p>
-        <p>grondvochtigheid laag 1: <span id="grondVocht2L1"></span> </p>
-        <p>grondvochtigheid laag 2: <span id="grondVocht2L2"></span></p>
-        <div class="form-group">
-            <label for="gewicht2">gewicht2</label>
-            <input type="number" name="gewicht2" id="gewicht2" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Kiezen</button>
-    </form>
+
+
+
+
+        <form action="statusDatabase.php" method="post">
+
+
+
+                <div class="mt-3 statusDiv">
+                    <h2 class="text-center geleAchtergrond">pompoen 1</h2>
+                    <p class="d-flex">temperatuur: <span id="temp1" class="statusValue ml-auto"></span></p>
+                    <p class="d-flex">grondvochtigheid laag 1: <span id="grondVocht1L1" class="statusValue ml-auto"></span></p>
+                    <p class="d-flex">grondvochtigheid laag 2: <span id="grondVocht1L2" class="statusValue ml-auto"></span></p>
+
+                    <div class="form-group d-flex">
+                        <label for="gewicht1">gewicht: </label>
+                        <input type="number" name="gewicht1" id="gewicht1" class="ml-auto" required>
+                    </div>
+                </div>
+
+                <div class="mt-3 statusDiv">
+                    <h2 class="text-center geleAchtergrond">pompoen 2</h2>
+                    <p class="d-flex">temperatuur: <span id="temp2" class="statusValue ml-auto"></span></p>
+                    <p class="d-flex">grondvochtigheid laag 1: <span id="grondVocht2L1" class="statusValue ml-auto"></span></p>
+                    <p class="d-flex">grondvochtigheid laag 2: <span id="grondVocht2L2" class="statusValue ml-auto"></span></p>
+                    <div class="form-group d-flex">
+                        <label for="gewicht2">gewicht: </label>
+                        <input type="number" name="gewicht2" id="gewicht2" class="ml-auto" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="gewichtButton">Kiezen</button>
+                </div>
+
+
+        </form>
+
+
 
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

@@ -107,3 +107,28 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
+
+
+
+
+
+.statusValue{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.statusDiv{
+    max-width: 500px;
+    margin: auto;
+}
+.geleAchtergrond{
+    background-color: rgb(255,193,7);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.responsive{
+    width: 100%;
+    height: auto;
+}
