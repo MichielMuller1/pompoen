@@ -18,10 +18,10 @@ int stateventuit = LOW;
 
 
 
-const char* ssid     = "pompoen";
-const char* password = "IoTpompoen";
-String stringOne = "1";
-const char* serverName = "http://192.168.137.253/esp-data-get.php";
+const char* ssid     = "Neerzijde 16_IoT";
+const char* password = "E4u6c1blockx";
+
+const char* serverName = "http://192.168.0.5/esp-data-get.php";
 
 // the following variables are unsigned longs because the time, measured in
 // milliseconds, will quickly become a bigger number than can be stored in an int.

@@ -2,7 +2,7 @@
 #include <HTTPClient.h>
 #include <Arduino_JSON.h>
 
-//raam1
+//ventilator1
 const int relay6 = 5;
 const int relay7 = 32;
 int stateventaanA = LOW;
@@ -11,8 +11,8 @@ int stateventaan = LOW;
 int stateventuit = LOW;
 
 //raam1
-const int relay = 22;
-const int relay1 = 23;
+const int relay = 23;
+const int relay1 = 22;
 int stateraamopenA = LOW;
 int stateraamtoeA = LOW;
 int stateraamopen = LOW;
@@ -34,10 +34,11 @@ int statedeurtoe = LOW;
 int statedeuropen2 = LOW;
 int statedeurtoe2 = LOW;
 
-const char* ssid     = "pompoen";
-const char* password = "IoTpompoen";
-String stringOne = "1";
-const char* serverName = "http://192.168.137.253/esp-data-get.php";
+
+const char* ssid     = "Neerzijde 16_IoT";
+const char* password = "E4u6c1blockx";
+
+const char* serverName = "http://192.168.0.5/esp-data-get.php";
 
 // the following variables are unsigned longs because the time, measured in
 // milliseconds, will quickly become a bigger number than can be stored in an int.
@@ -56,7 +57,7 @@ void setup() {
   pinMode(relay1, OUTPUT);
   pinMode(relay2, OUTPUT);
   pinMode(relay3, OUTPUT);
-    pinMode(relay4, OUTPUT);
+  pinMode(relay4, OUTPUT);
   pinMode(relay5, OUTPUT);
   pinMode(13, OUTPUT); 
   WiFi.begin(ssid, password);
@@ -106,6 +107,7 @@ void loop() {
       int temptot = (sensorReadingsArr[24].toInt() + sensorReadingsArr[27].toInt());
 
       Serial.println("tijd" + sensorReadingsArr[0]);
+      //
       if (sensorReadingsArr[14] == "1"){
         Serial.println("ventilator automatisch");
         if (temptot >= sensorReadingsArr[30].toInt() && stateventaanA == LOW){
@@ -134,7 +136,7 @@ void loop() {
           stateventaan = HIGH;
           stateventuit = LOW;
         }
-        else if (sensorReadingsArr[2] == "0" && stateventuit == LOW){
+        else if (sensorReadingsArr[1] == "0" && stateventuit == LOW){
            digitalWrite(relay7, HIGH);
            delay(5000);
            digitalWrite(relay7, LOW);
