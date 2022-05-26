@@ -33,31 +33,28 @@ DROP TABLE IF EXISTS `automatisch`;
 CREATE TABLE `automatisch` (
   `ID` int NOT NULL,
   `tijd` datetime NOT NULL,
-  `ventilator1` tinyint(1) NOT NULL,
-  `ventilator2` tinyint(1) NOT NULL,
-  `raam 1` tinyint(1) NOT NULL,
-  `raam 2` tinyint(1) NOT NULL,
-  `deur 1` tinyint(1) NOT NULL,
-  `deur 2` tinyint(1) NOT NULL,
-  `licht` tinyint(1) NOT NULL,
-  `vat1` tinyint(1) NOT NULL,
-  `vat2` tinyint(1) NOT NULL,
-  `vat3` tinyint(1) NOT NULL,
-  `tijdvat1` tinyint(1) NOT NULL,
-  `tijdvat2` tinyint(1) NOT NULL,
-  `tijdvat3` tinyint(1) NOT NULL,
-  `cyclus1` tinyint(1) NOT NULL,
-  `cyclus2` tinyint(1) NOT NULL,
-	
-  
-  `licht` tinyint(1) NOT NULL
+  `ventilator1A` tinyint(1) NOT NULL,
+  `ventilator2A` tinyint(1) NOT NULL,
+  `raam1A` tinyint(1) NOT NULL,
+  `raam2A` tinyint(1) NOT NULL,
+  `deur1A` tinyint(1) NOT NULL,
+  `deur2A` tinyint(1) NOT NULL,
+  `lichtA` tinyint(1) NOT NULL,
+  `vat1A` tinyint(1) NOT NULL,
+  `vat2A` tinyint(1) NOT NULL,
+  `vat3A` tinyint(1) NOT NULL,
+  `tijdvat1A` tinyint(1) NOT NULL,
+  `tijdvat2A` tinyint(1) NOT NULL,
+  `tijdvat3A` tinyint(1) NOT NULL,
+  `cyclus1A` tinyint(1) NOT NULL,
+  `cyclus2A` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `automatisch`
 --
 
-INSERT INTO `automatisch` (`ID`, `tijd`, `ventilator1`, `ventilator2`, `raam 1`, `raam 2`, `deur 1`, `deur 2`, `licht`, `vat1`, `vat2`, `vat3`, `tijdvat1`, `tijdvat2`, `tijdvat3`, `cyclus1` , `cyclus2`) VALUES
+INSERT INTO `automatisch` (`ID`, `tijd`, `ventilator1A`, `ventilator2A`, `raam1A`, `raam2A`, `deur1A`, `deur2A`, `lichtA`, `vat1A`, `vat2A`, `vat3A`, `tijdvat1A`, `tijdvat2A`, `tijdvat3A`, `cyclus1A` , `cyclus2A`) VALUES
 (1, '2022-04-28 14:12:16', 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
@@ -147,15 +144,15 @@ CREATE TABLE `pompoen 1` (
   `tijd` datetime NOT NULL,
   `temperatuur` int NOT NULL,
   `luchtvochtigheid` int NOT NULL,
-  `grondvochtigheid laag 1` int NOT NULL,
-  `grondvochtigheid laag 2` int NOT NULL
+  `grondvochtigheidlaag1` int NOT NULL,
+  `grondvochtigheidlaag2` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `pompoen 1`
 --
 
-INSERT INTO `pompoen 1` (`ID`, `tijd`, `temperatuur`, `luchtvochtigheid`, `grondvochtigheid laag 1`, `grondvochtigheid laag 2`) VALUES
+INSERT INTO `pompoen 1` (`ID`, `tijd`, `temperatuur`, `luchtvochtigheid`, `grondvochtigheidlaag1`, `grondvochtigheidlaag2`) VALUES
 (1, '2022-04-28 11:08:34', 5, 49, 3, 7),
 (2, '2022-04-28 12:20:28', 9, 50, 9, 9);
 
@@ -169,17 +166,17 @@ DROP TABLE IF EXISTS `pompoen 2`;
 CREATE TABLE `pompoen 2` (
   `ID` int NOT NULL,
   `tijd` datetime NOT NULL,
-  `temperatuur` int NOT NULL,
-  `luchtvochtigheid` int NOT NULL,
-  `grondvochtigheid laag 1` int NOT NULL,
-  `grondvochtigheid laag 2` int NOT NULL
+  `temperatuur2` int NOT NULL,
+  `luchtvochtigheid2` int NOT NULL,
+  `grondvochtigheidlaag12` int NOT NULL,
+  `grondvochtigheidlaag22` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `pompoen 2`
 --
 
-INSERT INTO `pompoen 2` (`ID`, `tijd`, `temperatuur`,`luchtvochtigheid`, `grondvochtigheid laag 1`, `grondvochtigheid laag 2`) VALUES
+INSERT INTO `pompoen 2` (`ID`, `tijd`, `temperatuur2`,`luchtvochtigheid2`, `grondvochtigheidlaag12`, `grondvochtigheidlaag22`) VALUES
 (1, '2022-04-28 11:09:19', 17, 26 , 25, 33);
 
 -- --------------------------------------------------------
@@ -218,31 +215,31 @@ DROP TABLE IF EXISTS `threshold`;
 CREATE TABLE `threshold` (
   `ID` int NOT NULL,
   `tijd` datetime NOT NULL,
-  `temp ventilator 1` int NOT NULL,
-  `temp ventilator 2` int NOT NULL,
-  `temp raam 1` int NOT NULL,
-  `temp raam 2` int NOT NULL,
-  `temp deur 1` int NOT NULL,
-  `temp deur 2` int NOT NULL,
-  `min vat 1` int NOT NULL,
-  `max vat 1` int NOT NULL,
-  `min vat 2` int NOT NULL,
-  `max vat 2` int NOT NULL,
-  `min vat 3` int NOT NULL,
-  `max vat 3` int NOT NULL,
-  `grondvochtigheid 1 laag 1` int NOT NULL,
-  `grondvochtigheid 1 laag 2` int NOT NULL,
-  `grondvochtigheid 2 laag 1` int NOT NULL,
-  `grondvochtigheid 2 laag 2` int NOT NULL,
-  `licht` int NOT NULL,
-  `lichtkleur` int NOT NULL
+  `tempventilator1T` int NOT NULL,
+  `tempventilator2T` int NOT NULL,
+  `tempraam1T` int NOT NULL,
+  `tempraam2T` int NOT NULL,
+  `tempdeur1T` int NOT NULL,
+  `tempdeur2T` int NOT NULL,
+  `minvat1T` int NOT NULL,
+  `maxvat1T` int NOT NULL,
+  `minvat2T` int NOT NULL,
+  `maxvat2T` int NOT NULL,
+  `minvat3T` int NOT NULL,
+  `maxvat3T` int NOT NULL,
+  `grondvochtigheid1laag1T` int NOT NULL,
+  `grondvochtigheid1laag2T` int NOT NULL,
+  `grondvochtigheid2laag12T` int NOT NULL,
+  `grondvochtigheid2laag22T` int NOT NULL,
+  `lichtT` int NOT NULL,
+  `lichtkleurT` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `threshold`
 --
 
-INSERT INTO `threshold` (`ID`, `tijd`, `temp ventilator 1`, `temp ventilator 2`, `temp raam 1`, `temp raam 2`, `temp deur 1`, `temp deur 2`, `min vat 1`, `max vat 1`, `min vat 2`, `max vat 2`, `min vat 3`, `max vat 3`, `grondvochtigheid 1 laag 1`, `grondvochtigheid 1 laag 2`, `grondvochtigheid 2 laag 1`, `grondvochtigheid 2 laag 2`, `licht`, `lichtkleur`) VALUES
+INSERT INTO `threshold` (`ID`, `tijd`, `tempventilator1T`, `tempventilator2T`, `tempraam1T`, `tempraam2T`, `tempdeur1T`, `tempdeur2T`, `minvat1T`, `maxvat1T`, `minvat2T`, `maxvat2T`, `minvat3T`, `maxvat3T`, `grondvochtigheid1laag1T`, `grondvochtigheid1laag2T`, `grondvochtigheid2laag12T`, `grondvochtigheid2laag22T`, `lichtT`, `lichtkleurT`) VALUES
 (1, '2022-04-28 14:12:16', 0, 0, 0, 0, 2, 0, 2, 0, 0, 5, 0, 0, 0, 0, 0, 3, 0, 5);
 
 -- --------------------------------------------------------
