@@ -32,7 +32,7 @@ unsigned long lastTime = 0;
 unsigned long timerDelay = 5000;
 
 String sensorReadings;
-String sensorReadingsArr[50];
+String sensorReadingsArr[100];
 
 void setup() {
   Serial.begin(115200);
@@ -85,13 +85,13 @@ void loop() {
         sensorReadingsArr[i] = value;
       }
 
-      int temptot = (sensorReadingsArr[24].toInt() + sensorReadingsArr[27].toInt());
+      int temptot = (sensorReadingsArr[29].toInt() + sensorReadingsArr[33].toInt())/2;
 
       Serial.println("tijd" + sensorReadingsArr[0]);
       //ventilator1
-      if (sensorReadingsArr[15] == "1"){
+      if (sensorReadingsArr[19] == "1"){
         Serial.println("vent2 automatisch");
-      if (temptot >= sensorReadingsArr[35].toInt() && statedeuropenA == LOW){
+      if (temptot >= sensorReadingsArr[38].toInt() && statedeuropenA == LOW){
           digitalWrite(relay2, HIGH);
           delay(5000);
           digitalWrite(relay2, LOW);
@@ -99,7 +99,7 @@ void loop() {
           stateventaanA = HIGH;
           stateventuitA = LOW;
       }
-           else if (temptot <= sensorReadingsArr[35].toInt() &&stateventaanA == LOW){
+           else if (temptot <= sensorReadingsArr[38].toInt() &&stateventaanA == LOW){
            digitalWrite(relay2, HIGH);
            delay(5000);
            digitalWrite(relay2, LOW);
@@ -131,7 +131,7 @@ void loop() {
       //deur2
       if (sensorReadingsArr[19] == "1"){
         Serial.println("deur2 automatisch");
-        if (temptot >= sensorReadingsArr[35].toInt() && statedeuropenA == LOW){
+        if (temptot >= sensorReadingsArr[42].toInt() && statedeuropenA == LOW){
           digitalWrite(relay, HIGH);
           delay(5000);
           digitalWrite(relay, LOW);
@@ -139,7 +139,7 @@ void loop() {
           statedeuropenA = HIGH;
           statedeurtoeA = LOW;
         }
-        else if (temptot <= sensorReadingsArr[35].toInt() &&statedeurtoeA == LOW){
+        else if (temptot <= sensorReadingsArr[42].toInt() &&statedeurtoeA == LOW){
            digitalWrite(relay1, HIGH);
            delay(5000);
            digitalWrite(relay1, LOW);

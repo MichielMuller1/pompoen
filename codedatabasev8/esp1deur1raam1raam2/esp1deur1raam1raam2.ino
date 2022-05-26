@@ -49,7 +49,7 @@ unsigned long lastTime = 0;
 unsigned long timerDelay = 5000;
 
 String sensorReadings;
-String sensorReadingsArr[50];
+String sensorReadingsArr[100];
 
 void setup() {
   Serial.begin(115200);
@@ -104,13 +104,13 @@ void loop() {
         sensorReadingsArr[i] = value;
       }
 
-      int temptot = (sensorReadingsArr[24].toInt() + sensorReadingsArr[27].toInt());
+      int temptot = (sensorReadingsArr[29].toInt() + sensorReadingsArr[33].toInt())/2;
 
       Serial.println("tijd" + sensorReadingsArr[0]);
       //
       if (sensorReadingsArr[14] == "1"){
         Serial.println("ventilator automatisch");
-        if (temptot >= sensorReadingsArr[30].toInt() && stateventaanA == LOW){
+        if (temptot >= sensorReadingsArr[37].toInt() && stateventaanA == LOW){
           digitalWrite(relay6, HIGH);
           delay(5000);
           digitalWrite(relay6, LOW);
@@ -118,7 +118,7 @@ void loop() {
           stateventaanA = HIGH;
           stateventuitA = LOW;
         }
-        else if (temptot <= sensorReadingsArr[30].toInt() &&stateventuitA == LOW){
+        else if (temptot <= sensorReadingsArr[37].toInt() && stateventuitA == LOW){
            digitalWrite(relay7, HIGH);
            delay(5000);
            digitalWrite(relay7, LOW);
@@ -150,7 +150,7 @@ void loop() {
       //raam1
       if (sensorReadingsArr[16] == "1"){
         Serial.println("raam1 automatisch");
-        if (temptot >= sensorReadingsArr[32].toInt() && stateraamopenA == LOW){
+        if (temptot >= sensorReadingsArr[39].toInt() && stateraamopenA == LOW){
           digitalWrite(relay, HIGH);
           delay(5000);
           digitalWrite(relay, LOW);
@@ -158,7 +158,7 @@ void loop() {
           stateraamopenA = HIGH;
           stateraamtoeA = LOW;
         }
-        else if (temptot <= sensorReadingsArr[32].toInt() &&stateraamtoeA == LOW){
+        else if (temptot <= sensorReadingsArr[39].toInt() &&stateraamtoeA == LOW){
            digitalWrite(relay1, HIGH);
            delay(5000);
            digitalWrite(relay1, LOW);
@@ -190,7 +190,7 @@ void loop() {
       //raam2
       if (sensorReadingsArr[17] == "1"){
         Serial.println("raam2 automatisch");
-        if (temptot >= sensorReadingsArr[33].toInt() && stateraamopen2A == LOW){
+        if (temptot >= sensorReadingsArr[40].toInt() && stateraamopen2A == LOW){
           digitalWrite(relay2, HIGH);
           delay(5000);
           digitalWrite(relay2, LOW);
@@ -198,7 +198,7 @@ void loop() {
           stateraamopen2A = HIGH;
           stateraamtoe2A = LOW;
         }
-        else if (temptot <= sensorReadingsArr[33].toInt() && stateraamtoe2A == LOW){
+        else if (temptot <= sensorReadingsArr[40].toInt() && stateraamtoe2A == LOW){
            digitalWrite(relay3, HIGH);
            delay(5000);
            digitalWrite(relay3, LOW);
@@ -233,7 +233,7 @@ void loop() {
       //deur1
       if (sensorReadingsArr[18] == "1"){
        Serial.println("deur1 automatisch");
-        if (temptot >= sensorReadingsArr[34].toInt() && statedeuropen == LOW){
+        if (temptot >= sensorReadingsArr[41].toInt() && statedeuropen == LOW){
           digitalWrite(relay4, HIGH);
           delay(5000);
           digitalWrite(relay4, LOW);
@@ -241,7 +241,7 @@ void loop() {
           statedeuropen = HIGH;
           statedeurtoe = LOW;
         }
-        else if (temptot <= sensorReadingsArr[34].toInt() && statedeurtoe == LOW){
+        else if (temptot <= sensorReadingsArr[41].toInt() && statedeurtoe == LOW){
            digitalWrite(relay5, HIGH);
            delay(5000);
            digitalWrite(relay5, LOW);

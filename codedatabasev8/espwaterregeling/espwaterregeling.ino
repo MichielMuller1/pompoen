@@ -55,7 +55,7 @@ unsigned long lastTime = 0;
 // Set timer to 5 seconds (5000)
 unsigned long timerDelay = 5000;
 String sensorReadings;
-String sensorReadingsArr[50];
+String sensorReadingsArr[100];
 
 void setup()
 {
@@ -103,9 +103,20 @@ void loop()
         Serial.print("current1:");
         Serial.print(current1);
         Serial.println("mA");
+
+        //vat3 code 
+        //voltage2 = analogRead(CurrentSensorPin2) / 1024.0 * VREF;
+        //Serial.print("voltage2:");
+        //Serial.print(voltage2);
+        //Serial.print("mV  ");
+        //current2 = voltage2 / 120.0; //Sense Resistor:120ohm
+        //Serial.print("current2:");
+        //Serial.print(current2);
+        //Serial.println("mA");
+        
         http.addHeader("Content-Type", "application/x-www-form-urlencoded");
         String httpRequestData = "api_key=" + apiKeyValue + "&vat1=" + voltage
-                                 + "&vat2=" + voltage1 + "";
+                                 + "&vat2=" + voltage1 + "&vat3=" + "" + "";
         Serial.print("httpRequestData: ");
         Serial.println(httpRequestData);
 
@@ -158,14 +169,16 @@ void loop()
         sensorReadingsArr[i] = value;
       }
 
-      int mini1 = sensorReadingsArr[36].toInt();
-      int maxi1 = sensorReadingsArr[37].toInt();
-      int mini2 = sensorReadingsArr[38].toInt();
-      int maxi2 = sensorReadingsArr[39].toInt();
+      int mini1 = sensorReadingsArr[43].toInt();
+      int maxi1 = sensorReadingsArr[44].toInt();
+      int mini2 = sensorReadingsArr[45].toInt();
+      int maxi2 = sensorReadingsArr[46].toInt();
+      int mini3 = sensorReadingsArr[47].toInt();
+      int maxi3 = sensorReadingsArr[48].toInt();
 
       Serial.println("tijd" + sensorReadingsArr[0]);
       //vat1 bijvullen
-      if (sensorReadingsArr[7] == "1" && mini1 >= sensorReadingsArr[]) {
+      if (mini1 >= sensorReadingsArr[55].toInt()) {
         Serial.println("vat1 bijvullen automatisch");
         digitalWrite(relay, LOW);
       }
@@ -174,12 +187,21 @@ void loop()
       }
 
       //vat2 bijvullen
-      if (sensorReadingsArr[9] == "1" && mini2 >= sensorReadingsArr[]) {
+      if (mini2 >= sensorReadingsArr[56].toInt()) {
         Serial.println("vat2 bijvullen automatisch");
         digitalWrite(relay2, LOW);
       }
       else {
         digitalWrite(relay2, HIGH);
+      }
+      
+      //vat3 bijvullen
+      if (mini3 >= sensorReadingsArr[57].toInt()) {
+        Serial.println("vat2 bijvullen automatisch");
+        digitalWrite(relay3, LOW);
+      }
+      else {
+        digitalWrite(relay3, HIGH);
       }
 
 
@@ -187,6 +209,10 @@ void loop()
 
             //vat1 wateren
       if (sensorReadingsArr[8] == "1") {
+        Serial.println("vat1 wateren");
+        digitalWrite(relay1, LOW);
+      }
+      else if(sensorReadingsArr[20] == "1"){
         Serial.println("vat1 wateren");
         digitalWrite(relay1, LOW);
       }
@@ -199,9 +225,27 @@ void loop()
         Serial.println("vat1 wateren");
         digitalWrite(relay3, LOW);
       }
+      else if(sensorReadingsArr[21] == "1"){
+        Serial.println("vat1 wateren");
+        digitalWrite(relay1, LOW);
+      }
       else {
         digitalWrite(relay3, HIGH);
       }
+
+          //vat3 wateren
+     //if (sensorReadingsArr[12] == "1") {
+       // Serial.println("vat1 wateren");
+        //digitalWrite(relay3, LOW);
+      //}
+      //      else if(sensorReadingsArr[22] == "1"){
+      //  Serial.println("vat1 wateren");
+      //  digitalWrite(relay1, LOW);
+      //}
+      //else {
+        //digitalWrite(relay3, HIGH);
+      //}
+      
       
 
     }
