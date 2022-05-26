@@ -47,15 +47,25 @@ CREATE TABLE `automatisch` (
   `tijdvat2A` tinyint(1) NOT NULL,
   `tijdvat3A` tinyint(1) NOT NULL,
   `cyclus1A` tinyint(1) NOT NULL,
-  `cyclus2A` tinyint(1) NOT NULL
+  `cyclus1Astart` time NOT NULL,
+  `cyclus2A` tinyint(1) NOT NULL,
+  `cyclus2Astart` time NOT NULL,
+  `cyclus12A` tinyint(1) NOT NULL,
+  `cyclus12Astart` time NOT NULL,
+  `cyclus22A` tinyint(1) NOT NULL,
+  `cyclus22Astart` time NOT NULL,
+  `cyclus13A` tinyint(1) NOT NULL,
+  `cyclus13Astart` time NOT NULL,
+  `cyclus23A` tinyint(1) NOT NULL,
+  `cyclus23Astart` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `automatisch`
 --
 
-INSERT INTO `automatisch` (`ID`, `tijd`, `ventilator1A`, `ventilator2A`, `raam1A`, `raam2A`, `deur1A`, `deur2A`, `lichtA`, `vat1A`, `vat2A`, `vat3A`, `tijdvat1A`, `tijdvat2A`, `tijdvat3A`, `cyclus1A` , `cyclus2A`) VALUES
-(1, '2022-04-28 14:12:16', 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO `automatisch` (`ID`, `tijd`, `ventilator1A`, `ventilator2A`, `raam1A`, `raam2A`, `deur1A`, `deur2A`, `lichtA`, `vat1A`, `vat2A`, `vat3A`, `tijdvat1A`, `tijdvat2A`, `tijdvat3A`, `cyclus1A` , `cyclus1Astart`, `cyclus2A`, `cyclus2Astart`, `cyclus12A` , `cyclus12Astart`, `cyclus22A`, `cyclus22Astart`, `cyclus13A` , `cyclus13Astart`, `cyclus23A`, `cyclus23Astart`) VALUES
+(1, '2022-04-28 14:12:16', 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "00:00", 0, "00:00", 0, "00:00", 0, "00:00", 0, "00:00", 0, "00:00");
 
 -- --------------------------------------------------------
 
@@ -232,15 +242,21 @@ CREATE TABLE `threshold` (
   `grondvochtigheid2laag12T` int NOT NULL,
   `grondvochtigheid2laag22T` int NOT NULL,
   `lichtT` int NOT NULL,
-  `lichtkleurT` int NOT NULL
+  `lichtkleurT` int NOT NULL,
+  `regen` int NOT NULL,
+  `rood` int NOT NULL,
+  `groen` int NOT NULL,
+  `blauw` int NOT NULL,
+  `apiTemperatuur` int NOT NULL,
+  `apiMinuten` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `threshold`
 --
 
-INSERT INTO `threshold` (`ID`, `tijd`, `tempventilator1T`, `tempventilator2T`, `tempraam1T`, `tempraam2T`, `tempdeur1T`, `tempdeur2T`, `minvat1T`, `maxvat1T`, `minvat2T`, `maxvat2T`, `minvat3T`, `maxvat3T`, `grondvochtigheid1laag1T`, `grondvochtigheid1laag2T`, `grondvochtigheid2laag12T`, `grondvochtigheid2laag22T`, `lichtT`, `lichtkleurT`) VALUES
-(1, '2022-04-28 14:12:16', 0, 0, 0, 0, 2, 0, 2, 0, 0, 5, 0, 0, 0, 0, 0, 3, 0, 5);
+INSERT INTO `threshold` (`ID`, `tijd`, `tempventilator1T`, `tempventilator2T`, `tempraam1T`, `tempraam2T`, `tempdeur1T`, `tempdeur2T`, `minvat1T`, `maxvat1T`, `minvat2T`, `maxvat2T`, `minvat3T`, `maxvat3T`, `grondvochtigheid1laag1T`, `grondvochtigheid1laag2T`, `grondvochtigheid2laag12T`, `grondvochtigheid2laag22T`, `lichtT`, `lichtkleurT`,`regen`,`rood`, `groen`,`blauw`, `apiTemperatuur`, `apiMinuten`) VALUES
+(1, '2022-04-28 14:12:16', 0, 0, 0, 0, 2, 0, 2, 0, 0, 5, 0, 0, 0, 0, 0, 3, 0, 5,0,0,0,0,0,0);
 
 -- --------------------------------------------------------
 
