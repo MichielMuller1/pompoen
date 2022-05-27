@@ -49,7 +49,7 @@ try {
         $conn->exec($sql);
     }
 //    if (isset($_POST['gewicht2'])){
-//        $sql = "UPDATE `gewicht` SET `tijd` = '$tijd', `gewicht p2`= $gewicht2 WHERE `ID` = 1;";
+//        $sql = "UPDATE `gewicht` SET `tijd` = '$tijd', `gewichtp2`= $gewicht2 WHERE `ID` = 1;";
 //        $conn->exec($sql);
 //    }
 
