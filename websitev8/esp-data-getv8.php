@@ -17,28 +17,21 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT * FROM automatisch, controls, pompoen1, pompoen2, threshold, water";
+$sql = "SELECT * FROM automatisch, control, pompoen1, pompoen2, threshold, water";
 
 
  
 if ($result = $conn->query($sql)) {
     while ($row = $result->fetch_assoc()) {
-		
-		//pompoen1
         $row_tijd = $row["tijd"];
         $row_temperatuur = $row["temperatuur"];
 		$row_hum = $row["luchtvochtigheid"];
         $row_grondvochtigheidslaag1 = $row["grondvochtigheidlaag1"];
         $row_grondvochtigheidslaag2 = $row["grondvochtigheidlaag2"]; 
-		
-		//pompoen2
         $row_temperatuur2 = $row["temperatuur2"];
 		$row_hum2 = $row["luchtvochtigheid2"];
         $row_grondvochtigheidslaag12 = $row["grondvochtigheidlaag12"];
         $row_grondvochtigheidslaag22 = $row["grondvochtigheidlaag22"]; 
-		
-		
-		//control
 	$row_ventilator1 = $row["ventilator1"];
     $row_ventilator2 = $row["ventilator2"];
     $row_raam1 = $row["raam1"];
@@ -52,7 +45,6 @@ if ($result = $conn->query($sql)) {
 	$row_tijdvat3 = $row["tijdvat3"];
 	$row_vat3waterenc = $row["vat3wateren"];
 	$row_lichtc = $row["licht"]; 
-		//automatisch
 	$row_ventilator1A = $row["ventilator1A"];
     $row_ventilator2A = $row["ventilator2A"];
     $row_raam1A = $row["raam1A"];
@@ -66,9 +58,6 @@ if ($result = $conn->query($sql)) {
 	$row_tijdvat1A = $row["vat1A"];
     $row_tijdvat2A = $row["vat2A"]; 
 	$row_tijdvat3A = $row["vat3A"];
-	$row_cyclus1A = $row["cyclus1A"]; 
-	$row_cyclus2A = $row["cyclus2A"];
-	    //tresholds
 	 $row_tempventilator1T = $row["tempventilator1T"];
 	 $row_tempventilator2T = $row["tempventilator2T"];
 	 $row_tempraam1T = $row["tempraam1T"];
@@ -86,8 +75,7 @@ if ($result = $conn->query($sql)) {
 	 $row_grondvochtigheid2laag12T = $row["grondvochtigheid2laag12T"];
 	 $row_grondvochtigheid2laag22T = $row["grondvochtigheid2laag22T"];
 	 $row_lichtT = $row["lichtT"];
-	 $row_lichtkleurT = $row["lichtkleurT"];	
-		//water
+	 $row_lichtkleurT = $row["lichtkleurT"];
 	$row_waterlevelvat1 = $row["waterlevelvat1"];
 	$row_waterlevelvat2 = $row["waterlevelvat2"];
 	$row_waterlevelvat3 = $row["waterlevelvat3"];
@@ -96,6 +84,7 @@ if ($result = $conn->query($sql)) {
       
 	  
 	  
+		
 		$data = array(
 		'tijd' => $row_tijd,
 		'ventilator1' => $row_ventilator1, 
@@ -143,7 +132,7 @@ if ($result = $conn->query($sql)) {
 		'minvat1T' => $row_minvat1T, 
 		'maxvat1T' => $row_maxvat1T, 
 		'minvat2T' => $row_minvat2T, 
-		'rmaxvat2T' => $row_maxvat2T, 
+		'maxvat2T' => $row_maxvat2T, 
 		'minvat3T' => $row_minvat3T, 
 		'maxvat3T' => $row_maxvat3T,
 		'grondvochtigheid1laag1T' => $row_grondvochtigheid1laag1T, 

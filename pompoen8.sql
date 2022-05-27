@@ -111,7 +111,7 @@ CREATE TABLE `gewicht` (
   `tijd` datetime NOT NULL,
   `gewicht p1` int NOT NULL,
   `gewicht p2` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `gewicht`
@@ -140,7 +140,7 @@ CREATE TABLE `log` (
   `grondvochtigheid` int NOT NULL,
   `lichtsterkte` int NOT NULL,
   `co2` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -156,7 +156,7 @@ CREATE TABLE `pompoen 1` (
   `luchtvochtigheid` int NOT NULL,
   `grondvochtigheidlaag1` int NOT NULL,
   `grondvochtigheidlaag2` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `pompoen 1`
@@ -180,7 +180,7 @@ CREATE TABLE `pompoen 2` (
   `luchtvochtigheid2` int NOT NULL,
   `grondvochtigheidlaag12` int NOT NULL,
   `grondvochtigheidlaag22` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `pompoen 2`
@@ -206,7 +206,7 @@ CREATE TABLE `serre` (
   `lichtsterkte` int NOT NULL,
   `co2` int NOT NULL,
   `luchtvochtigheid` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `serre`
@@ -249,7 +249,7 @@ CREATE TABLE `threshold` (
   `blauw` int NOT NULL,
   `apiTemperatuur` int NOT NULL,
   `apiMinuten` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `threshold`
@@ -277,7 +277,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `full_name`) VALUES
-(1, 'hverschueren99@gmail.com', '$2y$10$z8sTIctY/yyIdaVRhgD/m.VVXqEr1h7Rg9mJiBlpzNjccRYmkyLd2', 'Hanne Verschueren');
+(1, 'hverschueren99@gmail.com', '$2y$10$z8sTIctY/yyIdaVRhgD/m.VVXqEr1h7Rg9mJiBlpzNjccRYmkyLd2', 'Hanne Verschueren'),
+(2, 'BOON' , '$2y$10$z8sTIctY/yyIdaVRhgD/m.VVXqEr1h7Rg9mJiBlpzNjccRYmkyLd2' , 'pieter janssen');
 
 -- --------------------------------------------------------
 
@@ -293,7 +294,7 @@ CREATE TABLE `water` (
   `waterlevelvat2` smallint NOT NULL,
   `waterlevelvat3` smallint NOT NULL,
   `roerder` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `water`
