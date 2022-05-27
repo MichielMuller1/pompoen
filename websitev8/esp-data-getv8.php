@@ -17,7 +17,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT * FROM automatisch, control, pompoen1, pompoen2, threshold, water";
+$sql = "SELECT * FROM automatisch, controls, pompoen1, pompoen2, threshold, water";
 
 
  
