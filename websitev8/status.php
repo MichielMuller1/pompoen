@@ -87,7 +87,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 
 
         </form>
-
+			<?var_dump($_SESSION); ?>
 
 
 </div>
@@ -107,6 +107,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
     var co2 = document.getElementById("co2");
     var luchtvochtigheid = document.getElementById("luchtvochtigheid");
     var lichtsterkte = document.getElementById("lichtsterkte");
+	
 
     gewicht1Input.value= <?= $_SESSION['gewicht1'] ?>;
     gewicht2Input.value = <?= $_SESSION['gewicht2'] ?>;
