@@ -64,8 +64,8 @@ try {
     }else{
         $_SESSION['temperatuur2'] = 0;
 		$_SESSION['luchtvochtigheid2'] = 0;
-        $_SESSION['grondvocht2L1'] = 0;
-        $_SESSION['grondvocht2L2'] = 0;
+        $_SESSION['grondvocht2L12'] = 0;
+        $_SESSION['grondvocht2L22'] = 0;
     }
 
     if (!empty($result4)) {

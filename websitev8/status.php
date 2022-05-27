@@ -77,8 +77,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                     <h2 class="text-center geleAchtergrond">pompoen 2</h2>
                     <p class="d-flex">temperatuur: <span id="temp2" class="statusValue ml-auto"><?= $_SESSION['temperatuur2'] ?></span>°C</p>
 					<p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid2" class="statusValue ml-auto"><?= $_SESSION['luchtvochtigheid2'] ?></span>%</p>
-                    <p class="d-flex">grondvochtigheid laag 1: <span id="grondVocht2L1" class="statusValue ml-auto"><?= $_SESSION['grondvocht2L1'] ?></span>%</p>
-                    <p class="d-flex">grondvochtigheid laag 2: <span id="grondVocht2L2" class="statusValue ml-auto"><?= $_SESSION['grondvocht2L2'] ?></span>%</p>
+                    <p class="d-flex">grondvochtigheid laag 1: <span id="grondVocht2L1" class="statusValue ml-auto"><?= $_SESSION['grondvocht2L12'] ?></span>%</p>
+                    <p class="d-flex">grondvochtigheid laag 2: <span id="grondVocht2L2" class="statusValue ml-auto"><?= $_SESSION['grondvocht2L22'] ?></span>%</p>
                     <div class="form-group d-flex">
                         <label for="gewicht2">gewicht: </label>
                         <input type="number" name="gewicht2" id="gewicht2" class="ml-auto" required>
