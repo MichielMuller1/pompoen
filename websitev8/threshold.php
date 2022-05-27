@@ -168,8 +168,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <input type="checkbox" id="vat1_watergeven_onOff" name="vat1_watergeven_onOff" value="0" class="onOff">
                         <span class="slider round"></span>
                     </label>
-					<label for="vat1_tijd">vat 1 wateren tijd (in minuten)</label>
+					<label for="vat1_tijd">vat 1 wateren tijd (in minuten)
                     <input type="number" name="vat1_tijd" id="vat1_tijd" required>
+					</label>
 					</div>
                 </div>
 				
