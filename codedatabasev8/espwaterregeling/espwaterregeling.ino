@@ -1,5 +1,5 @@
-#define CurrentSensorPin  A2
-#define CurrentSensorPin1  A3
+#define CurrentSensorPin  34
+#define CurrentSensorPin1  39
 
 #include <WiFi.h>
 #include <Arduino_JSON.h>
@@ -19,20 +19,20 @@ String apiKeyValue = "tPmAT5Ab3j7F9";
 //relay
 
 //vat1
-const int relay = 27;
-int statevat1 = HIGH;
+const int relay = 33;
+int statevat1 = LOW;
 
 //vat1 wateren
-const int relay1 = 12;
-int statevat1w = HIGH;
+const int relay1 = 23;
+int statevat1w = LOW;
 
 //vat2
-const int relay2 = 15;
-int statevat2 = HIGH;
+const int relay2 = 21;
+int statevat2 = LOW;
 
 //vat2 wateren
-const int relay3 = 33;
-int statevat2w = HIGH;
+const int relay3 = 22;
+int statevat2w = LOW;
 
 
 
@@ -47,7 +47,7 @@ float current1;  //unit:mA
 const char* ssid     = "Neerzijde 16_IoT";
 const char* password = "E4u6c1blockx";
 const char* serverName1 = "http://192.168.0.5/post-esp-data-druk.php";
-const char* serverName = "http://192.168.0.5/esp-data-get.php";
+const char* serverName = "http://192.168.0.5/esp-data-getv8.php";
 
 unsigned long lastTime = 0;
 // Timer set to 10 minutes (600000)
@@ -60,7 +60,7 @@ String sensorReadingsArr[100];
 void setup()
 {
   Serial.begin(115200);
-    pinMode(relay, OUTPUT);
+  pinMode(relay, OUTPUT);
   pinMode(relay1, OUTPUT);
   pinMode(relay2, OUTPUT);
   pinMode(relay3, OUTPUT);
@@ -178,30 +178,32 @@ void loop()
 
       Serial.println("tijd" + sensorReadingsArr[0]);
       //vat1 bijvullen
-      if (mini1 >= sensorReadingsArr[55].toInt()) {
+      if (maxi1 >= sensorReadingsArr[55].toInt()) {
         Serial.println("vat1 bijvullen automatisch");
-        digitalWrite(relay, LOW);
+        digitalWrite(relay, HIGH);
       }
       else {
-        digitalWrite(relay, HIGH);
+        Serial.println("vat1 niet bijvullen");
+        digitalWrite(relay, LOW);
       }
 
       //vat2 bijvullen
-      if (mini2 >= sensorReadingsArr[56].toInt()) {
+      if (maxi2 >= sensorReadingsArr[56].toInt()) {
         Serial.println("vat2 bijvullen automatisch");
-        digitalWrite(relay2, LOW);
+        digitalWrite(relay2, HIGH);
       }
       else {
-        digitalWrite(relay2, HIGH);
+        Serial.println("vat2 niet bijvullen");
+        digitalWrite(relay2, LOW);
       }
       
       //vat3 bijvullen
-      if (mini3 >= sensorReadingsArr[57].toInt()) {
-        Serial.println("vat2 bijvullen automatisch");
-        digitalWrite(relay3, LOW);
+      if (maxi3 <= sensorReadingsArr[57].toInt()) {
+        Serial.println("vat3 bijvullen automatisch");
+        digitalWrite(relay3, HIGH);
       }
       else {
-        digitalWrite(relay3, HIGH);
+        digitalWrite(relay3, LOW);
       }
 
 
@@ -210,40 +212,45 @@ void loop()
             //vat1 wateren
       if (sensorReadingsArr[8] == "1") {
         Serial.println("vat1 wateren");
-        digitalWrite(relay1, LOW);
+        digitalWrite(relay1, HIGH);
       }
       else if(sensorReadingsArr[20] == "1"){
         Serial.println("vat1 wateren");
-        digitalWrite(relay1, LOW);
+        digitalWrite(relay1, HIGH);
       }
       else {
-        digitalWrite(relay1, HIGH);
+        Serial.println("vat1 GEEN wateren");
+        digitalWrite(relay1, LOW);
       }
 
             //vat2 wateren
       if (sensorReadingsArr[10] == "1") {
         Serial.println("vat1 wateren");
-        digitalWrite(relay3, LOW);
+        digitalWrite(relay3, HIGH);
       }
       else if(sensorReadingsArr[21] == "1"){
         Serial.println("vat1 wateren");
-        digitalWrite(relay1, LOW);
+        digitalWrite(relay1, HIGH);
       }
       else {
-        digitalWrite(relay3, HIGH);
+        Serial.println("vat2 GEEN wateren");
+        digitalWrite(relay3, LOW);
       }
 
           //vat3 wateren
      //if (sensorReadingsArr[12] == "1") {
        // Serial.println("vat1 wateren");
-        //digitalWrite(relay3, LOW);
+        //digitalWrite(relay3, HIGH);
       //}
       //      else if(sensorReadingsArr[22] == "1"){
       //  Serial.println("vat1 wateren");
-      //  digitalWrite(relay1, LOW);
+      //  digitalWrite(relay1, HIGH);
       //}
+
+     
       //else {
-        //digitalWrite(relay3, HIGH);
+      //Serial.println("vat3 GEEN wateren");
+        //digitalWrite(relay3, LOW);
       //}
       
       

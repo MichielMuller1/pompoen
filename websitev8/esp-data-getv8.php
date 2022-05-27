@@ -85,6 +85,7 @@ if ($result = $conn->query($sql)) {
 	  
 	  
 		
+		
 		$data = array(
 		'tijd' => $row_tijd,
 		'ventilator1' => $row_ventilator1, 
