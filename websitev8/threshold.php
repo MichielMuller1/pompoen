@@ -175,11 +175,13 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                 </div>
 				
                 <div class="form-group">
+				<div>
                     <label for="vat2MIN">vat 2 min</label>
                     <input type="number" name="vat2MIN" id="vat2MIN" required>
                     <label for="vat2MAX">vat 2 max</label>
                     <input type="number" name="vat2MAX" id="vat2MAX" required>
-					
+					</div>
+					<div>
                     <label class="switch"> water geven automatisch
 						<input type="checkbox" id="vat2Automatic" name="vat2Automatic" value="0">
 					</label>
@@ -200,15 +202,18 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 					<label for="cyclus22Astart"> starttijd
 						<input type="time" id="cyclus22Astart" name="cyclus22Astart" value="0">
 					</label>
+					</div>
 					
-					
-					
+					<div>
                     <label class="switchSlider"> water geven handmatig
                         <input type="checkbox" id="vat2_watergeven_onOff" name="vat2_watergeven_onOff" value="0" class="onOff">
                         <span class="slider round"></span>
                     </label>
+					</div>
+					<div>
 					<label for="vat2_tijd">vat 2 wateren tijd (in minuten)</label>
                     <input type="number" name="vat2_tijd" id="vat2_tijd" required>
+					</div>
                 </div>
 
                 <div class="form-group">
