@@ -8,7 +8,7 @@ if (isset($_POST['username']) && isset($_POST['password'])){
     $password = $_POST['password'];
 
 
-    if (empty($email)){
+    if (empty($username)){
         header("Location: login.php?error=Username is required");
 
     }else if (empty($password)){
@@ -16,7 +16,7 @@ if (isset($_POST['username']) && isset($_POST['password'])){
 
     }else{
         $stmt = $conn->prepare('SELECT * FROM users WHERE username=?');
-        $stmt->execute([$email]);
+        $stmt->execute([$username]);
 
         if ($stmt->rowCount() === 1){
             $user = $stmt->fetch();
@@ -28,7 +28,7 @@ if (isset($_POST['username']) && isset($_POST['password'])){
             if ($email === $user_email){
                 if (password_verify($password,$user_password)){
                     $_SESSION['user_id'] = $user_id;
-                    $_SESSION['user_username'] = $user_email;
+                    $_SESSION['user_username'] = $user_username;
                     $_SESSION['user_full_name'] = $user_full_name;
                     header("Location: status.php");
 
