@@ -30,7 +30,7 @@ try {
     $result4 = $stmt->fetchAll();
 
     //print_r($result);
-    print_r($result2);
+    //print_r($result2);
     //print_r($result3);
     //print_r($result4);
 
