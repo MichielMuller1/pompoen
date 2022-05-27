@@ -19,7 +19,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 </head>
 <body>
 <div class="container">
-<?var_dump($_SESSION); ?>
+
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="#">Pompoen</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,7 +64,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                     <h2 class="text-center geleAchtergrond">pompoen 1</h2>
                     <p class="d-flex">temperatuur: <span id="temp1" class="statusValue ml-auto"></span></p>
 					<p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid" class="statusValue ml-auto"></span> </p>
-                    <p class="d-flex">grondvochtigheid laag 1: <span id="grondVocht1L1" class="statusValue ml-auto"></span></p>
+                    <p class="d-flex">grondvochtigheid laag 1: <span id="grondVocht1L1" class="statusValue ml-auto"><?= $_SESSION['grondvochtigheidlaag1'] ?></span></p>
                     <p class="d-flex">grondvochtigheid laag 2: <span id="grondVocht1L2" class="statusValue ml-auto"></span></p>
 
                     <div class="form-group d-flex">
@@ -104,7 +104,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
     var temp2 = document.getElementById("temp2");
     var grondVocht2L1 = document.getElementById("grondVocht2L1");
     var grondVocht2L2 = document.getElementById("grondVocht2L2");
-
+	
     var co2 = document.getElementById("co2");
     var luchtvochtigheid = document.getElementById("luchtvochtigheid");
     var lichtsterkte = document.getElementById("lichtsterkte");
