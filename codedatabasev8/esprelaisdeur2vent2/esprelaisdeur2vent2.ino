@@ -91,7 +91,7 @@ void loop() {
       Serial.println("tijd" + sensorReadingsArr[0]);
       //ventilator1
       if (sensorReadingsArr[19] == "1"){
-        Serial.println("vent2 automatisch");
+        Serial.println("deur automatisch");
         Serial.println(sensorReadingsArr[42].toInt());
       if (temptot >= sensorReadingsArr[42].toInt() && statedeuropenA == LOW){
           digitalWrite(relay, HIGH);
@@ -130,14 +130,13 @@ void loop() {
       }
       
 
-      //deur2
-      if (sensorReadingsArr[15] == "1"){
-        Serial.println("ventilator aan");
-        if (temptot >= sensorReadingsArr[28].toInt()){
+      //ventilator
+      if (sensorReadingsArr[15] == "1" && temptot >= sensorReadingsArr[38].toInt()){
+        Serial.println("ventilator aan automode");
         digitalWrite(relay2, HIGH);
       }
-      else if(sensorReadingsArr[15] == "1"){
-        Serial.println("ventilator aan");
+      else if(sensorReadingsArr[2] == "1"){
+        Serial.println("ventilator aan controlmode");
         digitalWrite(relay2, HIGH);
       }
       else{
@@ -145,7 +144,7 @@ void loop() {
         digitalWrite(relay2, LOW);
       }
 
-      }
+      
       
     }
     else {
