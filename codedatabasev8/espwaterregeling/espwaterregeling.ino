@@ -153,7 +153,7 @@ void loop()
     // Free resources
     http.end();
     
-    delay(10000);
+    delay(5000);
   }
 
 
@@ -189,26 +189,32 @@ void loop()
         sensorReadingsArr[i] = value;
       }
 
-      int mini1 = sensorReadingsArr[43].toInt();
-      int maxi1 = sensorReadingsArr[44].toInt();
-      int mini2 = sensorReadingsArr[45].toInt();
-      int maxi2 = sensorReadingsArr[44].toInt();
-      int mini3 = sensorReadingsArr[47].toInt();
-      int maxi3 = sensorReadingsArr[48].toInt(); 
+      int mini1 = sensorReadingsArr[42].toInt();
+      Serial.println(sensorReadingsArr[42]);
+      int maxi1 = sensorReadingsArr[43].toInt();
+      Serial.println(sensorReadingsArr[43]);
+      int mini2 = sensorReadingsArr[44].toInt();
+      Serial.println(sensorReadingsArr[44]);
+      int maxi2 = sensorReadingsArr[45].toInt();
+      Serial.println(sensorReadingsArr[45]);
+      int mini3 = sensorReadingsArr[46].toInt();
+      Serial.println(sensorReadingsArr[46]);
+      int maxi3 = sensorReadingsArr[47].toInt(); 
+      Serial.println(sensorReadingsArr[47]);
 
-      int mini11 = mini1 + 100;
-      int maxi11 = maxi1 - 100;
-      int mini22 = mini2 + 100;
-      int maxi22 = maxi2 - 100;
-      int mini33 = mini3 + 100;
-      int maxi33 = maxi3 - 100;
+      int mini11 = mini1+100;
+      int maxi11 = maxi1-100;
+      int mini22 = mini2+100;
+      int maxi22 = maxi2-100;
+      int mini33 = mini3+100;
+      int maxi33 = maxi3-100;
 
       Serial.println("tijd" + sensorReadingsArr[0]);
       //vat1 bijvullen
       Serial.println("vat1 uitlezen");
-      Serial.println(maxi11);
+           Serial.println(mini11);
       Serial.println(sensorReadingsArr[54].toInt());
-      Serial.println(mini11);
+Serial.println(maxi11); 
       if (maxi11 >= sensorReadingsArr[54].toInt()) {
         Serial.println("vat1 bijvullen automatisch");
         digitalWrite(relay, HIGH);
@@ -220,9 +226,9 @@ void loop()
 
       //vat2 bijvullen
       Serial.println("vat2 uitlezen");
-      Serial.println(maxi22);
-      Serial.println(sensorReadingsArr[55].toInt());
       Serial.println(mini22);
+      Serial.println(sensorReadingsArr[55].toInt());
+      Serial.println(maxi22);
 
 
       if (maxi22 >= sensorReadingsArr[55].toInt()) {
