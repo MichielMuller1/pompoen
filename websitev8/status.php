@@ -62,10 +62,10 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 
                 <div class="mt-3 statusDiv">
                     <h2 class="text-center geleAchtergrond">pompoen 1</h2>
-                    <p class="d-flex">temperatuur: <span id="temp1" class="statusValue ml-auto"></span></p>
-					<p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid" class="statusValue ml-auto"><?= $_SESSION['luchtvochtigheid'] ?></span> </p>
-                    <p class="d-flex">grondvochtigheid laag 1: <span id="grondVocht1L1" class="statusValue ml-auto"><? echo grondVocht1L1 ?></span></p>
-                    <p class="d-flex">grondvochtigheid laag 2: <span id="grondVocht1L2" class="statusValue ml-auto"></span></p>
+                    <p class="d-flex">temperatuur: <span id="temp1" class="statusValue ml-auto"><?= $_SESSION['temperatuur'] ?></span>°C</p>
+					<p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid" class="statusValue ml-auto"><?= $_SESSION['luchtvochtigheid'] ?></span> %</p>
+                    <p class="d-flex">grondvochtigheid laag 1: <span id="grondVocht1L1" class="statusValue ml-auto"><?= $_SESSION['grondvochtigheidlaag12'] ?></span></p>
+                    <p class="d-flex">grondvochtigheid laag 2: <span id="grondVocht1L2" class="statusValue ml-auto"><?= $_SESSION['grondvochtigheidlaag12'] ?></span></p>
 
                     <div class="form-group d-flex">
                         <label for="gewicht1">gewicht: </label>
@@ -75,10 +75,10 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 
                 <div class="mt-3 statusDiv">
                     <h2 class="text-center geleAchtergrond">pompoen 2</h2>
-                    <p class="d-flex">temperatuur: <span id="temp2" class="statusValue ml-auto"><? $_SESSION['temperatuur2'] ?></span>°C</p>
-					<p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid2" class="statusValue ml-auto"><? $_SESSION['luchtvochtigheid2'] ?></span>%</p>
-                    <p class="d-flex">grondvochtigheid laag 1: <span id="grondVocht2L1" class="statusValue ml-auto"><? $_SESSION['grondvochtigheidlaag12'] ?></span></p>
-                    <p class="d-flex">grondvochtigheid laag 2: <span id="grondVocht2L2" class="statusValue ml-auto"><? $_SESSION['grondvochtigheidlaag22'] ?></span></p>
+                    <p class="d-flex">temperatuur: <span id="temp2" class="statusValue ml-auto"><?= $_SESSION['temperatuur2'] ?></span>°C</p>
+					<p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid2" class="statusValue ml-auto"><?= $_SESSION['luchtvochtigheid2'] ?></span>%</p>
+                    <p class="d-flex">grondvochtigheid laag 1: <span id="grondVocht2L1" class="statusValue ml-auto"><?= $_SESSION['grondvochtigheidlaag1'] ?></span></p>
+                    <p class="d-flex">grondvochtigheid laag 2: <span id="grondVocht2L2" class="statusValue ml-auto"><?= $_SESSION['grondvochtigheidlaag2'] ?></span></p>
                     <div class="form-group d-flex">
                         <label for="gewicht2">gewicht: </label>
                         <input type="number" name="gewicht2" id="gewicht2" class="ml-auto" required>
@@ -113,14 +113,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
     gewicht1Input.value= <?= $_SESSION['gewicht1'] ?>;
     gewicht2Input.value = <?= $_SESSION['gewicht2'] ?>;
 
-    temp1.textContent = <?echo $_SESSION['temperatuur'] ?>;
-	luchtvochtigheid.textContent = <?echo $_SESSION['luchtvochtigheid'] ?>;
-    grondVocht1L1.textContent = <?echo $_SESSION['grondvochtigheidlaag1'] ?>;
-    grondVocht1L2.textContent = <?echo $_SESSION['grondvochtigheidlaag12'] ?>;
-    temp2.textContent = <? $_SESSION['temperatuur2'] ?>;
-	luchtvochtigheid2.textContent = <? $_SESSION['luchtvochtigheid2'] ?>;
-    grondVocht2L1.textContent = <? $_SESSION['grondvochtigheidlaag12'] ?>;
-    grondVocht2L2.textContent = <? $_SESSION['grondvochtigheidlaag22'] ?>;
+
 
     co2.textContent = <? echo $_SESSION['co2'] ?>;
     lichtsterkte.textContent = <? echo $_SESSION['lichtsterkte'] ?>;
