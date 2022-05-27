@@ -13,9 +13,11 @@ const int relay2 = 21;
 
 
 
-const char* ssid     = "Neerzijde 16_IoT";
-const char* password = "E4u6c1blockx";
+//const char* ssid     = "Neerzijde 16_IoT";
+//const char* password = "E4u6c1blockx";
 
+const char* ssid     = "telenet-A646FD4";
+const char* password = "cdedjzam7uXd";
 
 
 
