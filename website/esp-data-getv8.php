@@ -68,6 +68,10 @@ if ($result = $conn->query($sql)) {
 	$row_tijdvat3A = $row["vat3A"];
 	$row_cyclus1A = $row["cyclus1A"]; 
 	$row_cyclus2A = $row["cyclus2A"];
+	$row_cyclus12A = $row["cyclus12A"]; 
+	$row_cyclus22A = $row["cyclus22A"];
+	$row_cyclus13A = $row["cyclus13A"]; 
+	$row_cyclus23A = $row["cyclus23A"];
 	    //tresholds
 	 $row_tempventilator1T = $row["tempventilator1T"];
 	 $row_tempventilator2T = $row["tempventilator2T"];
@@ -155,7 +159,11 @@ if ($result = $conn->query($sql)) {
 		'waterlevelvat1' => $row_waterlevelvat1,
 		'waterlevelvat2' => $row_waterlevelvat2,
 		'waterlevelvat3' => $row_waterlevelvat3,
-		'roerder' => $row_roerder
+		'roerder' => $row_roerder,
+		'cyclus12A' => $row_cyclus12A,
+		'cyclus22A' => $row_cyclus22A,
+		'cyclus13A' => $row_cyclus13A,
+		'cyclus23A' => $row_cyclus23A
 			     );
 		header('Content-type: text/javascript');
 		echo json_encode($data);
