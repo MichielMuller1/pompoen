@@ -22,7 +22,7 @@ try {
     $stmt->execute();
     $result2 = $stmt->fetchAll();
 
-    $stmt = $conn->prepare("select * from control");
+    $stmt = $conn->prepare("select * from controls");
     $stmt->execute();
     $result3 = $stmt->fetchAll();
 //    print_r($result);
