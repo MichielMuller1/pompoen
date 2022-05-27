@@ -13,11 +13,10 @@ const int relay2 = 21;
 
 
 
-//const char* ssid     = "Neerzijde 16_IoT";
-//const char* password = "E4u6c1blockx";
+const char* ssid     = "Neerzijde 16_IoT";
+const char* password = "E4u6c1blockx";
 
-const char* ssid     = "telenet-A646FD4";
-const char* password = "cdedjzam7uXd";
+
 
 
 
@@ -101,7 +100,7 @@ void loop() {
           statedeuropenA = HIGH;
           statedeurtoeA = LOW;
       }
-           else if (temptot <= sensorReadingsArr[42].toInt() && statedeurtoeA == LOW){
+           else if (temptot < sensorReadingsArr[42].toInt() && statedeurtoeA == LOW){
            digitalWrite(relay1, HIGH);
            delay(5000);
            digitalWrite(relay1, LOW);
