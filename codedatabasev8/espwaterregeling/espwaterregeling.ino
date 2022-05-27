@@ -18,7 +18,7 @@ String apiKeyValue = "tPmAT5Ab3j7F9";
 
 //relay
 
-/* 
+ 
 const int relay = 33;
 int statevat1 = LOW;
 //vat1 wateren
@@ -30,19 +30,7 @@ int statevat2 = LOW;
 //vat2 wateren
 const int relay3 = 18;
 int statevat2w = LOW;
-*/
 
-const int relay = 18;
-int statevat1 = LOW;
-//vat1 wateren
-const int relay1 = 33;
-int statevat1w = LOW;
-//vat2
-const int relay2 = 21;
-int statevat2 = LOW;
-//vat2 wateren
-const int relay3 = 19;
-int statevat2w = LOW;
 
 
 #define VREF 5000 // ADC's reference voltage on your Arduino,typical value:5000mV
@@ -53,10 +41,8 @@ unsigned int voltage1; //unit:mV
 float current1;  //unit:mA
 
 //instellen data ophalen
-//const char* ssid     = "Neerzijde 16_IoT";
-//const char* password = "E4u6c1blockx";
-const char* ssid     = "telenet-A646FD4";
-const char* password = "cdedjzam7uXd";
+const char* ssid     = "Neerzijde 16_IoT";
+const char* password = "E4u6c1blockx";
 const char* serverName1 = "http://192.168.0.5/post-esp-data-druk.php";
 const char* serverName = "http://192.168.0.5/esp-data-getv8.php";
 
@@ -132,8 +118,6 @@ void loop()
     //Serial.print("current2:");
     //Serial.print(current2);
     //Serial.println("mA");
-    voltage = random(2000,10000);
-    voltage1 = random(2000,10000);
     http.addHeader("Content-Type", "application/x-www-form-urlencoded");
     String httpRequestData = "api_key=" + apiKeyValue + "&vat1=" + voltage
                              + "&vat2=" + voltage1 + "&vat3=" + "" + "";
@@ -189,18 +173,18 @@ void loop()
         sensorReadingsArr[i] = value;
       }
 
-      int mini1 = sensorReadingsArr[42].toInt();
-      Serial.println(sensorReadingsArr[42]);
-      int maxi1 = sensorReadingsArr[43].toInt();
+      int mini1 = sensorReadingsArr[43].toInt();
       Serial.println(sensorReadingsArr[43]);
-      int mini2 = sensorReadingsArr[44].toInt();
+      int maxi1 = sensorReadingsArr[44].toInt();
       Serial.println(sensorReadingsArr[44]);
-      int maxi2 = sensorReadingsArr[45].toInt();
+      int mini2 = sensorReadingsArr[45].toInt();
       Serial.println(sensorReadingsArr[45]);
-      int mini3 = sensorReadingsArr[46].toInt();
+      int maxi2 = sensorReadingsArr[46].toInt();
       Serial.println(sensorReadingsArr[46]);
-      int maxi3 = sensorReadingsArr[47].toInt(); 
+      int mini3 = sensorReadingsArr[47].toInt();
       Serial.println(sensorReadingsArr[47]);
+      int maxi3 = sensorReadingsArr[48].toInt(); 
+      Serial.println(sensorReadingsArr[48]);
 
       int mini11 = mini1+100;
       int maxi11 = maxi1-100;
@@ -212,10 +196,10 @@ void loop()
       Serial.println("tijd" + sensorReadingsArr[0]);
       //vat1 bijvullen
       Serial.println("vat1 uitlezen");
-           Serial.println(mini11);
-      Serial.println(sensorReadingsArr[54].toInt());
-Serial.println(maxi11); 
-      if (maxi11 >= sensorReadingsArr[54].toInt()) {
+      Serial.println(mini11);
+      Serial.println(sensorReadingsArr[55].toInt());
+      Serial.println(maxi11); 
+      if (maxi11 >= sensorReadingsArr[55].toInt()) {
         Serial.println("vat1 bijvullen automatisch");
         digitalWrite(relay, HIGH);
       }
@@ -227,11 +211,11 @@ Serial.println(maxi11);
       //vat2 bijvullen
       Serial.println("vat2 uitlezen");
       Serial.println(mini22);
-      Serial.println(sensorReadingsArr[55].toInt());
+      Serial.println(sensorReadingsArr[56].toInt());
       Serial.println(maxi22);
 
 
-      if (maxi22 >= sensorReadingsArr[55].toInt()) {
+      if (maxi22 >= sensorReadingsArr[56].toInt()) {
         Serial.println("vat2 bijvullen automatisch");
         digitalWrite(relay2, HIGH);
       }
