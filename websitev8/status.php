@@ -46,7 +46,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         <div class="mt-3 statusDiv">
             <h2 class="text-center geleAchtergrond">algemeen</h2>
             <p class="d-flex">CO2: <span id="co2" class="statusValue ml-auto"></span> </p>
-            <p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid" class="statusValue ml-auto"></span> </p>
+            <p class="d-flex">luchtvochtigheid: <span name="luchtvochtigheid" class="statusValue ml-auto"></span> </p>
             <p class="d-flex">lichtsterkte: <span id="lichtsterkte" class="statusValue ml-auto"></span> </p>
             <p class="d-flex">laatste gewicht input <span class="statusValue ml-auto"> <?= $_SESSION['gewichtTijd'] ?></span></p>
             <p class="d-flex">regen: <span class="statusValue ml-auto"><?= $_SESSION['regenStatus'] ?></span></p>
@@ -64,8 +64,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                     <h2 class="text-center geleAchtergrond">pompoen 1</h2>
                     <p class="d-flex">temperatuur: <span id="temp1" class="statusValue ml-auto"></span></p>
 					<p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid" class="statusValue ml-auto"><?= $_SESSION['luchtvochtigheid'] ?></span> </p>
-                    <p class="d-flex">grondvochtigheid laag 1: <span id="grondVocht1L1" class="statusValue ml-auto"></span></p>
-                    <p class="d-flex">grondvochtigheid laag 2: <span id="grondVocht1L2" class="statusValue ml-auto"></span></p>
+                    <p class="d-flex">grondvochtigheid laag 1: <span name="grondVocht1L1" class="statusValue ml-auto"></span></p>
+                    <p class="d-flex">grondvochtigheid laag 2: <span name="grondVocht1L2" class="statusValue ml-auto"></span></p>
 
                     <div class="form-group d-flex">
                         <label for="gewicht1">gewicht: </label>
