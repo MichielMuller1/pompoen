@@ -4,7 +4,7 @@ include 'db_conn.php';
 
 
 if (isset($_POST['username']) && isset($_POST['password'])){
-    $email = $_POST['username'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
 
@@ -21,11 +21,11 @@ if (isset($_POST['username']) && isset($_POST['password'])){
         if ($stmt->rowCount() === 1){
             $user = $stmt->fetch();
             $user_id = $user['id'];
-            $user_email = $user['username'];
+            $user_username = $user['username'];
             $user_password = $user['password'];
             $user_full_name = $user['full_name'];
 
-            if ($email === $user_email){
+            if ($username === $user_username){
                 if (password_verify($password,$user_password)){
                     $_SESSION['user_id'] = $user_id;
                     $_SESSION['user_username'] = $user_username;
