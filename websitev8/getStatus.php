@@ -29,10 +29,10 @@ try {
     $stmt->execute();
     $result4 = $stmt->fetchAll();
 
-    print_r($result);
+    //print_r($result);
     print_r($result2);
-    print_r($result3);
-    print_r($result4);
+    //print_r($result3);
+    //print_r($result4);
 
     if (!empty($result)) {
         $_SESSION['gewichtTijd'] = $result[0][1];
