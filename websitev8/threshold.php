@@ -215,7 +215,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                     <input type="number" name="vat2_tijd" id="vat2_tijd" required>
 					</div>
                 </div>
-
+<!---
                 <div class="form-group">
                     <label for="vat3MIN">vat 3 min</label>
                     <input type="number" name="vat2MIN" id="vat2MIN" required>
@@ -251,7 +251,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 					<label for="vat3_tijd">vat 3 wateren tijd (in minuten)</label>
                     <input type="number" name="vat3_tijd" id="vat3_tijd" required>
                 </div>
-				
+				-->
 				
 				
                 <div class="form-group">
