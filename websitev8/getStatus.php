@@ -17,11 +17,11 @@ try {
     $stmt->execute();
     $result = $stmt->fetchAll();
 
-    $stmt = $conn->prepare("select * from `pompoen1`");
+    $stmt = $conn->prepare("select * from `pompoen1` where ID=1");
     $stmt->execute();
     $result2 = $stmt->fetchAll();
 
-    $stmt = $conn->prepare("select * from `pompoen2`");
+    $stmt = $conn->prepare("select * from `pompoen2` where ID=1");
     $stmt->execute();
     $result3 = $stmt->fetchAll();
 
