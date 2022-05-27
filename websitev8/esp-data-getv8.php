@@ -80,6 +80,12 @@ if ($result = $conn->query($sql)) {
 	$row_waterlevelvat2 = $row["waterlevelvat2"];
 	$row_waterlevelvat3 = $row["waterlevelvat3"];
 	$row_roerder = $row["roerder"];
+	$row_cyclus1A = $row["cyclus1A"];
+	$row_cyclus2A = $row["cyclus2A"];
+	$row_cyclus12A = $row["cyclus12A"];
+	$row_cyclus22A = $row["cyclus22A"];
+	$row_cyclus13A = $row["cyclus13A"];
+	$row_cyclus23A = $row["cyclus23A"];
 
       
 	  
@@ -146,6 +152,10 @@ if ($result = $conn->query($sql)) {
 		'waterlevelvat2' => $row_waterlevelvat2,
 		'waterlevelvat3' => $row_waterlevelvat3,
 		'roerder' => $row_roerder
+		'cyclus12A' => $row_cyclus12A,
+		'cyclus22A' => $row_cyclus22A,
+		'cyclus13A' => $row_cyclus13A,
+		'cyclus23A' => $row_cyclus23A
 			     );
 		header('Content-type: text/javascript');
 		echo json_encode($data);
