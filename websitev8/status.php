@@ -113,17 +113,17 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
     gewicht1Input.value= <?= $_SESSION['gewicht1'] ?>;
     gewicht2Input.value = <?= $_SESSION['gewicht2'] ?>;
 
-    temp1.textContent = <?= $_SESSION['temperatuur'] ?>;
-	luchtvochtigheid.textContent = <?= $_SESSION['luchtvochtigheid'] ?>;
-    grondVocht1L1.textContent = <?= $_SESSION['grondvochtigheidlaag1'] ?>;
-    grondVocht1L2.textContent = <?= $_SESSION['grondvochtigheidlaag12'] ?>;
-    temp2.textContent = <?= $_SESSION['temperatuur2'] ?>;
-	luchtvochtigheid2.textContent = <?= $_SESSION['luchtvochtigheid2'] ?>;
-    grondVocht2L1.textContent = <?= $_SESSION['grondvochtigheidlaag12'] ?>;
-    grondVocht2L2.textContent = <?= $_SESSION['grondvochtigheidlaag22'] ?>;
+    temp1.textContent = <?echo $_SESSION['temperatuur'] ?>;
+	luchtvochtigheid.textContent = <?echo $_SESSION['luchtvochtigheid'] ?>;
+    grondVocht1L1.textContent = <?echo $_SESSION['grondvochtigheidlaag1'] ?>;
+    grondVocht1L2.textContent = <?echo $_SESSION['grondvochtigheidlaag12'] ?>;
+    temp2.textContent = <? echo $_SESSION['temperatuur2'] ?>;
+	luchtvochtigheid2.textContent = <? echo $_SESSION['luchtvochtigheid2'] ?>;
+    grondVocht2L1.textContent = <? echo $_SESSION['grondvochtigheidlaag12'] ?>;
+    grondVocht2L2.textContent = <? echo $_SESSION['grondvochtigheidlaag22'] ?>;
 
-    co2.textContent = <?= $_SESSION['co2'] ?>;
-    lichtsterkte.textContent = <?= $_SESSION['lichtsterkte'] ?>;
+    co2.textContent = <? echo $_SESSION['co2'] ?>;
+    lichtsterkte.textContent = <? echo $_SESSION['lichtsterkte'] ?>;
 
 	
 </script>
