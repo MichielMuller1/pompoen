@@ -19,6 +19,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 </head>
 <body>
 <div class="container">
+<?var_dump($_SESSION); ?>
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="#">Pompoen</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,7 +88,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 
 
         </form>
-			<?var_dump($_SESSION); ?>
+			
 
 
 </div>
