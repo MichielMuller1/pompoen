@@ -423,11 +423,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 		var cyclus1ONOFF = document.getElementById("cyclus1");
 		cyclus1ONOFF.checked = <?= $_SESSION['cyclus1A'] ?>;
 		var	cyclus1startONOFF = document.getElementById("cyclus1Astart");
-		cyclus1startONOFF.checked = <?= $_SESSION['cyclus1Astart'] ?>;
+		cyclus1startONOFF.checked = <?= $_SESSION['cyclus1Astartf'] ?>;
 		var cyclus2ONOFF = document.getElementById("cyclus2");
 		cyclus2ONOFF.checked = <?= $_SESSION['cyclus2A'] ?>;
 		var cyclus2startONOFF = document.getElementById("cyclus2Astart");
-		cyclus2startONOFF.checked = <?= $_SESSION['cyclus2Astart'] ?>;
+		cyclus2startONOFF.checked = <?= $_SESSION['cyclus2Astartf'] ?>;
 		
 		var cyclus12ONOFF = document.getElementById("cyclus12");
 		cyclus12ONOFF.checked = <?= $_SESSION['cyclus12A'] ?>;
