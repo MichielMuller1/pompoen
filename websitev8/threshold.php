@@ -65,9 +65,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         </div>
                         <div class="form-group col-6">
                             <label for="ventilator2">ventilator 2</label>
-                            <input type="number" name="ventilator2" id="ventilator2" <? echo json_encode($vent1); ?>>
+                            <input type="number" name="ventilator2" id="ventilator2" >
                             <label class="switch">
-                                <input type="checkbox" id="ventilator2Automatic" name="ventilator2Automatic" value="0">
+                                <input type="checkbox" id="ventilator2Automatic" name="ventilator2Automatic" value="0" <? echo json_encode($vent1); ?>>
                                 <!--                            <input type="checkbox" id="ventilator2_onOff" name="ventilator2_onOff" value="0" class="onOff">-->
                             </label>
                             <label class="switchSlider">
@@ -306,7 +306,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
     <script>
 		 $("#ventilator1Automatic").change(function() {
                     var ischecked= $(this).is(':checked');
-                    var vent1 = "required";
+                    var vent1 = "checked";
                     if(!ischecked)
                       alert('uncheckd ' + $(this).val());
                 }); 
