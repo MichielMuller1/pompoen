@@ -17,6 +17,11 @@ try {
     $stmt->execute();
     $result = $stmt->fetchAll();
 
+	$stmt = $conn->prepare("select TIME_FORMAT(cyclus1Astart),'%H:%i') as cyclus1Astartf, TIME_FORMAT(cyclus2Astart),'%H:%i') as cyclus2Astartf from automatisch");
+    $stmt->execute();
+    $result1 = $stmt->fetchAll();
+
+	
 
     $stmt = $conn->prepare("select * from automatisch");
     $stmt->execute();
@@ -72,7 +77,7 @@ try {
         $_SESSION['tijdvat2A'] = $result2[0][13];
         $_SESSION['tijdvat3A'] = $result2[0][14];
 		$_SESSION['cyclus1A'] = $result2[0][15];
-		$_SESSION['cyclus1Astart'] = $result2[0][16];
+		
 		$_SESSION['cyclus2A'] = $result2[0][17];
 		$_SESSION['cyclus2Astart'] = $result2[0][18];
 		$_SESSION['cyclus12A'] = $result2[0][19];
@@ -167,7 +172,14 @@ try {
         $_SESSION['apiMinuten'] = 0;
 
     }
-
+	if (!empty($result1)){
+	$_SESSION['cyclus1Astartf'] = $result1[0][0];
+	$_SESSION['cyclus2Astartf'] = $result1[0][1];
+	}
+	else{
+		$_SESSION['cyclus1Astartf'] = 00:00;
+		$_SESSION['cyclus2Astartf'] = 00:00;
+	}
 
 
 } catch (PDOException $e) {

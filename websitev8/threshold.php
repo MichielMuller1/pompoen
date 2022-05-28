@@ -472,7 +472,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         vat3tijd.checked = <?= $_SESSION['tijdvat3'] ?>;
         vat3wateren.checked = <?= $_SESSION['vat3wateren'] ?>;
         lichtONOFF.checked = <?= $_SESSION['lichtONOFF'] ?>;
-		<? console.log(vent1);?>
 
     </script>
     </body>
