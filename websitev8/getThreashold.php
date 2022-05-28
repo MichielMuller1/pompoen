@@ -13,19 +13,19 @@ try {
     $conn = new PDO("mysql:host=$sName;dbname=$db_name", $uName, $pass);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     //threshold waardes uit database halen
-    $stmt = $conn->prepare("select * from threshold");
+    $stmt = $conn->prepare("select * from `threshold`");
     $stmt->execute();
     $result = $stmt->fetchAll();
 
-	$stmt = $conn->prepare("select TIME_FORMAT(cyclus1Astart),'%H:%i') as cyclus1Astartf, TIME_FORMAT(cyclus2Astart),'%H:%i') as cyclus2Astartf from automatisch");
+	$stmt = $conn->prepare("select TIME_FORMAT(`cyclus1Astart`),'%H:%i') as `cyclus1Astartf`, TIME_FORMAT(`cyclus2Astart`),'%H:%i') as `cyclus2Astartf` from `automatisch`");
     $stmt->execute();
     $result1 = $stmt->fetchAll();
 
-    $stmt = $conn->prepare("select * from automatisch");
+    $stmt = $conn->prepare("select * from `automatisch`");
     $stmt->execute();
     $result2 = $stmt->fetchAll();
 
-    $stmt = $conn->prepare("select * from controls");
+    $stmt = $conn->prepare("select * from `controls`");
     $stmt->execute();
     $result3 = $stmt->fetchAll();
 //    print_r($result);
