@@ -21,8 +21,6 @@ try {
     $stmt->execute();
     $result1 = $stmt->fetchAll();
 
-	
-
     $stmt = $conn->prepare("select * from automatisch");
     $stmt->execute();
     $result2 = $stmt->fetchAll();
@@ -77,9 +75,7 @@ try {
         $_SESSION['tijdvat2A'] = $result2[0][13];
         $_SESSION['tijdvat3A'] = $result2[0][14];
 		$_SESSION['cyclus1A'] = $result2[0][15];
-		
 		$_SESSION['cyclus2A'] = $result2[0][17];
-		$_SESSION['cyclus2Astart'] = $result2[0][18];
 		$_SESSION['cyclus12A'] = $result2[0][19];
 		$_SESSION['cyclus12Astart'] = $result2[0][20];
 		$_SESSION['cyclus22A'] = $result2[0][21];
@@ -104,9 +100,9 @@ try {
         $_SESSION['tijdvat2'] = 0;
         $_SESSION['tijdvat3'] = 0;
 		$_SESSION['cyclus1A'] = 0;
-		$_SESSION['cyclus1Astart'] = 0;
+
 		$_SESSION['cyclus2A'] = 0;
-		$_SESSION['cyclus2Astart'] = 0;
+
 		$_SESSION['cyclus12A'] = 0;
 		$_SESSION['cyclus12Astart'] = 0;
 		$_SESSION['cyclus22A'] = 0;
@@ -157,7 +153,6 @@ try {
         $_SESSION['vat2max'] = 0;
         $_SESSION['vat3min'] = 0;
         $_SESSION['vat3max'] = 0;
-
         $_SESSION['grond1laag1'] = 0;
         $_SESSION['grond1laag2'] = 0;
         $_SESSION['grond2laag1'] = 0;
