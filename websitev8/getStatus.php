@@ -31,7 +31,7 @@ try {
 
     //print_r($result);
     //print_r($result2);
-    print_r($result3);
+    //print_r($result3);
     //print_r($result4);
 
     if (!empty($result)) {
@@ -57,10 +57,10 @@ try {
     }
 
     if (!empty($result3)) {
-        $_SESSION['temperatuur2'] = $result2[0][2];
-		$_SESSION['luchtvochtigheid2'] = $result2[0][3];
-        $_SESSION['grondvocht2L12'] = $result2[0][4];
-        $_SESSION['grondvocht2L22'] = $result2[0][5];
+        $_SESSION['temperatuur2'] = $result3[0][2];
+		$_SESSION['luchtvochtigheid2'] = $result3[0][3];
+        $_SESSION['grondvocht2L12'] = $result3[0][4];
+        $_SESSION['grondvocht2L22'] = $result3[0][5];
     }else{
         $_SESSION['temperatuur2'] = 0;
 		$_SESSION['luchtvochtigheid2'] = 0;
