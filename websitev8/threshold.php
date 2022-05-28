@@ -310,12 +310,18 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 		if (checkBox.checked == true){
 			document.getElementById("ventilator1").disabled = false;
 			document.getElementById("ventilator1_onOff").checked = false;
+			ventilator1Auto = 1;
 		}
 		else{
 			document.getElementById("ventilator1").disabled = true;
+			ventilator1Auto = 0;
 		}
 		if (checkbox1.checked == true){
 			document.getElementById("ventilator1Automatic").checked = false;
+			ventilator1ONOFF = 1;
+		}
+		else{
+			ventilator1ONOFF = 0;
 		}
 	}
 	</script>
