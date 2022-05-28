@@ -168,8 +168,8 @@ try {
 
     }
 	if (!empty($result1)){
-	$_SESSION['cyclus1Astartf'] = $result1[0][0];
-	$_SESSION['cyclus2Astartf'] = $result1[0][1];
+		$_SESSION['cyclus1Astartf'] = $result1[0][0];
+		$_SESSION['cyclus2Astartf'] = $result1[0][1];
 	}
 	else{
 		$_SESSION['cyclus1Astartf'] = 00:00;
