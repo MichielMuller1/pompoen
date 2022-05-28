@@ -55,7 +55,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <label for="ventilator1">ventilator 1</label>
                             <input type="number" name="ventilator1" id="ventilator1">
                             <label class="switch">
-                                <input type="checkbox" id="ventilator1Automatic" name="ventilator1Automatic" value="0">
+                                <input type="checkbox" id="ventilator1Automatic" name="ventilator1Automatic" value="0" onclick="myFunction()">
                                 <!--                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">-->
                             </label>
                             <label class="switchSlider">
@@ -67,7 +67,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <label for="ventilator2">ventilator 2</label>
                             <input type="number" name="ventilator2" id="ventilator2" >
                             <label class="switch">
-                                <input type="checkbox" id="ventilator2Automatic" name="ventilator2Automatic" value="0" <? echo json_encode($vent1); ?>>
+                                <input type="checkbox" id="ventilator2Automatic" name="ventilator2Automatic" value="0">
                                 <!--                            <input type="checkbox" id="ventilator2_onOff" name="ventilator2_onOff" value="0" class="onOff">-->
                             </label>
                             <label class="switchSlider">
@@ -303,13 +303,16 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script>
-		 $("#ventilator1Automatic").change(function() {
-                    var ischecked= $(this).is(':checked');
-                    var vent1 = "checked";
-                    if(!ischecked)
-                      alert('uncheckd ' + $(this).val());
-                }); 
+	<script>
+	function myFunction(){
+		var checkBox = document.getElementById("ventilator1");
+		if (checkBox.checked == true){
+			document.getElementById("name").disabled = false;
+		}
+		else{
+			document.getElementById("ventilator1").disabled = true;
+		}
+	}
 	</script>
 	
 	<script>
