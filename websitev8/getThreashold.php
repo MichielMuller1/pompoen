@@ -68,9 +68,9 @@ try {
         $_SESSION['vat1Auto'] = $result2[0][9];
         $_SESSION['vat2Auto'] = $result2[0][10];
         $_SESSION['vat3Auto'] = $result2[0][11];
-		$_SESSION['tijdvat1'] = $result2[0][12];
-        $_SESSION['tijdvat2'] = $result2[0][13];
-        $_SESSION['tijdvat3'] = $result2[0][14];
+		$_SESSION['tijdvat1A'] = $result2[0][12];
+        $_SESSION['tijdvat2A'] = $result2[0][13];
+        $_SESSION['tijdvat3A'] = $result2[0][14];
 		$_SESSION['cyclus1A'] = $result2[0][15];
 		$_SESSION['cyclus1Astart'] = $result2[0][16];
 		$_SESSION['cyclus2A'] = $result2[0][17];

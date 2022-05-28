@@ -311,21 +311,21 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 			document.getElementById("ventilator1").disabled = false;
 			document.getElementById("ventilator1_onOff").checked = false;
 			ventilator1Auto = "1";
-			<? console.log(ventilator1Auto) ?>
+			
 		}
 		else{
 			document.getElementById("ventilator1").disabled = true;
 			ventilator1Auto = "0";
-			<? console.log(ventilator1Auto) ?>
+			
 		}
 		if (checkbox1.checked == true){
 			document.getElementById("ventilator1Automatic").checked = false;
 			ventilator1ONOFF = "1";
-			<? console.log(ventilator1ONOFF) ?>
+			
 		}
 		else{
 			ventilator1ONOFF = "0";
-			<? console.log(ventilator1ONOFF) ?>
+			
 		}
 	}
 	</script>
@@ -447,7 +447,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 		var cyclus23startONOFF = document.getElementById("cyclus23Astart");
 		cyclus23startONOFF.checked = <?= $_SESSION['cyclus23Astart'] ?>;
 		
-		var	cyclusstartA = document.getElementById("tijd1A");
+		var	cyclus1startA = document.getElementById("tijd1A");
 		cyclus1startA.checked = <?= $_SESSION['tijdvat1A'] ?>;
 		
 		var	cyclusstart2A = document.getElementById("tijd2A");
