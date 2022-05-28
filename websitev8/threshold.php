@@ -308,6 +308,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 		var checkBox = document.getElementById("ventilator1Automatic");
 		if (checkBox.checked == true){
 			document.getElementById("ventilator1").disabled = false;
+			document.getElementById("ventilator1_onOff").checked = false;
 		}
 		else{
 			document.getElementById("ventilator1").disabled = true;
