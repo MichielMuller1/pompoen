@@ -304,6 +304,26 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
+	$('#ventilator1Automatic').on('click',function(){
+   var checked=$(this).is(':checked');
+    if(checked==true)
+    {   
+        
+        $('#ventilator1_onOff').attr('checked', false);
+        $('#textbox').attr('disabled',false);
+        var text=$('#textbox').val();
+        checktext(text)
+    }
+  });
+  
+  function checktext(text){
+    alert(text);
+    if(text=='')
+        alert('Enter Text');
+}
+	</script>
+	
+	<script>
         //waardes uit de database standaard in de input velden zetten.
         var ventilator1Input = document.getElementById("ventilator1");
         var ventilator2Input = document.getElementById("ventilator2");
