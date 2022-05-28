@@ -53,7 +53,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                     <div class="row">
                         <div class="form-group col-6">
                             <label for="ventilator1">ventilator 1</label>
-                            <input type="number" name="ventilator1" id="ventilator1" required>
+                            <input type="number" name="ventilator1" id="ventilator1">
                             <label class="switch">
                                 <input type="checkbox" id="ventilator1Automatic" name="ventilator1Automatic" value="0">
                                 <!--                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">-->
@@ -308,10 +308,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
    var checked=$(this).is(':checked');
     if(checked==true)
     {   
-        
         $('#ventilator1_onOff').attr('checked', false);
-        $('#textbox').attr('disabled',false);
-        var text=$('#textbox').val();
+        $('#ventilator1').attr('disabled',false);
+        var text=$('#ventilator1').val();
         checktext(text)
     }
   });
