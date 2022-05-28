@@ -447,14 +447,14 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 		var cyclus23startONOFF = document.getElementById("cyclus23Astart");
 		cyclus23startONOFF.checked = <?= $_SESSION['cyclus23Astart'] ?>;
 		
-		var	cyclus1startA = document.getElementById("tijd1A");
-		cyclus1startA.checked = <?= $_SESSION['tijdvat1A'] ?>;
+		var	tijdvat1A = document.getElementById("tijd1A");
+		tijdvat1A.checked = <?= $_SESSION['tijdvat1A'] ?>;
 		
-		var	cyclusstart2A = document.getElementById("tijd2A");
-		cyclus1start2A.checked = <?= $_SESSION['tijdvat2A'] ?>;
+		var	tijdvat2A = document.getElementById("tijd2A");
+		tijdvat2A.checked = <?= $_SESSION['tijdvat2A'] ?>;
 		
-		var	cyclusstart3A = document.getElementById("tijd3A");
-		cyclus1start3A.checked = <?= $_SESSION['tijdvat3A'] ?>;
+		var	tijdvat3A = document.getElementById("tijd3A");
+		tijdvat3A.checked = <?= $_SESSION['tijdvat3A'] ?>;
 		
 		
 
