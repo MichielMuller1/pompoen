@@ -305,9 +305,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script>
 	function myFunction(){
-		var checkBox = document.getElementById("ventilator1");
+		var checkBox = document.getElementById("ventilator1Automatic");
 		if (checkBox.checked == true){
-			document.getElementById("name").disabled = false;
+			document.getElementById("ventilator1").disabled = false;
 		}
 		else{
 			document.getElementById("ventilator1").disabled = true;
