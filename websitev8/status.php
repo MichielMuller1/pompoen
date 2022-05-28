@@ -83,7 +83,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <label for="gewicht2">gewicht: </label>
                         <input type="number" name="gewicht2" id="gewicht2" class="ml-auto" required>
                     </div>
-                    <button type="submit" class="btn btn-primary" id="gewichtButton">Kiezen</button>
+                    <button type="submit" class="btn btn-primary" id="gewichtButton">submit</button>
                 </div>
 
 
