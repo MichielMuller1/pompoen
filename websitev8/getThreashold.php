@@ -17,9 +17,7 @@ try {
     $stmt->execute();
     $result = $stmt->fetchAll();
 
-	$stmt = $conn->prepare("select TIME_FORMAT(`cyclus1Astart`),'%H:%i') as `cyclus1Astartf`, TIME_FORMAT(`cyclus2Astart`),'%H:%i') as `cyclus2Astartf` from `automatisch`");
-    $stmt->execute();
-    $result1 = $stmt->fetchAll();
+
 
     $stmt = $conn->prepare("select * from `automatisch`");
     $stmt->execute();
@@ -167,14 +165,7 @@ try {
         $_SESSION['apiMinuten'] = 0;
 
     }
-	if (!empty($result1)){
-		$_SESSION['cyclus1Astartf'] = $result1[0][0];
-		$_SESSION['cyclus2Astartf'] = $result1[0][1];
-	}
-	else{
-		$_SESSION['cyclus1Astartf'] = 00:00;
-		$_SESSION['cyclus2Astartf'] = 00:00;
-	}
+
 
 
 } catch (PDOException $e) {
