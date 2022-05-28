@@ -59,7 +59,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                                 <!--                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">-->
                             </label>
                             <label class="switchSlider">
-                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">
+                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff" onclick="myFunction()">
                                 <span class="slider round"></span>
                             </label>
                         </div>
@@ -306,12 +306,16 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 	<script>
 	function myFunction(){
 		var checkBox = document.getElementById("ventilator1Automatic");
+		var checkbox1 = document.getElementById("ventilator1_onOff");
 		if (checkBox.checked == true){
 			document.getElementById("ventilator1").disabled = false;
 			document.getElementById("ventilator1_onOff").checked = false;
 		}
 		else{
 			document.getElementById("ventilator1").disabled = true;
+		}
+		if (checkbox1.checked == true){
+			document.getElementById("ventilator1Automatic").checked = false;
 		}
 	}
 	</script>
