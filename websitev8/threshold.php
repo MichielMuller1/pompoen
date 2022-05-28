@@ -82,12 +82,12 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 
                 <div class="form-group">
                     <label for="regen">regen</label>
-                    <input type="number" name="regen" id="regen" required>
+                    <input type="number" name="regen" id="regen" >
                 </div>
 
                 <div class="form-group">
                     <label for="raam1">raam 1</label>
-                    <input type="number" name="raam1" id="raam1" required>
+                    <input type="number" name="raam1" id="raam1" >
                     <label class="switch">
                         <input type="checkbox" id="raam1Automatic" name="raam1Automatic" value="0">
                         <!--                        <input type="checkbox" id="raam1_onOff" name="raam1_onOff" value="0" class="onOff">-->
@@ -99,7 +99,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                 </div>
                 <div class="form-group">
                     <label for="raam2">raam 2</label>
-                    <input type="number" name="raam2" id="raam2" required>
+                    <input type="number" name="raam2" id="raam2" >
                     <label class="switch">
                         <input type="checkbox" id="raam2Automatic" name="raam2Automatic" value="0">
                         <!--                        <input type="checkbox" id="raam2_onOff" name="raam2_onOff" value="0" class="onOff">-->
@@ -111,7 +111,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                 </div>
                 <div class="form-group">
                     <label for="deur1">deur 1</label>
-                    <input type="number" name="deur1" id="deur1" required>
+                    <input type="number" name="deur1" id="deur1" >
                     <label class="switch">
                         <input type="checkbox" id="deur1Automatic" name="deur1Automatic" value="0">
                         <!--                        <input type="checkbox" id="deur1_onOff" name="deur1_onOff" value="0" class="onOff">-->
@@ -123,7 +123,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                 </div>
                 <div class="form-group">
                     <label for="deur2"> deur 2</label>
-                    <input type="number" name="deur2" id="deur2" required>
+                    <input type="number" name="deur2" id="deur2" >
                     <label class="switch">
                         <input type="checkbox" id="deur2Automatic" name="deur2Automatic" value="0">
                         <!--                        <input type="checkbox" id="deur2_onOff" name="deur2_onOff" value="0" class="onOff">-->
@@ -137,9 +137,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 				
                 <div class="form-group">
                     <label for="vat1MIN">vat 1 min</label>
-                    <input type="number" name="vat1MIN" id="vat1MIN" required>
+                    <input type="number" name="vat1MIN" id="vat1MIN" >
                     <label for="vat1MAX">vat 1 max</label>
-                    <input type="number" name="vat1MAX" id="vat1MAX" required>
+                    <input type="number" name="vat1MAX" id="vat1MAX" >
 				<div>
 				<div>
                     <label class="switch"> water geven automatisch
@@ -169,7 +169,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <span class="slider round"></span>
                     </label>
 					<label for="vat1_tijd">vat 1 wateren tijd (in minuten)
-                    <input type="number" name="vat1_tijd" id="vat1_tijd" required>
+                    <input type="number" name="vat1_tijd" id="vat1_tijd" >
 					</label>
 					</div>
                 </div>
@@ -177,9 +177,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                 <div class="form-group">
 				<div>
                     <label for="vat2MIN">vat 2 min</label>
-                    <input type="number" name="vat2MIN" id="vat2MIN" required>
+                    <input type="number" name="vat2MIN" id="vat2MIN" >
                     <label for="vat2MAX">vat 2 max</label>
-                    <input type="number" name="vat2MAX" id="vat2MAX" required>
+                    <input type="number" name="vat2MAX" id="vat2MAX" >
 					</div>
 					<div>
                     <label class="switch"> water geven automatisch
@@ -212,7 +212,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 					</div>
 					<div>
 					<label for="vat2_tijd">vat 2 wateren tijd (in minuten)</label>
-                    <input type="number" name="vat2_tijd" id="vat2_tijd" required>
+                    <input type="number" name="vat2_tijd" id="vat2_tijd" >
 					</div>
                 </div>
 <!---
@@ -256,23 +256,23 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 				
                 <div class="form-group">
                     <label for="grondvochtigheid1Laag1">grondvochtigheid 1 laag 1</label>
-                    <input type="number" name="grondvochtigheid1Laag1" id="grondvochtigheid1Laag1" required>
+                    <input type="number" name="grondvochtigheid1Laag1" id="grondvochtigheid1Laag1" >
                 </div>
                 <div class="form-group">
                     <label for="grondvochtigheid1Laag2">grondvochtigheid 1 laag 2</label>
-                    <input type="number" name="grondvochtigheid1Laag2" id="grondvochtigheid1Laag2" required>
+                    <input type="number" name="grondvochtigheid1Laag2" id="grondvochtigheid1Laag2" >
                 </div>
                 <div class="form-group">
                     <label for="grondvochtigheid2Laag1">grondvochtigheid 2 laag 1</label>
-                    <input type="number" name="grondvochtigheid2Laag1" id="grondvochtigheid2Laag1" required>
+                    <input type="number" name="grondvochtigheid2Laag1" id="grondvochtigheid2Laag1">
                 </div>
                 <div class="form-group">
                     <label for="grondvochtigheid2Laag2">grondvochtigheid 2 laag 2</label>
-                    <input type="number" name="grondvochtigheid2Laag2" id="grondvochtigheid2Laag2" required>
+                    <input type="number" name="grondvochtigheid2Laag2" id="grondvochtigheid2Laag2" >
                 </div>
                 <div class="form-group">
                     <label for="licht">licht</label>
-                    <input type="number" name="licht" id="licht" required>
+                    <input type="number" name="licht" id="licht" >
 <!--                    <label for="lichtKleur">licht kleur</label>-->
 <!--                    <input type="number" name="lichtKleur" id="lichtKleur" required>-->
                     <label class="switch">
@@ -291,9 +291,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 
                 <div class="form-group">
                     <label for="api">weersvoorspelling temperatuur</label>
-                    <input type="api" name="api" id="api" required>
+                    <input type="api" name="api" id="api" >
                     <label for="minuten">minuten vooraf ramen open zetten</label>
-                    <input type="minuten" name="minuten" id="minuten" required>
+                    <input type="minuten" name="minuten" id="minuten" >
                 </div>
 
                 <button type="submit" class="btn btn-primary">Kiezen</button>
