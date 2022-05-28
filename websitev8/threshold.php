@@ -310,21 +310,21 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 		if (checkBox.checked == true){
 			document.getElementById("ventilator1").disabled = false;
 			document.getElementById("ventilator1_onOff").checked = false;
-			ventilator1Auto = 1;
+			ventilator1Auto = "1";
 			<? console.log(ventilator1Auto) ?>
 		}
 		else{
 			document.getElementById("ventilator1").disabled = true;
-			ventilator1Auto = 0;
+			ventilator1Auto = "0";
 			<? console.log(ventilator1Auto) ?>
 		}
 		if (checkbox1.checked == true){
 			document.getElementById("ventilator1Automatic").checked = false;
-			ventilator1ONOFF = 1;
+			ventilator1ONOFF = "1";
 			<? console.log(ventilator1ONOFF) ?>
 		}
 		else{
-			ventilator1ONOFF = 0;
+			ventilator1ONOFF = "0";
 			<? console.log(ventilator1ONOFF) ?>
 		}
 	}
