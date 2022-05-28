@@ -55,7 +55,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <label for="ventilator1">ventilator 1</label>
                             <input type="number" name="ventilator1" id="ventilator1">
                             <label class="switch">
-                                <input type="checkbox" id="ventilator1Automatic" name="ventilator1Automatic" value="1">
+                                <input type="checkbox" id="ventilator1Automatic" name="ventilator1Automatic" value="0">
                                 <!--                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">-->
                             </label>
                             <label class="switchSlider">
@@ -65,7 +65,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         </div>
                         <div class="form-group col-6">
                             <label for="ventilator2">ventilator 2</label>
-                            <input type="number" name="ventilator2" id="ventilator2" required>
+                            <input type="number" name="ventilator2" id="ventilator2" <? echo json_encode($vent1); ?>>
                             <label class="switch">
                                 <input type="checkbox" id="ventilator2Automatic" name="ventilator2Automatic" value="0">
                                 <!--                            <input type="checkbox" id="ventilator2_onOff" name="ventilator2_onOff" value="0" class="onOff">-->
@@ -304,22 +304,12 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
-	$('#ventilator1Automatic').on('click',function(){
-   var checked=$(this).is(':checked');
-    if(checked==true)
-    {   
-        $('#ventilator1_onOff').attr('checked', false);
-        $('#ventilator1').attr('disabled',false);
-        var text=$('#ventilator1').val();
-        checktext(text)
-    }
-  });
-  
-  function checktext(text){
-    alert(text);
-    if(text=='')
-        alert('Enter Text');
-}
+		 $("#ventilator1Automatic").change(function() {
+                    var ischecked= $(this).is(':checked');
+                    var vent1 = "required";
+                    if(!ischecked)
+                      alert('uncheckd ' + $(this).val());
+                }); 
 	</script>
 	
 	<script>
@@ -464,7 +454,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         vat3tijd.checked = <?= $_SESSION['tijdvat3'] ?>;
         vat3wateren.checked = <?= $_SESSION['vat3wateren'] ?>;
         lichtONOFF.checked = <?= $_SESSION['lichtONOFF'] ?>;
-		
+		<? console.log(vent1);?>
 
     </script>
     </body>
