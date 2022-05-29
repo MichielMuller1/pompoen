@@ -56,12 +56,12 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <!--                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">-->
                         </label>
                         <label class="switchSlider">
-                            <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff">
+                            <input type="checkbox" id="ventilator1_onOfff" name="ventilator1_onOfff">
                             <span class="slider round"></span>
                         </label>
                         <br>
-                        <label for="raam1C">raam 1</label>
-                        <input type="number" name="raam1C" id="raam1C">
+                        <label for="raam1">raam 1</label>
+                        <input type="number" name="raam1" id="raam1">
                         <label class="switch">
                             <input type="checkbox" id="raam1Auto" name="raam1Auto">
                             <!--                        <input type="checkbox" id="raam1_onOff" name="raam1_onOff" value="0" class="onOff">-->
@@ -317,10 +317,10 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             //waardes uit de database standaard in de input velden zetten.
             var ventilator1InputT = document.getElementById("ventilator1");
             var ventilator2InputT = document.getElementById("ventilator2");
-            var raam1InputT = document.getElementById("raam1C");
-            var raam2InputT = document.getElementById("raam2C");
-            var deur1InputT = document.getElementById("deur1C");
-            var deur2InputT = document.getElementById("deur2C");
+            var raam1InputT = document.getElementById("raam1");
+            var raam2InputT = document.getElementById("raam2");
+            var deur1InputT = document.getElementById("deur1");
+            var deur2InputT = document.getElementById("deur2");
             var vat1minInputT = document.getElementById("vat1MIN");
             var vat1maxInputT = document.getElementById("vat1MAX");
             var vat2minInputT = document.getElementById("vat2MIN");
@@ -334,8 +334,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             var regenInputT = document.getElementById("regen");
             var apiTempInputT = document.getElementById("api");
             var apiMinutesInputT = document.getElementById("minuten");
-            var ledstripstartONT = document.getElementById['ledstripSTO'];
-            var ledstripstartOFFT = document.getElementById['ledstripSTA'];
+            //var ledstripstartONT = document.getElementById['ledstripSTO'];
+            //var ledstripstartOFFT = document.getElementById['ledstripSTA'];
 
 
             ventilator1InputT.value = <?= $_SESSION['ventilator1'] ?>;
@@ -361,7 +361,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             //ledstripstartOFFT.value = document.getElementById("ledstripSTOP");
 
             //controls juistzetten met wat er in de database staat
-            var ventilator1ONOFFc = document.getElementById("ventilator1_onOff");
+            var ventilator1ONOFFc = document.getElementById("ventilator1_onOfff");
             var ventilator2ONOFFc = document.getElementById("ventilator2_onOff");
             var raam1ONOFFc = document.getElementById("raam1_onOff");
             var raam2ONOFFc = document.getElementById("raam2_onOff");
