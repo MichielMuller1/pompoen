@@ -165,8 +165,8 @@ try {
         $_SESSION['blauw'] = 0;
         $_SESSION['apiTemp'] = 0;
         $_SESSION['apiMinuten'] = 0;
-	    $_SESSION['ledstripSTA'] = 00:00:00;
-		$_SESSION['ledstripSTO'] = 00:00:00;
+	    $_SESSION['ledstripSTA'] = 0;
+		$_SESSION['ledstripSTO'] = 0;
 
     }
 

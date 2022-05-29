@@ -98,27 +98,12 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 <script>
     var gewicht1Input = document.getElementById("gewicht1");
     var gewicht2Input = document.getElementById("gewicht2");
-    var temp1 = document.getElementById("temp1");
-    var grondVocht1L1 = document.getElementById("grondVocht1L1");
-    var grondVocht1L2 = document.getElementById("grondVocht1L2")
-    var temp2 = document.getElementById("temp2");
-    var grondVocht2L1 = document.getElementById("grondVocht2L1");
-    var grondVocht2L2 = document.getElementById("grondVocht2L2");
-	
-    var co2 = document.getElementById("co2");
-    var luchtvochtigheid = document.getElementById("luchtvochtigheid");
-    var lichtsterkte = document.getElementById("lichtsterkte");
-	
-
     gewicht1Input.value= <?= $_SESSION['gewicht1'] ?>;
     gewicht2Input.value = <?= $_SESSION['gewicht2'] ?>;
 
 
-
     co2.value = <?= $_SESSION['co2'] ?>;
     lichtsterkte.value = <?= $_SESSION['lichtsterkte'] ?>;
-
-	
 </script>
 
 </body>
