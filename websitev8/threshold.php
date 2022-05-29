@@ -309,32 +309,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script>
-	function myFunction(){
-		var checkBox = document.getElementById("ventilator1");
-		var checkbox1 = document.getElementById("ventilator1_onOff");
-		if (checkBox.checked == true){
-			document.getElementById("ventilator1").disabled = false;
-			document.getElementById("ventilator1_onOff").checked = false;
-			ventilator1Auto = "1";
-			
-		}
-		else{
-			document.getElementById("ventilator1").disabled = true;
-			ventilator1Auto = "0";
-			
-		}
-		if (checkbox1.checked == true){
-			document.getElementById("ventilator1Auto").checked = false;
-			ventilator1ONOFF = "1";
-			
-		}
-		else{
-			ventilator1ONOFF = "0";
-			
-		}
-	}
-	</script>
+
 	
 	<script>
         //waardes uit de database standaard in de input velden zetten.
