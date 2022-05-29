@@ -358,7 +358,35 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             var ledstripstartONT = document.getElementById("ledstripSTART");
             var ledstripstartOFFT = document.getElementById("ledstripSTOP");
 
+            //controls juistzetten met wat er in de database staat
+            var ventilator1ONOFFc = document.getElementById("ventilator1_onOff");
+            var ventilator2ONOFFc = document.getElementById("ventilator2_onOff");
+            var raam1ONOFFc = document.getElementById("raam1_onOff");
+            var raam2ONOFFc = document.getElementById("raam2_onOff");
+            var deur1ONOFFc = document.getElementById("deur1_onOff");
+            var deur2ONOFFc = document.getElementById("deur2_onOff");
+            var vat1tijdc = document.getElementById("tijdvat1wat");
+            var vat1waterenc = document.getElementById("vat1_watergeven_onOff");
+            var vat2tijdc = document.getElementById("tijdvat2wat");
+            var vat2waterenc = document.getElementById("vat2_watergeven_onOff");
+            var vat3tijdc = document.getElementById("tijdvat3wat");
+            var vat3waterenc = document.getElementById("vat3_watergeven_onOff");
+            var lichtONOFFc = document.getElementById("licht_onOff");
 
+
+            ventilator1ONOFFc.checked = <?= $_SESSION['ventilator1ONOFF'] ?>;
+            ventilator2ONOFFc.checked = <?= $_SESSION['ventilator2ONOFF'] ?>;
+            raam1ONOFFc.checked = <?= $_SESSION['raam1ONOFF'] ?>;
+            raam2ONOFFc.checked = <?= $_SESSION['raam2ONOFF'] ?>;
+            deur1ONOFFc.checked = <?= $_SESSION['deur1ONOFF'] ?>;
+            deur2ONOFFc.checked = <?= $_SESSION['deur2ONOFF'] ?>;
+            vat1tijdc.checked = <?= $_SESSION['tijdvat1c'] ?>;
+            vat1waterenc.checked = <?= $_SESSION['vat1wateren'] ?>;
+            vat2tijdc.checked = <?= $_SESSION['tijdvat2c'] ?>;
+            vat2waterenc.checked = <?= $_SESSION['vat2wateren'] ?>;
+            vat3tijdc.checked = <?= $_SESSION['tijdvat3c'] ?>;
+            vat3waterenc.checked = <?= $_SESSION['vat3wateren'] ?>;
+            lichtONOFFc.checked = <?= $_SESSION['lichtONOFF'] ?>;
 
             //automatisch checkboxen juist zetten
             var ventilator1AutoA = document.getElementById("ventilator1Auto");
@@ -412,35 +440,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             var tijdvat3AA = document.getElementById("tijd3AA");
             tijdvat3AA.checked = <?= $_SESSION['tijdvat3A'] ?>;
 
-            //controls juistzetten met wat er in de database staat
-            var ventilator1ONOFFc = document.getElementById("ventilator1_onOff");
-            var ventilator2ONOFFc = document.getElementById("ventilator2_onOff");
-            var raam1ONOFFc = document.getElementById("raam1_onOff");
-            var raam2ONOFFc = document.getElementById("raam2_onOff");
-            var deur1ONOFFc = document.getElementById("deur1_onOff");
-            var deur2ONOFFc = document.getElementById("deur2_onOff");
-            var vat1tijdc = document.getElementById("tijdvat1wat");
-            var vat1waterenc = document.getElementById("vat1_watergeven_onOff");
-            var vat2tijdc = document.getElementById("tijdvat2wat");
-            var vat2waterenc = document.getElementById("vat2_watergeven_onOff");
-            var vat3tijdc = document.getElementById("tijdvat3wat");
-            var vat3waterenc = document.getElementById("vat3_watergeven_onOff");
-            var lichtONOFFc = document.getElementById("licht_onOff");
 
-
-            ventilator1ONOFFc.checked = <?= $_SESSION['ventilator1ONOFF'] ?>;
-            ventilator2ONOFFc.checked = <?= $_SESSION['ventilator2ONOFF'] ?>;
-            raam1ONOFFc.checked = <?= $_SESSION['raam1ONOFF'] ?>;
-            raam2ONOFFc.checked = <?= $_SESSION['raam2ONOFF'] ?>;
-            deur1ONOFFc.checked = <?= $_SESSION['deur1ONOFF'] ?>;
-            deur2ONOFFc.checked = <?= $_SESSION['deur2ONOFF'] ?>;
-            vat1tijdc.checked = <?= $_SESSION['tijdvat1c'] ?>;
-            vat1waterenc.checked = <?= $_SESSION['vat1wateren'] ?>;
-            vat2tijdc.checked = <?= $_SESSION['tijdvat2c'] ?>;
-            vat2waterenc.checked = <?= $_SESSION['vat2wateren'] ?>;
-            vat3tijdc.checked = <?= $_SESSION['tijdvat3c'] ?>;
-            vat3waterenc.checked = <?= $_SESSION['vat3wateren'] ?>;
-            lichtONOFFc.checked = <?= $_SESSION['lichtONOFF'] ?>;
 
             //ledstripstartONT.value = <?= $_SESSION['ledstripSTO'] ?>;
             //ledstripstartOFFT.value = <?= $_SESSION['ledstripSTA'] ?>;
