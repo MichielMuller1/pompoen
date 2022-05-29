@@ -140,9 +140,8 @@ try {
     $sql3 = "UPDATE `controls` SET `tijd` = '".date("Y-m-d H:i:s",$t)."',`ventilator1` = '" .$ventilator1ONOFF. "',`ventilator2` = '" . $ventilator2ONOFF. "',`raam1` = '" .$raam1ONOFF. "',`raam2` = '" .$raam2ONOFF. "',`deur1` = '" .$deur1ONOFF. "',`deur2` = '" .$deur2ONOFF. "',`tijdvat1` = '" .$vat1tijd. "',`vat1wateren` = '" .$vat1_watergevenONOFF. "',`tijdvat2` = '" .$vat2tijd. "',`vat2wateren` = '" .$vat2_watergevenONOFF. "',`tijdvat3` = '" .$vat3tijd. "',`vat3wateren` = '" .$vat3_watergevenONOFF. "',`licht` = '" .$lichtONOFF. "' WHERE id = '1'";
     $conn->exec($sql3);
     echo "treasure will be set if the form has been submitted (to TRUE, I believe)";
-}   
-
-} catch (PDOException $e) {
+    }
+}   catch (PDOException $e) {
     echo " database error " . $e->getMessage();
 }
 header("Location: threshold.php");
