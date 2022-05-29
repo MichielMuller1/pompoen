@@ -145,11 +145,12 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <input type="number" name="licht" id="licht">
                         <!--                    <label for="lichtKleur">licht kleur</label>-->
                         <!--                    <input type="number" name="lichtKleur" id="lichtKleur" required>-->
-                        <br>
+                        
                         <label class="switch">
                             <input type="checkbox" id="lichtAuto" name="lichtAuto" value="0">
                             <!--                        <input type="checkbox" id="licht_onOff" name="licht_onOff" value="0" class="onOff">-->
                         </label>
+                        <br>
                         <label class="switchSlider">
                             <input type="checkbox" id="licht_onOff" name="licht_onOff" value="0" class="onOff">
                             <span class="slider round"></span>
