@@ -4,8 +4,8 @@ const pool = mariadb.createPool({
     user: 'pi',
     password: 'raspberry',
     database: "pompoen"
-
 });
+
 pool.getConnection()
     .then(conn => {
 
@@ -14,7 +14,7 @@ pool.getConnection()
                 console.log(rows); //[ {val: 1}, meta: ... ]
                 //Table must have been created before 
                 // " CREATE TABLE myTable (id int, val varchar(255)) "
-                return conn.query("UPDATE water SET roerder = 1 where id = '1'");
+                return conn.query("UPDATE `water` SET `roerder` = '1' where id = '1'");
             })
             .then((res) => {
                 console.log(res); // { affectedRows: 1, insertId: 1, warningStatus: 0 }
