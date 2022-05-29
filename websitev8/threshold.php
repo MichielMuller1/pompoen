@@ -188,8 +188,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <label class="switch"> water geven automatisch
                             <input type="checkbox" id="vat1Auto" name="vat1Auto" value="0">
                         </label>
-                        <label for="tijd1A"> aantal minuten
-                            <input type="number" id="tijd1A" name="tijd1A">
+                        <label for="tijd1AA"> aantal minuten
+                            <input type="number" id="tijd1AA" name="tijd1AA">
                         </label>
                         <br><br>
                         cyclus 1
@@ -231,8 +231,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <label class="switch"> water geven automatisch
                             <input type="checkbox" id="vat2Auto" name="vat2Auto" value="0">
                         </label>
-                        <label for="tijd2A"> aantal minuten
-                            <input type="number" id="tijd2A" name="tijd2A">
+                        <label for="tijd2AA"> aantal minuten
+                            <input type="number" id="tijd2AA" name="tijd2AA">
                         </label>
                         <br><br>
                         cyclus 1
@@ -270,8 +270,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <label class="switch"> water geven automatisch
                             <input type="checkbox" id="vat3Auto" name="vat3Auto" value="0">
                         </label>
-                        <label for="tijd3A"> aantal minuten
-                            <input type="number" id="tijd3A" name="tijd3A">
+                        <label for="tijd3AA"> aantal minuten
+                            <input type="number" id="tijd3AA" name="tijd3AA">
                         </label>
                         <br><br>
                         cyclus 1
@@ -427,13 +427,13 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             var cyclus23startONOFFA = document.getElementById("cyclus23Astart");
             //cyclus23startONOFFA.checked = <?= $_SESSION['cyclus23Astart'] ?>;
 
-            var tijdvat1AA = document.getElementById("tijd1A");
+            var tijdvat1AA = document.getElementById("tijd1AA");
             tijdvat1AA.checked = <?= $_SESSION['tijdvat1A'] ?>;
 
-            var tijdvat2AA = document.getElementById("tijd2A");
+            var tijdvat2AA = document.getElementById("tijd2AA");
             tijdvat2AA.checked = <?= $_SESSION['tijdvat2A'] ?>;
 
-            var tijdvat3AA = document.getElementById("tijd3A");
+            var tijdvat3AA = document.getElementById("tijd3AA");
             tijdvat3AA.checked = <?= $_SESSION['tijdvat3A'] ?>;
 
             //controls juistzetten met wat er in de database staat

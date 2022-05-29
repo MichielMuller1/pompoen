@@ -158,7 +158,7 @@ try {
         $conn->exec($sql28);
     }
 
-    if (isset($_POST["tijd1A"])){
+    if (isset($_POST["tijd1AA"])){
         $tijd1A = $_POST["tijd1A"];
         $sql29 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `tijd1A` = '" .$tijd1A. "' WHERE id = '1'";
         $conn->exec($sql29);
@@ -169,7 +169,7 @@ try {
         $conn->exec($sql30);
     }
 
-    if (isset($_POST["tijd2A"])){
+    if (isset($_POST["tijd2AA"])){
         $tijd2A = $_POST["tijd2A"];
         $sql31 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `tijd2A` = '" .$tijd2A. "' WHERE id = '1'";
         $conn->exec($sql31);
@@ -179,7 +179,7 @@ try {
         $sql32 = "UPDATE `controls` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `tijdvat2` = '" .$vat2tijd. "' WHERE id = '1'";
         $conn->exec($sql32);
     }
-    if (isset($_POST["tijd3A"])){
+    if (isset($_POST["tijd3AA"])){
         $tijd3A = $_POST["tijd3A"];
         $sql33 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `tijd3A` = '" .$tijd3A. "' WHERE id = '1'";
         $conn->exec($sql33);

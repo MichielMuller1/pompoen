@@ -1,8 +1,8 @@
 const mariadb = require('mariadb');
 const pool = mariadb.createConnection({
     host: 'localhost',
-    user: 'root',
-    password: 'root',
+    user: 'pi',
+    password: 'raspberry',
     database: "pompoen"
 });
 
