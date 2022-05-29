@@ -283,11 +283,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <input type="checkbox" id="licht_onOff" name="licht_onOff" value="0" class="onOff">
                         <span class="slider round"></span>
                     </label>
-					<label for="ledstripSTA"> starttijd
-						<input type="time" id="ledstripSTA" name="ledstripSTA" value="00:00:00" step="2">
+					<label for="ledstripSTART"> starttijd
+						<input type="time" id="ledstripSTART" name="ledstripSTART" value="00:00:00" step="2">
 					</label>
-					<label for="ledstripSTO"> starttijd
-						<input type="time" id="ledstripSTO" name="ledstripSTO" value="00:00:00" step="2">
+					<label for="ledstripSTOP"> starttijd
+						<input type="time" id="ledstripSTOP" name="ledstripSTOP" value="00:00:00" step="2">
 					</label>
                 </div>
                 <div class="form-group">
@@ -385,10 +385,10 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         apiTempInput.value = <?= $_SESSION['apiTemp'] ?>;
         apiMinutesInput.value = <?= $_SESSION['apiMinuten'] ?>;
 		
-		var ledstripstartON = document.getElementById("ledstripSTA");
-		ledstripstartON.value = <?= $_SESSION['ledstripstop'] ?>;
-		var ledstripstartOFF = document.getElementById("ledstripSTO");
-        ledstripstartOFF.value = <?= $_SESSION['ledstripstart'] ?>;
+		var ledstripstartON = document.getElementById("ledstripSTART");
+		ledstripstartON.value = <?= $_SESSION['ledstripSTO'] ?>;
+		var ledstripstartOFF = document.getElementById("ledstripSTOP");
+        ledstripstartOFF.value = <?= $_SESSION['ledstripSTA'] ?>;
 
 
         //automatisch checkboxen juist zetten
