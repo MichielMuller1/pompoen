@@ -52,7 +52,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                     <div>
                         <p>boven deze temperatuur gaat de ventilator aan</p>
                         <div class="row">
-                            <div class="form-group col-6">
+                            <div class="col-6">
                                 <label for="ventilator1">ventilator 1</label>
                                 <input type="number" name="ventilator1" id="ventilator1">
                                 <label class="switch">
@@ -86,7 +86,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-6">
+                            <div class="col-6">
                                 <label for="ventilator2">ventilator 2</label>
                                 <input type="number" name="ventilator2" id="ventilator2">
                                 <label class="switch">
