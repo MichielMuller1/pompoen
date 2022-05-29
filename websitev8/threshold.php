@@ -121,7 +121,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                     </div>
                 </div>
 
-
+                <br><br><br><br>
                 <div class="form-group">
                     <label for="regen">regen</label>
                     <input type="number" name="regen" id="regen">
@@ -129,7 +129,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 
 
 
-
+                <br><br><br><br>
                 <div class="row">
 
                     <div class="form-group col-4">
