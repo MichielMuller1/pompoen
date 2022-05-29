@@ -357,8 +357,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             regenInputT.value = <?= $_SESSION['regen'] ?>;
             apiTempInputT.value = <?= $_SESSION['apiTemp'] ?>;
             apiMinutesInputT.value = <?= $_SESSION['apiMinuten'] ?>;
-            ledstripstartONT.value = document.getElementById("ledstripSTART");
-            ledstripstartOFFT.value = document.getElementById("ledstripSTOP");
+            //ledstripstartONT.value = document.getElementById("ledstripSTART");
+            //ledstripstartOFFT.value = document.getElementById("ledstripSTOP");
 
             //controls juistzetten met wat er in de database staat
             var ventilator1ONOFFc = document.getElementById("ventilator1_onOff");
