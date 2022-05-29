@@ -134,7 +134,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                     </label>
                 </div>
 				
-				
+				<br><br><br>
                 <div class="form-group">
                     <label for="vat1MIN">vat 1 min</label>
                     <input type="number" name="vat1MIN" id="vat1MIN" >
@@ -173,7 +173,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 					</label>
 					</div>
                 </div>
-				
+				<br><br><br>
                 <div class="form-group">
 				<div>
                     <label for="vat2MIN">vat 2 min</label>
@@ -215,12 +215,12 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                     <input type="number" name="vat2_tijd" id="vat2_tijd" >
 					</div>
                 </div>
-<!---
+<br><br><br>
                 <div class="form-group">
                     <label for="vat3MIN">vat 3 min</label>
-                    <input type="number" name="vat2MIN" id="vat2MIN" required>
+                    <input type="number" name="vat2MIN" id="vat2MIN" >
                     <label for="vat3MAX">vat 3 max</label>
-                    <input type="number" name="vat3MAX" id="vat3MAX" required>
+                    <input type="number" name="vat3MAX" id="vat3MAX" >
 					
                     <label class="switch"> water geven automatisch
 						<input type="checkbox" id="vat3Automatic" name="vat3Automatic" value="0">
@@ -241,7 +241,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 					<label for="cyclus23Astart"> starttijd
 						<input type="time" id="cyclus23Astart" name="cyclus23Astart" value="0">
 					</label>
-					
+                    <br><br><br>				
 					
 					
                     <label class="switchSlider"> water geven handmatig
@@ -251,7 +251,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 					<label for="vat3_tijd">vat 3 wateren tijd (in minuten)</label>
                     <input type="number" name="vat3_tijd" id="vat3_tijd" required>
                 </div>
-				-->
+
 				
 				
                 <div class="form-group">
@@ -338,151 +338,151 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 	
 	<script>
         //waardes uit de database standaard in de input velden zetten.
-        var ventilator1Input = document.getElementById("ventilator1");
-        var ventilator2Input = document.getElementById("ventilator2");
-        var raam1Input = document.getElementById("raam1");
-        var raam2Input = document.getElementById("raam2");
-        var deur1Input = document.getElementById("deur1");
-        var deur2Input = document.getElementById("deur2");
-        var vat1minInput = document.getElementById("vat1MIN");
-        var vat1maxInput = document.getElementById("vat1MAX");
-        var vat2minInput = document.getElementById("vat2MIN");
-        var vat2maxInput = document.getElementById("vat2MAX");
-        var vat3minInput = document.getElementById("vat3MIN");
-        var vat3maxInput = document.getElementById("vat3MAX");
-        var grond1laag1Input = document.getElementById("grondvochtigheid1Laag1");
-        var grond1laag2Input = document.getElementById("grondvochtigheid1Laag2");
-        var grond2laag1Input = document.getElementById("grondvochtigheid2Laag1");
-        var grond2laag2Input = document.getElementById("grondvochtigheid2Laag2");
-        var lichtInput = document.getElementById("licht");
+        var ventilator1InputT = document.getElementById("ventilator1");
+        var ventilator2InputT = document.getElementById("ventilator2");
+        var raam1InputT = document.getElementById("raam1");
+        var raam2InputT = document.getElementById("raam2");
+        var deur1InputT = document.getElementById("deur1");
+        var deur2InputT = document.getElementById("deur2");
+        var vat1minInputT = document.getElementById("vat1MIN");
+        var vat1maxInputT = document.getElementById("vat1MAX");
+        var vat2minInputT = document.getElementById("vat2MIN");
+        var vat2maxInputT = document.getElementById("vat2MAX");
+        var vat3minInputT = document.getElementById("vat3MIN");
+        var vat3maxInputT = document.getElementById("vat3MAX");
+        var grond1laag1InputT = document.getElementById("grondvochtigheid1Laag1");
+        var grond1laag2InputT = document.getElementById("grondvochtigheid1Laag2");
+        var grond2laag1InputT = document.getElementById("grondvochtigheid2Laag1");
+        var grond2laag2InputT = document.getElementById("grondvochtigheid2Laag2");
+        var lichtInputT = document.getElementById("licht");
         // var lichtKleurInput = document.getElementById("lichtKleur");
-        var regenInput = document.getElementById("regen");
-        var kleur = document.getElementById("kleur");
-        var apiTempInput = document.getElementById("api");
-        var apiMinutesInput = document.getElementById("minuten");
+        var regenInputT = document.getElementById("regen");
+        var kleurT = document.getElementById("kleur");
+        var apiTempInputT = document.getElementById("api");
+        var apiMinutesInputT = document.getElementById("minuten");
 
 
-        ventilator1Input.value = <?= $_SESSION['ventilator1'] ?>;
-        ventilator2Input.value = <?= $_SESSION['ventilator2'] ?>;
-        raam1Input.value = <?= $_SESSION['raam1'] ?>;
-        raam2Input.value = <?= $_SESSION['raam2'] ?>;
-        deur1Input.value = <?= $_SESSION['deur1'] ?>;
-        deur2Input.value = <?= $_SESSION['deur2'] ?>;
-        vat1minInput.value = <?= $_SESSION['vat1min'] ?>;
-        vat1maxInput.value = <?= $_SESSION['vat1max'] ?>;
-        vat2minInput.value = <?= $_SESSION['vat2min'] ?>;
-        vat2maxInput.value = <?= $_SESSION['vat2max'] ?>;
-        vat3minInput.value = <?= $_SESSION['vat3min'] ?>;
-        vat3maxInput.value = <?= $_SESSION['vat3max'] ?>;
-        grond1laag1Input.value = <?= $_SESSION['grond1laag1'] ?>;
-        grond1laag2Input.value = <?= $_SESSION['grond1laag2'] ?>;
-        grond2laag1Input.value = <?= $_SESSION['grond2laag1'] ?>;
-        grond2laag2Input.value = <?= $_SESSION['grond2laag2'] ?>;
-        lichtInput.value = <?= $_SESSION['licht'] ?>;
+        ventilator1InputT.value = <?= $_SESSION['ventilator1'] ?>;
+        ventilator2InputT.value = <?= $_SESSION['ventilator2'] ?>;
+        raam1InputT.value = <?= $_SESSION['raam1'] ?>;
+        raam2InputT.value = <?= $_SESSION['raam2'] ?>;
+        deur1InputT.value = <?= $_SESSION['deur1'] ?>;
+        deur2InputT.value = <?= $_SESSION['deur2'] ?>;
+        vat1minInputT.value = <?= $_SESSION['vat1min'] ?>;
+        vat1maxInputT.value = <?= $_SESSION['vat1max'] ?>;
+        vat2minInputT.value = <?= $_SESSION['vat2min'] ?>;
+        vat2maxInputT.value = <?= $_SESSION['vat2max'] ?>;
+        vat3minInputT.value = <?= $_SESSION['vat3min'] ?>;
+        vat3maxInputT.value = <?= $_SESSION['vat3max'] ?>;
+        grond1laag1InputT.value = <?= $_SESSION['grond1laag1'] ?>;
+        grond1laag2InputT.value = <?= $_SESSION['grond1laag2'] ?>;
+        grond2laag1InputT.value = <?= $_SESSION['grond2laag1'] ?>;
+        grond2laag2InputT.value = <?= $_SESSION['grond2laag2'] ?>;
+        lichtInputT.value = <?= $_SESSION['licht'] ?>;
         //lichtKleurInput.value = <?//= $_SESSION['lichtkleur'] ?>//;
-        regenInput.value = <?= $_SESSION['regen'] ?>;
-        kleur.value = <?='"'. $_SESSION['kleur'] .'"'?>;
-        apiTempInput.value = <?= $_SESSION['apiTemp'] ?>;
-        apiMinutesInput.value = <?= $_SESSION['apiMinuten'] ?>;
+        regenInputT.value = <?= $_SESSION['regen'] ?>;
+        kleurT.value = <?='"'. $_SESSION['kleur'] .'"'?>;
+        apiTempInputT.value = <?= $_SESSION['apiTemp'] ?>;
+        apiMinutesInputT.value = <?= $_SESSION['apiMinuten'] ?>;
 		
-		var ledstripstartON = document.getElementById("ledstripSTART");
-		ledstripstartON.value = <?= $_SESSION['ledstripSTO'] ?>;
-		var ledstripstartOFF = document.getElementById("ledstripSTOP");
-        ledstripstartOFF.value = <?= $_SESSION['ledstripSTA'] ?>;
+		var ledstripstartONT = document.getElementById("ledstripSTART");
+		ledstripstartONT.value = <?= $_SESSION['ledstripSTO'] ?>;
+		var ledstripstartOFFT = document.getElementById("ledstripSTOP");
+        ledstripstartOFFT.value = <?= $_SESSION['ledstripSTA'] ?>;
 
 
         //automatisch checkboxen juist zetten
-        var ventilator1Auto = document.getElementById("ventilator1Automatic");
-        var ventilator2Auto = document.getElementById("ventilator2Automatic");
-        var raam1Auto = document.getElementById("raam1Automatic");
-        var raam2Auto = document.getElementById("raam2Automatic");
-        var deur1Auto = document.getElementById("deur1Automatic");
-        var deur2Auto = document.getElementById("deur2Automatic");
-        var vat1Auto = document.getElementById("vat1Automatic");
-        var vat2Auto = document.getElementById("vat2Automatic");
-        var vat3Auto = document.getElementById("vat3Automatic");
-        var lichtAuto = document.getElementById("lichtAutomatic");
+        var ventilator1AutoA = document.getElementById("ventilator1Auto");
+        var ventilator2AutoA = document.getElementById("ventilator2Auto");
+        var raam1AutoA = document.getElementById("raam1Auto");
+        var raam2AutoA = document.getElementById("raam2Auto");
+        var deur1AutoA = document.getElementById("deur1Auto");
+        var deur2AutoA = document.getElementById("deur2Auto");
+        var vat1AutoA = document.getElementById("vat1Auto");
+        var vat2AutoA = document.getElementById("vat2Auto");
+        var vat3AutoA = document.getElementById("vat3Auto");
+        var lichtAutoA = document.getElementById("lichtAuto");
 
-        ventilator1Auto.checked = <?= $_SESSION['ventilator1Auto'] ?>;
-        ventilator2Auto.checked = <?= $_SESSION['ventilator2Auto'] ?>;
-        raam1Auto.checked = <?= $_SESSION['raam1Auto'] ?>;
-        raam2Auto.checked = <?= $_SESSION['raam2Auto'] ?>;
-        deur1Auto.checked = <?= $_SESSION['deur1Auto'] ?>;
-        deur2Auto.checked = <?= $_SESSION['deur2Auto'] ?>;
-        vat1Auto.checked = <?= $_SESSION['vat1Auto'] ?>;
-        vat2Auto.checked = <?= $_SESSION['vat2Auto'] ?>;
-        vat3Auto.checked = <?= $_SESSION['vat3Auto'] ?>;
-        lichtAuto.checked = <?= $_SESSION['lichtAuto'] ?>;
+        ventilator1AutoA.checked = <?= $_SESSION['ventilator1Auto'] ?>;
+        ventilator2AutoA.checked = <?= $_SESSION['ventilator2Auto'] ?>;
+        raam1AutoA.checked = <?= $_SESSION['raam1Auto'] ?>;
+        raam2AutoA.checked = <?= $_SESSION['raam2Auto'] ?>;
+        deur1AutoA.checked = <?= $_SESSION['deur1Auto'] ?>;
+        deur2AutoA.checked = <?= $_SESSION['deur2Auto'] ?>;
+        vat1AutoA.checked = <?= $_SESSION['vat1Auto'] ?>;
+        vat2AutoA.checked = <?= $_SESSION['vat2Auto'] ?>;
+        vat3AutoA.checked = <?= $_SESSION['vat3Auto'] ?>;
+        lichtAutoA.checked = <?= $_SESSION['lichtAuto'] ?>;
 
 
         //controls juistzetten met wat er in de database staat
-        var ventilator1ONOFF = document.getElementById("ventilator1_onOff");
-        var ventilator2ONOFF = document.getElementById("ventilator2_onOff");
-        var raam1ONOFF = document.getElementById("raam1_onOff");
-        var raam2ONOFF = document.getElementById("raam2_onOff");
-        var deur1ONOFF = document.getElementById("deur1_onOff");
-        var deur2ONOFF = document.getElementById("deur2_onOff");
-        var vat1tijd = document.getElementById("vat1_tijd");
-        var vat1wateren = document.getElementById("vat1_watergeven_onOff");
-        var vat2tijd = document.getElementById("vat2_tijd");
-        var vat2wateren = document.getElementById("vat2_watergeven_onOff");
-        var vat3tijd = document.getElementById("vat3_tijd");
-        var vat3wateren = document.getElementById("vat3_watergeven_onOff");
-        var lichtONOFF = document.getElementById("licht_onOff");
+        var ventilator1ONOFFc = document.getElementById("ventilator1_onOff");
+        var ventilator2ONOFFc = document.getElementById("ventilator2_onOff");
+        var raam1ONOFFc = document.getElementById("raam1_onOff");
+        var raam2ONOFFc = document.getElementById("raam2_onOff");
+        var deur1ONOFFc = document.getElementById("deur1_onOff");
+        var deur2ONOFFc = document.getElementById("deur2_onOff");
+        var vat1tijdc = document.getElementById("vat1_tijd");
+        var vat1waterenc = document.getElementById("vat1_watergeven_onOff");
+        var vat2tijdc = document.getElementById("vat2_tijd");
+        var vat2waterenc = document.getElementById("vat2_watergeven_onOff");
+        var vat3tijdc = document.getElementById("vat3_tijd");
+        var vat3waterenc = document.getElementById("vat3_watergeven_onOff");
+        var lichtONOFFc = document.getElementById("licht_onOff");
 		
 		
-		var cyclus1ONOFF = document.getElementById("cyclus1");
-		cyclus1ONOFF.checked = <?= $_SESSION['cyclus1A'] ?>;
-		var	cyclus1startONOFF = document.getElementById("cyclus1Astart");
-		cyclus1startONOFF.checked = <?= $_SESSION['cyclus1Astart'] ?>;
-		var cyclus2ONOFF = document.getElementById("cyclus2");
-		cyclus2ONOFF.checked = <?= $_SESSION['cyclus2A'] ?>;
-		var cyclus2startONOFF = document.getElementById("cyclus2Astart");
-		cyclus2startONOFF.checked = <?= $_SESSION['cyclus2Astart'] ?>;
+		var cyclus1ONOFFA = document.getElementById("cyclus1");
+		cyclus1ONOFFA.checked = <?= $_SESSION['cyclus1A'] ?>;
+		var	cyclus1startONOFFA = document.getElementById("cyclus1Astart");
+		cyclus1startONOFFA.checked = <?= $_SESSION['cyclus1Astart'] ?>;
+		var cyclus2ONOFFA = document.getElementById("cyclus2");
+		cyclus2ONOFFA.checked = <?= $_SESSION['cyclus2A'] ?>;
+		var cyclus2startONOFFA = document.getElementById("cyclus2Astart");
+		cyclus2startONOFFA.checked = <?= $_SESSION['cyclus2Astart'] ?>;
 		
-		var cyclus12ONOFF = document.getElementById("cyclus12");
-		cyclus12ONOFF.checked = <?= $_SESSION['cyclus12A'] ?>;
-		var	cyclus12startONOFF = document.getElementById("cyclus12Astart");
-		cyclus12startONOFF.checked = <?= $_SESSION['cyclus12Astart'] ?>;
-		var cyclus22ONOFF = document.getElementById("cyclus22");
-		cyclus22ONOFF.checked = <?= $_SESSION['cyclus22A'] ?>;
-		var cyclus22startONOFF = document.getElementById("cyclus22Astart");
-		cyclus22startONOFF.checked = <?= $_SESSION['cyclus22Astart'] ?>;
+		var cyclus12ONOFFA = document.getElementById("cyclus12");
+		cyclus12ONOFFA.checked = <?= $_SESSION['cyclus12A'] ?>;
+		var	cyclus12startONOFFA = document.getElementById("cyclus12Astart");
+		cyclus12startONOFFA.checked = <?= $_SESSION['cyclus12Astart'] ?>;
+		var cyclus22ONOFFA = document.getElementById("cyclus22");
+		cyclus22ONOFFA.checked = <?= $_SESSION['cyclus22A'] ?>;
+		var cyclus22startONOFFA = document.getElementById("cyclus22Astart");
+		cyclus22startONOFFA.checked = <?= $_SESSION['cyclus22Astart'] ?>;
 		
-		var cyclus13ONOFF = document.getElementById("cyclus13");
-		cyclus13ONOFF.checked = <?= $_SESSION['cyclus13A'] ?>;
-		var	cyclus13startONOFF = document.getElementById("cyclus1Astart");
-		cyclus13startONOFF.checked = <?= $_SESSION['cyclus13Astart'] ?>;
-		var cyclus23ONOFF = document.getElementById("cyclus23");
-		cyclus23ONOFF.checked = <?= $_SESSION['cyclus23A'] ?>;
-		var cyclus23startONOFF = document.getElementById("cyclus23Astart");
-		cyclus23startONOFF.checked = <?= $_SESSION['cyclus23Astart'] ?>;
+		var cyclus13ONOFFA = document.getElementById("cyclus13");
+		cyclus13ONOFFA.checked = <?= $_SESSION['cyclus13A'] ?>;
+		var	cyclus13startONOFFA = document.getElementById("cyclus13Astart");
+		cyclus13startONOFFA.checked = <?= $_SESSION['cyclus13Astart'] ?>;
+		var cyclus23ONOFFA = document.getElementById("cyclus23");
+		cyclus23ONOFFA.checked = <?= $_SESSION['cyclus23A'] ?>;
+		var cyclus23startONOFFA = document.getElementById("cyclus23Astart");
+		cyclus23startONOFFA.checked = <?= $_SESSION['cyclus23Astart'] ?>;
 		
-		var	tijdvat1A = document.getElementById("tijd1A");
-		tijdvat1A.checked = <?= $_SESSION['tijdvat1A'] ?>;
+		var	tijdvat1AA = document.getElementById("tijd1A");
+		tijdvat1AA.checked = <?= $_SESSION['tijdvat1A'] ?>;
 		
-		var	tijdvat2A = document.getElementById("tijd2A");
-		tijdvat2A.checked = <?= $_SESSION['tijdvat2A'] ?>;
+		var	tijdvat2AA = document.getElementById("tijd2A");
+		tijdvat2AA.checked = <?= $_SESSION['tijdvat2A'] ?>;
 		
-		var	tijdvat3A = document.getElementById("tijd3A");
-		tijdvat3A.checked = <?= $_SESSION['tijdvat3A'] ?>;
+		var	tijdvat3AA = document.getElementById("tijd3A");
+		tijdvat3AA.checked = <?= $_SESSION['tijdvat3A'] ?>;
 		
 		
 
 
-        ventilator1ONOFF.checked = <?= $_SESSION['ventilator1ONOFF'] ?>;
-        ventilator2ONOFF.checked = <?= $_SESSION['ventilator2ONOFF'] ?>;
-        raam1ONOFF.checked = <?= $_SESSION['raam1ONOFF'] ?>;
-        raam2ONOFF.checked = <?= $_SESSION['raam2ONOFF'] ?>;
-        deur1ONOFF.checked = <?= $_SESSION['deur1ONOFF'] ?>;
-        deur2ONOFF.checked = <?= $_SESSION['deur2ONOFF'] ?>;
-        vat1tijd.checked = <?= $_SESSION['tijdvat1'] ?>;
-        vat1wateren.checked = <?= $_SESSION['vat1wateren'] ?>;
-        vat2tijd.checked = <?= $_SESSION['tijdvat2'] ?>;
-        vat2wateren.checked = <?= $_SESSION['vat2wateren'] ?>;
-        vat3tijd.checked = <?= $_SESSION['tijdvat3'] ?>;
-        vat3wateren.checked = <?= $_SESSION['vat3wateren'] ?>;
-        lichtONOFF.checked = <?= $_SESSION['lichtONOFF'] ?>;
+        ventilator1ONOFFc.checked = <?= $_SESSION['ventilator1ONOFF'] ?>;
+        ventilator2ONOFFc.checked = <?= $_SESSION['ventilator2ONOFF'] ?>;
+        raam1ONOFFc.checked = <?= $_SESSION['raam1ONOFF'] ?>;
+        raam2ONOFFc.checked = <?= $_SESSION['raam2ONOFF'] ?>;
+        deur1ONOFFc.checked = <?= $_SESSION['deur1ONOFF'] ?>;
+        deur2ONOFFc.checked = <?= $_SESSION['deur2ONOFF'] ?>;
+        vat1tijdc.checked = <?= $_SESSION['tijdvat1'] ?>;
+        vat1waterenc.checked = <?= $_SESSION['vat1wateren'] ?>;
+        vat2tijdc.checked = <?= $_SESSION['tijdvat2'] ?>;
+        vat2waterenc.checked = <?= $_SESSION['vat2wateren'] ?>;
+        vat3tijdc.checked = <?= $_SESSION['tijdvat3'] ?>;
+        vat3waterenc.checked = <?= $_SESSION['vat3wateren'] ?>;
+        lichtONOFFc.checked = <?= $_SESSION['lichtONOFF'] ?>;
 
     </script>
     </body>
