@@ -32,7 +32,7 @@ try {
         $ventilator2ONOFF = $_POST["ventilator2_onOff"] ? 1 : 0;
         $sql2 = "UPDATE `controls` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `ventilator1` = '" . $ventilator1ONOFF . "', `ventilator2` = '" . $ventilator2ONOFF . "' WHERE id = '1'";
         $conn->exec($sql2);
-
+    }
         
 
 
@@ -153,7 +153,7 @@ try {
         $cyclus1 = isset($_POST["cyclus1"]) ? 1 : 0;
         $sql35 = "UPDATE `automatisch` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `cyclus1A` = '" . $cyclus1 . "' WHERE id = '1'";
         $conn->exec($sql35);
-    }
+    
 
 
 
