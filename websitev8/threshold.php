@@ -302,7 +302,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                     <input type="minuten" name="minuten" id="minuten" >
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" name="pompoen">Submit</button>
             </form>
         </div>
     </div>
