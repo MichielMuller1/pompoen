@@ -141,11 +141,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                     </div>
 
                     <div class="form-group col-6">
-                        <label for="licht">licht</label>
-                        <input type="number" name="licht" id="licht">
-                        <!--                    <label for="lichtKleur">licht kleur</label>-->
-                        <!--                    <input type="number" name="lichtKleur" id="lichtKleur" required>-->
-
                         <label class="switch">
                             <input type="checkbox" id="lichtAuto" name="lichtAuto" value="0">
                             <!--                        <input type="checkbox" id="licht_onOff" name="licht_onOff" value="0" class="onOff">-->
@@ -336,7 +331,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             var grond1laag2InputT = document.getElementById("grondvochtigheid1Laag2");
             var grond2laag1InputT = document.getElementById("grondvochtigheid2Laag1");
             var grond2laag2InputT = document.getElementById("grondvochtigheid2Laag2");
-            var lichtInputT = document.getElementById("licht");
             var regenInputT = document.getElementById("regen");
             var apiTempInputT = document.getElementById("api");
             var apiMinutesInputT = document.getElementById("minuten");
@@ -358,7 +352,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             grond1laag2InputT.value = <?= $_SESSION['grond1laag2'] ?>;
             grond2laag1InputT.value = <?= $_SESSION['grond2laag1'] ?>;
             grond2laag2InputT.value = <?= $_SESSION['grond2laag2'] ?>;
-            lichtInputT.value = <?= $_SESSION['licht'] ?>;
             regenInputT.value = <?= $_SESSION['regen'] ?>;
             apiTempInputT.value = <?= $_SESSION['apiTemp'] ?>;
             apiMinutesInputT.value = <?= $_SESSION['apiMinuten'] ?>;
