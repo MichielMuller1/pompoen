@@ -102,7 +102,7 @@ try {
         $sql16 = "UPDATE `automatisch` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `deur2A` = '" . $deur2Auto . "' WHERE id = '1'";
         $conn->exec($sql16);
     }
-    if (isset($_POST["deur2ONOFF"])) {
+    if (isset($_POST["deur2_onOff"])) {
         $deur2ONOFF = $_POST["deur2_onOff"] ? 1 : 0;
         $sql17 = "UPDATE `controls` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `deur2` = '" . $deur2ONOFF . "' WHERE id = '1'";
         $conn->exec($sql17);
