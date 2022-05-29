@@ -24,13 +24,13 @@ try {
     }
     if (isset($_POST["ventilator1Auto"])){
         $ventilator1Auto = $_POST["ventilator1Auto"] ? 1 : 0;
-        $sql = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `ventilator1A` = '" .$ventilator1Auto. "' WHERE id = '1'";
-        $conn->exec($sql);
+        $sql1 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `ventilator1A` = '" .$ventilator1Auto. "' WHERE id = '1'";
+        $conn->exec($sql1);
     } 
     if (isset($_POST["ventilator1ONOFF"])){
         $ventilator1ONOFF = $_POST["ventilator1ONOFF"] ? 1 : 0;
-        $sql = "UPDATE `controls` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `ventilator1` = '" .$ventilator1ONOFF. "' WHERE id = '1'";
-        $conn->exec($sql);
+        $sql2 = "UPDATE `controls` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `ventilator1` = '" .$ventilator1ONOFF. "' WHERE id = '1'";
+        $conn->exec($sql2);
     }
     
    
@@ -73,18 +73,18 @@ try {
 
     if (isset($_POST["raam2"])){
         $raam2 = $_POST["raam2"];
-        $sql6 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `tempraam2T` = '" .$raam2. "' WHERE id = '1'";
-        $conn->exec($sql6);
+        $sql9 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `tempraam2T` = '" .$raam2. "' WHERE id = '1'";
+        $conn->exec($sql9);
     } 
     if (isset($_POST["raam2Auto"])){
         $raam2Auto = $_POST["raam2Auto"] ? 1 : 0;
-        $sql7 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `raam2A` = '" .$raam2Auto. "' WHERE id = '1'";
-        $conn->exec($sql7);
+        $sql10 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `raam2A` = '" .$raam2Auto. "' WHERE id = '1'";
+        $conn->exec($sql10);
     } 
     if (isset($_POST["raam2ONOFF"])){
         $raam2ONOFF = $_POST["raam2ONOFF"] ? 1 : 0;
-        $sql8 = "UPDATE `controls` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `raam2` = '" .$raam2ONOFF. "' WHERE id = '1'";
-        $conn->exec($sql8);
+        $sql11 = "UPDATE `controls` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `raam2` = '" .$raam2ONOFF. "' WHERE id = '1'";
+        $conn->exec($sql11);
     }
 
 
@@ -92,47 +92,50 @@ try {
 
     if (isset($_POST["deur1"])){
         $deur1 = $_POST["deur1"];
-        $sql9 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `tempdeur1T` = '" .$deur1. "' WHERE id = '1'";
-        $conn->exec($sql9);
+        $sql12 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `tempdeur1T` = '" .$deur1. "' WHERE id = '1'";
+        $conn->exec($sql12);
     } 
     if (isset($_POST["deur1Auto"])){
         $deur1Auto = $_POST["deur1Auto"] ? 1 : 0;
-        $sql10 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `deur1A` = '" .$deur1Auto. "' WHERE id = '1'";
-        $conn->exec($sql10);
+        $sql13 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `deur1A` = '" .$deur1Auto. "' WHERE id = '1'";
+        $conn->exec($sql13);
     } 
     if (isset($_POST["deur1ONOFF"])){
         $deur1ONOFF = $_POST["deur1ONOFF"] ? 1 : 0;
-        $sql11 = "UPDATE `controls` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `deur1` = '" .$deur1ONOFF. "' WHERE id = '1'";
-        $conn->exec($sql11);
+        $sql14 = "UPDATE `controls` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `deur1` = '" .$deur1ONOFF. "' WHERE id = '1'";
+        $conn->exec($sql14);
     }
 
     if (isset($_POST["deur2"])){
         $deur2 = $_POST["deur2"];
-        $sql12 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `tempdeur2T` = '" .$deur2. "' WHERE id = '1'";
-        $conn->exec($sql12);
+        $sql15 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `tempdeur2T` = '" .$deur2. "' WHERE id = '1'";
+        $conn->exec($sql15);
     } 
     if (isset($_POST["deur2Auto"])){
         $deur2Auto = $_POST["deur2Auto"] ? 1 : 0;
-        $sql13 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `deur2A` = '" .$deur2Auto. "' WHERE id = '1'";
-        $conn->exec($sql13);
+        $sql16 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `deur2A` = '" .$deur2Auto. "' WHERE id = '1'";
+        $conn->exec($sql16);
     } 
     if (isset($_POST["deur2ONOFF"])){
         $deur2ONOFF = $_POST["deur2ONOFF"] ? 1 : 0;
-        $sql14 = "UPDATE `controls` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `deur2` = '" .$deur2ONOFF. "' WHERE id = '1'";
-        $conn->exec($sql14);
+        $sql17 = "UPDATE `controls` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `deur2` = '" .$deur2ONOFF. "' WHERE id = '1'";
+        $conn->exec($sql17);
+    }
+
+
+    if (isset($_POST["vat1MIN"])){
+        $vat1MIN = $_POST["vat1MIN"];
+        $sql18 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `minvat1T` = '" .$vat1MIN. "' WHERE id = '1'";
+        $conn->exec($sql18);
+    }
+    if (isset($_POST["vat1MAX"])){
+        $vat1MAX = $_POST["vat1MAX"];
+        $sql19 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `maxvat1T` = '" .$vat1MAX. "' WHERE id = '1'";
+        $conn->exec($sql19);
     }
 
 
 
-
-
-
-
-
-
-
-    $vat1MIN = $_POST["vat1MIN"];
-    $vat1MAX = $_POST["vat1MAX"];
     $vat1Auto = isset($_POST["vat1Auto"]) ? 1 : 0;
     $vat1_watergevenONOFF = isset($_POST["vat1wateren"]) ? 1 : 0;
     $cyclus1ONOFF = isset($_POST["cyclus1"]) ? 1 : 0;
@@ -141,10 +144,22 @@ try {
     $cyclus2startONOFF = $_POST["cyclus2Astart"];
     $tijd1A = $_POST["tijd1A"];
     $vat1tijd = $_POST["tijdvat1"];
-    echo $vat1MIN . "\n";
-    echo $vat1MAX . "\n";
-    echo $cyclus1start . "\n";
-    echo $cyclus2start . "\n";
+
+
+
+    if (isset($_POST["vat2MIN"])){
+        $vat2MIN = $_POST["vat2MIN"];
+        $sql18 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `minvat2T` = '" .$vat2MIN. "' WHERE id = '1'";
+        $conn->exec($sql18);
+    }
+    if (isset($_POST["vat2MAX"])){
+        $vat2MAX = $_POST["vat2MAX"];
+        $sql19 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `maxvat2T` = '" .$vat2MAX. "' WHERE id = '1'";
+        $conn->exec($sql19);
+    }
+
+
+
 
     $vat2MIN = $_POST["vat2MIN"];
     $vat2MAX = $_POST["vat2MAX"];
