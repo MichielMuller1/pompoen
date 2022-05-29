@@ -32,9 +32,6 @@ try {
         $sql2 = "UPDATE `controls` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `ventilator1` = '" .$ventilator1ONOFF. "' WHERE id = '1'";
         $conn->exec($sql2);
     }
-    
-   
-
     if (isset($_POST["ventilator2"])){
         $ventilator2 = $_POST["ventilator2"];
         $sql3 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `tempventilator2T` = '" .$ventilator2. "' WHERE id = '1'";
