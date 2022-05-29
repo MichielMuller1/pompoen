@@ -157,6 +157,10 @@ try {
         $cyclus1 = isset($_POST["cyclus1"]) ? 1 : 0;
         $sql35 = "UPDATE `automatisch` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `cyclus1A` = '" . $cyclus1 . "' WHERE id = '1'";
         $conn->exec($sql35);
+
+        $regenT = $_POST["regenT"];
+        $sql35 = "UPDATE `threshold` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `regen` = '" . $regenT . "' WHERE id = '1'";
+        $conn->exec($sql35);
     }
 
 
@@ -199,7 +203,7 @@ try {
     $lichtAuto = isset($_POST["lichtAuto"]) ? 1 : 0;
     $lichtONOFF = isset($_POST["lichtONOFF"]) ? 1 : 0;
     echo $licht . "\n";
-    $regen = $_POST["regen"];
+    
 
 
     $kleur = $_POST["kleur"];
