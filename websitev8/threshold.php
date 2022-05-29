@@ -357,11 +357,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             grond1laag2InputT.value = <?= $_SESSION['grond1laag2'] ?>;
             grond2laag1InputT.value = <?= $_SESSION['grond2laag1'] ?>;
             grond2laag2InputT.value = <?= $_SESSION['grond2laag2'] ?>;
-            //regenInputT.value = <?= $_SESSION['regen'] ?>;
-            //apiTempInputT.value = <?= $_SESSION['apiTemp'] ?>;
-            //apiMinutesInputT.value = <?= $_SESSION['apiMinuten'] ?>;
-            //ledstripstartONT.value = document.getElementById("ledstripSTART");
-            //ledstripstartOFFT.value = document.getElementById("ledstripSTOP");
 
             //controls juistzetten met wat er in de database staat
             var ventilator1ONOFFc = document.getElementById("ventilator1_onOff");
@@ -448,6 +443,13 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             var cyclus23ONOFFA = document.getElementById("cyclus23");
             cyclus23ONOFFA.checked = <?= $_SESSION['cyclus23A'] ?>;
             var cyclus23startONOFFA = document.getElementById("cyclus23Astart");
+
+
+                        //regenInputT.value = <?= $_SESSION['regen'] ?>;
+            //apiTempInputT.value = <?= $_SESSION['apiTemp'] ?>;
+            //apiMinutesInputT.value = <?= $_SESSION['apiMinuten'] ?>;
+            //ledstripstartONT.value = document.getElementById("ledstripSTART");
+            //ledstripstartOFFT.value = document.getElementById("ledstripSTOP");
 
             //var kleurT = document.getElementById("kleur");
             // var lichtKleurInput = document.getElementById("lichtKleur");
