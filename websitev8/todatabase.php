@@ -42,8 +42,8 @@ try {
         $sql5 = "UPDATE `controls` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `ventilator2` = '" . $ventilator2ONOFF . "' WHERE id = '1'";
         $conn->exec($sql5);
 
-        $raam1C = $_POST["raam1"];
-        $sql6 = "UPDATE `threshold` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `tempraam1T` = '" . $raam1 . "' WHERE id = '1'";
+        $raam1T = $_POST["raam1T"];
+        $sql6 = "UPDATE `threshold` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `tempraam1T` = '" . $raam1T . "' WHERE id = '1'";
         $conn->exec($sql6);
   
         $raam1Auto = $_POST["raam1Auto"] ? 1 : 0;
@@ -54,8 +54,8 @@ try {
         $sql8 = "UPDATE `controls` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `raam1` = '" . $raam1ONOFF . "' WHERE id = '1'";
         $conn->exec($sql8);
 
-        $raam2 = $_POST["raam2"];
-        $sql9 = "UPDATE `threshold` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `tempraam2T` = '" . $raam2 . "' WHERE id = '1'";
+        $raam2T = $_POST["raam2T"];
+        $sql9 = "UPDATE `threshold` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `tempraam2T` = '" . $raam2T . "' WHERE id = '1'";
         $conn->exec($sql9);
 
         $raam2Auto = $_POST["raam2Auto"] ? 1 : 0;
@@ -66,8 +66,8 @@ try {
         $sql11 = "UPDATE `controls` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `raam2` = '" . $raam2ONOFF . "' WHERE id = '1'";
         $conn->exec($sql11);
 
-        $deur1 = $_POST["deur1"];
-        $sql12 = "UPDATE `threshold` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `tempdeur1T` = '" . $deur1 . "' WHERE id = '1'";
+        $deur1T = $_POST["deur1T"];
+        $sql12 = "UPDATE `threshold` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `tempdeur1T` = '" . $deur1T . "' WHERE id = '1'";
         $conn->exec($sql12);
 
         $deur1Auto = $_POST["deur1Auto"] ? 1 : 0;
@@ -78,8 +78,8 @@ try {
         $sql14 = "UPDATE `controls` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `deur1` = '" . $deur1ONOFF . "' WHERE id = '1'";
         $conn->exec($sql14);
 
-        $deur2 = $_POST["deur2"];
-        $sql15 = "UPDATE `threshold` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `tempdeur2T` = '" . $deur2 . "' WHERE id = '1'";
+        $deur2T = $_POST["deur2T"];
+        $sql15 = "UPDATE `threshold` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `tempdeur2T` = '" . $deur2T . "' WHERE id = '1'";
         $conn->exec($sql15);
 
         $deur2Auto = $_POST["deur2Auto"] ? 1 : 0;

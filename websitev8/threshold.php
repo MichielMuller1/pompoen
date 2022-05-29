@@ -60,8 +60,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <span class="slider round"></span>
                         </label>
                         <br>
-                        <label for="raam1">raam 1</label>
-                        <input type="number" name="raam1" id="raam1">
+                        <label for="raam1T">raam 1</label>
+                        <input type="number" name="raam1T" id="raam1T">
                         <label class="switch">
                             <input type="checkbox" id="raam1Auto" name="raam1Auto">
                             <!--                        <input type="checkbox" id="raam1_onOff" name="raam1_onOff" value="0" class="onOff">-->
@@ -71,8 +71,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <span class="slider round"></span>
                         </label>
                         <br>
-                        <label for="deur1">deur 1</label>
-                        <input type="number" name="deur1" id="deur1">
+                        <label for="deur1T">deur 1</label>
+                        <input type="number" name="deur1T" id="deur1T">
                         <label class="switch">
                             <input type="checkbox" id="deur1Auto" name="deur1Auto" value="0">
                             <!--                        <input type="checkbox" id="deur1_onOff" name="deur1_onOff" value="0" class="onOff">-->
@@ -96,8 +96,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <span class="slider round"></span>
                         </label>
                         <br>
-                        <label for="raam2">raam 2</label>
-                        <input type="number" name="raam2" id="raam2">
+                        <label for="raam2T">raam 2</label>
+                        <input type="number" name="raam2T" id="raam2T">
                         <label class="switch">
                             <input type="checkbox" id="raam2Auto" name="raam2Auto">
                             <!--                        <input type="checkbox" id="raam2_onOff" name="raam2_onOff" value="0" class="onOff">-->
@@ -107,8 +107,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <span class="slider round"></span>
                         </label>
                         <br>
-                        <label for="deur2"> deur 2</label>
-                        <input type="number" name="deur2" id="deur2">
+                        <label for="deur2T"> deur 2</label>
+                        <input type="number" name="deur2T" id="deur2T">
                         <label class="switch">
                             <input type="checkbox" id="deur2Auto" name="deur2Auto">
                             <!--                        <input type="checkbox" id="deur2_onOff" name="deur2_onOff" value="0" class="onOff">-->
@@ -317,10 +317,10 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             //waardes uit de database standaard in de input velden zetten.
             var ventilator1InputT = document.getElementById("ventilator1");
             var ventilator2InputT = document.getElementById("ventilator2");
-            var raam1InputT = document.getElementById("raam1");
-            var raam2InputT = document.getElementById("raam2");
-            var deur1InputT = document.getElementById("deur1");
-            var deur2InputT = document.getElementById("deur2");
+            var raam1InputT = document.getElementById("raam1T");
+            var raam2InputT = document.getElementById("raam2T");
+            var deur1InputT = document.getElementById("deur1T");
+            var deur2InputT = document.getElementById("deur2T");
             var vat1minInputT = document.getElementById("vat1MIN");
             var vat1maxInputT = document.getElementById("vat1MAX");
             var vat2minInputT = document.getElementById("vat2MIN");
