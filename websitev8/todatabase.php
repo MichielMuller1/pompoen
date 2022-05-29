@@ -148,13 +148,13 @@ try {
 
     if (isset($_POST["vat2MIN"])){
         $vat2MIN = $_POST["vat2MIN"];
-        $sql18 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `minvat2T` = '" .$vat2MIN. "' WHERE id = '1'";
-        $conn->exec($sql18);
+        $sql20 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `minvat2T` = '" .$vat2MIN. "' WHERE id = '1'";
+        $conn->exec($sql20);
     }
     if (isset($_POST["vat2MAX"])){
         $vat2MAX = $_POST["vat2MAX"];
-        $sql19 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `maxvat2T` = '" .$vat2MAX. "' WHERE id = '1'";
-        $conn->exec($sql19);
+        $sql21 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `maxvat2T` = '" .$vat2MAX. "' WHERE id = '1'";
+        $conn->exec($sql22);
     }
 
 
@@ -174,13 +174,13 @@ try {
 
     if (isset($_POST["vat3MIN"])){
         $vat3MIN = $_POST["vat3MIN"];
-        $sql18 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `minvat3T` = '" .$vat3MIN. "' WHERE id = '1'";
-        $conn->exec($sql18);
+        $sql23 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `minvat3T` = '" .$vat3MIN. "' WHERE id = '1'";
+        $conn->exec($sql23);
     }
     if (isset($_POST["vat2MAX"])){
         $vat2MAX = $_POST["vat2MAX"];
-        $sql19 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `maxvat3T` = '" .$vat3MAX. "' WHERE id = '1'";
-        $conn->exec($sql19);
+        $sql24 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `maxvat3T` = '" .$vat3MAX. "' WHERE id = '1'";
+        $conn->exec($sql24);
     }
 
 
@@ -193,29 +193,28 @@ try {
     $cyclus23startONOFF = $_POST["cyclus23Astart"];
     $tijd3A = $_POST["tijd3A"];
     $vat3tijd = $_POST["tijdvat3"];
-    echo $vat3MIN . "\n";
-    echo $vat3MAX . "\n";
+
 
 
     if (isset($_POST["grondvochtigheid1Laag1"])){
         $grondvochtigheid1Laag1 = $_POST["grondvochtigheid1Laag1"];
-        $sql20 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid1laag1T` = '" .$grondvochtigheid1Laag1. "' WHERE id = '1'";
-        $conn->exec($sql20);
+        $sql25 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid1laag1T` = '" .$grondvochtigheid1Laag1. "' WHERE id = '1'";
+        $conn->exec($sql25);
     }
     if (isset($_POST["grondvochtigheid1Laag2"])){
         $grondvochtigheid1Laag2 = $_POST["grondvochtigheid1Laag2"];
-        $sql21 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid1laag2T	` = '" .$grondvochtigheid1Laag2. "' WHERE id = '1'";
-        $conn->exec($sql21);
+        $sql26 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid1laag2T	` = '" .$grondvochtigheid1Laag2. "' WHERE id = '1'";
+        $conn->exec($sql26);
     }
     if (isset($_POST["grondvochtigheid2Laag1"])){
         $grondvochtigheid2Laag1 = $_POST["grondvochtigheid2Laag1"];
-        $sql22 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid2laag12T` = '" .$grondvochtigheid2Laag1. "' WHERE id = '1'";
-        $conn->exec($sql22);
+        $sql27 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid2laag12T` = '" .$grondvochtigheid2Laag1. "' WHERE id = '1'";
+        $conn->exec($sql27);
     }
     if (isset($_POST["grondvochtigheid2Laag2"])){
         $grondvochtigheid2Laag2 = $_POST["grondvochtigheid2Laag2"];
-        $sql23 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid2laag22T` = '" .$grondvochtigheid2Laag2. "' WHERE id = '1'";
-        $conn->exec($sql23);
+        $sql28 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid2laag22T` = '" .$grondvochtigheid2Laag2. "' WHERE id = '1'";
+        $conn->exec($sql28);
     }
 
 
