@@ -143,7 +143,7 @@ try {
         $conn->exec($sql31);
 
         $vat2tijdwat = $_POST["tijdvat1wat"];
-        $sql32 = "UPDATE `controls` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `tijdvat2wat` = '" . $vat2tijd . "' WHERE id = '1'";
+        $sql32 = "UPDATE `controls` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `tijdvat2` = '" . $vat2tijdwat . "' WHERE id = '1'";
         $conn->exec($sql32);
 
         $tijd3A = $_POST["tijd3A"];
@@ -151,7 +151,7 @@ try {
         $conn->exec($sql33);
 
         $vat3tijdwat = $_POST["tijdvat3wat"];
-        $sql34 = "UPDATE `controls` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `tijdvat3wat` = '" . $vat3tijd . "' WHERE id = '1'";
+        $sql34 = "UPDATE `controls` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `tijdvat3` = '" . $vat3tijdwat . "' WHERE id = '1'";
         $conn->exec($sql34);
 
         $cyclus1 = isset($_POST["cyclus1"]) ? 1 : 0;
