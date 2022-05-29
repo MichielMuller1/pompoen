@@ -199,23 +199,23 @@ try {
 
     if (isset($_POST["grondvochtigheid1Laag1"])){
         $grondvochtigheid1Laag1 = $_POST["grondvochtigheid1Laag1"];
-        $sql19 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid1laag1T` = '" .$grondvochtigheid1Laag1. "' WHERE id = '1'";
-        $conn->exec($sql19);
+        $sql20 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid1laag1T` = '" .$grondvochtigheid1Laag1. "' WHERE id = '1'";
+        $conn->exec($sql20);
     }
     if (isset($_POST["grondvochtigheid1Laag2"])){
         $grondvochtigheid1Laag2 = $_POST["grondvochtigheid1Laag2"];
-        $sql19 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid1laag2T	` = '" .$grondvochtigheid1Laag2. "' WHERE id = '1'";
-        $conn->exec($sql19);
+        $sql21 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid1laag2T	` = '" .$grondvochtigheid1Laag2. "' WHERE id = '1'";
+        $conn->exec($sql21);
     }
     if (isset($_POST["grondvochtigheid2Laag1"])){
         $grondvochtigheid2Laag1 = $_POST["grondvochtigheid2Laag1"];
-        $sql19 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid2laag12T` = '" .$grondvochtigheid2Laag1. "' WHERE id = '1'";
-        $conn->exec($sql19);
+        $sql22 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid2laag12T` = '" .$grondvochtigheid2Laag1. "' WHERE id = '1'";
+        $conn->exec($sql22);
     }
     if (isset($_POST["grondvochtigheid2Laag2"])){
         $grondvochtigheid2Laag2 = $_POST["grondvochtigheid2Laag2"];
-        $sql19 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid2laag22T` = '" .$grondvochtigheid2Laag2. "' WHERE id = '1'";
-        $conn->exec($sql19);
+        $sql23 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid2laag22T` = '" .$grondvochtigheid2Laag2. "' WHERE id = '1'";
+        $conn->exec($sql23);
     }
 
 
