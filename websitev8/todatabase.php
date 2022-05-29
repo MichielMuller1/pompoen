@@ -127,35 +127,22 @@ try {
     $conn = new PDO("mysql:host=$sName;dbname=$db_name", $uName, $pass);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $conn->prepare("select * from threshold where id=1");
-    $stmt->execute();
-    $result = $stmt->fetchAll();
-
-
+    date_default_timezone_set("Europe/Brussels");
+    $t = date('Y-m-d H:i:s');
+    echo $t;
 
     //insert all the values into the database
 	
-	$sql = "UPDATE `threshold` SET `tijd` = '".date("Y-m-d H:i:s",$t)."', `tempventilator1T` = '" .$ventilator1. "',  `tempventilator2T` = '" .$ventilator2. "', `tempraam1T` = '" .$raam1. "' ,
-	 `tempraam2T` = '" .$raam2."' , `tempdeur1T` = '" .$deur1."' , `tempdeur2T` = '" .$deur2."' , `minvat1T` = '" .$vat1MIN."' , 
-	  `maxvat1T` = '" .$vat1MAX."' , `minvat2T` = '" .$vat2MIM."' , `maxvat2T` = '" .$vat2MAX."' , `minvat3T` = '" .$vat3MIN."' , 
-	  `maxvat3T` = '" .$vat3MAX."' , `grondvochtigheid1laag1T` = '" .$grondvochtigheid1Laag1."' , `grondvochtigheid1laag2T` = '" .$grondvochtigheid1Laag2."' , `grondvochtigheid2laag12T` = '" .$grondvochtigheid2Laag1."' , 
-	  `grondvochtigheid2laag22T` = '" .$grondvochtigheid2Laag2."' , `lichtT` = '" .$licht."' , `regen` = '" .$regen."' , `rood` = '" .$r."' , `groen` = '" .$g."' ,`blauw` = '" .$b."' ,
-	  `apiTemperatuur` = '" .$apiTemp."' , `apiMinuten`` = '" .$minuten."' , `ledstripstart` = '" .$ledstripSTA."' , `ledstipstop` = '" .$ledstripSTO."' WHERE `ID` = '1'";
+	$sql = "UPDATE `threshold` SET `tijd` = '".date("Y-m-d H:i:s",$t)."', `tempventilator1T` = '" .$ventilator1. "',  `tempventilator2T` = '" .$ventilator2. "', `tempraam1T` = '" .$raam1. "' ,`tempraam2T` = '" .$raam2."' , `tempdeur1T` = '" .$deur1."' , `tempdeur2T` = '" .$deur2."' , `minvat1T` = '" .$vat1MIN."' , `maxvat1T` = '" .$vat1MAX."' , `minvat2T` = '" .$vat2MIM."' , `maxvat2T` = '" .$vat2MAX."' , `minvat3T` = '" .$vat3MIN."' , `maxvat3T` = '" .$vat3MAX."' , `grondvochtigheid1laag1T` = '" .$grondvochtigheid1Laag1."' , `grondvochtigheid1laag2T` = '" .$grondvochtigheid1Laag2."' , `grondvochtigheid2laag12T` = '" .$grondvochtigheid2Laag1."' , `grondvochtigheid2laag22T` = '" .$grondvochtigheid2Laag2."' , `lichtT` = '" .$licht."' , `regen` = '" .$regen."' , `rood` = '" .$r."' , `groen` = '" .$g."' ,`blauw` = '" .$b."' ,`apiTemperatuur` = '" .$apiTemp."' , `apiMinuten`` = '" .$minuten."' , `ledstripstart` = '" .$ledstripSTA."' , `ledstipstop` = '" .$ledstripSTO."' WHERE id = '1'";
     $conn->exec($sql);
 
-    $sql2 = "INSERT INTO `automatisch` (`ID`, `tijd`, `ventilator1A`, `ventilator2A`, `raam1A`, `raam2A`, `deur1A`, `deur2A`, `lichtA`, `vat1A`, `vat2A`, `vat3A`, `tijdvat1A`, `tijdvat2A`, `tijdvat3A`, `cyclus1A` , `cyclus1Astart`, `cyclus2A`, `cyclus2Astart`, `cyclus12A` , `cyclus12Astart`, `cyclus22A`, `cyclus22Astart`, `cyclus13A` , `cyclus13Astart`, `cyclus23A`, `cyclus23Astart`) VALUES 
-	(1,'$tijd',$ventilator1Automatic,$ventilator2Automatic,$raam1Automatic,$raam2Automatic,$deur1Automatic,$deur2Automatic, $lichtAutomatic, $vat1Automatic,$vat2Automatic,$vat3Automatic, $tijd1A, $tijd2A, $tijd3A, $cyclus1ONOFF, $cyclus1startONOFF, $cyclus2ONOFF, $cyclus2startONOFF, $cyclus12ONOFF, $cyclus12startONOFF, $cyclus22ONOFF, $cyclus22startONOFF, $cyclus13ONOFF, $cyclus13startONOFF, $cyclus23ONOFF, $cyclus23startONOFF )";
+
+    $sql2 = "UPDATE `automatisch` SET `tijd` = '".date("Y-m-d H:i:s",$t)."', `ventilator1A` = '" .$ventilator1Automatic. "', `ventilator2A` = '" .$ventilator2Automatic. "', `raam1A` = '" .$raam1Automatic. "', `deur1A` = '" .$deur1Automatic. "', `deur2A` = '" .$deur2Automatic. "', `lichtA` = '" .$lichtAutomatic. "', `vat1A` = '" .$vat1Automatic. "', `vat2A` = '" .$vat2Automatic. "', `vat3A` = '" .$vat3Automatic. "', `tijdvat1A` = '" .$tijd1A. "', `tijdvat2A` = '" .$tijd2A. "', `tijdvat3A` = '" .$tijd3A. "', `cyclus1A` = '" .$cyclus1ONOFF. "', `cyclus1Astart` = '" .$cyclus1startONOFF. "', `cyclus2A` = '" .$cyclus2ONOFF. "', `cyclus2Astart` = '" .$cyclus2startONOFF. "', `cyclus12A` = '" .$cyclus12ONOFF. "', `cyclus12Astart` = '" .$cyclus12startONOFF. "', `cyclus22A` = '" .$cyclus22ONOFF. "', `cyclus22Astart` = '" .$cyclus22startONOFF. "', `cyclus13A` = '" .$cyclus13ONOFF. "', `cyclus13Astart` = '" .$cyclus13startONOFF. "', `cyclus23A` = '" .$cyclus23ONOFF. "', `cyclus23Astart` = '" .$cyclus23startONOFF. "' WHERE id = '1'";
     $conn->exec($sql2);
 
-    $sql3 = "INSERT INTO `controls` (`ID`, `tijd`, `ventilator1`, `ventilator2`, `raam1`, `raam2`, `deur1`, `deur2`, `tijdvat1`, `vat1wateren`, `tijdvat2`, `vat2wateren`, `tijdvat3`, `vat3wateren`, `licht`) VALUES 
-	('1', '$tijd', $ventilator1ONOFF, $ventilator2ONOFF, $raam1ONOFF, $raam2ONOFF, $deur1ONOFF, $deur2ONOFF, $vat1tijd, $vat1_watergevenONOFF, $vat2tijd, $vat2_watergevenONOFF, $vat3tijd, $vat3_watergevenONOFF, $lichtONOFF)";
+
+    $sql3 = "UPDATE `controls` SET `tijd` = '".date("Y-m-d H:i:s",$t)."',`ventilator1` = '" .$ventilator1ONOFF. "',`ventilator2` = '" . $ventilator2ONOFF. "',`raam1` = '" .$raam1ONOFF. "',`raam2` = '" .$raam2ONOFF. "',`deur1` = '" .$deur1ONOFF. "',`deur2` = '" .$deur2ONOFF. "',`tijdvat1` = '" .$vat1tijd. "',`vat1wateren` = '" .$vat1_watergevenONOFF. "',`tijdvat2` = '" .$vat2tijd. "',`vat2wateren` = '" .$vat2_watergevenONOFF. "',`tijdvat3` = '" .$vat3tijd. "',`vat3wateren` = '" .$vat3_watergevenONOFF. "',`licht` = '" .$lichtONOFF. "' WHERE id = '1'";
     $conn->exec($sql3);
-    //$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-
-
-//    print_r($result);
-//    echo $result[0][1] . "   " . $result[0][2];
-//    $_SESSION['ventilator1'] = $result[0][1];
 
 
 } catch (PDOException $e) {
