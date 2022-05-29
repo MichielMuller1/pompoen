@@ -191,11 +191,11 @@ try {
     }
 
 
-    if (isset($_POST["cyclus1"])){
-        $cyclus1 = $_POST["cyclus1"] ? 1 : 0;
+
+        $cyclus1 = isset($_POST["cyclus1"]) ? 1 : 0;
         $sql35 = "UPDATE `automatisch` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `cyclus1A` = '" . $cyclus1 . "' WHERE id = '1'";
         $conn->exec($sql35);
-    }
+    
 
 
 
