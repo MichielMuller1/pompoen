@@ -386,9 +386,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         apiMinutesInputT.value = <?= $_SESSION['apiMinuten'] ?>;
 		
 		var ledstripstartONT = document.getElementById("ledstripSTART");
-		ledstripstartONT.value = <?= $_SESSION['ledstripSTO'] ?>;
+		//ledstripstartONT.value = <?= $_SESSION['ledstripSTO'] ?>;
 		var ledstripstartOFFT = document.getElementById("ledstripSTOP");
-        ledstripstartOFFT.value = <?= $_SESSION['ledstripSTA'] ?>;
+        //ledstripstartOFFT.value = <?= $_SESSION['ledstripSTA'] ?>;
 
 
         //automatisch checkboxen juist zetten
