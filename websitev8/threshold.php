@@ -168,8 +168,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <input type="checkbox" id="vat1_watergeven_onOff" name="vat1_watergeven_onOff" value="0" class="onOff">
                         <span class="slider round"></span>
                     </label>
-					<label for="vat1_tijd">vat 1 wateren tijd (in minuten)
-                    <input type="number" name="vat1_tijd" id="vat1_tijd" >
+					<label for="tijdvat1">vat 1 wateren tijd (in minuten)
+                    <input type="number" name="tijdvat1" id="tijdvat1" >
 					</label>
 					</div>
                 </div>
@@ -211,8 +211,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                     </label>
 					</div>
 					<div>
-					<label for="vat2_tijd">vat 2 wateren tijd (in minuten)</label>
-                    <input type="number" name="vat2_tijd" id="vat2_tijd" >
+					<label for="tijdvat2">vat 2 wateren tijd (in minuten)</label>
+                    <input type="number" name="tijdvat2" id="tijdvat2" >
 					</div>
                 </div>
 <br><br><br>
@@ -248,8 +248,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <input type="checkbox" id="vat3_watergeven_onOff" name="vat3_watergeven_onOff" value="0" class="onOff">
                         <span class="slider round"></span>
                     </label>
-					<label for="vat3_tijd">vat 3 wateren tijd (in minuten)</label>
-                    <input type="number" name="vat3_tijd" id="vat3_tijd" >
+					<label for="tijdvat3">vat 3 wateren tijd (in minuten)</label>
+                    <input type="number" name="tijdvat3" id="tijdvat3" >
                 </div>
 
 				
@@ -436,11 +436,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         var raam2ONOFFc = document.getElementById("raam2_onOff");
         var deur1ONOFFc = document.getElementById("deur1_onOff");
         var deur2ONOFFc = document.getElementById("deur2_onOff");
-        var vat1tijdc = document.getElementById("vat1_tijd");
+        var vat1tijdc = document.getElementById("tijdvat1");
         var vat1waterenc = document.getElementById("vat1_watergeven_onOff");
-        var vat2tijdc = document.getElementById("vat2_tijd");
+        var vat2tijdc = document.getElementById("tijdvat2");
         var vat2waterenc = document.getElementById("vat2_watergeven_onOff");
-        var vat3tijdc = document.getElementById("vat3_tijd");
+        var vat3tijdc = document.getElementById("tijdvat3");
         var vat3waterenc = document.getElementById("vat3_watergeven_onOff");
         var lichtONOFFc = document.getElementById("licht_onOff");
 
