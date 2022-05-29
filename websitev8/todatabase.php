@@ -159,8 +159,8 @@ try {
         $conn->exec($sql35);
 
         $regenT = $_POST["regenT"];
-        $sql35 = "UPDATE `threshold` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `regen` = '" . $regenT . "' WHERE id = '1'";
-        $conn->exec($sql35);
+        $sql36 = "UPDATE `threshold` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `regen` = '" . $regenT . "' WHERE id = '1'";
+        $conn->exec($sql36);
     }
 
 
