@@ -218,7 +218,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 <br><br><br>
                 <div class="form-group">
                     <label for="vat3MIN">vat 3 min</label>
-                    <input type="number" name="vat2MIN" id="vat2MIN" >
+                    <input type="number" name="vat3MIN" id="vat3MIN" >
                     <label for="vat3MAX">vat 3 max</label>
                     <input type="number" name="vat3MAX" id="vat3MAX" >
 					
@@ -249,7 +249,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <span class="slider round"></span>
                     </label>
 					<label for="vat3_tijd">vat 3 wateren tijd (in minuten)</label>
-                    <input type="number" name="vat3_tijd" id="vat3_tijd" required>
+                    <input type="number" name="vat3_tijd" id="vat3_tijd" >
                 </div>
 
 				
