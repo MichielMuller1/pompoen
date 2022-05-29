@@ -130,175 +130,172 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 
 
 
+                <div class="row">
 
-                <div class="form-group">
-                    <label for="vat1MIN">vat 1 min</label>
-                    <input type="number" name="vat1MIN" id="vat1MIN">
-                    <label for="vat1MAX">vat 1 max</label>
-                    <input type="number" name="vat1MAX" id="vat1MAX">
-                    <div>
-                        <div>
-                            <label class="switch"> water geven automatisch
-                                <input type="checkbox" id="vat1Auto" name="vat1Auto" value="0">
-                            </label>
-                            <label for="tijd1A"> aantal minuten
-                                <input type="number" id="tijd1A" name="tijd1A" value="0">
-                            </label>
-
-                            <label class="switch"> cyclus 1
-                                <input type="checkbox" id="cyclus1" name="cyclus1" value="0">
-                            </label>
-                            <label for="cyclus1Astart"> starttijd
-                                <input type="time" id="cyclus1Astart" name="cyclus1Astart" value="00:00:00" step="2">
-                            </label>
-                            <label class="switch"> cyclus 2
-                                <input type="checkbox" id="cyclus2" name="cyclus2" value="0">
-                            </label>
-                            <label for="cyclus2Astart"> starttijd
-                                <input type="time" id="cyclus2Astart" name="cyclus2Astart" value="00:00:00" step="2">
-                            </label>
-                        </div>
-
-                        <div>
-                            <label class="switchSlider"> water geven handmatig
-                                <input type="checkbox" id="vat1_watergeven_onOff" name="vat1_watergeven_onOff" value="0" class="onOff">
-                                <span class="slider round"></span>
-                            </label>
-                            <label for="tijdvat1">vat 1 wateren tijd (in minuten)
-                                <input type="number" name="tijdvat1" id="tijdvat1">
-                            </label>
-                        </div>
+                    <div class="form-group col-4">
+                        <label for="vat1MIN">vat 1 min</label>
+                        <input type="number" name="vat1MIN" id="vat1MIN">
+                        <br>
+                        <label for="vat1MAX">vat 1 max</label>
+                        <input type="number" name="vat1MAX" id="vat1MAX">
+                        <br>
+                        <label class="switch"> water geven automatisch
+                            <input type="checkbox" id="vat1Auto" name="vat1Auto" value="0">
+                        </label>
+                        <label for="tijd1A"> aantal minuten
+                            <input type="number" id="tijd1A" name="tijd1A" value="0">
+                        </label>
+                        <br>
+                        <label class="switch"> cyclus 1
+                            <input type="checkbox" id="cyclus1" name="cyclus1" value="0">
+                        </label>
+                        <label for="cyclus1Astart"> starttijd
+                            <input type="time" id="cyclus1Astart" name="cyclus1Astart" value="00:00:00" step="2">
+                        </label>
+                        <br>
+                        <label class="switch"> cyclus 2
+                            <input type="checkbox" id="cyclus2" name="cyclus2" value="0">
+                        </label>
+                        <label for="cyclus2Astart"> starttijd
+                            <input type="time" id="cyclus2Astart" name="cyclus2Astart" value="00:00:00" step="2">
+                        </label>
+                        <br>
+                        <label class="switchSlider"> water geven handmatig
+                            <input type="checkbox" id="vat1_watergeven_onOff" name="vat1_watergeven_onOff" value="0" class="onOff">
+                            <span class="slider round"></span>
+                        </label>
+                        <label for="tijdvat1">vat 1 wateren tijd (in minuten)
+                            <input type="number" name="tijdvat1" id="tijdvat1">
+                        </label>
+                        <br>
                     </div>
-                    <br><br><br>
-                    <div class="form-group">
-                        <div>
-                            <label for="vat2MIN">vat 2 min</label>
-                            <input type="number" name="vat2MIN" id="vat2MIN">
-                            <label for="vat2MAX">vat 2 max</label>
-                            <input type="number" name="vat2MAX" id="vat2MAX">
-                        </div>
-                        <div>
-                            <label class="switch"> water geven automatisch
-                                <input type="checkbox" id="vat2Auto" name="vat2Auto" value="0">
-                            </label>
-                            <label for="tijd2A"> aantal minuten
-                                <input type="number" id="tijd2A" name="tijd2A" value="0">
-                            </label>
 
 
-                            <label class="switch"> cyclus 1
-                                <input type="checkbox" id="cyclus12" name="cyclus12" value="0">
-                            </label>
-                            <label for="cyclus12Astart"> starttijd
-                                <input type="time" id="cyclus12Astart" name="cyclus12Astart" value="00:00:00" step="2">
-                            </label>
-                            <label class="switch"> cyclus 2
-                                <input type="checkbox" id="cyclus22" name="cyclus22" value="0">
-                            </label>
-                            <label for="cyclus22Astart"> starttijd
-                                <input type="time" id="cyclus22Astart" name="cyclus22Astart" value="00:00:00" step="2">
-                            </label>
-                        </div>
 
-                        <div>
-                            <label class="switchSlider"> water geven handmatig
-                                <input type="checkbox" id="vat2_watergeven_onOff" name="vat2_watergeven_onOff" value="0" class="onOff">
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
-                        <div>
-                            <label for="tijdvat2">vat 2 wateren tijd (in minuten)</label>
-                            <input type="number" name="tijdvat2" id="tijdvat2">
-                        </div>
+                    <div class="form-group col-4">
+                        <label for="vat2MIN">vat 2 min</label>
+                        <input type="number" name="vat2MIN" id="vat2MIN">
+                        <br>
+                        <label for="vat2MAX">vat 2 max</label>
+                        <input type="number" name="vat2MAX" id="vat2MAX">
+                        <br>
+                        <label class="switch"> water geven automatisch
+                            <input type="checkbox" id="vat2Auto" name="vat2Auto" value="0">
+                        </label>
+                        <label for="tijd2A"> aantal minuten
+                            <input type="number" id="tijd2A" name="tijd2A" value="0">
+                        </label>
+                        <br>
+                        <label class="switch"> cyclus 1
+                            <input type="checkbox" id="cyclus12" name="cyclus12" value="0">
+                        </label>
+                        <label for="cyclus12Astart"> starttijd
+                            <input type="time" id="cyclus12Astart" name="cyclus12Astart" value="00:00:00" step="2">
+                        </label>
+                        <br>
+                        <label class="switch"> cyclus 2
+                            <input type="checkbox" id="cyclus22" name="cyclus22" value="0">
+                        </label>
+                        <label for="cyclus22Astart"> starttijd
+                            <input type="time" id="cyclus22Astart" name="cyclus22Astart" value="00:00:00" step="2">
+                        </label>
+                        <br>
+                        <label class="switchSlider"> water geven handmatig
+                            <input type="checkbox" id="vat2_watergeven_onOff" name="vat2_watergeven_onOff" value="0" class="onOff">
+                            <span class="slider round"></span>
+                        </label>
+                        <label for="tijdvat2">vat 2 wateren tijd (in minuten)</label>
+                        <input type="number" name="tijdvat2" id="tijdvat2">
                     </div>
-                    <br><br><br>
-                    <div class="form-group">
+
+                    <div class="form-group col-4">
                         <label for="vat3MIN">vat 3 min</label>
                         <input type="number" name="vat3MIN" id="vat3MIN">
+                        <br>
                         <label for="vat3MAX">vat 3 max</label>
                         <input type="number" name="vat3MAX" id="vat3MAX">
-
+                        <br>
                         <label class="switch"> water geven automatisch
                             <input type="checkbox" id="vat3Auto" name="vat3Auto" value="0">
                         </label>
                         <label for="tijd3A"> aantal minuten
                             <input type="number" id="tijd3A" name="tijd3A" value="0">
                         </label>
-
+                        <br>
                         <label class="switch"> cyclus 1
                             <input type="checkbox" id="cyclus13" name="cyclus13" value="0">
                         </label>
                         <label for="cyclus13Astart"> starttijd
                             <input type="time" id="cyclus13Astart" name="cyclus13Astart" step="2">
                         </label>
+                        <br>
                         <label class="switch"> cyclus 2
                             <input type="checkbox" id="cyclus23" name="cyclus23" value="0">
                         </label>
                         <label for="cyclus23Astart"> starttijd
                             <input type="time" id="cyclus23Astart" name="cyclus23Astart" step="2">
                         </label>
-                        <br><br><br>
-
-
+                        <br>
                         <label class="switchSlider"> water geven handmatig
                             <input type="checkbox" id="vat3_watergeven_onOff" name="vat3_watergeven_onOff" value="0" class="onOff">
                             <span class="slider round"></span>
                         </label>
                         <label for="tijdvat3">vat 3 wateren tijd (in minuten)</label>
                         <input type="number" name="tijdvat3" id="tijdvat3">
+                        <br>
                     </div>
+                </div>
 
 
+                <div class="form-group">
+                    <label for="grondvochtigheid1Laag1">grondvochtigheid 1 laag 1</label>
+                    <input type="number" name="grondvochtigheid1Laag1" id="grondvochtigheid1Laag1">
+                </div>
+                <div class="form-group">
+                    <label for="grondvochtigheid1Laag2">grondvochtigheid 1 laag 2</label>
+                    <input type="number" name="grondvochtigheid1Laag2" id="grondvochtigheid1Laag2">
+                </div>
+                <div class="form-group">
+                    <label for="grondvochtigheid2Laag1">grondvochtigheid 2 laag 1</label>
+                    <input type="number" name="grondvochtigheid2Laag1" id="grondvochtigheid2Laag1">
+                </div>
+                <div class="form-group">
+                    <label for="grondvochtigheid2Laag2">grondvochtigheid 2 laag 2</label>
+                    <input type="number" name="grondvochtigheid2Laag2" id="grondvochtigheid2Laag2">
+                </div>
+                <div class="form-group">
+                    <label for="licht">licht</label>
+                    <input type="number" name="licht" id="licht">
+                    <!--                    <label for="lichtKleur">licht kleur</label>-->
+                    <!--                    <input type="number" name="lichtKleur" id="lichtKleur" required>-->
+                    <label class="switch">
+                        <input type="checkbox" id="lichtAuto" name="lichtAuto" value="0">
+                        <!--                        <input type="checkbox" id="licht_onOff" name="licht_onOff" value="0" class="onOff">-->
+                    </label>
+                    <label class="switchSlider">
+                        <input type="checkbox" id="licht_onOff" name="licht_onOff" value="0" class="onOff">
+                        <span class="slider round"></span>
+                    </label>
+                    <label for="ledstripSTART"> starttijd
+                        <input type="time" id="ledstripSTART" name="ledstripSTART" value="00:00:00" step="2">
+                    </label>
+                    <label for="ledstripSTOP"> stoptijd
+                        <input type="time" id="ledstripSTOP" name="ledstripSTOP" value="00:00:00" step="2">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="kleur">Lichtkleur</label>
+                    <input type="color" id="kleur" name="kleur" onchange="clickColor(0, -1, -1, 5)" style="width: 50%">
+                </div>
 
-                    <div class="form-group">
-                        <label for="grondvochtigheid1Laag1">grondvochtigheid 1 laag 1</label>
-                        <input type="number" name="grondvochtigheid1Laag1" id="grondvochtigheid1Laag1">
-                    </div>
-                    <div class="form-group">
-                        <label for="grondvochtigheid1Laag2">grondvochtigheid 1 laag 2</label>
-                        <input type="number" name="grondvochtigheid1Laag2" id="grondvochtigheid1Laag2">
-                    </div>
-                    <div class="form-group">
-                        <label for="grondvochtigheid2Laag1">grondvochtigheid 2 laag 1</label>
-                        <input type="number" name="grondvochtigheid2Laag1" id="grondvochtigheid2Laag1">
-                    </div>
-                    <div class="form-group">
-                        <label for="grondvochtigheid2Laag2">grondvochtigheid 2 laag 2</label>
-                        <input type="number" name="grondvochtigheid2Laag2" id="grondvochtigheid2Laag2">
-                    </div>
-                    <div class="form-group">
-                        <label for="licht">licht</label>
-                        <input type="number" name="licht" id="licht">
-                        <!--                    <label for="lichtKleur">licht kleur</label>-->
-                        <!--                    <input type="number" name="lichtKleur" id="lichtKleur" required>-->
-                        <label class="switch">
-                            <input type="checkbox" id="lichtAuto" name="lichtAuto" value="0">
-                            <!--                        <input type="checkbox" id="licht_onOff" name="licht_onOff" value="0" class="onOff">-->
-                        </label>
-                        <label class="switchSlider">
-                            <input type="checkbox" id="licht_onOff" name="licht_onOff" value="0" class="onOff">
-                            <span class="slider round"></span>
-                        </label>
-                        <label for="ledstripSTART"> starttijd
-                            <input type="time" id="ledstripSTART" name="ledstripSTART" value="00:00:00" step="2">
-                        </label>
-                        <label for="ledstripSTOP"> stoptijd
-                            <input type="time" id="ledstripSTOP" name="ledstripSTOP" value="00:00:00" step="2">
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label for="kleur">Lichtkleur</label>
-                        <input type="color" id="kleur" name="kleur" onchange="clickColor(0, -1, -1, 5)" style="width: 50%">
-                    </div>
+                <div class="form-group">
+                    <label for="api">weersvoorspelling temperatuur</label>
+                    <input type="api" name="api" id="api">
+                    <label for="minuten">minuten vooraf ramen open zetten</label>
+                    <input type="minuten" name="minuten" id="minuten">
+                </div>
 
-                    <div class="form-group">
-                        <label for="api">weersvoorspelling temperatuur</label>
-                        <input type="api" name="api" id="api">
-                        <label for="minuten">minuten vooraf ramen open zetten</label>
-                        <input type="minuten" name="minuten" id="minuten">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary" name="pompoen">Submit</button>
+                <button type="submit" class="btn btn-primary" name="pompoen">Submit</button>
             </form>
         </div>
 
