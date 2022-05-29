@@ -56,7 +56,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <!--                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">-->
                         </label>
                         <label class="switchSlider">
-                            <input type="checkbox" id="ventilator1_onOfff" name="ventilator1_onOfff">
+                            <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff">
                             <span class="slider round"></span>
                         </label>
                         <br>
@@ -361,7 +361,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             //ledstripstartOFFT.value = document.getElementById("ledstripSTOP");
 
             //controls juistzetten met wat er in de database staat
-            var ventilator1ONOFFc = document.getElementById("ventilator1_onOfff");
+            var ventilator1ONOFFc = document.getElementById("ventilator1_onOff");
             var ventilator2ONOFFc = document.getElementById("ventilator2_onOff");
             var raam1ONOFFc = document.getElementById("raam1_onOff");
             var raam2ONOFFc = document.getElementById("raam2_onOff");
@@ -415,6 +415,12 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 
 
 
+            var tijdvat1AA = document.getElementById("tijd1AA");
+            tijdvat1AA.value = <?= $_SESSION['tijdvat1A'] ?>;
+            var tijdvat2AA = document.getElementById("tijd2AA");
+            tijdvat2AA.value = <?= $_SESSION['tijdvat2A'] ?>;
+            var tijdvat3AA = document.getElementById("tijd3AA");
+            tijdvat3AA.value = <?= $_SESSION['tijdvat3A'] ?>;
 
 
             var cyclus1ONOFFA = document.getElementById("cyclus1");
@@ -435,15 +441,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             var cyclus23ONOFFA = document.getElementById("cyclus23");
             cyclus23ONOFFA.checked = <?= $_SESSION['cyclus23A'] ?>;
             var cyclus23startONOFFA = document.getElementById("cyclus23Astart");
-            var tijdvat1AA = document.getElementById("tijd1AA");
-            tijdvat1AA.value = <?= $_SESSION['tijdvat1A'] ?>;
-            var tijdvat2AA = document.getElementById("tijd2AA");
-            tijdvat2AA.value = <?= $_SESSION['tijdvat2A'] ?>;
-            var tijdvat3AA = document.getElementById("tijd3AA");
-            tijdvat3AA.value = <?= $_SESSION['tijdvat3A'] ?>;
-
-
-
 
             //var kleurT = document.getElementById("kleur");
             // var lichtKleurInput = document.getElementById("lichtKleur");
