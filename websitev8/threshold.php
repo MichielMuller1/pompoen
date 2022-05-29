@@ -434,29 +434,29 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 		var cyclus1ONOFFA = document.getElementById("cyclus1");
 		cyclus1ONOFFA.checked = <?= $_SESSION['cyclus1A'] ?>;
 		var	cyclus1startONOFFA = document.getElementById("cyclus1Astart");
-		cyclus1startONOFFA.checked = <?= $_SESSION['cyclus1Astart'] ?>;
+		//cyclus1startONOFFA.checked = <?= $_SESSION['cyclus1Astart'] ?>;
 		var cyclus2ONOFFA = document.getElementById("cyclus2");
 		cyclus2ONOFFA.checked = <?= $_SESSION['cyclus2A'] ?>;
 		var cyclus2startONOFFA = document.getElementById("cyclus2Astart");
-		cyclus2startONOFFA.checked = <?= $_SESSION['cyclus2Astart'] ?>;
+		//cyclus2startONOFFA.checked = <?= $_SESSION['cyclus2Astart'] ?>;
 		
 		var cyclus12ONOFFA = document.getElementById("cyclus12");
 		cyclus12ONOFFA.checked = <?= $_SESSION['cyclus12A'] ?>;
 		var	cyclus12startONOFFA = document.getElementById("cyclus12Astart");
-		cyclus12startONOFFA.checked = <?= $_SESSION['cyclus12Astart'] ?>;
+		//cyclus12startONOFFA.checked = <?= $_SESSION['cyclus12Astart'] ?>;
 		var cyclus22ONOFFA = document.getElementById("cyclus22");
 		cyclus22ONOFFA.checked = <?= $_SESSION['cyclus22A'] ?>;
 		var cyclus22startONOFFA = document.getElementById("cyclus22Astart");
-		cyclus22startONOFFA.checked = <?= $_SESSION['cyclus22Astart'] ?>;
+		//cyclus22startONOFFA.checked = <?= $_SESSION['cyclus22Astart'] ?>;
 		
 		var cyclus13ONOFFA = document.getElementById("cyclus13");
 		cyclus13ONOFFA.checked = <?= $_SESSION['cyclus13A'] ?>;
 		var	cyclus13startONOFFA = document.getElementById("cyclus13Astart");
-		cyclus13startONOFFA.checked = <?= $_SESSION['cyclus13Astart'] ?>;
+		//cyclus13startONOFFA.checked = <?= $_SESSION['cyclus13Astart'] ?>;
 		var cyclus23ONOFFA = document.getElementById("cyclus23");
 		cyclus23ONOFFA.checked = <?= $_SESSION['cyclus23A'] ?>;
 		var cyclus23startONOFFA = document.getElementById("cyclus23Astart");
-		cyclus23startONOFFA.checked = <?= $_SESSION['cyclus23Astart'] ?>;
+		//cyclus23startONOFFA.checked = <?= $_SESSION['cyclus23Astart'] ?>;
 		
 		var	tijdvat1AA = document.getElementById("tijd1A");
 		tijdvat1AA.checked = <?= $_SESSION['tijdvat1A'] ?>;
