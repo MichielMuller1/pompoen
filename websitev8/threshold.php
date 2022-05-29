@@ -60,8 +60,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <span class="slider round"></span>
                         </label>
                         <br>
-                        <label for="raam1">raam 1</label>
-                        <input type="number" name="raam1" id="raam1">
+                        <label for="raam1C">raam 1</label>
+                        <input type="number" name="raam1C" id="raam1C">
                         <label class="switch">
                             <input type="checkbox" id="raam1Auto" name="raam1Auto">
                             <!--                        <input type="checkbox" id="raam1_onOff" name="raam1_onOff" value="0" class="onOff">-->
@@ -317,10 +317,10 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             //waardes uit de database standaard in de input velden zetten.
             var ventilator1InputT = document.getElementById("ventilator1");
             var ventilator2InputT = document.getElementById("ventilator2");
-            var raam1InputT = document.getElementById("raam1");
-            var raam2InputT = document.getElementById("raam2");
-            var deur1InputT = document.getElementById("deur1");
-            var deur2InputT = document.getElementById("deur2");
+            var raam1InputT = document.getElementById("raam1C");
+            var raam2InputT = document.getElementById("raam2C");
+            var deur1InputT = document.getElementById("deur1C");
+            var deur2InputT = document.getElementById("deur2C");
             var vat1minInputT = document.getElementById("vat1MIN");
             var vat1maxInputT = document.getElementById("vat1MAX");
             var vat2minInputT = document.getElementById("vat2MIN");
