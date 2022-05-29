@@ -121,15 +121,36 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                     </div>
                 </div>
 
-                <br><br><br><br>
+                <br><br>
                 <div class="form-group">
                     <label for="regen">regen</label>
                     <input type="number" name="regen" id="regen">
                 </div>
+                <br>
+                <div class="form-group">
+                    <label for="grondvochtigheid1Laag1">grondvochtigheid 1 laag 1</label>
+                    <input type="number" name="grondvochtigheid1Laag1" id="grondvochtigheid1Laag1">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="grondvochtigheid1Laag2">grondvochtigheid 1 laag 2</label>
+                    <input type="number" name="grondvochtigheid1Laag2" id="grondvochtigheid1Laag2">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="grondvochtigheid2Laag1">grondvochtigheid 2 laag 1</label>
+                    <input type="number" name="grondvochtigheid2Laag1" id="grondvochtigheid2Laag1">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="grondvochtigheid2Laag2">grondvochtigheid 2 laag 2</label>
+                    <input type="number" name="grondvochtigheid2Laag2" id="grondvochtigheid2Laag2">
+                </div>
+                
 
 
 
-                <br><br><br><br>
+                <br><br>
                 <div class="row">
 
                     <div class="form-group col-4">
@@ -247,22 +268,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                 </div>
 
 
-                <div class="form-group">
-                    <label for="grondvochtigheid1Laag1">grondvochtigheid 1 laag 1</label>
-                    <input type="number" name="grondvochtigheid1Laag1" id="grondvochtigheid1Laag1">
-                </div>
-                <div class="form-group">
-                    <label for="grondvochtigheid1Laag2">grondvochtigheid 1 laag 2</label>
-                    <input type="number" name="grondvochtigheid1Laag2" id="grondvochtigheid1Laag2">
-                </div>
-                <div class="form-group">
-                    <label for="grondvochtigheid2Laag1">grondvochtigheid 2 laag 1</label>
-                    <input type="number" name="grondvochtigheid2Laag1" id="grondvochtigheid2Laag1">
-                </div>
-                <div class="form-group">
-                    <label for="grondvochtigheid2Laag2">grondvochtigheid 2 laag 2</label>
-                    <input type="number" name="grondvochtigheid2Laag2" id="grondvochtigheid2Laag2">
-                </div>
+
                 <div class="form-group">
                     <label for="licht">licht</label>
                     <input type="number" name="licht" id="licht">
