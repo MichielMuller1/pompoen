@@ -42,8 +42,8 @@ try {
         $sql4 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `ventilator2A` = '" .$ventilator2Auto. "' WHERE id = '1'";
         $conn->exec($sql4);
     } 
-    if (isset($_POST["ventilator2ONOFF"])){
-        $ventilator2ONOFF = $_POST["ventilator2ONOFF"] ? 1 : 0;
+    if (isset($_POST["ventilator2_onOff"])){
+        $ventilator2ONOFF = $_POST["ventilator2_onOff"] ? 1 : 0;
         $sql5 = "UPDATE `controls` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `ventilator2` = '" .$ventilator2ONOFF. "' WHERE id = '1'";
         $conn->exec($sql5);
     }
@@ -57,8 +57,8 @@ try {
         $sql7 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `raam1A` = '" .$raam1Auto. "' WHERE id = '1'";
         $conn->exec($sql7);
     } 
-    if (isset($_POST["raam1ONOFF"])){
-        $raam1ONOFF = $_POST["raam1ONOFF"] ? 1 : 0;
+    if (isset($_POST["raam1_onOff"])){
+        $raam1ONOFF = $_POST["raam1_onOff"] ? 1 : 0;
         $sql8 = "UPDATE `controls` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `raam1` = '" .$raam1ONOFF. "' WHERE id = '1'";
         $conn->exec($sql8);
     }
@@ -72,8 +72,8 @@ try {
         $sql10 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `raam2A` = '" .$raam2Auto. "' WHERE id = '1'";
         $conn->exec($sql10);
     } 
-    if (isset($_POST["raam2ONOFF"])){
-        $raam2ONOFF = $_POST["raam2ONOFF"] ? 1 : 0;
+    if (isset($_POST["raam2_onOff"])){
+        $raam2ONOFF = $_POST["raam2_onOff"] ? 1 : 0;
         $sql11 = "UPDATE `controls` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `raam2` = '" .$raam2ONOFF. "' WHERE id = '1'";
         $conn->exec($sql11);
     }
@@ -87,8 +87,8 @@ try {
         $sql13 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `deur1A` = '" .$deur1Auto. "' WHERE id = '1'";
         $conn->exec($sql13);
     } 
-    if (isset($_POST["deur1ONOFF"])){
-        $deur1ONOFF = $_POST["deur1ONOFF"] ? 1 : 0;
+    if (isset($_POST["deur1_onOff"])){
+        $deur1ONOFF = $_POST["deur1_onOff"] ? 1 : 0;
         $sql14 = "UPDATE `controls` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `deur1` = '" .$deur1ONOFF. "' WHERE id = '1'";
         $conn->exec($sql14);
     }
@@ -103,7 +103,7 @@ try {
         $conn->exec($sql16);
     } 
     if (isset($_POST["deur2ONOFF"])){
-        $deur2ONOFF = $_POST["deur2ONOFF"] ? 1 : 0;
+        $deur2ONOFF = $_POST["deur2_onOff"] ? 1 : 0;
         $sql17 = "UPDATE `controls` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `deur2` = '" .$deur2ONOFF. "' WHERE id = '1'";
         $conn->exec($sql17);
     }
