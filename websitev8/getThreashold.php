@@ -73,7 +73,9 @@ try {
         $_SESSION['tijdvat2A'] = $result2[0][13];
         $_SESSION['tijdvat3A'] = $result2[0][14];
 		$_SESSION['cyclus1A'] = $result2[0][15];
+        $_SESSION['cyclus1Astart'] = $result2[0][16];
 		$_SESSION['cyclus2A'] = $result2[0][17];
+        $_SESSION['cyclus2Astart'] = $result2[0][18];
 		$_SESSION['cyclus12A'] = $result2[0][19];
 		$_SESSION['cyclus12Astart'] = $result2[0][20];
 		$_SESSION['cyclus22A'] = $result2[0][21];
@@ -98,9 +100,9 @@ try {
         $_SESSION['tijdvat2'] = 0;
         $_SESSION['tijdvat3'] = 0;
 		$_SESSION['cyclus1A'] = 0;
-
+        $_SESSION['cyclus1Astart'] = 0;
 		$_SESSION['cyclus2A'] = 0;
-
+        $_SESSION['cyclus2Astart'] = 0;
 		$_SESSION['cyclus12A'] = 0;
 		$_SESSION['cyclus12Astart'] = 0;
 		$_SESSION['cyclus22A'] = 0;
