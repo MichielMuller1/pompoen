@@ -110,11 +110,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <label for="deur2"> deur 2</label>
                         <input type="number" name="deur2" id="deur2">
                         <label class="switch">
-                            <input type="checkbox" id="deur2Auto" name="deur2Auto" value="0">
+                            <input type="checkbox" id="deur2Auto" name="deur2Auto">
                             <!--                        <input type="checkbox" id="deur2_onOff" name="deur2_onOff" value="0" class="onOff">-->
                         </label>
                         <label class="switchSlider">
-                            <input type="checkbox" id="deur2_onOff" name="deur2_onOff" value="0" class="onOff">
+                            <input type="checkbox" id="deur2_onOff" name="deur2_onOff">
                             <span class="slider round"></span>
                         </label>
                         <br>
@@ -152,15 +152,15 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         </label>
 
                         <label class="switchSlider">
-                            <input type="checkbox" id="licht_onOff" name="licht_onOff" value="0" class="onOff">
+                            <input type="checkbox" id="licht_onOff" name="licht_onOff" >
                             <span class="slider round"></span>
                         </label>
                         <br>
                         <label for="ledstripSTART"> starttijd
-                            <input type="time" id="ledstripSTART" name="ledstripSTART" value="00:00:00" step="2">
+                            <input type="time" id="ledstripSTART" name="ledstripSTART" step="2">
                         </label>
                         <label for="ledstripSTOP"> stoptijd
-                            <input type="time" id="ledstripSTOP" name="ledstripSTOP" value="00:00:00" step="2">
+                            <input type="time" id="ledstripSTOP" name="ledstripSTOP" step="2">
                         </label>
                         <br>
                         <label for="kleur">Lichtkleur</label>
@@ -186,7 +186,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <input type="number" name="vat1MAX" id="vat1MAX">
                         <br>
                         <label class="switch"> water geven automatisch
-                            <input type="checkbox" id="vat1Auto" name="vat1Auto" value="0">
+                            <input type="checkbox" id="vat1Auto" name="vat1Auto" >
                         </label>
                         <label for="tijd1AA"> aantal minuten
                             <input type="number" id="tijd1AA" name="tijd1AA">
@@ -194,23 +194,23 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <br><br>
                         cyclus 1
                         <label class="switch">
-                            <input type="checkbox" id="cyclus1" name="cyclus1" value="0">
+                            <input type="checkbox" id="cyclus1" name="cyclus1" >
                         </label>
                         <label for="cyclus1Astart"> starttijd
-                            <input type="time" id="cyclus1Astart" name="cyclus1Astart" value="00:00:00" step="2">
+                            <input type="time" id="cyclus1Astart" name="cyclus1Astart"  step="2">
                         </label>
                         <br><br>
                         cyclus 2
                         <label class="switch">
-                            <input type="checkbox" id="cyclus2" name="cyclus2" value="0">
+                            <input type="checkbox" id="cyclus2" name="cyclus2">
                         </label>
                         <label for="cyclus2Astart"> starttijd
-                            <input type="time" id="cyclus2Astart" name="cyclus2Astart" value="00:00:00" step="2">
+                            <input type="time" id="cyclus2Astart" name="cyclus2Astart"  step="2">
                         </label>
                         <br><br>
                         water geven handmatig
                         <label class="switchSlider">
-                            <input type="checkbox" id="vat1_watergeven_onOff" name="vat1_watergeven_onOff" value="0" class="onOff">
+                            <input type="checkbox" id="vat1_watergeven_onOff" name="vat1_watergeven_onOff">
                             <span class="slider round"></span>
                         </label>
                         <label for="tijdvat1wat">vat 1 wateren tijd (in minuten)
@@ -229,7 +229,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <input type="number" name="vat2MAX" id="vat2MAX">
                         <br>
                         <label class="switch"> water geven automatisch
-                            <input type="checkbox" id="vat2Auto" name="vat2Auto" value="0">
+                            <input type="checkbox" id="vat2Auto" name="vat2Auto">
                         </label>
                         <label for="tijd2AA"> aantal minuten
                             <input type="number" id="tijd2AA" name="tijd2AA">
@@ -237,23 +237,23 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <br><br>
                         cyclus 1
                         <label class="switch">
-                            <input type="checkbox" id="cyclus12" name="cyclus12" value="0">
+                            <input type="checkbox" id="cyclus12" name="cyclus12">
                         </label>
                         <label for="cyclus12Astart"> starttijd
-                            <input type="time" id="cyclus12Astart" name="cyclus12Astart" value="00:00:00" step="2">
+                            <input type="time" id="cyclus12Astart" name="cyclus12Astart" step="2">
                         </label>
                         <br><br>
                         cyclus 2
                         <label class="switch">
-                            <input type="checkbox" id="cyclus22" name="cyclus22" value="0">
+                            <input type="checkbox" id="cyclus22" name="cyclus22" >
                         </label>
                         <label for="cyclus22Astart"> starttijd
-                            <input type="time" id="cyclus22Astart" name="cyclus22Astart" value="00:00:00" step="2">
+                            <input type="time" id="cyclus22Astart" name="cyclus22Astart" step="2">
                         </label>
                         <br><br>
                         water geven handmatig
                         <label class="switchSlider">
-                            <input type="checkbox" id="vat2_watergeven_onOff" name="vat2_watergeven_onOff" value="0" class="onOff">
+                            <input type="checkbox" id="vat2_watergeven_onOff" name="vat2_watergeven_onOff" >
                             <span class="slider round"></span>
                         </label>
                         <label for="tijdvat2wat">vat 2 wateren tijd (in minuten)</label>
@@ -268,7 +268,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <input type="number" name="vat3MAX" id="vat3MAX">
                         <br>
                         <label class="switch"> water geven automatisch
-                            <input type="checkbox" id="vat3Auto" name="vat3Auto" value="0">
+                            <input type="checkbox" id="vat3Auto" name="vat3Auto">
                         </label>
                         <label for="tijd3AA"> aantal minuten
                             <input type="number" id="tijd3AA" name="tijd3AA">
@@ -276,7 +276,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <br><br>
                         cyclus 1
                         <label class="switch">
-                            <input type="checkbox" id="cyclus13" name="cyclus13" value="0">
+                            <input type="checkbox" id="cyclus13" name="cyclus13" >
                         </label>
                         starttijd
                         <label for="cyclus13Astart">
@@ -285,7 +285,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <br><br>
                         cyclus 2
                         <label class="switch">
-                            <input type="checkbox" id="cyclus23" name="cyclus23" value="0">
+                            <input type="checkbox" id="cyclus23" name="cyclus23" >
                         </label>
                         starttijd
                         <label for="cyclus23Astart">
@@ -294,7 +294,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <br><br>
                         water geven handmatig
                         <label class="switchSlider">
-                            <input type="checkbox" id="vat3_watergeven_onOff" name="vat3_watergeven_onOff" value="0" class="onOff">
+                            <input type="checkbox" id="vat3_watergeven_onOff" name="vat3_watergeven_onOff" >
                             <span class="slider round"></span>
                         </label>
                         <label for="tijdvat3wat">vat 3 wateren tijd (in minuten)</label>
@@ -337,9 +337,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             var grond2laag1InputT = document.getElementById("grondvochtigheid2Laag1");
             var grond2laag2InputT = document.getElementById("grondvochtigheid2Laag2");
             var lichtInputT = document.getElementById("licht");
-            // var lichtKleurInput = document.getElementById("lichtKleur");
             var regenInputT = document.getElementById("regen");
-            //var kleurT = document.getElementById("kleur");
             var apiTempInputT = document.getElementById("api");
             var apiMinutesInputT = document.getElementById("minuten");
 
@@ -361,16 +359,12 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             grond2laag1InputT.value = <?= $_SESSION['grond2laag1'] ?>;
             grond2laag2InputT.value = <?= $_SESSION['grond2laag2'] ?>;
             lichtInputT.value = <?= $_SESSION['licht'] ?>;
-            //lichtKleurInput.value = <?= $_SESSION['lichtkleur'] ?>;
             regenInputT.value = <?= $_SESSION['regen'] ?>;
-            //kleurT.value = <?= $_SESSION['kleur'] ?>;
             apiTempInputT.value = <?= $_SESSION['apiTemp'] ?>;
             apiMinutesInputT.value = <?= $_SESSION['apiMinuten'] ?>;
-
             var ledstripstartONT = document.getElementById("ledstripSTART");
-            //ledstripstartONT.value = <?= $_SESSION['ledstripSTO'] ?>;
             var ledstripstartOFFT = document.getElementById("ledstripSTOP");
-            //ledstripstartOFFT.value = <?= $_SESSION['ledstripSTA'] ?>;
+
 
 
             //automatisch checkboxen juist zetten
@@ -403,36 +397,25 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             var cyclus1ONOFFA = document.getElementById("cyclus1");
             cyclus1ONOFFA.checked = <?= $_SESSION['cyclus1A'] ?>;
             var cyclus1startONOFFA = document.getElementById("cyclus1Astart");
-            //cyclus1startONOFFA.checked = <?= $_SESSION['cyclus1Astart'] ?>;
             var cyclus2ONOFFA = document.getElementById("cyclus2");
             cyclus2ONOFFA.checked = <?= $_SESSION['cyclus2A'] ?>;
             var cyclus2startONOFFA = document.getElementById("cyclus2Astart");
-            //cyclus2startONOFFA.checked = <?= $_SESSION['cyclus2Astart'] ?>;
-
             var cyclus12ONOFFA = document.getElementById("cyclus12");
             cyclus12ONOFFA.checked = <?= $_SESSION['cyclus12A'] ?>;
             var cyclus12startONOFFA = document.getElementById("cyclus12Astart");
-            //cyclus12startONOFFA.checked = <?= $_SESSION['cyclus12Astart'] ?>;
             var cyclus22ONOFFA = document.getElementById("cyclus22");
             cyclus22ONOFFA.checked = <?= $_SESSION['cyclus22A'] ?>;
             var cyclus22startONOFFA = document.getElementById("cyclus22Astart");
-            //cyclus22startONOFFA.checked = <?= $_SESSION['cyclus22Astart'] ?>;
-
             var cyclus13ONOFFA = document.getElementById("cyclus13");
             cyclus13ONOFFA.checked = <?= $_SESSION['cyclus13A'] ?>;
             var cyclus13startONOFFA = document.getElementById("cyclus13Astart");
-            //cyclus13startONOFFA.checked = <?= $_SESSION['cyclus13Astart'] ?>;
             var cyclus23ONOFFA = document.getElementById("cyclus23");
             cyclus23ONOFFA.checked = <?= $_SESSION['cyclus23A'] ?>;
             var cyclus23startONOFFA = document.getElementById("cyclus23Astart");
-            //cyclus23startONOFFA.checked = <?= $_SESSION['cyclus23Astart'] ?>;
-
             var tijdvat1AA = document.getElementById("tijd1AA");
             tijdvat1AA.checked = <?= $_SESSION['tijdvat1A'] ?>;
-
             var tijdvat2AA = document.getElementById("tijd2AA");
             tijdvat2AA.checked = <?= $_SESSION['tijdvat2A'] ?>;
-
             var tijdvat3AA = document.getElementById("tijd3AA");
             tijdvat3AA.checked = <?= $_SESSION['tijdvat3A'] ?>;
 
@@ -465,6 +448,19 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             vat3tijdc.checked = <?= $_SESSION['tijdvat3c'] ?>;
             vat3waterenc.checked = <?= $_SESSION['vat3wateren'] ?>;
             lichtONOFFc.checked = <?= $_SESSION['lichtONOFF'] ?>;
+
+            //ledstripstartONT.value = <?= $_SESSION['ledstripSTO'] ?>;
+            //ledstripstartOFFT.value = <?= $_SESSION['ledstripSTA'] ?>;
+            //var kleurT = document.getElementById("kleur");
+            // var lichtKleurInput = document.getElementById("lichtKleur");
+            //lichtKleurInput.value = <?= $_SESSION['lichtkleur'] ?>;
+            //kleurT.value = <?= $_SESSION['kleur'] ?>;
+            //cyclus13startONOFFA.checked = <?= $_SESSION['cyclus13Astart'] ?>;
+            //cyclus23startONOFFA.checked = <?= $_SESSION['cyclus23Astart'] ?>;
+            //cyclus1startONOFFA.checked = <?= $_SESSION['cyclus1Astart'] ?>;
+            //cyclus2startONOFFA.checked = <?= $_SESSION['cyclus2Astart'] ?>;
+            //cyclus12startONOFFA.checked = <?= $_SESSION['cyclus12Astart'] ?>;
+            //cyclus22startONOFFA.checked = <?= $_SESSION['cyclus22Astart'] ?>;
         </script>
     </body>
 
