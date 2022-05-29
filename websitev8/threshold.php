@@ -153,13 +153,13 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 						<input type="checkbox" id="cyclus1" name="cyclus1" value="0">
 					</label>
 					<label for="cyclus1Astart"> starttijd
-						<input type="time" id="cyclus1Astart" name="cyclus1Astart" value="00:00:00" step="2">
+						<input type="time" id="cyclus1Astart" name="cyclus1Astart" step="2">
 					</label>
 					<label class="switch"> cyclus 2
 						<input type="checkbox" id="cyclus2" name="cyclus2" value="0">
 					</label>
 					<label for="cyclus2Astart"> starttijd
-						<input type="time" id="cyclus2Astart" name="cyclus2Astart" value="00:00:00" step="2">
+						<input type="time" id="cyclus2Astart" name="cyclus2Astart" step="2">
 					</label>
 					</div>
 					
@@ -194,13 +194,13 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 						<input type="checkbox" id="cyclus12" name="cyclus12" value="0">
 					</label>
 					<label for="cyclus12Astart"> starttijd
-						<input type="time" id="cyclus12Astart" name="cyclus12Astart" value="00:00:00" step="2">
+						<input type="time" id="cyclus12Astart" name="cyclus12Astart" step="2">
 					</label>
 					<label class="switch"> cyclus 2
 						<input type="checkbox" id="cyclus22" name="cyclus22" value="0">
 					</label>
 					<label for="cyclus22Astart"> starttijd
-						<input type="time" id="cyclus22Astart" name="cyclus22Astart" value="00:00:00" step="2">
+						<input type="time" id="cyclus22Astart" name="cyclus22Astart" step="2">
 					</label>
 					</div>
 					
@@ -284,10 +284,10 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <span class="slider round"></span>
                     </label>
 					<label for="ledstripSTART"> starttijd
-						<input type="time" id="ledstripSTART" name="ledstripSTART" value="00:00:00" step="2">
+						<input type="time" id="ledstripSTART" name="ledstripSTART" step="2">
 					</label>
 					<label for="ledstripSTOP"> stoptijd
-						<input type="time" id="ledstripSTOP" name="ledstripSTOP" value="00:00:00" step="2">
+						<input type="time" id="ledstripSTOP" name="ledstripSTOP" step="2">
 					</label>
                 </div>
                 <div class="form-group">
