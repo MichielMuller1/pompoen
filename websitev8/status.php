@@ -115,8 +115,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 
 
 
-    co2.textContent = <? echo $_SESSION['co2'] ?>;
-    lichtsterkte.textContent = <? echo $_SESSION['lichtsterkte'] ?>;
+    co2.value = <? echo $_SESSION['co2'] ?>;
+    lichtsterkte.value = <? echo $_SESSION['lichtsterkte'] ?>;
 
 	
 </script>
