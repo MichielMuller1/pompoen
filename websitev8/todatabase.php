@@ -137,7 +137,6 @@ try {
         $sql24 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `maxvat3T` = '" .$vat3MAX. "' WHERE id = '1'";
         $conn->exec($sql24);
     }
-    /*
     if (isset($_POST["grondvochtigheid1Laag1"])){
         $grondvochtigheid1Laag1 = $_POST["grondvochtigheid1Laag1"];
         $sql25 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid1laag1T` = '" .$grondvochtigheid1Laag1. "' WHERE id = '1'";
@@ -157,7 +156,7 @@ try {
         $grondvochtigheid2Laag2 = $_POST["grondvochtigheid2Laag2"];
         $sql28 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid2laag22T` = '" .$grondvochtigheid2Laag2. "' WHERE id = '1'";
         $conn->exec($sql28);
-    }*/
+    }
 
     if (isset($_POST["tijd1A"])){
         $tijd1A = $_POST["tijd1A"];
