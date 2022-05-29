@@ -357,7 +357,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         var lichtInputT = document.getElementById("licht");
         // var lichtKleurInput = document.getElementById("lichtKleur");
         var regenInputT = document.getElementById("regen");
-        var kleurT = document.getElementById("kleur");
+        //var kleurT = document.getElementById("kleur");
         var apiTempInputT = document.getElementById("api");
         var apiMinutesInputT = document.getElementById("minuten");
 
@@ -381,7 +381,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         lichtInputT.value = <?= $_SESSION['licht'] ?>;
         //lichtKleurInput.value = <?//= $_SESSION['lichtkleur'] ?>//;
         regenInputT.value = <?= $_SESSION['regen'] ?>;
-        kleurT.value = <?= $_SESSION['kleur']?>;
+        //kleurT.value = <?= $_SESSION['kleur']?>;
         apiTempInputT.value = <?= $_SESSION['apiTemp'] ?>;
         apiMinutesInputT.value = <?= $_SESSION['apiMinuten'] ?>;
 		
