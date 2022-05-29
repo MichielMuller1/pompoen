@@ -415,20 +415,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         lichtAutoA.checked = <?= $_SESSION['lichtAuto'] ?>;
 
 
-        //controls juistzetten met wat er in de database staat
-        var ventilator1ONOFFc = document.getElementById("ventilator1_onOff");
-        var ventilator2ONOFFc = document.getElementById("ventilator2_onOff");
-        var raam1ONOFFc = document.getElementById("raam1_onOff");
-        var raam2ONOFFc = document.getElementById("raam2_onOff");
-        var deur1ONOFFc = document.getElementById("deur1_onOff");
-        var deur2ONOFFc = document.getElementById("deur2_onOff");
-        var vat1tijdc = document.getElementById("vat1_tijd");
-        var vat1waterenc = document.getElementById("vat1_watergeven_onOff");
-        var vat2tijdc = document.getElementById("vat2_tijd");
-        var vat2waterenc = document.getElementById("vat2_watergeven_onOff");
-        var vat3tijdc = document.getElementById("vat3_tijd");
-        var vat3waterenc = document.getElementById("vat3_watergeven_onOff");
-        var lichtONOFFc = document.getElementById("licht_onOff");
+
 		
 		
 		var cyclus1ONOFFA = document.getElementById("cyclus1");
@@ -467,7 +454,20 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 		var	tijdvat3AA = document.getElementById("tijd3A");
 		tijdvat3AA.checked = <?= $_SESSION['tijdvat3A'] ?>;
 		
-		
+		//controls juistzetten met wat er in de database staat
+        var ventilator1ONOFFc = document.getElementById("ventilator1_onOff");
+        var ventilator2ONOFFc = document.getElementById("ventilator2_onOff");
+        var raam1ONOFFc = document.getElementById("raam1_onOff");
+        var raam2ONOFFc = document.getElementById("raam2_onOff");
+        var deur1ONOFFc = document.getElementById("deur1_onOff");
+        var deur2ONOFFc = document.getElementById("deur2_onOff");
+        var vat1tijdc = document.getElementById("vat1_tijd");
+        var vat1waterenc = document.getElementById("vat1_watergeven_onOff");
+        var vat2tijdc = document.getElementById("vat2_tijd");
+        var vat2waterenc = document.getElementById("vat2_watergeven_onOff");
+        var vat3tijdc = document.getElementById("vat3_tijd");
+        var vat3waterenc = document.getElementById("vat3_watergeven_onOff");
+        var lichtONOFFc = document.getElementById("licht_onOff");
 
 
         ventilator1ONOFFc.checked = <?= $_SESSION['ventilator1ONOFF'] ?>;
