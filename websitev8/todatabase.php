@@ -27,8 +27,8 @@ try {
         $sql1 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `ventilator1A` = '" .$ventilator1Auto. "' WHERE id = '1'";
         $conn->exec($sql1);
     } 
-    if (isset($_POST["ventilator1ONOFF"])){
-        $ventilator1ONOFF = $_POST["ventilator1ONOFF"] ? 1 : 0;
+    if (isset($_POST["ventilator1_onOff"])){
+        $ventilator1ONOFF = $_POST["ventilator1_onOff"] ? 1 : 0;
         $sql2 = "UPDATE `controls` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `ventilator1` = '" .$ventilator1ONOFF. "' WHERE id = '1'";
         $conn->exec($sql2);
     }
