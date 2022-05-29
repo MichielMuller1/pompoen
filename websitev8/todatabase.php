@@ -23,7 +23,7 @@ try {
         $conn->exec($sql0);
     }
     if (isset($_POST["ventilator1Auto"])){
-        $ventilator1Auto = $_POST["ventilator1Auto"] ? 1 : 0;;
+        $ventilator1Auto = $_POST["ventilator1Auto"] ? 1 : 0;
         $sql1 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `ventilator1A` = '" .$ventilator1Auto. "' WHERE id = '1'";
         $conn->exec($sql1);
     } 
@@ -41,7 +41,7 @@ try {
         $conn->exec($sql3);
     } 
     if (isset($_POST["ventilator2Auto"])){
-        $ventilator1Auto = $_POST["ventilator2Auto"] ? 1 : 0;;
+        $ventilator1Auto = $_POST["ventilator2Auto"] ? 1 : 0;
         $sql4 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `ventilator2A` = '" .$ventilator2Auto. "' WHERE id = '1'";
         $conn->exec($sql4);
     } 
@@ -59,7 +59,7 @@ try {
         $conn->exec($sql6);
     } 
     if (isset($_POST["raam1Auto"])){
-        $raam1Auto = $_POST["raam1Auto"] ? 1 : 0;;
+        $raam1Auto = $_POST["raam1Auto"] ? 1 : 0;
         $sql7 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `raam1A` = '" .$raam1Auto. "' WHERE id = '1'";
         $conn->exec($sql7);
     } 
@@ -77,7 +77,7 @@ try {
         $conn->exec($sql6);
     } 
     if (isset($_POST["raam2Auto"])){
-        $raam2Auto = $_POST["raam2Auto"] ? 1 : 0;;
+        $raam2Auto = $_POST["raam2Auto"] ? 1 : 0;
         $sql7 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `raam2A` = '" .$raam2Auto. "' WHERE id = '1'";
         $conn->exec($sql7);
     } 
@@ -96,7 +96,7 @@ try {
         $conn->exec($sql9);
     } 
     if (isset($_POST["deur1Auto"])){
-        $deur1Auto = $_POST["deur1Auto"] ? 1 : 0;;
+        $deur1Auto = $_POST["deur1Auto"] ? 1 : 0;
         $sql10 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `deur1A` = '" .$deur1Auto. "' WHERE id = '1'";
         $conn->exec($sql10);
     } 
@@ -112,7 +112,7 @@ try {
         $conn->exec($sql12);
     } 
     if (isset($_POST["deur2Auto"])){
-        $deur2Auto = $_POST["deur2Auto"] ? 1 : 0;;
+        $deur2Auto = $_POST["deur2Auto"] ? 1 : 0;
         $sql13 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `deur2A` = '" .$deur2Auto. "' WHERE id = '1'";
         $conn->exec($sql13);
     } 
@@ -208,7 +208,7 @@ try {
     $ledstripSTO = $_POST["ledstripSTO"];
 
 
-    /*if (isset($_POST["pompoen"])){
+    if (isset($_POST["pompoen"])){
         $sql = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `tempventilator1T` = '" .$ventilator1. "',  `tempventilator2T` = '" .$ventilator2. "', `tempraam1T` = '" .$raam1. "' ,`tempraam2T` = '" .$raam2. "' , `tempdeur1T` = '" .$deur1. "' , `tempdeur2T` = '" .$deur2. "' , `minvat1T` = '" .$vat1MIN. "' , `maxvat1T` = '" .$vat1MAX. "' , `minvat2T` = '" .$vat2MIM. "' , `maxvat2T` = '" .$vat2MAX. "' , `minvat3T` = '" .$vat3MIN. "' , `maxvat3T` = '" .$vat3MAX. "' , `grondvochtigheid1laag1T` = '" .$grondvochtigheid1Laag1. "' , `grondvochtigheid1laag2T` = '" .$grondvochtigheid1Laag2. "' , `grondvochtigheid2laag12T` = '" .$grondvochtigheid2Laag1. "' , `grondvochtigheid2laag22T` = '" .$grondvochtigheid2Laag2. "' , `lichtT` = '" .$licht. "' , `regen` = '" .$regen. "' , `rood` = '" .$r. "' , `groen` = '" .$g. "' ,`blauw` = '" .$b. "' ,`apiTemperatuur` = '" .$apiTemp. "' , `apiMinuten`` = '" .$minuten. "' , `ledstripstart` = '" .$ledstripSTA. "' , `ledstipstop` = '" .$ledstripSTO. "' WHERE id = '1'";
         $conn->exec($sql);
         $sql2 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `ventilator1A` = '" .$ventilator1Auto. "', `ventilator2A` = '" .$ventilator2Auto. "', `raam1A` = '" .$raam1Auto. "', `deur1A` = '" .$deur1Auto. "', `deur2A` = '" .$deur2Auto. "', `lichtA` = '" .$lichtAuto. "', `vat1A` = '" .$vat1Auto. "', `vat2A` = '" .$vat2Auto. "', `vat3A` = '" .$vat3Auto. "', `tijdvat1A` = '" .$tijd1A. "', `tijdvat2A` = '" .$tijd2A. "', `tijdvat3A` = '" .$tijd3A. "', `cyclus1A` = '" .$cyclus1ONOFF. "', `cyclus1Astart` = '" .$cyclus1startONOFF. "', `cyclus2A` = '" .$cyclus2ONOFF. "', `cyclus2Astart` = '" .$cyclus2startONOFF. "', `cyclus12A` = '" .$cyclus12ONOFF. "', `cyclus12Astart` = '" .$cyclus12startONOFF. "', `cyclus22A` = '" .$cyclus22ONOFF. "', `cyclus22Astart` = '" .$cyclus22startONOFF. "', `cyclus13A` = '" .$cyclus13ONOFF. "', `cyclus13Astart` = '" .$cyclus13startONOFF. "', `cyclus23A` = '" .$cyclus23ONOFF. "', `cyclus23Astart` = '" .$cyclus23startONOFF. "' WHERE id = '1'";
@@ -216,7 +216,7 @@ try {
         $sql3 = "UPDATE `controls` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "',`ventilator1` = '" .$ventilator1ONOFF. "',`ventilator2` = '" .$ventilator2ONOFF. "', `raam1` = '" .$raam1ONOFF. "', `raam2` = '" .$raam2ONOFF. "',`deur1` = '" .$deur1ONOFF. "',`deur2` = '" .$deur2ONOFF. "',`tijdvat1` = '" .$vat1tijd. "',`vat1wateren` = '" .$vat1_watergevenONOFF. "',`tijdvat2` = '" .$vat2tijd. "',`vat2wateren` = '" .$vat2_watergevenONOFF. "',`tijdvat3` = '" .$vat3tijd. "',`vat3wateren` = '" .$vat3_watergevenONOFF . "',`licht` = '" .$lichtONOFF. "' WHERE id = '1'";
         $conn->exec($sql3);
         echo "treasure will be set if the form has been submitted (to TRUE, I believe)";
-    }*/
+    }
 } catch (PDOException $e) {
     echo " database error " . $e->getMessage();
 }
