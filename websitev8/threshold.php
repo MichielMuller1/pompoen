@@ -303,8 +303,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 
 
                     <button type="submit" class="btn btn-primary" name="pompoen">Submit</button>
+                </div>
+
             </form>
         </div>
+
 
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -355,8 +358,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             grond2laag1InputT.value = <?= $_SESSION['grond2laag1'] ?>;
             grond2laag2InputT.value = <?= $_SESSION['grond2laag2'] ?>;
             lichtInputT.value = <?= $_SESSION['licht'] ?>;
-            //lichtKleurInput.value = <? //= $_SESSION['lichtkleur'] 
-                                        ?>//;
+            //lichtKleurInput.value = <?= $_SESSION['lichtkleur'] ?>;
             regenInputT.value = <?= $_SESSION['regen'] ?>;
             //kleurT.value = <?= $_SESSION['kleur'] ?>;
             apiTempInputT.value = <?= $_SESSION['apiTemp'] ?>;
