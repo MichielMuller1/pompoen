@@ -122,32 +122,56 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                 </div>
 
                 <br><br>
-                <div class="form-group">
-                    <label for="regen">regen</label>
-                    <input type="number" name="regen" id="regen">
-                </div>
-                <br>
-                <div class="form-group">
-                    <label for="grondvochtigheid1Laag1">grondvochtigheid 1 laag 1</label>
-                    <input type="number" name="grondvochtigheid1Laag1" id="grondvochtigheid1Laag1">
-                </div>
-                <br>
-                <div class="form-group">
-                    <label for="grondvochtigheid1Laag2">grondvochtigheid 1 laag 2</label>
-                    <input type="number" name="grondvochtigheid1Laag2" id="grondvochtigheid1Laag2">
-                </div>
-                <br>
-                <div class="form-group">
-                    <label for="grondvochtigheid2Laag1">grondvochtigheid 2 laag 1</label>
-                    <input type="number" name="grondvochtigheid2Laag1" id="grondvochtigheid2Laag1">
-                </div>
-                <br>
-                <div class="form-group">
-                    <label for="grondvochtigheid2Laag2">grondvochtigheid 2 laag 2</label>
-                    <input type="number" name="grondvochtigheid2Laag2" id="grondvochtigheid2Laag2">
-                </div>
-                
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="regen">regen</label>
+                        <input type="number" name="regen" id="regen">
+        
+                        <label for="grondvochtigheid1Laag1">grondvochtigheid 1 laag 1</label>
+                        <input type="number" name="grondvochtigheid1Laag1" id="grondvochtigheid1Laag1">
 
+                        <label for="grondvochtigheid1Laag2">grondvochtigheid 1 laag 2</label>
+                        <input type="number" name="grondvochtigheid1Laag2" id="grondvochtigheid1Laag2">
+
+                        <label for="grondvochtigheid2Laag1">grondvochtigheid 2 laag 1</label>
+                        <input type="number" name="grondvochtigheid2Laag1" id="grondvochtigheid2Laag1">
+
+                        <label for="grondvochtigheid2Laag2">grondvochtigheid 2 laag 2</label>
+                        <input type="number" name="grondvochtigheid2Laag2" id="grondvochtigheid2Laag2">
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="licht">licht</label>
+                        <input type="number" name="licht" id="licht">
+                        <!--                    <label for="lichtKleur">licht kleur</label>-->
+                        <!--                    <input type="number" name="lichtKleur" id="lichtKleur" required>-->
+                        <br>
+                        <label class="switch">
+                            <input type="checkbox" id="lichtAuto" name="lichtAuto" value="0">
+                            <!--                        <input type="checkbox" id="licht_onOff" name="licht_onOff" value="0" class="onOff">-->
+                        </label>
+                        <label class="switchSlider">
+                            <input type="checkbox" id="licht_onOff" name="licht_onOff" value="0" class="onOff">
+                            <span class="slider round"></span>
+                        </label>
+                        <br>
+                        <label for="ledstripSTART"> starttijd
+                            <input type="time" id="ledstripSTART" name="ledstripSTART" value="00:00:00" step="2">
+                        </label>
+                        <label for="ledstripSTOP"> stoptijd
+                            <input type="time" id="ledstripSTOP" name="ledstripSTOP" value="00:00:00" step="2">
+                        </label>
+<br>
+                        <label for="kleur">Lichtkleur</label>
+                        <input type="color" id="kleur" name="kleur" onchange="clickColor(0, -1, -1, 5)" style="width: 50%">
+<br>
+                        <label for="api">weersvoorspelling temperatuur</label>
+                        <input type="api" name="api" id="api">
+                        <br>
+                        <label for="minuten">minuten vooraf ramen open zetten</label>
+                        <input type="minuten" name="minuten" id="minuten">
+                    
+                </div>
 
 
                 <br><br>
@@ -268,38 +292,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                 </div>
 
 
-
-                <div class="form-group">
-                    <label for="licht">licht</label>
-                    <input type="number" name="licht" id="licht">
-                    <!--                    <label for="lichtKleur">licht kleur</label>-->
-                    <!--                    <input type="number" name="lichtKleur" id="lichtKleur" required>-->
-                    <label class="switch">
-                        <input type="checkbox" id="lichtAuto" name="lichtAuto" value="0">
-                        <!--                        <input type="checkbox" id="licht_onOff" name="licht_onOff" value="0" class="onOff">-->
-                    </label>
-                    <label class="switchSlider">
-                        <input type="checkbox" id="licht_onOff" name="licht_onOff" value="0" class="onOff">
-                        <span class="slider round"></span>
-                    </label>
-                    <label for="ledstripSTART"> starttijd
-                        <input type="time" id="ledstripSTART" name="ledstripSTART" value="00:00:00" step="2">
-                    </label>
-                    <label for="ledstripSTOP"> stoptijd
-                        <input type="time" id="ledstripSTOP" name="ledstripSTOP" value="00:00:00" step="2">
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label for="kleur">Lichtkleur</label>
-                    <input type="color" id="kleur" name="kleur" onchange="clickColor(0, -1, -1, 5)" style="width: 50%">
-                </div>
-
-                <div class="form-group">
-                    <label for="api">weersvoorspelling temperatuur</label>
-                    <input type="api" name="api" id="api">
-                    <label for="minuten">minuten vooraf ramen open zetten</label>
-                    <input type="minuten" name="minuten" id="minuten">
-                </div>
 
                 <button type="submit" class="btn btn-primary" name="pompoen">Submit</button>
             </form>
