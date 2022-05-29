@@ -390,6 +390,15 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             vat3waterenc.checked = <?= $_SESSION['vat3wateren'] ?>;
             lichtONOFFc.checked = <?= $_SESSION['lichtONOFF'] ?>;
 
+
+            var tijdvat1AutoA = document.getElementById("tijd1A");
+            tijdvat1AutoA.value = <?= $_SESSION['tijdvat1A'] ?>;
+            var tijdvat2AutoA = document.getElementById("tijd2A");
+            tijdvat2AutoA.value = <?= $_SESSION['tijdvat2A'] ?>;
+            var tijdvat3AutoA = document.getElementById("tijd3A");
+            tijdvat3AutoA.value = <?= $_SESSION['tijdvat3A'] ?>;
+
+
             //automatisch checkboxen juist zetten
             var ventilator1AutoA = document.getElementById("ventilator1Auto");
             var ventilator2AutoA = document.getElementById("ventilator2Auto");
@@ -415,12 +424,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 
 
 
-            var tijdvat1AutoA = document.getElementById("tijd1A");
-            tijdvat1AutoA.value = <?= $_SESSION['tijdvat1A'] ?>;
-            var tijdvat2AutoA = document.getElementById("tijd2A");
-            tijdvat2AutoA.value = <?= $_SESSION['tijdvat2A'] ?>;
-            var tijdvat3AutoA = document.getElementById("tijd3A");
-            tijdvat3AutoA.value = <?= $_SESSION['tijdvat3A'] ?>;
+
 
 
             var cyclus1ONOFFA = document.getElementById("cyclus1");
