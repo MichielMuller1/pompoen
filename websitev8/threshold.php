@@ -55,11 +55,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <label for="ventilator1">ventilator 1</label>
                             <input type="number" name="ventilator1" id="ventilator1">
                             <label class="switch">
-                                <input type="checkbox" id="ventilator1Auto" name="ventilator1Auto" onclick="myFunction()">
+                                <input type="checkbox" id="ventilator1Auto" name="ventilator1Auto" >
                                 <!--                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">-->
                             </label>
                             <label class="switchSlider">
-                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" onclick="myFunction()">
+                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" >
                                 <span class="slider round"></span>
                             </label>
                         </div>
