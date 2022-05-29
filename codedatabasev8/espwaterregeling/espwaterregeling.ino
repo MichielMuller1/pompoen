@@ -19,16 +19,16 @@ String apiKeyValue = "tPmAT5Ab3j7F9";
 //relay
 
  
-const int relay = 33;
+const int relay = 18;
 int statevat1 = LOW;
 //vat1 wateren
-const int relay1 = 21;
+const int relay1 = 33;
 int statevat1w = LOW;
 //vat2
-const int relay2 = 19;
+const int relay2 = 21;
 int statevat2 = LOW;
 //vat2 wateren
-const int relay3 = 18;
+const int relay3 = 19;
 int statevat2w = LOW;
 
 
@@ -43,6 +43,8 @@ float current1;  //unit:mA
 //instellen data ophalen
 const char* ssid     = "Neerzijde 16_IoT";
 const char* password = "E4u6c1blockx";
+
+
 const char* serverName1 = "http://192.168.0.5/post-esp-data-druk.php";
 const char* serverName = "http://192.168.0.5/esp-data-getv8.php";
 
@@ -239,11 +241,11 @@ void loop()
 
 
       //vat1 wateren
-      if (sensorReadingsArr[8] == "1") {
+      if (sensorReadingsArr[8] == "1" && mini11 <= sensorReadingsArr[55].toInt()) {
         Serial.println("vat1 wateren");
         digitalWrite(relay1, HIGH);
       }
-      else if (sensorReadingsArr[20] == "1") {
+      else if (sensorReadingsArr[20] == "1" && mini11 <= sensorReadingsArr[55].toInt()) {
         Serial.println("vat1 wateren");
         digitalWrite(relay1, HIGH);
       }
@@ -253,11 +255,11 @@ void loop()
       }
 
       //vat2 wateren
-      if (sensorReadingsArr[10] == "1") {
+      if (sensorReadingsArr[10] == "1" && mini22 <= sensorReadingsArr[56].toInt()) {
         Serial.println("vat1 wateren");
         digitalWrite(relay3, HIGH);
       }
-      else if (sensorReadingsArr[21] == "1") {
+      else if (sensorReadingsArr[21] == "1" && mini22 <= sensorReadingsArr[56].toInt()) {
         Serial.println("vat1 wateren");
         digitalWrite(relay3, HIGH);
       }
