@@ -54,12 +54,12 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <div class="form-group col-6">
                             <label for="ventilator1">ventilator 1</label>
                             <input type="number" name="ventilator1" id="ventilator1">
-                            <label class="switch"> 
-                                <input type="checkbox" id="ventilator1Auto" name="ventilator1Auto" value="0" class="onOff">
+                            <label class="switch">
+                                <input type="checkbox" id="ventilator1Auto" name="ventilator1Auto" value="0">
                                 <!--                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">-->
                             </label>
                             <label class="switchSlider">
-                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0" class="onOff">
+                                <input type="checkbox" id="ventilator1_onOff" name="ventilator1_onOff" value="0">
                                 <span class="slider round"></span>
                             </label>
                         </div>
@@ -67,11 +67,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <label for="ventilator2">ventilator 2</label>
                             <input type="number" name="ventilator2" id="ventilator2" >
                             <label class="switch">
-                                <input type="checkbox" id="ventilator2Auto" name="ventilator2Auto" value="0" class="onOff">
+                                <input type="checkbox" id="ventilator2Auto" name="ventilator2Auto" value="0">
                                 <!--                            <input type="checkbox" id="ventilator2_onOff" name="ventilator2_onOff" value="0" class="onOff">-->
                             </label>
                             <label class="switchSlider">
-                                <input type="checkbox" id="ventilator2_onOff" name="ventilator2_onOff" value="0" class="onOff">
+                                <input type="checkbox" id="ventilator2_onOff" name="ventilator2_onOff" value="0">
                                 <span class="slider round"></span>
                             </label>
                         </div>
@@ -89,11 +89,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                     <label for="raam1">raam 1</label>
                     <input type="number" name="raam1" id="raam1" >
                     <label class="switch">
-                        <input type="checkbox" id="raam1Auto" name="raam1Auto" value="0" class="onOff">
+                        <input type="checkbox" id="raam1Auto" name="raam1Auto" value="0">
                         <!--                        <input type="checkbox" id="raam1_onOff" name="raam1_onOff" value="0" class="onOff">-->
                     </label>
                     <label class="switchSlider">
-                        <input type="checkbox" id="raam1_onOff" name="raam1_onOff" value="0" class="onOff">
+                        <input type="checkbox" id="raam1_onOff" name="raam1_onOff" value="0">
                         <span class="slider round"></span>
                     </label>
                 </div>
@@ -101,7 +101,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                     <label for="raam2">raam 2</label>
                     <input type="number" name="raam2" id="raam2" >
                     <label class="switch">
-                        <input type="checkbox" id="raam2Auto" name="raam2Auto" value="0" class="onOff">
+                        <input type="checkbox" id="raam2Auto" name="raam2Auto" value="0">
                         <!--                        <input type="checkbox" id="raam2_onOff" name="raam2_onOff" value="0" class="onOff">-->
                     </label>
                     <label class="switchSlider">
@@ -113,11 +113,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                     <label for="deur1">deur 1</label>
                     <input type="number" name="deur1" id="deur1" >
                     <label class="switch">
-                        <input type="checkbox" id="deur1Auto" name="deur1Auto" value="0" class="onOff">
+                        <input type="checkbox" id="deur1Auto" name="deur1Auto" value="0">
                         <!--                        <input type="checkbox" id="deur1_onOff" name="deur1_onOff" value="0" class="onOff">-->
                     </label>
                     <label class="switchSlider">
-                        <input type="checkbox" id="deur1_onOff" name="deur1_onOff" class="onOff" value="0">
+                        <input type="checkbox" id="deur1_onOff" name="deur1_onOff" value="0">
                         <span class="slider round"></span>
                     </label>
                 </div>
@@ -125,7 +125,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                     <label for="deur2"> deur 2</label>
                     <input type="number" name="deur2" id="deur2" >
                     <label class="switch">
-                        <input type="checkbox" id="deur2Auto" name="deur2Auto" value="0" class="onOff">
+                        <input type="checkbox" id="deur2Auto" name="deur2Auto" value="0">
                         <!--                        <input type="checkbox" id="deur2_onOff" name="deur2_onOff" value="0" class="onOff">-->
                     </label>
                     <label class="switchSlider">
