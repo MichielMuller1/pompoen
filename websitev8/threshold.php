@@ -276,8 +276,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <label class="switch"> 
                                 <input type="checkbox" id="cyclus13" name="cyclus13" value="0">
                             </label>
-                            
-                            <label for="cyclus13Astart"> starttijd
+                            starttijd
+                            <label for="cyclus13Astart"> 
                                 <input type="time" id="cyclus13Astart" name="cyclus13Astart" step="2">
                             </label>
                             <br><br>
@@ -285,12 +285,13 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <label class="switch"> 
                                 <input type="checkbox" id="cyclus23" name="cyclus23" value="0">
                             </label>
-                            
-                            <label for="cyclus23Astart"> starttijd
+                            starttijd
+                            <label for="cyclus23Astart"> 
                                 <input type="time" id="cyclus23Astart" name="cyclus23Astart" step="2">
                             </label>
                             <br><br>
-                            <label class="switchSlider"> water geven handmatig
+                            water geven handmatig
+                            <label class="switchSlider"> 
                                 <input type="checkbox" id="vat3_watergeven_onOff" name="vat3_watergeven_onOff" value="0" class="onOff">
                                 <span class="slider round"></span>
                             </label>
