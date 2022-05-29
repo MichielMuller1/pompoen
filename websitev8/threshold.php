@@ -124,8 +124,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                 <br><br>
                 <div class="row">
                     <div class="form-group col-6">
-                        <label for="regen">regen</label>
-                        <input type="number" name="regen" id="regen">
+                        <label for="regenT">regen</label>
+                        <input type="number" name="regenT" id="regenT">
                         <br>
                         <label for="grondvochtigheid1Laag1">grondvochtigheid 1 laag 1</label>
                         <input type="number" name="grondvochtigheid1Laag1" id="grondvochtigheid1Laag1">
@@ -331,7 +331,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             var grond1laag2InputT = document.getElementById("grondvochtigheid1Laag2");
             var grond2laag1InputT = document.getElementById("grondvochtigheid2Laag1");
             var grond2laag2InputT = document.getElementById("grondvochtigheid2Laag2");
-            var regenInputT = document.getElementById("regen");
+            var regenInputT = document.getElementById("regenT");
             var apiTempInputT = document.getElementById("api");
             var apiMinutesInputT = document.getElementById("minuten");
             //var ledstripstartONT = document.getElementById['ledstripSTO'];
