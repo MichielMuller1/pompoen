@@ -24,45 +24,45 @@ try {
 
 
 
-    $ventilator1ONOFF = isset($_POST["ventilator1_onOff"]) ? 1 : 0;
+    $ventilator1ONOFF = isset($_POST["ventilator1ONOFF"]) ? 1 : 0;
     echo $ventilator1ONOFF . "\n";
 
 
     $ventilator2 = $_POST["ventilator2"];
     $ventilator2Auto = isset($_POST["ventilator2Auto"]) ? 1 : 0;
-    $ventilator2ONOFF = isset($_POST["ventilator2_onOff"]) ? 1 : 0;
+    $ventilator2ONOFF = isset($_POST["ventilator2ONOFF"]) ? 1 : 0;
     echo $ventilator2 . "\n";
 
     $raam1 = $_POST["raam1"];
     $raam1Auto = isset($_POST["raam1Auto"]) ? 1 : 0;
-    $raam1ONOFF = isset($_POST["raam1_onOff"]) ? 1 : 0;
+    $raam1ONOFF = isset($_POST["raam1ONOFF"]) ? 1 : 0;
     echo $raam1 . "\n";
 
     $raam2 = $_POST["raam2"];
     $raam2Auto = isset($_POST["raam2Auto"]) ? 1 : 0;
-    $raam2ONOFF = isset($_POST["raam2_onOff"]) ? 1 : 0;
+    $raam2ONOFF = isset($_POST["raam2ONOFF"]) ? 1 : 0;
     echo $raam2 . "\n";
 
     $deur1 = $_POST["deur1"];
     $deur1Auto = isset($_POST["deur1Auto"]) ? 1 : 0;
-    $deur1ONOFF = isset($_POST["deur1_onOff"]) ? 1 : 0;
+    $deur1ONOFF = isset($_POST["deur1ONOFF"]) ? 1 : 0;
     echo $deur1 . "\n";
 
     $deur2 = $_POST["deur2"];
     $deur2Auto = isset($_POST["deur2Auto"]) ? 1 : 0;
-    $deur2ONOFF = isset($_POST["deur2_onOff"]) ? 1 : 0;
+    $deur2ONOFF = isset($_POST["deur2ONOFF"]) ? 1 : 0;
     echo $deur2 . "\n";
 
     $vat1MIN = $_POST["vat1MIN"];
     $vat1MAX = $_POST["vat1MAX"];
     $vat1Auto = isset($_POST["vat1Auto"]) ? 1 : 0;
-    $vat1_watergevenONOFF = isset($_POST["vat1_watergeven_onOff"]) ? 1 : 0;
+    $vat1_watergevenONOFF = isset($_POST["vat1wateren"]) ? 1 : 0;
     $cyclus1ONOFF = isset($_POST["cyclus1"]) ? 1 : 0;
     $cyclus2ONOFF = isset($_POST["cyclus2"]) ? 1 : 0;
     $cyclus1startONOFF = $_POST["cyclus1Astart"];
     $cyclus2startONOFF = $_POST["cyclus2Astart"];
     $tijd1A = $_POST["tijd1A"];
-    $vat1tijd = $_POST["vat1_tijd"];
+    $vat1tijd = $_POST["tijdvat1"];
     echo $vat1MIN . "\n";
     echo $vat1MAX . "\n";
     echo $cyclus1start . "\n";
@@ -71,26 +71,26 @@ try {
     $vat2MIN = $_POST["vat2MIN"];
     $vat2MAX = $_POST["vat2MAX"];
     $vat2Auto = isset($_POST["vat2Auto"]) ? 1 : 0;
-    $vat2_watergevenONOFF = isset($_POST["vat2_watergeven_onOff"]) ? 1 : 0;
+    $vat2_watergevenONOFF = isset($_POST["vat2wateren"]) ? 1 : 0;
     $cyclus12ONOFF = isset($_POST["cyclus12"]) ? 1 : 0;
     $cyclus22ONOFF = isset($_POST["cyclus22"]) ? 1 : 0;
     $cyclus12startONOFF = $_POST["cyclus12Astart"];
     $cyclus22startONOFF = $_POST["cyclus22Astart"];
     $tijd2A = $_POST["tijd2A"];
-    $vat2tijd = $_POST["vat2_tijd"];
+    $vat2tijd = $_POST["tijdvat2"];
     echo $vat2MIN . "\n";
     echo $vat2MAX . "\n";
 
     $vat3MIN = $_POST["vat3MIN"];
     $vat3MAX = $_POST["vat3MAX"];
     $vat3Auto = isset($_POST["vat3Auto"]) ? 1 : 0;
-    $vat3_watergevenONOFF = isset($_POST["vat3_watergeven_onOff"]) ? 1 : 0;
+    $vat3_watergevenONOFF = isset($_POST["vat3wateren"]) ? 1 : 0;
     $cyclus13ONOFF = isset($_POST["cyclus13"]) ? 1 : 0;
     $cyclus23ONOFF = isset($_POST["cyclus23"]) ? 1 : 0;
     $cyclus13startONOFF = $_POST["cyclus13Astart"];
     $cyclus23startONOFF = $_POST["cyclus23Astart"];
     $tijd3A = $_POST["tijd3A"];
-    $vat3tijd = $_POST["vat3_tijd"];
+    $vat3tijd = $_POST["tijdvat3"];
     echo $vat3MIN . "\n";
     echo $vat3MAX . "\n";
 
@@ -111,7 +111,7 @@ try {
     $licht = $_POST["licht"];
     //$lichtKleur = $_POST["lichtKleur"];
     $lichtAuto = isset($_POST["lichtAuto"]) ? 1 : 0;
-    $lichtONOFF = isset($_POST["licht_onOff"]) ? 1 : 0;
+    $lichtONOFF = isset($_POST["lichtONOFF"]) ? 1 : 0;
     echo $licht . "\n";
     $regen = $_POST["regen"];
 
