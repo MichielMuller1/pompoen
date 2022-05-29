@@ -158,6 +158,18 @@ try {
         $sql35 = "UPDATE `automatisch` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `cyclus1A` = '" . $cyclus1 . "' WHERE id = '1'";
         $conn->exec($sql35);
 
+        $vat1Auto = isset($_POST["vat1Auto"]) ? 1 : 0;
+        $sql36 = "UPDATE `automatisch` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `vat1A` = '" . $vat1Auto . "' WHERE id = '1'";
+        $conn->exec($sql36);
+
+        $vat2Auto = isset($_POST["vat2Auto"]) ? 1 : 0;
+        $sql37 = "UPDATE `automatisch` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `vat2A` = '" . $vat2Auto . "' WHERE id = '1'";
+        $conn->exec($sql37);
+
+        $vat3Auto = isset($_POST["vat3Auto"]) ? 1 : 0;
+        $sql38 = "UPDATE `automatisch` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `vat3A` = '" . $vat3Auto . "' WHERE id = '1'";
+        $conn->exec($sql38);
+
 
 
     }
@@ -171,7 +183,7 @@ try {
 
 
 
-    $vat1Auto = isset($_POST["vat1Auto"]) ? 1 : 0;
+    
     $vat1_watergevenONOFF = isset($_POST["vat1wateren"]) ? 1 : 0;
 
 
@@ -180,7 +192,7 @@ try {
     //$cyclus2startONOFF = $_POST["cyclus2Astart"];
 
 
-    $vat2Auto = isset($_POST["vat2Auto"]) ? 1 : 0;
+
     $vat2_watergevenONOFF = isset($_POST["vat2wateren"]) ? 1 : 0;
     $cyclus12ONOFF = isset($_POST["cyclus12"]) ? 1 : 0;
     $cyclus22ONOFF = isset($_POST["cyclus22"]) ? 1 : 0;
@@ -189,7 +201,7 @@ try {
 
 
 
-    $vat3Auto = isset($_POST["vat3Auto"]) ? 1 : 0;
+
     $vat3_watergevenONOFF = isset($_POST["vat3wateren"]) ? 1 : 0;
     $cyclus13ONOFF = isset($_POST["cyclus13"]) ? 1 : 0;
     $cyclus23ONOFF = isset($_POST["cyclus23"]) ? 1 : 0;
@@ -203,7 +215,7 @@ try {
     //$lichtKleur = $_POST["lichtKleur"];
     $lichtAuto = isset($_POST["lichtAuto"]) ? 1 : 0;
     $lichtONOFF = isset($_POST["lichtONOFF"]) ? 1 : 0;
-    echo $licht . "\n";
+
     
 
 
