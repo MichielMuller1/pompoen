@@ -171,22 +171,22 @@ try {
 
     if (isset($_POST["tijd2A"])){
         $tijd2A = $_POST["tijd2A"];
-        $sql31 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `tijd2A` = '" .$tijd2A. "' WHERE id = '1'";
+        $sql31 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `tijd2A` = '" .$tijd2A. "' WHERE id = '1'";
         $conn->exec($sql31);
     }
     if (isset($_POST["tijdvat2"])){
         $vat2tijd = $_POST["tijdvat1"];
-        $sql32 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `tijdvat2` = '" .$vat2tijd. "' WHERE id = '1'";
+        $sql32 = "UPDATE `controls` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `tijdvat2` = '" .$vat2tijd. "' WHERE id = '1'";
         $conn->exec($sql32);
     }
     if (isset($_POST["tijd3A"])){
         $tijd3A = $_POST["tijd3A"];
-        $sql32 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `tijd3A` = '" .$tijd3A. "' WHERE id = '1'";
+        $sql32 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `tijd3A` = '" .$tijd3A. "' WHERE id = '1'";
         $conn->exec($sql32);
     }
     if (isset($_POST["tijdvat3"])){
         $vat3tijd = $_POST["tijdvat3"];
-        $sql33 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `tijdvat3` = '" .$vat3tijd. "' WHERE id = '1'";
+        $sql33 = "UPDATE `controls` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `tijdvat3` = '" .$vat3tijd. "' WHERE id = '1'";
         $conn->exec($sql33);
     }
 
