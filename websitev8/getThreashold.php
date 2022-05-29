@@ -137,6 +137,8 @@ try {
         $_SESSION['apiTemp'] = $result[0][23];
         $_SESSION['apiMinuten'] = $result[0][24];
         $_SESSION['kleur'] = sprintf("#%02x%02x%02x", $_SESSION['rood'],  $_SESSION['groen'], $_SESSION['blauw']);
+		$_SESSION['ledstripSTA'] = $result[0][25];
+		$_SESSION['ledstripSTO'] = $result[0][26];
 
     }else{
         $_SESSION['ventilator1'] = 0;
@@ -163,6 +165,8 @@ try {
         $_SESSION['blauw'] = 0;
         $_SESSION['apiTemp'] = 0;
         $_SESSION['apiMinuten'] = 0;
+	    $_SESSION['ledstripSTA'] = 00:00:00;
+		$_SESSION['ledstripSTO'] = 00:00:00;
 
     }
 

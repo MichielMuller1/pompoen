@@ -107,6 +107,10 @@ list($r, $g, $b) = sscanf($kleur, "#%02x%02x%02x");
 $apiTemp = $_POST["api"];
 $minuten = $_POST["minuten"];
 
+$ledstripSTA = $_POST["ledstripSTA"];
+$ledstripSTO = $_POST["ledstripSTO"];
+
+
 
 //$sName = "192.168.56.5";
 //$uName = "root";
@@ -132,10 +136,12 @@ try {
     //insert all the values into the database
 	
 	
-	$sql = "UPDATE `threshold` SET `tijd` = '".date("Y-m-d H:i:s",$t)."', `tempventilator1T` = '" .$ventilator1. "',  `tempventilator2T` = '" .$ventilator2. "', `tempraam1T` = '" .$raam1. "' WHERE ID = '1'"
-	
-    //$sql = "UPDATE `threshold` SET (`ID`, `tijd`, `tempventilator1T`, `tempventilator2T`, `tempraam1T`, `tempraam2T`, `tempdeur1T`, `tempdeur2T`, `minvat1T`, `maxvat1T`, `minvat2T`, `maxvat2T`, `minvat3T`, `maxvat3T`, `grondvochtigheid1laag1T`,`grondvochtigheid1laag2T`, `grondvochtigheid2laag12T`,`grondvochtigheid2laag22T`, `lichtT`, `regen`,`rood`,`groen`,`blauw`,`apiTemperatuur`,`apiMinuten`, `ledstripstart`,`ledstripstop`) VALUES 
-	//(1,'$tijd',$ventilator1, $ventilator2,$raam1,$raam2,$deur1,$deur2,$vat1MIN,$vat1MAX,$vat2MIN,$vat2MAX,$vat3MIN,$vat3MAX,$grondvochtigheid1Laag1,$grondvochtigheid1Laag2,$grondvochtigheid2Laag1,$grondvochtigheid2Laag2,$licht,$regen,$r,$g,$b,$apiTemp,$minuten, 00:00:00, 00:00:00)";
+	$sql = "UPDATE `threshold` SET `tijd` = '".date("Y-m-d H:i:s",$t)."', `tempventilator1T` = '" .$ventilator1. "',  `tempventilator2T` = '" .$ventilator2. "', `tempraam1T` = '" .$raam1. "' ,
+	 `tempraam2T` = '" .$raam2."' , `tempdeur1T` = '" .$deur1."' , `tempdeur2T` = '" .$deur2."' , `minvat1T` = '" .$vat1MIN."' , 
+	  `maxvat1T` = '" .$vat1MAX."' , `minvat2T` = '" .$vat2MIM."' , `maxvat2T` = '" .$vat2MAX."' , `minvat3T` = '" .$vat3MIN."' , 
+	  `maxvat3T` = '" .$vat3MAX."' , `grondvochtigheid1laag1T` = '" .$grondvochtigheid1Laag1."' , `grondvochtigheid1laag2T` = '" .$grondvochtigheid1Laag2."' , `grondvochtigheid2laag12T` = '" .$grondvochtigheid2Laag1."' , 
+	  `grondvochtigheid2laag22T` = '" .$grondvochtigheid2Laag2."' , `lichtT` = '" .$licht."' , `regen` = '" .$regen."' , `rood` = '" .$r."' , `groen` = '" .$g."' ,`blauw` = '" .$b."' ,
+	  `apiTemperatuur` = '" .$apiTemp."' , `apiMinuten`` = '" .$minuten."' , `ledstripstart` = '" .$ledstripSTA."' , `ledstipstop` = '" .$ledstripSTO."' WHERE ID = '1'"
     $conn->exec($sql);
 
     $sql2 = "INSERT INTO `automatisch` (`ID`, `tijd`, `ventilator1A`, `ventilator2A`, `raam1A`, `raam2A`, `deur1A`, `deur2A`, `lichtA`, `vat1A`, `vat2A`, `vat3A`, `tijdvat1A`, `tijdvat2A`, `tijdvat3A`, `cyclus1A` , `cyclus1Astart`, `cyclus2A`, `cyclus2Astart`, `cyclus12A` , `cyclus12Astart`, `cyclus22A`, `cyclus22Astart`, `cyclus13A` , `cyclus13Astart`, `cyclus23A`, `cyclus23Astart`) VALUES 
