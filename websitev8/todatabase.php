@@ -17,22 +17,19 @@ try {
     echo $t;
 
 
-    if (isset($_POST["ventilator1"])) {
+    if (isset($_POST["pompoen"])) {
         $ventilator1 = $_POST["ventilator1"];
         $sql0 = "UPDATE `threshold` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `tempventilator1T` = '" . $ventilator1 . "' WHERE id = '1'";
         $conn->exec($sql0);
-    }
-    if (isset($_POST["ventilator1Auto"])) {
+
         $ventilator1Auto = $_POST["ventilator1Auto"] ? 1 : 0;
         $sql1 = "UPDATE `automatisch` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `ventilator1A` = '" . $ventilator1Auto . "' WHERE id = '1'";
         $conn->exec($sql1);
-    }
-    if (isset($_POST["ventilator1_onOff"])) {
+
         $ventilator1ONOFF = $_POST["ventilator1_onOff"] ? 1 : 0;
         $sql2 = "UPDATE `controls` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `ventilator1` = '" . $ventilator1ONOFF . "' WHERE id = '1'";
         $conn->exec($sql2);
-    }
-    if (isset($_POST["ventilator2"])) {
+
         $ventilator2 = $_POST["ventilator2"];
         $sql3 = "UPDATE `threshold` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `tempventilator2T` = '" . $ventilator2 . "' WHERE id = '1'";
         $conn->exec($sql3);
