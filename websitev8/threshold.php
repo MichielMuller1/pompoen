@@ -451,11 +451,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         raam2ONOFFc.checked = <?= $_SESSION['raam2ONOFF'] ?>;
         deur1ONOFFc.checked = <?= $_SESSION['deur1ONOFF'] ?>;
         deur2ONOFFc.checked = <?= $_SESSION['deur2ONOFF'] ?>;
-        vat1tijdc.checked = <?= $_SESSION['tijdvat1'] ?>;
+        vat1tijdc.checked = <?= $_SESSION['tijdvat1c'] ?>;
         vat1waterenc.checked = <?= $_SESSION['vat1wateren'] ?>;
-        vat2tijdc.checked = <?= $_SESSION['tijdvat2'] ?>;
+        vat2tijdc.checked = <?= $_SESSION['tijdvat2c'] ?>;
         vat2waterenc.checked = <?= $_SESSION['vat2wateren'] ?>;
-        vat3tijdc.checked = <?= $_SESSION['tijdvat3'] ?>;
+        vat3tijdc.checked = <?= $_SESSION['tijdvat3c'] ?>;
         vat3waterenc.checked = <?= $_SESSION['vat3wateren'] ?>;
         lichtONOFFc.checked = <?= $_SESSION['lichtONOFF'] ?>;
 

@@ -35,11 +35,11 @@ try {
         $_SESSION['raam2ONOFF'] = $result3[0][5];
         $_SESSION['deur1ONOFF'] = $result3[0][6];
         $_SESSION['deur2ONOFF'] = $result3[0][7];
-        $_SESSION['tijdvat1'] = $result3[0][8];
+        $_SESSION['tijdvat1c'] = $result3[0][8];
         $_SESSION['vat1wateren'] = $result3[0][9];
-        $_SESSION['tijdvat2'] = $result3[0][10];
+        $_SESSION['tijdvat2c'] = $result3[0][10];
         $_SESSION['vat2wateren'] = $result3[0][11];
-        $_SESSION['tijdvat3'] = $result3[0][12];
+        $_SESSION['tijdvat3c'] = $result3[0][12];
         $_SESSION['vat3wateren'] = $result3[0][13];
         $_SESSION['lichtONOFF'] = $result3[0][14];
     }else{
@@ -49,11 +49,11 @@ try {
         $_SESSION['raam2ONOFF'] = 0;
         $_SESSION['deur1ONOFF'] = 0;
         $_SESSION['deur2ONOFF'] = 0;
-        $_SESSION['tijdvat1'] = 0;
+        $_SESSION['tijdvat1c'] = 0;
         $_SESSION['vat1wateren'] = 0;
-        $_SESSION['tijdvat2'] = 0;
+        $_SESSION['tijdvat2c'] = 0;
         $_SESSION['vat2wateren'] = 0;
-        $_SESSION['tijdvat3'] = 0;
+        $_SESSION['tijdvat3c'] = 0;
         $_SESSION['vat3wateren'] = 0;
         $_SESSION['lichtONOFF'] = 0;
     }
@@ -96,9 +96,9 @@ try {
         $_SESSION['vat1Auto'] = 0;
         $_SESSION['vat2Auto'] = 0;
         $_SESSION['vat3Auto'] = 0;
-		$_SESSION['tijdvat1'] = 0;
-        $_SESSION['tijdvat2'] = 0;
-        $_SESSION['tijdvat3'] = 0;
+		$_SESSION['tijdvat1A'] = 0;
+        $_SESSION['tijdvat2A'] = 0;
+        $_SESSION['tijdvat3A'] = 0;
 		$_SESSION['cyclus1A'] = 0;
         $_SESSION['cyclus1Astart'] = 0;
 		$_SESSION['cyclus2A'] = 0;
