@@ -286,7 +286,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 					<label for="ledstripSTART"> starttijd
 						<input type="time" id="ledstripSTART" name="ledstripSTART" value="00:00:00" step="2">
 					</label>
-					<label for="ledstripSTOP"> starttijd
+					<label for="ledstripSTOP"> stoptijd
 						<input type="time" id="ledstripSTOP" name="ledstripSTOP" value="00:00:00" step="2">
 					</label>
                 </div>
