@@ -192,15 +192,17 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                                 <input type="number" id="tijd1A" name="tijd1A" value="0">
                             </label>
                             <br><br>
-                            <label class="switch"> cyclus 1
+                            cyclus 1
+                            <label class="switch"> 
                                 <input type="checkbox" id="cyclus1" name="cyclus1" value="0">
                             </label>
-                            <br>
+                            
                             <label for="cyclus1Astart"> starttijd
                                 <input type="time" id="cyclus1Astart" name="cyclus1Astart" value="00:00:00" step="2">
                             </label>
                             <br><br>
-                            <label class="switch"> cyclus 2
+                            cyclus 2
+                            <label class="switch"> 
                                 <input type="checkbox" id="cyclus2" name="cyclus2" value="0">
                             </label>
                             <br>
