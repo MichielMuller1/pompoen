@@ -15,7 +15,12 @@ try {
     date_default_timezone_set("Europe/Brussels");
     $t = date('Y-m-d H:i:s');
     echo $t;
-
+    
+    if(isset($_POST['ventilator1'])){
+        $ventilator1 = $_POST["ventilator1"];
+        $sql0 = "UPDATE `automatisch` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `ventilator1A` = '" . $ventilator1Auto . "' WHERE id = '1'" ;
+        $conn->exec($sql0);
+    }
     $ventilator1 = $_POST["ventilator1"];
     echo $ventilator1 . "\n";
     $ventilator1Automatic = isset($_POST['ventilator1Auto']) ? 1 : 0;
