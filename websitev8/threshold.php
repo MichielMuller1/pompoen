@@ -449,8 +449,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             // var lichtKleurInput = document.getElementById("lichtKleur");
             //lichtKleurInput.value = <?= $_SESSION['lichtkleur'] ?>;
             //kleurT.value = <?= $_SESSION['kleur'] ?>;
-            cyclus13startONOFFA.checked = <?= $_SESSION['cyclus13Astart'] ?>;
-            cyclus23startONOFFA.checked = <?= $_SESSION['cyclus23Astart'] ?>;
+            cyclus13startONOFFA.value = <?= $_SESSION['cyclus13Astart'] ?>;
+            cyclus23startONOFFA.value = <?= $_SESSION['cyclus23Astart'] ?>;
             cyclus1startONOFFA.value = <?= $_SESSION['cyclus1Astart'] ?>;
             cyclus2startONOFFA.value = <?= $_SESSION['cyclus2Astart'] ?>;
             cyclus12startONOFFA.value = <?= $_SESSION['cyclus12Astart'] ?>;
