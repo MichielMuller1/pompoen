@@ -124,9 +124,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                 <br><br>
                 <div class="row">
                     <div class="form-group col-6">
+                        <!--
                         <label for="regenT">regen</label>
                         <input type="number" name="regenT" id="regenT">
                         <br>
+-->
                         <label for="grondvochtigheid1Laag1">grondvochtigheid 1 laag 1</label>
                         <input type="number" name="grondvochtigheid1Laag1" id="grondvochtigheid1Laag1">
 
@@ -161,12 +163,13 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         <label for="kleur">Lichtkleur</label>
                         <input type="color" id="kleur" name="kleur" onchange="clickColor(0, -1, -1, 5)" style="width: 50%">
                         <br>
+                        <!--
                         <label for="api">weersvoorspelling temperatuur</label>
                         <input type="api" name="api" id="api">
                         <br>
                         <label for="minuten">minuten vooraf ramen open zetten</label>
                         <input type="minuten" name="minuten" id="minuten">
-
+-->
                     </div>
 
                 </div>
@@ -331,9 +334,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             var grond1laag2InputT = document.getElementById("grondvochtigheid1Laag2");
             var grond2laag1InputT = document.getElementById("grondvochtigheid2Laag1");
             var grond2laag2InputT = document.getElementById("grondvochtigheid2Laag2");
-            var regenInputT = document.getElementById("regenT");
-            var apiTempInputT = document.getElementById("api");
-            var apiMinutesInputT = document.getElementById("minuten");
+            //var regenInputT = document.getElementById("regenT");
+            //var apiTempInputT = document.getElementById("api");
+            //var apiMinutesInputT = document.getElementById("minuten");
             //var ledstripstartONT = document.getElementById['ledstripSTO'];
             //var ledstripstartOFFT = document.getElementById['ledstripSTA'];
 
@@ -354,9 +357,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             grond1laag2InputT.value = <?= $_SESSION['grond1laag2'] ?>;
             grond2laag1InputT.value = <?= $_SESSION['grond2laag1'] ?>;
             grond2laag2InputT.value = <?= $_SESSION['grond2laag2'] ?>;
-            regenInputT.value = <?= $_SESSION['regen'] ?>;
-            apiTempInputT.value = <?= $_SESSION['apiTemp'] ?>;
-            apiMinutesInputT.value = <?= $_SESSION['apiMinuten'] ?>;
+            //regenInputT.value = <?= $_SESSION['regen'] ?>;
+            //apiTempInputT.value = <?= $_SESSION['apiTemp'] ?>;
+            //apiMinutesInputT.value = <?= $_SESSION['apiMinuten'] ?>;
             //ledstripstartONT.value = document.getElementById("ledstripSTART");
             //ledstripstartOFFT.value = document.getElementById("ledstripSTOP");
 

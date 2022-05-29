@@ -158,15 +158,15 @@ try {
         $sql35 = "UPDATE `automatisch` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `cyclus1A` = '" . $cyclus1 . "' WHERE id = '1'";
         $conn->exec($sql35);
 
-        $regenT = $_POST["regenT"];
-        $sql36 = "UPDATE `threshold` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `regen` = '" . $regenT . "' WHERE id = '1'";
-        $conn->exec($sql36);
+
 
     }
 
 
 
-
+    //$regenT = $_POST["regenT"];
+    //$sql36 = "UPDATE `threshold` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `regen` = '" . $regenT . "' WHERE id = '1'";
+    //$conn->exec($sql36);
 
 
 
@@ -214,8 +214,8 @@ try {
     list($r, $g, $b) = sscanf($kleur, "#%02x%02x%02x");
 
 
-    $apiTemp = $_POST["api"];
-    $minuten = $_POST["minuten"];
+    //$apiTemp = $_POST["api"];
+    //$minuten = $_POST["minuten"];
 
     //$ledstripSTA = $_POST["ledstripSTA"];
     //$ledstripSTO = $_POST["ledstripSTO"];
