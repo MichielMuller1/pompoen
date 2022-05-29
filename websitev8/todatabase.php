@@ -26,7 +26,7 @@ try {
     
     if (isset($_POST["ventilator1Auto"])){
         $ventilator1Auto = $_POST["ventilator1Auto"] ? 1 : 0;;
-        $sql1 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `ventilator1A` = '" .$ventilator1Auto. "' WHERE id = '1'";
+        $sql1 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `ventilator1A` = '" .$ventilator1Auto. "' WHERE id = '1'";
         $conn->exec($sql1);
     } 
 
