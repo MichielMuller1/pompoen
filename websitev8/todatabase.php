@@ -133,19 +133,6 @@ try {
         $sql19 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `maxvat1T` = '" .$vat1MAX. "' WHERE id = '1'";
         $conn->exec($sql19);
     }
-
-
-
-    $vat1Auto = isset($_POST["vat1Auto"]) ? 1 : 0;
-    $vat1_watergevenONOFF = isset($_POST["vat1wateren"]) ? 1 : 0;
-    $cyclus1ONOFF = isset($_POST["cyclus1"]) ? 1 : 0;
-    $cyclus2ONOFF = isset($_POST["cyclus2"]) ? 1 : 0;
-    //$cyclus1startONOFF = $_POST["cyclus1Astart"];
-    //$cyclus2startONOFF = $_POST["cyclus2Astart"];
-
-
-
-
     if (isset($_POST["vat2MIN"])){
         $vat2MIN = $_POST["vat2MIN"];
         $sql20 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `minvat2T` = '" .$vat2MIN. "' WHERE id = '1'";
@@ -154,46 +141,18 @@ try {
     if (isset($_POST["vat2MAX"])){
         $vat2MAX = $_POST["vat2MAX"];
         $sql21 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `maxvat2T` = '" .$vat2MAX. "' WHERE id = '1'";
-        $conn->exec($sql22);
+        $conn->exec($sql21);
     }
-
-
-
-
-    $vat2Auto = isset($_POST["vat2Auto"]) ? 1 : 0;
-    $vat2_watergevenONOFF = isset($_POST["vat2wateren"]) ? 1 : 0;
-    $cyclus12ONOFF = isset($_POST["cyclus12"]) ? 1 : 0;
-    $cyclus22ONOFF = isset($_POST["cyclus22"]) ? 1 : 0;
-    //$cyclus12startONOFF = $_POST["cyclus12Astart"];
-    //$cyclus22startONOFF = $_POST["cyclus22Astart"];
-    $tijd2A = $_POST["tijd2A"];
-    $vat2tijd = $_POST["tijdvat2"];
-
-
     if (isset($_POST["vat3MIN"])){
         $vat3MIN = $_POST["vat3MIN"];
         $sql23 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `minvat3T` = '" .$vat3MIN. "' WHERE id = '1'";
         $conn->exec($sql23);
     }
-    if (isset($_POST["vat2MAX"])){
-        $vat2MAX = $_POST["vat2MAX"];
+    if (isset($_POST["vat3MAX"])){
+        $vat3MAX = $_POST["vat3MAX"];
         $sql24 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `maxvat3T` = '" .$vat3MAX. "' WHERE id = '1'";
         $conn->exec($sql24);
     }
-
-
-
-    $vat3Auto = isset($_POST["vat3Auto"]) ? 1 : 0;
-    $vat3_watergevenONOFF = isset($_POST["vat3wateren"]) ? 1 : 0;
-    $cyclus13ONOFF = isset($_POST["cyclus13"]) ? 1 : 0;
-    $cyclus23ONOFF = isset($_POST["cyclus23"]) ? 1 : 0;
-    //$cyclus13startONOFF = $_POST["cyclus13Astart"];
-    //$cyclus23startONOFF = $_POST["cyclus23Astart"];
-    $tijd3A = $_POST["tijd3A"];
-    $vat3tijd = $_POST["tijdvat3"];
-
-
-
     if (isset($_POST["grondvochtigheid1Laag1"])){
         $grondvochtigheid1Laag1 = $_POST["grondvochtigheid1Laag1"];
         $sql25 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid1laag1T` = '" .$grondvochtigheid1Laag1. "' WHERE id = '1'";
@@ -214,6 +173,38 @@ try {
         $sql28 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid2laag22T` = '" .$grondvochtigheid2Laag2. "' WHERE id = '1'";
         $conn->exec($sql28);
     }
+
+
+
+
+
+    $vat1Auto = isset($_POST["vat1Auto"]) ? 1 : 0;
+    $vat1_watergevenONOFF = isset($_POST["vat1wateren"]) ? 1 : 0;
+    $cyclus1ONOFF = isset($_POST["cyclus1"]) ? 1 : 0;
+    $cyclus2ONOFF = isset($_POST["cyclus2"]) ? 1 : 0;
+    //$cyclus1startONOFF = $_POST["cyclus1Astart"];
+    //$cyclus2startONOFF = $_POST["cyclus2Astart"];
+
+
+    $vat2Auto = isset($_POST["vat2Auto"]) ? 1 : 0;
+    $vat2_watergevenONOFF = isset($_POST["vat2wateren"]) ? 1 : 0;
+    $cyclus12ONOFF = isset($_POST["cyclus12"]) ? 1 : 0;
+    $cyclus22ONOFF = isset($_POST["cyclus22"]) ? 1 : 0;
+    //$cyclus12startONOFF = $_POST["cyclus12Astart"];
+    //$cyclus22startONOFF = $_POST["cyclus22Astart"];
+    $tijd2A = $_POST["tijd2A"];
+    $vat2tijd = $_POST["tijdvat2"];
+
+
+
+    $vat3Auto = isset($_POST["vat3Auto"]) ? 1 : 0;
+    $vat3_watergevenONOFF = isset($_POST["vat3wateren"]) ? 1 : 0;
+    $cyclus13ONOFF = isset($_POST["cyclus13"]) ? 1 : 0;
+    $cyclus23ONOFF = isset($_POST["cyclus23"]) ? 1 : 0;
+    //$cyclus13startONOFF = $_POST["cyclus13Astart"];
+    //$cyclus23startONOFF = $_POST["cyclus23Astart"];
+    $tijd3A = $_POST["tijd3A"];
+    $vat3tijd = $_POST["tijdvat3"];
 
 
 
