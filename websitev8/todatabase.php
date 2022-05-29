@@ -16,8 +16,8 @@ try {
     $t = date('Y-m-d H:i:s');
     echo $t;
 
-    if(isset($_POST['ventilator1'])){
-        $ventilator1 = $_POST["ventilator1"];
+    if(isset($_POST['ventilator1Auto'])){
+        $ventilator1Auto = $_POST["ventilator1Auto"];
         $sql0 = "UPDATE `automatisch` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `ventilator1A` = '" . $ventilator1Auto . "' WHERE id = '1'" ;
         $conn->exec($sql0);
     }
