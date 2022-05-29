@@ -334,6 +334,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             var regenInputT = document.getElementById("regen");
             var apiTempInputT = document.getElementById("api");
             var apiMinutesInputT = document.getElementById("minuten");
+            var ledstripstartONT = document.getElementById['ledstripSTO'];
+            var ledstripstartOFFT = document.getElementById['ledstripSTA'];
 
 
             ventilator1InputT.value = <?= $_SESSION['ventilator1'] ?>;
@@ -355,8 +357,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             regenInputT.value = <?= $_SESSION['regen'] ?>;
             apiTempInputT.value = <?= $_SESSION['apiTemp'] ?>;
             apiMinutesInputT.value = <?= $_SESSION['apiMinuten'] ?>;
-            var ledstripstartONT = document.getElementById("ledstripSTART");
-            var ledstripstartOFFT = document.getElementById("ledstripSTOP");
+            ledstripstartONT.value = document.getElementById("ledstripSTART");
+            ledstripstartOFFT.value = document.getElementById("ledstripSTOP");
 
             //controls juistzetten met wat er in de database staat
             var ventilator1ONOFFc = document.getElementById("ventilator1_onOff");
@@ -380,11 +382,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             raam2ONOFFc.checked = <?= $_SESSION['raam2ONOFF'] ?>;
             deur1ONOFFc.checked = <?= $_SESSION['deur1ONOFF'] ?>;
             deur2ONOFFc.checked = <?= $_SESSION['deur2ONOFF'] ?>;
-            vat1tijdc.checked = <?= $_SESSION['tijdvat1c'] ?>;
+            vat1tijdc.value = <?= $_SESSION['tijdvat1c'] ?>;
             vat1waterenc.checked = <?= $_SESSION['vat1wateren'] ?>;
-            vat2tijdc.checked = <?= $_SESSION['tijdvat2c'] ?>;
+            vat2tijdc.value = <?= $_SESSION['tijdvat2c'] ?>;
             vat2waterenc.checked = <?= $_SESSION['vat2wateren'] ?>;
-            vat3tijdc.checked = <?= $_SESSION['tijdvat3c'] ?>;
+            vat3tijdc.value = <?= $_SESSION['tijdvat3c'] ?>;
             vat3waterenc.checked = <?= $_SESSION['vat3wateren'] ?>;
             lichtONOFFc.checked = <?= $_SESSION['lichtONOFF'] ?>;
 
@@ -434,26 +436,25 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
             cyclus23ONOFFA.checked = <?= $_SESSION['cyclus23A'] ?>;
             var cyclus23startONOFFA = document.getElementById("cyclus23Astart");
             var tijdvat1AA = document.getElementById("tijd1AA");
-            tijdvat1AA.checked = <?= $_SESSION['tijdvat1A'] ?>;
+            tijdvat1AA.value = <?= $_SESSION['tijdvat1A'] ?>;
             var tijdvat2AA = document.getElementById("tijd2AA");
-            tijdvat2AA.checked = <?= $_SESSION['tijdvat2A'] ?>;
+            tijdvat2AA.value = <?= $_SESSION['tijdvat2A'] ?>;
             var tijdvat3AA = document.getElementById("tijd3AA");
-            tijdvat3AA.checked = <?= $_SESSION['tijdvat3A'] ?>;
+            tijdvat3AA.value = <?= $_SESSION['tijdvat3A'] ?>;
 
 
 
-            //ledstripstartONT.value = <?= $_SESSION['ledstripSTO'] ?>;
-            //ledstripstartOFFT.value = <?= $_SESSION['ledstripSTA'] ?>;
+
             //var kleurT = document.getElementById("kleur");
             // var lichtKleurInput = document.getElementById("lichtKleur");
             //lichtKleurInput.value = <?= $_SESSION['lichtkleur'] ?>;
             //kleurT.value = <?= $_SESSION['kleur'] ?>;
-            //cyclus13startONOFFA.checked = <?= $_SESSION['cyclus13Astart'] ?>;
-            //cyclus23startONOFFA.checked = <?= $_SESSION['cyclus23Astart'] ?>;
-            //cyclus1startONOFFA.checked = <?= $_SESSION['cyclus1Astart'] ?>;
-            //cyclus2startONOFFA.checked = <?= $_SESSION['cyclus2Astart'] ?>;
-            //cyclus12startONOFFA.checked = <?= $_SESSION['cyclus12Astart'] ?>;
-            //cyclus22startONOFFA.checked = <?= $_SESSION['cyclus22Astart'] ?>;
+            cyclus13startONOFFA.checked = <?= $_SESSION['cyclus13Astart'] ?>;
+            cyclus23startONOFFA.checked = <?= $_SESSION['cyclus23Astart'] ?>;
+            cyclus1startONOFFA.value = <?= $_SESSION['cyclus1Astart'] ?>;
+            cyclus2startONOFFA.value = <?= $_SESSION['cyclus2Astart'] ?>;
+            cyclus12startONOFFA.value = <?= $_SESSION['cyclus12Astart'] ?>;
+            cyclus22startONOFFA.value = <?= $_SESSION['cyclus22Astart'] ?>;
         </script>
     </body>
 
