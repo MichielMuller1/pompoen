@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.0.4deb2
 -- https://www.phpmyadmin.net/
 --
--- Host: 192.168.56.5:3306:3306
--- Gegenereerd op: 05 mei 2022 om 10:59
--- Serverversie: 8.0.28
--- PHP-versie: 8.0.15
+-- Host: localhost:3306
+-- Gegenereerd op: 29 mei 2022 om 13:03
+-- Serverversie: 10.5.15-MariaDB-0+deb11u1
+-- PHP-versie: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `pompoen`
 --
-CREATE DATABASE IF NOT EXISTS `pompoen` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `pompoen`;
 
 -- --------------------------------------------------------
 
@@ -29,9 +27,8 @@ USE `pompoen`;
 -- Tabelstructuur voor tabel `automatisch`
 --
 
-DROP TABLE IF EXISTS `automatisch`;
 CREATE TABLE `automatisch` (
-  `ID` int NOT NULL,
+  `ID` int(11) NOT NULL,
   `tijd` datetime NOT NULL,
   `ventilator1A` tinyint(1) NOT NULL,
   `ventilator2A` tinyint(1) NOT NULL,
@@ -58,24 +55,23 @@ CREATE TABLE `automatisch` (
   `cyclus13Astart` time NOT NULL,
   `cyclus23A` tinyint(1) NOT NULL,
   `cyclus23Astart` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `automatisch`
 --
 
-INSERT INTO `automatisch` (`ID`, `tijd`, `ventilator1A`, `ventilator2A`, `raam1A`, `raam2A`, `deur1A`, `deur2A`, `lichtA`, `vat1A`, `vat2A`, `vat3A`, `tijdvat1A`, `tijdvat2A`, `tijdvat3A`, `cyclus1A` , `cyclus1Astart`, `cyclus2A`, `cyclus2Astart`, `cyclus12A` , `cyclus12Astart`, `cyclus22A`, `cyclus22Astart`, `cyclus13A` , `cyclus13Astart`, `cyclus23A`, `cyclus23Astart`) VALUES
-(1, '2022-04-28 14:12:16', 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "00:00", 0, "00:00", 0, "00:00", 0, "00:00", 0, "00:00", 0, "00:00");
+INSERT INTO `automatisch` (`ID`, `tijd`, `ventilator1A`, `ventilator2A`, `raam1A`, `raam2A`, `deur1A`, `deur2A`, `lichtA`, `vat1A`, `vat2A`, `vat3A`, `tijdvat1A`, `tijdvat2A`, `tijdvat3A`, `cyclus1A`, `cyclus1Astart`, `cyclus2A`, `cyclus2Astart`, `cyclus12A`, `cyclus12Astart`, `cyclus22A`, `cyclus22Astart`, `cyclus13A`, `cyclus13Astart`, `cyclus23A`, `cyclus23Astart`) VALUES
+(1, '2022-04-28 14:12:16', 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '00:00:00', 0, '00:00:00', 0, '00:00:00', 0, '00:00:00', 0, '00:00:00', 0, '00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `control`
+-- Tabelstructuur voor tabel `controls`
 --
 
-DROP TABLE IF EXISTS `control`;
-CREATE TABLE `control` (
-  `ID` int NOT NULL,
+CREATE TABLE `controls` (
+  `ID` int(11) NOT NULL,
   `tijd` datetime NOT NULL,
   `ventilator1` tinyint(1) NOT NULL,
   `ventilator2` tinyint(1) NOT NULL,
@@ -90,13 +86,13 @@ CREATE TABLE `control` (
   `tijdvat3` tinyint(1) NOT NULL,
   `vat3wateren` tinyint(1) NOT NULL,
   `licht` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `control`
+-- Gegevens worden geëxporteerd voor tabel `controls`
 --
 
-INSERT INTO `control` (`ID`, `tijd`, `ventilator1`, `ventilator2`, `raam1`, `raam2`, `deur1`, `deur2`, `tijdvat1`, `vat1wateren`, `tijdvat2`, `vat2wateren`, `tijdvat3`, `vat3wateren`, `licht`) VALUES
+INSERT INTO `controls` (`ID`, `tijd`, `ventilator1`, `ventilator2`, `raam1`, `raam2`, `deur1`, `deur2`, `tijdvat1`, `vat1wateren`, `tijdvat2`, `vat2wateren`, `tijdvat3`, `vat3wateren`, `licht`) VALUES
 (1, '2022-04-28 14:12:16', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
@@ -105,26 +101,20 @@ INSERT INTO `control` (`ID`, `tijd`, `ventilator1`, `ventilator2`, `raam1`, `raa
 -- Tabelstructuur voor tabel `gewicht`
 --
 
-DROP TABLE IF EXISTS `gewicht`;
 CREATE TABLE `gewicht` (
-  `ID` int NOT NULL,
+  `ID` int(11) NOT NULL,
   `tijd` datetime NOT NULL,
-  `gewicht p1` int NOT NULL,
-  `gewicht p2` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `gewichtp1` int(11) NOT NULL,
+  `gewichtp2` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `gewicht`
 --
 
-INSERT INTO `gewicht` (`ID`, `tijd`, `gewicht p1`, `gewicht p2`) VALUES
-(1, '2022-04-28 13:50:59', 5, 17),
-(2, '2022-04-28 14:06:05', 5, 17),
-(3, '2022-04-28 14:07:14', 5, 17),
-(4, '2022-04-28 14:07:34', 8, 16),
-(5, '2022-04-28 14:13:02', 1500, 17),
-(6, '2022-04-28 14:13:09', 1500, 17),
-(7, '2022-04-28 14:16:47', 1, 1);
+INSERT INTO `gewicht` (`ID`, `tijd`, `gewichtp1`, `gewichtp2`) VALUES
+(9, '2022-05-28 10:26:24', 200, 200),
+(10, '2022-05-29 10:52:33', 200, 200);
 
 -- --------------------------------------------------------
 
@@ -132,62 +122,58 @@ INSERT INTO `gewicht` (`ID`, `tijd`, `gewicht p1`, `gewicht p2`) VALUES
 -- Tabelstructuur voor tabel `log`
 --
 
-DROP TABLE IF EXISTS `log`;
 CREATE TABLE `log` (
-  `ID` int NOT NULL,
+  `ID` int(11) NOT NULL,
   `tijd` datetime NOT NULL,
-  `temperatuur` int NOT NULL,
-  `grondvochtigheid` int NOT NULL,
-  `lichtsterkte` int NOT NULL,
-  `co2` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `temperatuur` int(11) NOT NULL,
+  `grondvochtigheid` int(11) NOT NULL,
+  `lichtsterkte` int(11) NOT NULL,
+  `co2` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `pompoen 1`
+-- Tabelstructuur voor tabel `pompoen1`
 --
 
-DROP TABLE IF EXISTS `pompoen 1`;
-CREATE TABLE `pompoen 1` (
-  `ID` int NOT NULL,
+CREATE TABLE `pompoen1` (
+  `ID` int(11) NOT NULL,
   `tijd` datetime NOT NULL,
-  `temperatuur` int NOT NULL,
-  `luchtvochtigheid` int NOT NULL,
-  `grondvochtigheidlaag1` int NOT NULL,
-  `grondvochtigheidlaag2` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `temperatuur` int(11) NOT NULL,
+  `luchtvochtigheid` int(11) NOT NULL,
+  `grondvochtigheidlaag1` int(11) NOT NULL,
+  `grondvochtigheidlaag2` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `pompoen 1`
+-- Gegevens worden geëxporteerd voor tabel `pompoen1`
 --
 
-INSERT INTO `pompoen 1` (`ID`, `tijd`, `temperatuur`, `luchtvochtigheid`, `grondvochtigheidlaag1`, `grondvochtigheidlaag2`) VALUES
-(1, '2022-04-28 11:08:34', 5, 49, 3, 7),
-(2, '2022-04-28 12:20:28', 9, 50, 9, 9);
+INSERT INTO `pompoen1` (`ID`, `tijd`, `temperatuur`, `luchtvochtigheid`, `grondvochtigheidlaag1`, `grondvochtigheidlaag2`) VALUES
+(1, '2022-04-28 11:08:34', 20, 49, 25, 30);
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `pompoen 2`
+-- Tabelstructuur voor tabel `pompoen2`
 --
 
-DROP TABLE IF EXISTS `pompoen 2`;
-CREATE TABLE `pompoen 2` (
-  `ID` int NOT NULL,
+CREATE TABLE `pompoen2` (
+  `ID` int(11) NOT NULL,
   `tijd` datetime NOT NULL,
-  `temperatuur2` int NOT NULL,
-  `luchtvochtigheid2` int NOT NULL,
-  `grondvochtigheidlaag12` int NOT NULL,
-  `grondvochtigheidlaag22` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `temperatuur2` int(11) NOT NULL,
+  `luchtvochtigheid2` int(11) NOT NULL,
+  `grondvochtigheidlaag12` int(11) NOT NULL,
+  `grondvochtigheidlaag22` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `pompoen 2`
+-- Gegevens worden geëxporteerd voor tabel `pompoen2`
 --
 
-INSERT INTO `pompoen 2` (`ID`, `tijd`, `temperatuur2`,`luchtvochtigheid2`, `grondvochtigheidlaag12`, `grondvochtigheidlaag22`) VALUES
-(1, '2022-04-28 11:09:19', 17, 26 , 25, 33);
+INSERT INTO `pompoen2` (`ID`, `tijd`, `temperatuur2`, `luchtvochtigheid2`, `grondvochtigheidlaag12`, `grondvochtigheidlaag22`) VALUES
+(1, '2022-04-28 11:09:19', 30, 26, 25, 33);
 
 -- --------------------------------------------------------
 
@@ -195,25 +181,25 @@ INSERT INTO `pompoen 2` (`ID`, `tijd`, `temperatuur2`,`luchtvochtigheid2`, `gron
 -- Tabelstructuur voor tabel `serre`
 --
 
-DROP TABLE IF EXISTS `serre`;
 CREATE TABLE `serre` (
-  `ID` int NOT NULL,
+  `ID` int(11) NOT NULL,
   `tijd` datetime NOT NULL,
   `deur 1` tinyint(1) NOT NULL,
   `deur 2` tinyint(1) NOT NULL,
   `raam 1` tinyint(1) NOT NULL,
   `raam 2` tinyint(1) NOT NULL,
-  `lichtsterkte` int NOT NULL,
-  `co2` int NOT NULL,
-  `luchtvochtigheid` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `lichtsterkte` int(11) NOT NULL,
+  `co2` int(11) NOT NULL,
+  `luchtvochtigheid` int(11) NOT NULL,
+  `regenstatus` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `serre`
 --
 
-INSERT INTO `serre` (`ID`, `tijd`, `deur 1`, `deur 2`, `raam 1`, `raam 2`, `lichtsterkte`, `co2`, `luchtvochtigheid`) VALUES
-(1, '2022-03-03 00:00:00', 5, 3, 5, 4, 1, 9, 6);
+INSERT INTO `serre` (`ID`, `tijd`, `deur 1`, `deur 2`, `raam 1`, `raam 2`, `lichtsterkte`, `co2`, `luchtvochtigheid`, `regenstatus`) VALUES
+(1, '2022-03-03 00:00:00', 5, 3, 5, 4, 1, 9, 6, 0);
 
 -- --------------------------------------------------------
 
@@ -221,42 +207,42 @@ INSERT INTO `serre` (`ID`, `tijd`, `deur 1`, `deur 2`, `raam 1`, `raam 2`, `lich
 -- Tabelstructuur voor tabel `threshold`
 --
 
-DROP TABLE IF EXISTS `threshold`;
 CREATE TABLE `threshold` (
-  `ID` int NOT NULL,
+  `ID` int(11) NOT NULL,
   `tijd` datetime NOT NULL,
-  `tempventilator1T` int NOT NULL,
-  `tempventilator2T` int NOT NULL,
-  `tempraam1T` int NOT NULL,
-  `tempraam2T` int NOT NULL,
-  `tempdeur1T` int NOT NULL,
-  `tempdeur2T` int NOT NULL,
-  `minvat1T` int NOT NULL,
-  `maxvat1T` int NOT NULL,
-  `minvat2T` int NOT NULL,
-  `maxvat2T` int NOT NULL,
-  `minvat3T` int NOT NULL,
-  `maxvat3T` int NOT NULL,
-  `grondvochtigheid1laag1T` int NOT NULL,
-  `grondvochtigheid1laag2T` int NOT NULL,
-  `grondvochtigheid2laag12T` int NOT NULL,
-  `grondvochtigheid2laag22T` int NOT NULL,
-  `lichtT` int NOT NULL,
-  `lichtkleurT` int NOT NULL,
-  `regen` int NOT NULL,
-  `rood` int NOT NULL,
-  `groen` int NOT NULL,
-  `blauw` int NOT NULL,
-  `apiTemperatuur` int NOT NULL,
-  `apiMinuten` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `tempventilator1T` int(11) NOT NULL,
+  `tempventilator2T` int(11) NOT NULL,
+  `tempraam1T` int(11) NOT NULL,
+  `tempraam2T` int(11) NOT NULL,
+  `tempdeur1T` int(11) NOT NULL,
+  `tempdeur2T` int(11) NOT NULL,
+  `minvat1T` int(11) NOT NULL,
+  `maxvat1T` int(11) NOT NULL,
+  `minvat2T` int(11) NOT NULL,
+  `maxvat2T` int(11) NOT NULL,
+  `minvat3T` int(11) NOT NULL,
+  `maxvat3T` int(11) NOT NULL,
+  `grondvochtigheid1laag1T` int(11) NOT NULL,
+  `grondvochtigheid1laag2T` int(11) NOT NULL,
+  `grondvochtigheid2laag12T` int(11) NOT NULL,
+  `grondvochtigheid2laag22T` int(11) NOT NULL,
+  `lichtT` int(11) NOT NULL,
+  `regen` int(11) NOT NULL,
+  `rood` int(11) NOT NULL,
+  `groen` int(11) NOT NULL,
+  `blauw` int(11) NOT NULL,
+  `apiTemperatuur` int(11) NOT NULL,
+  `apiMinuten` int(11) NOT NULL,
+  `ledstripstart` time NOT NULL,
+  `ledstripstop` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `threshold`
 --
 
-INSERT INTO `threshold` (`ID`, `tijd`, `tempventilator1T`, `tempventilator2T`, `tempraam1T`, `tempraam2T`, `tempdeur1T`, `tempdeur2T`, `minvat1T`, `maxvat1T`, `minvat2T`, `maxvat2T`, `minvat3T`, `maxvat3T`, `grondvochtigheid1laag1T`, `grondvochtigheid1laag2T`, `grondvochtigheid2laag12T`, `grondvochtigheid2laag22T`, `lichtT`, `lichtkleurT`,`regen`,`rood`, `groen`,`blauw`, `apiTemperatuur`, `apiMinuten`) VALUES
-(1, '2022-04-28 14:12:16', 0, 0, 0, 0, 2, 0, 2, 0, 0, 5, 0, 0, 0, 0, 0, 3, 0, 5,0,0,0,0,0,0);
+INSERT INTO `threshold` (`ID`, `tijd`, `tempventilator1T`, `tempventilator2T`, `tempraam1T`, `tempraam2T`, `tempdeur1T`, `tempdeur2T`, `minvat1T`, `maxvat1T`, `minvat2T`, `maxvat2T`, `minvat3T`, `maxvat3T`, `grondvochtigheid1laag1T`, `grondvochtigheid1laag2T`, `grondvochtigheid2laag12T`, `grondvochtigheid2laag22T`, `lichtT`, `regen`, `rood`, `groen`, `blauw`, `apiTemperatuur`, `apiMinuten`, `ledstripstart`, `ledstripstop`) VALUES
+(1, '2022-04-28 14:12:16', 0, 0, 0, 0, 2, 0, 2, 0, 0, 5, 0, 0, 0, 0, 0, 3, 0, 5, 0, 0, 0, 0, 0, '00:00:00', '00:00:00');
 
 -- --------------------------------------------------------
 
@@ -264,21 +250,20 @@ INSERT INTO `threshold` (`ID`, `tijd`, `tempventilator1T`, `tempventilator2T`, `
 -- Tabelstructuur voor tabel `users`
 --
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
-  `id` int NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `password` varchar(1000) COLLATE utf8mb4_general_ci NOT NULL,
-  `full_name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(1000) NOT NULL,
+  `full_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `password`, `full_name`) VALUES
+INSERT INTO `users` (`id`, `username`, `password`, `full_name`) VALUES
 (1, 'hverschueren99@gmail.com', '$2y$10$z8sTIctY/yyIdaVRhgD/m.VVXqEr1h7Rg9mJiBlpzNjccRYmkyLd2', 'Hanne Verschueren'),
-(2, 'BOON' , '$2y$10$z8sTIctY/yyIdaVRhgD/m.VVXqEr1h7Rg9mJiBlpzNjccRYmkyLd2' , 'pieter janssen');
+(2, 'BOON', '$2y$10$z8sTIctY/yyIdaVRhgD/m.VVXqEr1h7Rg9mJiBlpzNjccRYmkyLd2', 'pieter janssen');
 
 -- --------------------------------------------------------
 
@@ -286,22 +271,21 @@ INSERT INTO `users` (`id`, `email`, `password`, `full_name`) VALUES
 -- Tabelstructuur voor tabel `water`
 --
 
-DROP TABLE IF EXISTS `water`;
 CREATE TABLE `water` (
-  `ID` int NOT NULL,
+  `ID` int(11) NOT NULL,
   `tijd` datetime NOT NULL,
-  `waterlevelvat1` smallint NOT NULL,
-  `waterlevelvat2` smallint NOT NULL,
-  `waterlevelvat3` smallint NOT NULL,
+  `waterlevelvat1` smallint(6) NOT NULL,
+  `waterlevelvat2` smallint(6) NOT NULL,
+  `waterlevelvat3` smallint(6) NOT NULL,
   `roerder` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `water`
 --
 
-INSERT INTO `water` (`ID`, `tijd`, `waterlevelvat1`, `waterlevelvat2`, `waterlevelvat3` , `roerder`) VALUES
-(1, '2022-03-03 00:00:00', 0, 0, 0, 0);
+INSERT INTO `water` (`ID`, `tijd`, `waterlevelvat1`, `waterlevelvat2`, `waterlevelvat3`, `roerder`) VALUES
+(1, '2022-05-27 20:44:04', 6289, 5408, 0, 0);
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -314,9 +298,9 @@ ALTER TABLE `automatisch`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexen voor tabel `control`
+-- Indexen voor tabel `controls`
 --
-ALTER TABLE `control`
+ALTER TABLE `controls`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -332,15 +316,15 @@ ALTER TABLE `log`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexen voor tabel `pompoen 1`
+-- Indexen voor tabel `pompoen1`
 --
-ALTER TABLE `pompoen 1`
+ALTER TABLE `pompoen1`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexen voor tabel `pompoen 2`
+-- Indexen voor tabel `pompoen2`
 --
-ALTER TABLE `pompoen 2`
+ALTER TABLE `pompoen2`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -360,7 +344,7 @@ ALTER TABLE `threshold`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD UNIQUE KEY `email` (`username`);
 
 --
 -- Indexen voor tabel `water`
@@ -376,49 +360,49 @@ ALTER TABLE `water`
 -- AUTO_INCREMENT voor een tabel `gewicht`
 --
 ALTER TABLE `gewicht`
-  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT voor een tabel `log`
 --
 ALTER TABLE `log`
-  MODIFY `ID` int NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT voor een tabel `pompoen 1`
+-- AUTO_INCREMENT voor een tabel `pompoen1`
 --
-ALTER TABLE `pompoen 1`
-  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `pompoen1`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT voor een tabel `pompoen 2`
+-- AUTO_INCREMENT voor een tabel `pompoen2`
 --
-ALTER TABLE `pompoen 2`
-  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `pompoen2`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT voor een tabel `serre`
 --
 ALTER TABLE `serre`
-  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT voor een tabel `threshold`
 --
 ALTER TABLE `threshold`
-  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT voor een tabel `water`
 --
 ALTER TABLE `water`
-  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
