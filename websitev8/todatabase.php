@@ -36,17 +36,17 @@ try {
    
 
     if (isset($_POST["ventilator2"])){
-    $ventilator1 = $_POST["ventilator2"];
+        $ventilator2 = $_POST["ventilator2"];
         $sql3 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `tempventilator2T` = '" .$ventilator2. "' WHERE id = '1'";
         $conn->exec($sql3);
     } 
     if (isset($_POST["ventilator2Auto"])){
-        $ventilator1Auto = $_POST["ventilator2Auto"] ? 1 : 0;
+        $ventilator2Auto = $_POST["ventilator2Auto"] ? 1 : 0;
         $sql4 = "UPDATE `automatisch` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `ventilator2A` = '" .$ventilator2Auto. "' WHERE id = '1'";
         $conn->exec($sql4);
     } 
     if (isset($_POST["ventilator2ONOFF"])){
-        $ventilator1ONOFF = $_POST["ventilator2ONOFF"] ? 1 : 0;
+        $ventilator2ONOFF = $_POST["ventilator2ONOFF"] ? 1 : 0;
         $sql5 = "UPDATE `controls` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `ventilator2` = '" .$ventilator2ONOFF. "' WHERE id = '1'";
         $conn->exec($sql5);
     }
