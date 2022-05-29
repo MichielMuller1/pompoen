@@ -233,13 +233,13 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 						<input type="checkbox" id="cyclus13" name="cyclus13" value="0">
 					</label>
 					<label for="cyclus13Astart"> starttijd
-						<input type="time" id="cyclus13Astart" name="cyclus13Astart" value="0">
+						<input type="time" id="cyclus13Astart" name="cyclus13Astart" value="0" step="2">
 					</label>
 					<label class="switch"> cyclus 2
 						<input type="checkbox" id="cyclus23" name="cyclus23" value="0">
 					</label>
 					<label for="cyclus23Astart"> starttijd
-						<input type="time" id="cyclus23Astart" name="cyclus23Astart" value="0">
+						<input type="time" id="cyclus23Astart" name="cyclus23Astart" value="0" step="2">
 					</label>
                     <br><br><br>				
 					
