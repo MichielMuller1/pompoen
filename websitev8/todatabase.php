@@ -160,7 +160,7 @@ try {
     }
     if (isset($_POST["grondvochtigheid1Laag2"])){
         $grondvochtigheid1Laag2 = $_POST["grondvochtigheid1Laag2"];
-        $sql26 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid1laag2T	` = '" .$grondvochtigheid1Laag2. "' WHERE id = '1'";
+        $sql26 = "UPDATE `threshold` SET `tijd` = '" .date("Y-m-d H:i:s", $t). "', `grondvochtigheid1laag2T` = '" .$grondvochtigheid1Laag2. "' WHERE id = '1'";
         $conn->exec($sql26);
     }
     if (isset($_POST["grondvochtigheid2Laag1"])){
