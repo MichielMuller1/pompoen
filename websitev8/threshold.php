@@ -415,12 +415,12 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 
 
 
-            var tijdvat1AA = document.getElementById("tijd1A");
-            tijdvat1AA.value = <?= $_SESSION['tijdvat1A'] ?>;
-            var tijdvat2AA = document.getElementById("tijd2A");
-            tijdvat2AA.value = <?= $_SESSION['tijdvat2A'] ?>;
-            var tijdvat3AA = document.getElementById("tijd3A");
-            tijdvat3AA.value = <?= $_SESSION['tijdvat3A'] ?>;
+            var tijdvat1AutoA = document.getElementById("tijd1A");
+            tijdvat1AutoA.value = <?= $_SESSION['tijdvat1A'] ?>;
+            var tijdvat2AutoA = document.getElementById("tijd2A");
+            tijdvat2AutoA.value = <?= $_SESSION['tijdvat2A'] ?>;
+            var tijdvat3AutoA = document.getElementById("tijd3A");
+            tijdvat3AutoA.value = <?= $_SESSION['tijdvat3A'] ?>;
 
 
             var cyclus1ONOFFA = document.getElementById("cyclus1");
