@@ -16,15 +16,20 @@ try {
     $t = date('Y-m-d H:i:s');
     echo $t;
 
-    if(isset($_POST['ventilator1Auto'])){
-        $ventilator1Auto = $_POST["ventilator1Auto"];
-        $sql0 = "UPDATE `automatisch` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `ventilator1A` = '" . $ventilator1Auto . "' WHERE id = '1'" ;
-        $conn->exec($sql0);
-    }
+
     $ventilator1 = $_POST["ventilator1"];
     echo $ventilator1 . "\n";
     $ventilator1Auto = isset($_POST['ventilator1Auto']) ? 1 : 0;
     echo $ventilator1Auto . "\n";
+
+    if(isset($_POST['ventilator1Auto'])){
+        $ventilator1Auto = $_POST["ventilator1Auto"] ? 1 : 0;
+        $sql0 = "UPDATE `automatisch` SET `tijd` = '" . date("Y-m-d H:i:s", $t) . "', `ventilator1A` = '" . $ventilator1Auto . "' WHERE id = '1'" ;
+        $conn->exec($sql0);
+    }
+
+
+
     $ventilator1ONOFF = isset($_POST["ventilator1_onOff"]) ? 1 : 0;
     echo $ventilator1ONOFF . "\n";
 
