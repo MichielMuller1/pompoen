@@ -195,6 +195,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <label class="switch"> cyclus 1
                                 <input type="checkbox" id="cyclus1" name="cyclus1" value="0">
                             </label>
+                            <br>
                             <label for="cyclus1Astart"> starttijd
                                 <input type="time" id="cyclus1Astart" name="cyclus1Astart" value="00:00:00" step="2">
                             </label>
@@ -202,6 +203,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <label class="switch"> cyclus 2
                                 <input type="checkbox" id="cyclus2" name="cyclus2" value="0">
                             </label>
+                            <br>
                             <label for="cyclus2Astart"> starttijd
                                 <input type="time" id="cyclus2Astart" name="cyclus2Astart" value="00:00:00" step="2">
                             </label>
@@ -235,6 +237,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <label class="switch"> cyclus 1
                                 <input type="checkbox" id="cyclus12" name="cyclus12" value="0">
                             </label>
+                            <br>
                             <label for="cyclus12Astart"> starttijd
                                 <input type="time" id="cyclus12Astart" name="cyclus12Astart" value="00:00:00" step="2">
                             </label>
@@ -242,6 +245,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <label class="switch"> cyclus 2
                                 <input type="checkbox" id="cyclus22" name="cyclus22" value="0">
                             </label>
+                            <br>
                             <label for="cyclus22Astart"> starttijd
                                 <input type="time" id="cyclus22Astart" name="cyclus22Astart" value="00:00:00" step="2">
                             </label>
@@ -271,6 +275,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <label class="switch"> cyclus 1
                                 <input type="checkbox" id="cyclus13" name="cyclus13" value="0">
                             </label>
+                            <br>
                             <label for="cyclus13Astart"> starttijd
                                 <input type="time" id="cyclus13Astart" name="cyclus13Astart" step="2">
                             </label>
@@ -278,6 +283,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <label class="switch"> cyclus 2
                                 <input type="checkbox" id="cyclus23" name="cyclus23" value="0">
                             </label>
+                            <br>
                             <label for="cyclus23Astart"> starttijd
                                 <input type="time" id="cyclus23Astart" name="cyclus23Astart" step="2">
                             </label>
