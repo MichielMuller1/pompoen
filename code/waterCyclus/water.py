@@ -88,7 +88,7 @@ def time_check(cyclus,starttijd,vat,minutenLatenLopen, vatStatus):
     uren = (starttijdSeconden/60)/60
     uren = int(uren//1)
     print(minuten)
-    while minuten-60 >60:
+    while minuten-60 >=60:
         #print(minuten)
         minuten = minuten-60
     minuten = minuten-60
@@ -102,17 +102,14 @@ def time_check(cyclus,starttijd,vat,minutenLatenLopen, vatStatus):
     urenEindtijd = (eindtijdSeconden/60)/60
     urenEindtijd = int(urenEindtijd//1)
     print(minutenEindtijd)
-    while minutenEindtijd-60 >60:
+    while minutenEindtijd-60 >=60:
         #print(minuten)
         minutenEindtijd = minutenEindtijd-60
     minutenEindtijd = minutenEindtijd-60
     minutenEindtijd = int(minutenEindtijd)
     print("einde",minutenEindtijd,urenEindtijd)
-
-
-    if not cyclus:
-        change_database(0,vat,'automatisch') 
-    else:
+        
+    if cyclus:
         if cyclus and uren == datetime.now().hour and minuten==datetime.now().minute:#als de cyclus mag gaan en het uur is de starttijd een 1 in de database zetten
             if not vatStatus:
                 change_database(1,vat,'automatisch') 
