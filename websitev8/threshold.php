@@ -424,6 +424,17 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 
         var cyclus1A = document.getElementById('cyclus1A')
         cyclus1A.checked = <?=$_SESSION['cyclus1A']?>;
+        var cyclus12A = document.getElementById('cyclus12A')
+        cyclus12A.checked = <?=$_SESSION['cyclus12A']?>;
+        var cyclus13A = document.getElementById('cyclus13A')
+        cyclus13A.checked = <?=$_SESSION['cyclus13A']?>;
+        var cyclus2A = document.getElementById('cyclus2A')
+        cyclus2A.checked = <?=$_SESSION['cyclus2A']?>;
+        var cyclus22A = document.getElementById('cyclus22A')
+        cyclus22A.checked = <?=$_SESSION['cyclus22A']?>;
+        var cyclus23A = document.getElementById('cyclus23A')
+        cyclus23A.checked = <?=$_SESSION['cyclus23A']?>;
+
 
         //
         // raam1Toe.onclick = function (e){
