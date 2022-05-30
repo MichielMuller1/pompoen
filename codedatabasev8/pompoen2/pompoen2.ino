@@ -23,7 +23,7 @@ const int AirValue = 2950;
 const int WaterValue = 1375;
 const int SensorPin = 34;
 const int SensorPin1 = 39;
-const int SensorPin2 = 36;
+const int SensorPin2 = 33;
 const int SensorPin3 = 32;
 
 int soilMoistureValue1 = 0;
@@ -33,10 +33,10 @@ int soilMoistureValue4 = 0;
 int soilmoisturepercent = 0;
 int gemiddelde = 0;
 
-const char* ssid     = "pompoen";
-const char* password = "IoTpompoen";
+const char* ssid     = "telenet-A646FD4";
+const char* password = "cdedjzam7uXd";
 
-const char* serverName = "http://192.168.227.251/post-esp-data1.php";
+const char* serverName = "http://192.168.0.5/post-esp-data1.php";
 
 String apiKeyValue = "tPmAT5Ab3j7F9";
 
@@ -44,9 +44,14 @@ String apiKeyValue = "tPmAT5Ab3j7F9";
 #include <DHT.h>
 #include <DHT_U.h>
 
-#define DHTPIN 33     // Digital pin connected to the DHT sensor 
+#define DHTPIN A4    // Digital pin connected to the DHT sensor 
 
-// Feather HUZZAH ESP8266 note: use pins 3, 4, 5, 12, 13 or 14 --
+// Feather HUZZAH ESP8266 note,
+
+
+
+
+//: use pins 3, 4, 5, 12, 13 or 14 --
 // Pin 15 can work but DHT must be disconnected during program upload.
 
 // Uncomment the type of sensor in use:
@@ -74,6 +79,7 @@ void setup() {
   Serial.print("Connected to WiFi network with IP Address: ");
   Serial.println(WiFi.localIP());
 
+  pinMode(DHTPIN, INPUT);
 
   // Initialize device.
   dht.begin();

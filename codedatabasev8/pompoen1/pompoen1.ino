@@ -34,10 +34,11 @@ int soilMoistureValue4 = 0;
 int soilmoisturepercent = 0;
 int gemiddelde = 0;
 
-const char* ssid     = "pompoen";
-const char* password = "IoTpompoen";
 
-const char* serverName = "http://192.168.227.251/post-esp-data.php";
+const char* ssid     = "Neerzijde 16_IoT";
+const char* password = "E4u6c1blockx";
+
+const char* serverName = "http://192.168.0.5/esp-data-getv8.php";
 
 String apiKeyValue = "tPmAT5Ab3j7F9";
 

@@ -16,10 +16,11 @@
 #include <WiFiClient.h>
 #endif
 
-const char* ssid     = "pompoen";
-const char* password = "IoTpompoen";
 
-const char* serverName = "http://192.168.227.251/post-esp-data.php";
+const char* ssid     = "Neerzijde 16_IoT";
+const char* password = "E4u6c1blockx";
+
+const char* serverName = "http://192.168.0.5/post-esp-data.php";
 
 String apiKeyValue = "tPmAT5Ab3j7F9";
 

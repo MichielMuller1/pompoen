@@ -18,19 +18,21 @@ String apiKeyValue = "tPmAT5Ab3j7F9";
 
 //relay
 
- 
-const int relay = 18;
+
+const int relay = 33;
 int statevat1 = LOW;
 //vat1 wateren
-const int relay1 = 33;
+const int relay1 = 18;
 int statevat1w = LOW;
 //vat2
 const int relay2 = 21;
 int statevat2 = LOW;
 //vat2 wateren
-const int relay3 = 19;
+const int relay3 = 32;
 int statevat2w = LOW;
 
+int state = LOW;
+int state1 = LOW;
 
 
 #define VREF 5000 // ADC's reference voltage on your Arduino,typical value:5000mV
@@ -138,7 +140,7 @@ void loop()
     }
     // Free resources
     http.end();
-    
+
     delay(5000);
   }
 
@@ -185,25 +187,35 @@ void loop()
       Serial.println(sensorReadingsArr[46]);
       int mini3 = sensorReadingsArr[47].toInt();
       Serial.println(sensorReadingsArr[47]);
-      int maxi3 = sensorReadingsArr[48].toInt(); 
+      int maxi3 = sensorReadingsArr[48].toInt();
       Serial.println(sensorReadingsArr[48]);
 
-      int mini11 = mini1+100;
-      int maxi11 = maxi1-100;
-      int mini22 = mini2+100;
-      int maxi22 = maxi2-100;
-      int mini33 = mini3+100;
-      int maxi33 = maxi3-100;
+      int mini11 = mini1 + 100;
+      int maxi11 = maxi1 - 100;
+      int mini22 = mini2 + 100;
+      int maxi22 = maxi2 - 100;
+      int mini33 = mini3 + 100;
+      int maxi33 = maxi3 - 100;
 
       Serial.println("tijd" + sensorReadingsArr[0]);
       //vat1 bijvullen
       Serial.println("vat1 uitlezen");
       Serial.println(mini11);
       Serial.println(sensorReadingsArr[55].toInt());
-      Serial.println(maxi11); 
-      if (maxi11 >= sensorReadingsArr[55].toInt()) {
+      Serial.println(maxi11);
+
+
+
+
+      if (mini11 + 400 >= sensorReadingsArr[55].toInt()) {
         Serial.println("vat1 bijvullen automatisch");
         digitalWrite(relay, HIGH);
+
+      }
+      else if (maxi11 - 400 >= sensorReadingsArr[55].toInt()) {
+        Serial.println("vat1 niet bijvullen");
+        digitalWrite(relay, LOW);
+
       }
       else {
         Serial.println("vat1 niet bijvullen");
@@ -217,25 +229,32 @@ void loop()
       Serial.println(maxi22);
 
 
-      if (maxi22 >= sensorReadingsArr[56].toInt()) {
+
+      if (mini22 + 400 >= sensorReadingsArr[56].toInt()) {
         Serial.println("vat2 bijvullen automatisch");
         digitalWrite(relay2, HIGH);
+
+      }
+      else if (maxi22 - 400 >= sensorReadingsArr[56].toInt()) {
+        Serial.println("vat2 niet bijvullen");
+        digitalWrite(relay2, LOW);
+
       }
       else {
         Serial.println("vat2 niet bijvullen");
         digitalWrite(relay2, LOW);
       }
 
- /*
-      //vat3 bijvullen
-      if (maxi33 <= sensorReadingsArr[57].toInt() && mini33 >= sensorReadingsArr[57].toInt()) {
-        Serial.println("vat3 bijvullen automatisch");
-        digitalWrite(relay3, HIGH);
-      }
-      else {
-        digitalWrite(relay3, LOW);
-      }
-*/
+      /*
+           //vat3 bijvullen
+           if (maxi33 <= sensorReadingsArr[57].toInt() && mini33 >= sensorReadingsArr[57].toInt()) {
+             Serial.println("vat3 bijvullen automatisch");
+             digitalWrite(relay3, HIGH);
+           }
+           else {
+             digitalWrite(relay3, LOW);
+           }
+      */
 
 
 
@@ -256,11 +275,11 @@ void loop()
 
       //vat2 wateren
       if (sensorReadingsArr[10] == "1" && mini22 <= sensorReadingsArr[56].toInt()) {
-        Serial.println("vat1 wateren");
+        Serial.println("vat2 wateren");
         digitalWrite(relay3, HIGH);
       }
       else if (sensorReadingsArr[21] == "1" && mini22 <= sensorReadingsArr[56].toInt()) {
-        Serial.println("vat1 wateren");
+        Serial.println("vat2 wateren");
         digitalWrite(relay3, HIGH);
       }
       else {
