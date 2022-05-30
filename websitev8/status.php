@@ -19,7 +19,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 </head>
 <body>
 <div class="container">
-
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="#">Pompoen</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,30 +41,23 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         </div>
     </nav>
 
-
         <div class="mt-3 statusDiv">
             <h2 class="text-center geleAchtergrond">algemeen</h2>
-            <p class="d-flex">CO2: <span id="co2" class="statusValue ml-auto"></span> </p>
-            <p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid" class="statusValue ml-auto"></span> </p>
-            <p class="d-flex">lichtsterkte: <span id="lichtsterkte" class="statusValue ml-auto"></span> </p>
-            <p class="d-flex">laatste gewicht input <span class="statusValue ml-auto"> <?= $_SESSION['gewichtTijd'] ?></span></p>
+            <p class="d-flex">CO2: <span id="co2" class="statusValue ml-auto"><?= $_SESSION['co2'] ?></span> </p>
+            <p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid" class="statusValue ml-auto"><?= $_SESSION['luchtvochtigheid'] ?></span> </p>
+<!--            <p class="d-flex">lichtsterkte: <span id="lichtsterkte" class="statusValue ml-auto"></span> </p>-->
             <p class="d-flex">regen: <span class="statusValue ml-auto"><?= $_SESSION['regenStatus'] ?></span></p>
+            <p class="d-flex">laatste gewicht input <span class="statusValue ml-auto"> <?= $_SESSION['gewichtTijd'] ?></span></p>
         </div>
-
-
-
-
 
         <form action="statusDatabase.php" method="post">
 
-
-
                 <div class="mt-3 statusDiv">
                     <h2 class="text-center geleAchtergrond">pompoen 1</h2>
-                    <p class="d-flex">temperatuur: <span id="temp1" class="statusValue ml-auto"><?= $_SESSION['temperatuur1'] ?></span>°C</p>
-					<p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid" class="statusValue ml-auto"><?= $_SESSION['luchtvochtigheid'] ?></span> %</p>
-                    <p class="d-flex">grondvochtigheid laag 1: <span id="grondVocht1L1" class="statusValue ml-auto"><?= $_SESSION['grondvocht1L1'] ?></span>%</p>
-                    <p class="d-flex">grondvochtigheid laag 2: <span id="grondVocht1L2" class="statusValue ml-auto"><?= $_SESSION['grondvocht1L2'] ?></span>%</p>
+                    <p class="d-flex">temperatuur: <span id="temp1" class="statusValue ml-auto"><?= $_SESSION['temperatuur1'] ?></span></p>
+                    <p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid1" class="statusValue ml-auto"><?= $_SESSION['luchtvochtigheid1'] ?></span></p>
+                    <p class="d-flex">grondvochtigheid laag 1: <span id="grondVocht1L1" class="statusValue ml-auto"><?= $_SESSION['grondvocht1L1'] ?></span></p>
+                    <p class="d-flex">grondvochtigheid laag 2: <span id="grondVocht1L2" class="statusValue ml-auto"><?= $_SESSION['grondvocht1L2'] ?></span></p>
 
                     <div class="form-group d-flex">
                         <label for="gewicht1">gewicht: </label>
@@ -75,20 +67,19 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 
                 <div class="mt-3 statusDiv">
                     <h2 class="text-center geleAchtergrond">pompoen 2</h2>
-                    <p class="d-flex">temperatuur: <span id="temp2" class="statusValue ml-auto"><?= $_SESSION['temperatuur2'] ?></span>°C</p>
-					<p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid2" class="statusValue ml-auto"><?= $_SESSION['luchtvochtigheid2'] ?></span>%</p>
-                    <p class="d-flex">grondvochtigheid laag 1: <span id="grondVocht2L1" class="statusValue ml-auto"><?= $_SESSION['grondvocht2L12'] ?></span>%</p>
-                    <p class="d-flex">grondvochtigheid laag 2: <span id="grondVocht2L2" class="statusValue ml-auto"><?= $_SESSION['grondvocht2L22'] ?></span>%</p>
+                    <p class="d-flex">temperatuur: <span id="temp2" class="statusValue ml-auto"><?= $_SESSION['temperatuur2'] ?></span></p>
+                    <p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid2" class="statusValue ml-auto"><?= $_SESSION['luchtvochtigheid2'] ?></span></p>
+                    <p class="d-flex">grondvochtigheid laag 1: <span id="grondVocht2L1" class="statusValue ml-auto"><?= $_SESSION['grondvocht2L1'] ?></span></p>
+                    <p class="d-flex">grondvochtigheid laag 2: <span id="grondVocht2L2" class="statusValue ml-auto"><?= $_SESSION['grondvocht2L2'] ?></span></p>
                     <div class="form-group d-flex">
                         <label for="gewicht2">gewicht: </label>
                         <input type="number" name="gewicht2" id="gewicht2" class="ml-auto" required>
                     </div>
-                    <button type="submit" class="btn btn-primary" id="gewichtButton">submit</button>
+                    <button type="submit" class="btn btn-success" id="gewichtButton">Kiezen</button>
                 </div>
 
-
         </form>
-			
+
 
 
 </div>
@@ -98,12 +89,30 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 <script>
     var gewicht1Input = document.getElementById("gewicht1");
     var gewicht2Input = document.getElementById("gewicht2");
+    // var temp1 = document.getElementById("temp1");
+    // var grondVocht1L1 = document.getElementById("grondVocht1L1");
+    // var grondVocht1L2 = document.getElementById("grondVocht1L2")
+    // var temp2 = document.getElementById("temp2");
+    // var grondVocht2L1 = document.getElementById("grondVocht2L1");
+    // var grondVocht2L2 = document.getElementById("grondVocht2L2");
+    //
+    // var co2 = document.getElementById("co2");
+    // var luchtvochtigheid = document.getElementById("luchtvochtigheid");
+    // var lichtsterkte = document.getElementById("lichtsterkte");
+
     gewicht1Input.value= <?= $_SESSION['gewicht1'] ?>;
     gewicht2Input.value = <?= $_SESSION['gewicht2'] ?>;
 
-
-    co2.value = <?= $_SESSION['co2'] ?>;
-    lichtsterkte.value = <?= $_SESSION['lichtsterkte'] ?>;
+    //temp1.textContent = <?//= $_SESSION['temperatuur1'] ?>//;
+    //grondVocht1L1.textContent = <?//= $_SESSION['grondvocht1L1'] ?>//;
+    //grondVocht1L2.textContent = <?//= $_SESSION['grondvocht1L2'] ?>//;
+    //temp2.textContent = <?//= $_SESSION['temperatuur2'] ?>//;
+    //grondVocht2L1.textContent = <?//= $_SESSION['grondvocht2L1'] ?>//;
+    //grondVocht2L2.textContent = <?//= $_SESSION['grondvocht2L2'] ?>//;
+    //
+    //co2.textContent = <?//= $_SESSION['co2'] ?>//;
+    //lichtsterkte.textContent = <?//= $_SESSION['lichtsterkte'] ?>//;
+    //luchtvochtigheid.textContent = <?//= $_SESSION['luchtvochtigheid'] ?>//;
 </script>
 
 </body>
