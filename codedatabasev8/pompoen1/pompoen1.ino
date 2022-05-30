@@ -1,12 +1,3 @@
-// DHT Temperature & Humidity Sensor
-// Unified Sensor Library Example
-// Written by Tony DiCola for Adafruit Industries
-// Released under an MIT license.
-
-// REQUIRES the following Arduino libraries:
-// - DHT Sensor Library: https://github.com/adafruit/DHT-sensor-library
-// - Adafruit Unified Sensor Lib: https://github.com/adafruit/Adafruit_Sensor
-
 #ifdef ESP32
 #include <WiFi.h>
 #include <HTTPClient.h>
@@ -16,15 +7,14 @@
 #include <WiFiClient.h>
 #endif
 
-
 #include <SPI.h>
 #include <Wire.h>
 
 const int AirValue = 2950;
 const int WaterValue = 1375;
 const int SensorPin = 34;
-const int SensorPin1 = 39;
-const int SensorPin2 = 36;
+const int SensorPin1 = 36;
+const int SensorPin2 = 33;
 const int SensorPin3 = 32;
 
 int soilMoistureValue1 = 0;
@@ -34,11 +24,10 @@ int soilMoistureValue4 = 0;
 int soilmoisturepercent = 0;
 int gemiddelde = 0;
 
-
 const char* ssid     = "Neerzijde 16_IoT";
 const char* password = "E4u6c1blockx";
 
-const char* serverName = "http://192.168.0.5/esp-data-getv8.php";
+const char* serverName = "http://192.168.0.5/post-esp-data.php";
 
 String apiKeyValue = "tPmAT5Ab3j7F9";
 
@@ -46,9 +35,14 @@ String apiKeyValue = "tPmAT5Ab3j7F9";
 #include <DHT.h>
 #include <DHT_U.h>
 
-#define DHTPIN 33     // Digital pin connected to the DHT sensor 
+#define DHTPIN 5    // Digital pin connected to the DHT sensor 
 
-// Feather HUZZAH ESP8266 note: use pins 3, 4, 5, 12, 13 or 14 --
+// Feather HUZZAH ESP8266 note,
+
+
+
+
+//: use pins 3, 4, 5, 12, 13 or 14 --
 // Pin 15 can work but DHT must be disconnected during program upload.
 
 // Uncomment the type of sensor in use:
@@ -66,8 +60,6 @@ uint32_t delayMS;
 
 void setup() {
   Serial.begin(9600);
-  int temptot = 0;
-  int humtot = 0;
   WiFi.begin(ssid, password);
   Serial.println("Connecting");
   while (WiFi.status() != WL_CONNECTED) {
@@ -125,19 +117,23 @@ void loop() {
     // Your Domain name with URL path or IP address with path
     http.begin(client, serverName);
 
-      sensors_event_t event;
-  dht.temperature().getEvent(&event);
-  int temp1 = event.temperature;
-  Serial.println(temp1);
-  dht.humidity().getEvent(&event);
-  int hum1 = event.relative_humidity;
-  Serial.println(hum1);
+    sensors_event_t event;
+    dht.temperature().getEvent(&event);
+    int temp1 = event.temperature;
+    Serial.println(temp1);
+    dht.humidity().getEvent(&event);
+    int hum1 = event.relative_humidity;
+    Serial.println(hum1);
 
 
     soilMoistureValue1 = analogRead(SensorPin);  //put Sensor insert into soil
+    Serial.println(soilMoistureValue1);
     soilMoistureValue2 = analogRead(SensorPin1);  //put Sensor insert into soil
+    Serial.println(soilMoistureValue2);
     soilMoistureValue3 = analogRead(SensorPin2);  //put Sensor insert into soil
+    Serial.println(soilMoistureValue2);
     soilMoistureValue4 = analogRead(SensorPin3);  //put Sensor insert into soil
+    Serial.println(soilMoistureValue2);
     gemiddelde = (soilMoistureValue1 + soilMoistureValue2 + soilMoistureValue3 + soilMoistureValue4) / 4;
     soilmoisturepercent = map(gemiddelde, AirValue, WaterValue, 0, 100);
     int gemgem = 0;
@@ -154,6 +150,7 @@ void loop() {
       gemgem = soilmoisturepercent;
 
     }
+
 
     http.addHeader("Content-Type", "application/x-www-form-urlencoded");
     String httpRequestData = "api_key=" + apiKeyValue + "&temp=" + temp1

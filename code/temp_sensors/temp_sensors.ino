@@ -16,10 +16,10 @@
 #include <WiFiClient.h>
 #endif
 
-const char* ssid     = "pompoen";
-const char* password = "IoTpompoen";
+const char* ssid     = "telenet-A646FD4";
+const char* password = "cdedjzam7uXd";
 
-const char* serverName = "http://192.168.227.251/post-esp-data.php";
+const char* serverName = "http://192.168.0.5/post-esp-data1.php";
 
 String apiKeyValue = "tPmAT5Ab3j7F9";
 
@@ -27,7 +27,7 @@ String apiKeyValue = "tPmAT5Ab3j7F9";
 #include <DHT.h>
 #include <DHT_U.h>
 
-#define DHTPIN 4     // Digital pin connected to the DHT sensor 
+#define DHTPIN 5     // Digital pin connected to the DHT sensor 
 
 // Feather HUZZAH ESP8266 note: use pins 3, 4, 5, 12, 13 or 14 --
 // Pin 15 can work but DHT must be disconnected during program upload.
