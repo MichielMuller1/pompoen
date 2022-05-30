@@ -421,6 +421,10 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         vat3wateren.checked = <?= $_SESSION['vat3wateren'] ?>;
         lichtONOFF.checked = <?= $_SESSION['lichtONOFF'] ?>;
 
+
+        var cyclus1A = document.getElementById('cyclus1A')
+        cyclus1A.checked = <?=$_SESSION['cyclus1A']?>;
+
         //
         // raam1Toe.onclick = function (e){
         //     e.preventDefault();
