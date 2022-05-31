@@ -57,7 +57,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 
         <div class="mt-3 statusDiv">
             <h2 class="text-center geleAchtergrond">algemeen</h2>
-            <p class="d-flex">CO2: <span id="co2" class="statusValue ml-auto"><?= $_SESSION['co2'] ?></span> </p>
+            <p class="d-flex">CO2: <span id="co2" class="statusValue ml-auto"><?= $_SESSION['co2'] ?></span>ppm </p>
             <p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid" class="statusValue ml-auto"><?= $_SESSION['luchtvochtigheid'] ?></span> %</p>
 <!--            <p class="d-flex">lichtsterkte: <span id="lichtsterkte" class="statusValue ml-auto"></span> </p>-->
             <p class="d-flex">regen: <span class="statusValue ml-auto"><?= $_SESSION['regenStatus'] ?></span>%</p>
