@@ -1,23 +1,29 @@
 #include <Arduino.h>
-#define POWER_PIN  21
-#define SIGNAL_PIN A5
+#define POWER_PIN  23
+#define SIGNAL_PIN A2
 
-int value = 0; // variable to store the sensor value
+float value = 0; // variable to store the sensor value
+float percentage = 0;
 
 void setup() {
   Serial.begin(9600);
   pinMode(POWER_PIN, OUTPUT);   // configure D7 pin as an OUTPUT
+  pinMode(SIGNAL_PIN, INPUT);
   digitalWrite(POWER_PIN, LOW); // turn the sensor OFF
+  // digitalWrite(POWER_PIN, HIGH);
 }
 
 void regensensor(){
   digitalWrite(POWER_PIN, HIGH);  // turn the sensor ON
   delay(10);                      // wait 10 milliseconds
+  
   value = analogRead(SIGNAL_PIN); // read the analog value from sensor
+  percentage = value/2000*100;
   digitalWrite(POWER_PIN, LOW);   // turn the sensor OFF
 
-  Serial.print("Sensor value: ");
-  Serial.println(value);
+  // Serial.print("Sensor value: ");
+  // Serial.println(value);
+  // Serial.println(percentage);
 
   delay(1000);
 }
