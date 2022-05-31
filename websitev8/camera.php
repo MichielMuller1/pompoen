@@ -61,7 +61,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <a class="nav-link active" href="camera.php" aria-current="page">camera</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://192.168.137.2:3000">grafana</a>
+                            <a class="nav-link" href="http://192.168.0.5:3000">grafana</a>
                         </li>
                     </ul>
 
