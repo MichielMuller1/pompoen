@@ -97,15 +97,17 @@ def apiToDatabase(aanOfAf):
             print(err)
     else:
         cursor = cnx.cursor()
-
-        query = ("UPDATE `weersvoorspelling` SET `tijd` = `"+ str(datetime.now()) +"`,` weersvoorspelling` =`"+ str(aanOfAf)+"`, WHERE `id` = `1`;")
-        cursor.execute(query)
         
+        query = ("update weersvoorspelling set tijd='"+str(datetime.now())+"',voorspelling="+str(aanOfAf)+" where ID=1")
+        cursor.execute(query)
+        cnx.commit()
+        print(query)
         cnx.close()
 
+getWeatherPrediction()
 databaseTemp,databaseMinuten = getTreshold()
 startUur,eindUur = getstartAndEndHour(databaseTemp,databaseMinuten)
-
+print(datetime.now(),"nu")
 #####code#####
 while True:
     newDatabaseTemp,newDatabaseMinute = getTreshold()
@@ -124,10 +126,12 @@ while True:
         alreadyGotWeatherPrediction = False
 
     if startUur.hour == datetime.now().hour and startUur.minute == datetime.now().minute and not alreadySendStart:
+        print("to database 1")
         apiToDatabase(1)
         alreadySendStart = True
         alreadySendStop = False
     if eindUur.hour == datetime.now().hour and startUur.minute == datetime.now().minute and not alreadySendStop:
+        print("to database 0")
         apiToDatabase(0)
         alreadySendStart = False
         alreadySendStop = True
