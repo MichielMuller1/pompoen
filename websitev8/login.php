@@ -2,8 +2,8 @@
 <?php
 session_start();
 
-$hashed_password = password_hash('ITF', PASSWORD_DEFAULT);
-echo $hashed_password;
+//$hashed_password = password_hash('ITF', PASSWORD_DEFAULT);
+//echo $hashed_password;
 
 if(!isset($_SESSION['user_id']) && !isset($_SESSION['user_username'])){//only let user go to login if he isn't already logged in
 ?>

@@ -25,12 +25,25 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>pompoenen</title>
+
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/favicon/site.webmanifest">
+        <link rel="shortcut icon" href="/favicon/favicon.ico">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+
+
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
 
     </head>
     <body>
-        <div class="container">
+        <div class="container mb-5">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="#">Pompoen</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,6 +59,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="camera.php" aria-current="page">camera</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://192.168.0.5:3000">grafana</a>
                         </li>
                     </ul>
 

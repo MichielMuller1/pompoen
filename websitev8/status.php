@@ -14,11 +14,22 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>pompoenen</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
+<div class="container mb-5">
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="#">Pompoen</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,6 +46,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                 <li class="nav-item">
                     <a class="nav-link" href="camera.php">camera</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://192.168.0.5:3000">grafana</a>
+                </li>
             </ul>
 
             <a href="logout.php" class="btn btn-warning ml-auto">LOGOUT</a>
@@ -44,9 +58,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         <div class="mt-3 statusDiv">
             <h2 class="text-center geleAchtergrond">algemeen</h2>
             <p class="d-flex">CO2: <span id="co2" class="statusValue ml-auto"><?= $_SESSION['co2'] ?></span> </p>
-            <p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid" class="statusValue ml-auto"><?= $_SESSION['luchtvochtigheid'] ?></span> </p>
+            <p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid" class="statusValue ml-auto"><?= $_SESSION['luchtvochtigheid'] ?></span> %</p>
 <!--            <p class="d-flex">lichtsterkte: <span id="lichtsterkte" class="statusValue ml-auto"></span> </p>-->
-            <p class="d-flex">regen: <span class="statusValue ml-auto"><?= $_SESSION['regenStatus'] ?></span></p>
+            <p class="d-flex">regen: <span class="statusValue ml-auto"><?= $_SESSION['regenStatus'] ?></span>%</p>
             <p class="d-flex">laatste gewicht input <span class="statusValue ml-auto"> <?= $_SESSION['gewichtTijd'] ?></span></p>
         </div>
 
@@ -54,25 +68,25 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 
                 <div class="mt-3 statusDiv">
                     <h2 class="text-center geleAchtergrond">pompoen 1</h2>
-                    <p class="d-flex">temperatuur: <span id="temp1" class="statusValue ml-auto"><?= $_SESSION['temperatuur1'] ?></span></p>
-                    <p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid1" class="statusValue ml-auto"><?= $_SESSION['luchtvochtigheid1'] ?></span></p>
-                    <p class="d-flex">grondvochtigheid laag 1: <span id="grondVocht1L1" class="statusValue ml-auto"><?= $_SESSION['grondvocht1L1'] ?></span></p>
-                    <p class="d-flex">grondvochtigheid laag 2: <span id="grondVocht1L2" class="statusValue ml-auto"><?= $_SESSION['grondvocht1L2'] ?></span></p>
+                    <p class="d-flex">temperatuur: <span id="temp1" class="statusValue ml-auto"><?= $_SESSION['temperatuur1'] ?></span>°C</p>
+                    <p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid1" class="statusValue ml-auto"><?= $_SESSION['luchtvochtigheid1'] ?></span>%</p>
+                    <p class="d-flex">grondvochtigheid laag 1: <span id="grondVocht1L1" class="statusValue ml-auto"><?= $_SESSION['grondvocht1L1'] ?></span>%</p>
+                    <p class="d-flex">grondvochtigheid laag 2: <span id="grondVocht1L2" class="statusValue ml-auto"><?= $_SESSION['grondvocht1L2'] ?></span>%</p>
 
                     <div class="form-group d-flex">
-                        <label for="gewicht1">gewicht: </label>
+                        <label class="gewicht" for="gewicht1">gewicht: </label>
                         <input type="number" name="gewicht1" id="gewicht1" class="ml-auto" required>
                     </div>
                 </div>
 
                 <div class="mt-3 statusDiv">
                     <h2 class="text-center geleAchtergrond">pompoen 2</h2>
-                    <p class="d-flex">temperatuur: <span id="temp2" class="statusValue ml-auto"><?= $_SESSION['temperatuur2'] ?></span></p>
-                    <p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid2" class="statusValue ml-auto"><?= $_SESSION['luchtvochtigheid2'] ?></span></p>
-                    <p class="d-flex">grondvochtigheid laag 1: <span id="grondVocht2L1" class="statusValue ml-auto"><?= $_SESSION['grondvocht2L1'] ?></span></p>
-                    <p class="d-flex">grondvochtigheid laag 2: <span id="grondVocht2L2" class="statusValue ml-auto"><?= $_SESSION['grondvocht2L2'] ?></span></p>
+                    <p class="d-flex">temperatuur: <span id="temp2" class="statusValue ml-auto"><?= $_SESSION['temperatuur2'] ?></span>°C</p>
+                    <p class="d-flex">luchtvochtigheid: <span id="luchtvochtigheid2" class="statusValue ml-auto"><?= $_SESSION['luchtvochtigheid2'] ?></span>%</p>
+                    <p class="d-flex">grondvochtigheid laag 1: <span id="grondVocht2L1" class="statusValue ml-auto"><?= $_SESSION['grondvocht2L1'] ?></span>%</p>
+                    <p class="d-flex">grondvochtigheid laag 2: <span id="grondVocht2L2" class="statusValue ml-auto"><?= $_SESSION['grondvocht2L2'] ?></span>%</p>
                     <div class="form-group d-flex">
-                        <label for="gewicht2">gewicht: </label>
+                        <label class="gewicht" for="gewicht2">gewicht: </label>
                         <input type="number" name="gewicht2" id="gewicht2" class="ml-auto" required>
                     </div>
                     <button type="submit" class="btn btn-success" id="gewichtButton">Kiezen</button>
