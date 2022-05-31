@@ -1,10 +1,18 @@
-/*input[type="number"] {*/
-/*    width: 100px;*/
-/*}*/
+input[type="number"] {
+    max-width: 150px;
+    height: 35px;
+}
 .form-group{
     margin-bottom: 20px;
 }
-
+label {
+    display:block;
+    font-weight: bold;
+    margin-right: 10px;
+}
+input{
+    margin-top: 5px;
+}
 /*checkbox style https://moderncss.dev/pure-css-custom-checkbox-style/*/
 input[type="checkbox"] {
     /* Add if not using autoprefixer */
@@ -23,6 +31,8 @@ input[type="checkbox"] {
     transform: translateY(-0.075em);
     display: grid;
     place-content: center;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 input[type="checkbox"]::before {
     content: "";
@@ -50,6 +60,7 @@ input[type="checkbox"]:checked::before {
     display: inline-block;
     width: 60px;
     height: 34px;
+    margin-left: 5px;
 }
 
 /* Hide default HTML checkbox */
@@ -125,6 +136,7 @@ input:checked + .slider:before {
     background-color: rgb(255,193,7);
     padding: 10px;
     border-radius: 10px;
+    margin-top: 20px;
 }
 
 
@@ -132,3 +144,48 @@ input:checked + .slider:before {
     width: 100%;
     height: auto;
 }
+
+input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+    width: 32px;
+    height: 32px;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+}
+
+.raambuttons button{
+    width: 80px;
+}
+
+.gewicht{
+    font-weight: normal;
+}
+#gewicht1, #gewicht2{
+    text-align: right;
+    max-width: 90px;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+input[type="checkbox"]:disabled + :hover{
+    cursor: not-allowed;
+}
+
+
+
+/*label{*/
+/*    margin-right: 5px;*/
+/*}*/
+
+
+
+
+
+
+
+

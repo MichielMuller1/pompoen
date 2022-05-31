@@ -64,7 +64,7 @@ try {
         $_SESSION['raam2Auto'] = $result2[0][5];
         $_SESSION['deur1Auto'] = $result2[0][6];
         $_SESSION['deur2Auto'] = $result2[0][7];
-        $_SESSION['lichtAuto'] = $result [0][8];
+        $_SESSION['lichtAuto'] = $result2[0][8];
         $_SESSION['vat1Auto'] = $result2[0][9];
         $_SESSION['vat2Auto'] = $result2[0][10];
         $_SESSION['vat3Auto'] = $result2[0][11];
