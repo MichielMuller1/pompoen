@@ -13,7 +13,7 @@
 const int AirValue = 2950;
 const int WaterValue = 1375;
 const int SensorPin = 34;
-const int SensorPin1 = 36;
+const int SensorPin1 = 39;
 const int SensorPin2 = 33;
 const int SensorPin3 = 32;
 
@@ -27,9 +27,9 @@ int gemiddelde = 0;
 const char* ssid     = "Neerzijde 16_IoT";
 const char* password = "E4u6c1blockx";
 
-const char* serverName = "http://192.168.0.5/post-esp-data.php";
+const char* serverName = "http://192.168.0.5/post-esp-dataespachter.php";
 
-String apiKeyValue = "tPmAT5Ab3j7F9";
+String apiKeyValue = "tPmAT5Ab3j7F96";
 
 
 uint32_t delayMS;
@@ -64,13 +64,13 @@ void loop() {
     http.begin(client, serverName);
 
     soilMoistureValue1 = analogRead(SensorPin);  //put Sensor insert into soil
-    Serial.println(soilMoistureValue1);
+  
     soilMoistureValue2 = analogRead(SensorPin1);  //put Sensor insert into soil
-    Serial.println(soilMoistureValue2);
+  Serial.println(soilMoistureValue2);
     soilMoistureValue3 = analogRead(SensorPin2);  //put Sensor insert into soil
-    Serial.println(soilMoistureValue3);
+
     soilMoistureValue4 = analogRead(SensorPin3);  //put Sensor insert into soil
-    Serial.println(soilMoistureValue4);
+
     gemiddelde = (soilMoistureValue1 + soilMoistureValue2 + soilMoistureValue3 + soilMoistureValue4) / 4;
     soilmoisturepercent = map(gemiddelde, AirValue, WaterValue, 0, 100);
     int gemgem = 0;
@@ -109,4 +109,4 @@ void loop() {
   }
   delay(1000);
 
-}
+} 

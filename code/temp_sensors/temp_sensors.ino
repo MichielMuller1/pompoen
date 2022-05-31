@@ -19,9 +19,9 @@
 const char* ssid     = "Neerzijde 16_IoT";
 const char* password = "E4u6c1blockx";
 
-const char* serverName = "http://192.168.0.5/post-esp-data1.php";
+const char* serverName = "http://192.168.0.5/post-esp-data.php";
 
-String apiKeyValue = "tPmAT5Ab3j7F9";
+String apiKeyValue = "tPmAT5Ab3j7F7";
 
 #include <Adafruit_Sensor.h>
 #include <DHT.h>
