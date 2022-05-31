@@ -20,8 +20,8 @@ $api_key= $temp = $hum = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $api_key = test_input($_POST["api_key"]);
     if($api_key == $api_key_value) {
-        $temp = test_input($_POST["temp"]);
-        $hum = test_input($_POST["hum"]);
+        $temp = test_input($_POST["temp1"]);
+        $hum = test_input($_POST["hum1"]);
 
 
 
