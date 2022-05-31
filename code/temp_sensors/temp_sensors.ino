@@ -19,7 +19,7 @@
 const char* ssid     = "Neerzijde 16_IoT";
 const char* password = "E4u6c1blockx";
 
-const char* serverName = "http://192.168.0.5/post-esp-data.php";
+const char* serverName = "http://192.168.0.5/post-esp-data1.php";
 
 String apiKeyValue = "tPmAT5Ab3j7F9";
 
@@ -118,8 +118,8 @@ void loop() {
 
 
     http.addHeader("Content-Type", "application/x-www-form-urlencoded");
-    String httpRequestData = "api_key=" + apiKeyValue + "&temp=" + temp1
-                             + "&hum=" + hum1 + "";
+    String httpRequestData = "api_key=" + apiKeyValue + "&temp1=" + temp1
+                             + "&hum1=" + hum1 + "";
     Serial.print("httpRequestData: ");
     Serial.println(httpRequestData);
 

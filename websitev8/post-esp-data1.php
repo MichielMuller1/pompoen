@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } 
         $t=time();
         
-        $sql = "UPDATE pompoen2 SET tijd = '".date("Y-m-d H:i:s",$t)."', temperatuur = '" .$temp. "', luchtvochtigheid2 = '" .$hum. "' WHERE id = '1'";
+        $sql = "UPDATE pompoen2 SET tijd = '".date("Y-m-d H:i:s",$t)."', temperatuur2 = '" .$temp. "', luchtvochtigheid2 = '" .$hum. "' WHERE id = '1'";
         
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
