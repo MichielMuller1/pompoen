@@ -166,7 +166,7 @@ if ($result = $conn->query($sql)) {
 		'cyclus13A' => $row_cyclus13A,
 		'cyclus23A' => $row_cyclus23A,
 		'vat1controlcyclus' => $row_vat1controlcyclus,
-		'vat2controlcyclus' => $vat2controlcyclus,
+		'vat2controlcyclus' => $row_vat2controlcyclus,
 		'voorspelling' => $row_voorspelling
 			     );
 		header('Content-type: text/javascript');
