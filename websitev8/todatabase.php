@@ -148,18 +148,18 @@ try {
     if (isset($_POST['raam1Toe'])){
         $raam1ONOFF = 't';
     }
-    if (isset($_POST['raam1Stop'])){
-        $raam1ONOFF = 's';
-    }
+//    if (isset($_POST['raam1Stop'])){
+//        $raam1ONOFF = 's';
+//    }
     echo "raam1:  ".$raam1ONOFF;
 
     if(isset($_POST['raam2Open'])){
         $raam2ONOFF = 'o';
     }elseif (isset($_POST['raam2Toe'])){
         $raam2ONOFF = 't';
-    } elseif(isset($_POST['raam2Stop'])){
-        $raam2ONOFF = 's';
-    }
+//    } elseif(isset($_POST['raam2Stop'])){
+//        $raam2ONOFF = 's';
+//    }
     echo "raam2:  ".$raam2ONOFF;
 
 
