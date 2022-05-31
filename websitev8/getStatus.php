@@ -72,6 +72,11 @@ try {
         $_SESSION['co2'] = $result4[0][7];
         $_SESSION['luchtvochtigheid'] = $result4[0][8];
         $_SESSION['regenStatus'] = $result4[0][9];
+        if($_SESSION['regenStatus']==0){
+            $_SESSION['regenStatus'] = "nee";
+        }elseif ($_SESSION['regenStatus']){
+            $_SESSION['regenStatus'] = "ja";
+        }
     }else{
         $_SESSION['lichtsterkte'] = 0;
         $_SESSION['co2'] = 0;

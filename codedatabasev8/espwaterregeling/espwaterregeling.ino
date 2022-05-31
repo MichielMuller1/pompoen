@@ -142,6 +142,13 @@ void loop()
     http.end();
 
     delay(5000);
+  } else {
+    Serial.println("Reconnecting");
+    WiFi.reconnect();
+    while (WiFi.status() != WL_CONNECTED) {
+      delay(500);
+      Serial.print(".");
+    }
   }
 
 
@@ -305,6 +312,13 @@ void loop()
 
 
 
+    } else {
+      Serial.println("Reconnecting");
+      WiFi.reconnect();
+      while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.print(".");
+      }
     }
   }
 }
