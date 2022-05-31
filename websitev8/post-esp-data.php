@@ -15,14 +15,14 @@ $password = "raspberry";
 // If you change this value, the ESP32 sketch needs to match
 $api_key_value = "tPmAT5Ab3j7F7";
 
-$api_key= $temp = $hum = $laag1 = "";
+$api_key= $temp = $hum = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $api_key = test_input($_POST["api_key"]);
     if($api_key == $api_key_value) {
         $temp = test_input($_POST["temp"]);
         $hum = test_input($_POST["hum"]);
-		$laag1 = test_input($_POST["laag1"]);
+
 
 
         // Create connection
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } 
         $t=time();
         
-        $sql = "UPDATE pompoen1 SET tijd = '".date("Y-m-d H:i:s",$t)."', temperatuur = '" .$temp. "', vochtigheid = '" .$hum. "', grondvochtigheidlaag1 = '" .$laag1."' WHERE id = '1'";
+        $sql = "UPDATE pompoen1 SET tijd = '".date("Y-m-d H:i:s",$t)."', temperatuur = '" .$temp. "', vochtigheid = '" .$hum. "' WHERE id = '1'";
         
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
