@@ -87,7 +87,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
 
                     <div class="col-md-6 col-sm-12">
                         <div class="form-group">
-                            <label for="regen">regen</label>
+                            <label for="regen">regen %</label>
                             <input type="number" name="regen" id="regen" value="<?= $_SESSION['regen'] ?>" required>
                         </div>
                     </div>
@@ -110,7 +110,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                             <div class="mt-2 raambuttons">
                                 <button class="btn btn-success" id="raam1Open" name="raam1Open" value="o">open</button>
                                 <button class="btn btn-success" id="raam1Toe" name="raam1Toe" value="t">toe</button>
-                                <button class="btn btn-danger" id="raam1Stop" name="raam1Stop" value="s">stop</button>
+<!--                                <button class="btn btn-danger" id="raam1Stop" name="raam1Stop" value="s">stop</button>-->
                             </div>
                         </div>
                     </div>
@@ -134,9 +134,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
                                 <button type="submit" class="btn btn-success" id="raam2Toe" name="raam2Toe" value="o">
                                     toe
                                 </button>
-                                <button type="submit" class="btn btn-danger" id="raam2Stop" name="raam2Stop" value="o">
-                                    stop
-                                </button>
+<!--                                <button type="submit" class="btn btn-danger" id="raam2Stop" name="raam2Stop" value="o">-->
+<!--                                    stop-->
+<!--                                </button>-->
                             </div>
                         </div>
                     </div>
@@ -515,8 +515,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         var raam2Open = document.getElementById("raam2Open");
         var raam1Toe = document.getElementById("raam1Toe");
         var raam2Toe = document.getElementById("raam2Toe");
-        var raam1Stop = document.getElementById("raam1Stop");
-        var raam2Stop = document.getElementById("raam2Stop");
+        // var raam1Stop = document.getElementById("raam1Stop");
+        // var raam2Stop = document.getElementById("raam2Stop");
 
         if(ventilatorAuto.checked){
             ventilatorONOFF.setAttribute('disabled','');
@@ -527,11 +527,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_username'])) {
         if(raam1Auto.checked){
             raam1Open.setAttribute('disabled','');
             raam1Toe.setAttribute('disabled','');
-            raam1Stop.setAttribute('disabled','');
+            // raam1Stop.setAttribute('disabled','');
         }else {
             raam1Open.removeAttribute('disabled');
             raam1Toe.removeAttribute('disabled');
-            raam1Stop.removeAttribute('disabled');
+            // raam1Stop.removeAttribute('disabled');
         }
 
         if(raam2Auto.checked){
