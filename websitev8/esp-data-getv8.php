@@ -17,7 +17,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT * FROM automatisch, controls, pompoen1, pompoen2, threshold, water";
+$sql = "SELECT * FROM automatisch, controls, pompoen1, pompoen2, threshold, water, weersvoorspelling";
 
 
  
@@ -86,6 +86,9 @@ if ($result = $conn->query($sql)) {
 	$row_cyclus22A = $row["cyclus22A"];
 	$row_cyclus13A = $row["cyclus13A"];
 	$row_cyclus23A = $row["cyclus23A"];
+	$row_vat2controlcyclus = $row["vat1controlcyclus"];
+	$row_vat1controlcyclus = $row["vat2controlcyclus"];
+	$row_voorspelling = $row["voorspelling"];
 
       
 	  
@@ -161,7 +164,10 @@ if ($result = $conn->query($sql)) {
 		'cyclus12A' => $row_cyclus12A,
 		'cyclus22A' => $row_cyclus22A,
 		'cyclus13A' => $row_cyclus13A,
-		'cyclus23A' => $row_cyclus23A
+		'cyclus23A' => $row_cyclus23A,
+		'vat1controlcyclus' => $row_vat1controlcyclus,
+		'vat2controlcyclus' => $vat2controlcyclus,
+		'voorspelling' => $row_voorspelling
 			     );
 		header('Content-type: text/javascript');
 		echo json_encode($data);
