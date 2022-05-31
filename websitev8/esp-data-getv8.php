@@ -89,6 +89,7 @@ if ($result = $conn->query($sql)) {
 	$row_vat2controlcyclus = $row["vat1controlcyclus"];
 	$row_vat1controlcyclus = $row["vat2controlcyclus"];
 	$row_voorspelling = $row["voorspelling"];
+	$row_regenstatus = $row["regenstatus"];
 
       
 	  
@@ -167,7 +168,8 @@ if ($result = $conn->query($sql)) {
 		'cyclus23A' => $row_cyclus23A,
 		'vat1controlcyclus' => $row_vat1controlcyclus,
 		'vat2controlcyclus' => $row_vat2controlcyclus,
-		'voorspelling' => $row_voorspelling
+		'voorspelling' => $row_voorspelling,
+		'regenstatus' => $row_regenstatus
 			     );
 		header('Content-type: text/javascript');
 		echo json_encode($data);
