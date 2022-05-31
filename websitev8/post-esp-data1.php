@@ -15,7 +15,7 @@ $password = "raspberry";
 // If you change this value, the ESP32 sketch needs to match
 $api_key_value = "tPmAT5Ab3j7F9";
 
-$api_key= $temp = $hum = $laag1 = $laag2 = "";
+$api_key= $temp = $hum = $laag1 = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $api_key = test_input($_POST["api_key"]);

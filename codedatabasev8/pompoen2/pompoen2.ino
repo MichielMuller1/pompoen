@@ -162,8 +162,8 @@ void loop() {
 
 
     http.addHeader("Content-Type", "application/x-www-form-urlencoded");
-    String httpRequestData = "api_key=" + apiKeyValue + "&temp=" + temp1
-                             + "&hum=" + hum1 + "&laag1=" + gemgem + "";
+    String httpRequestData = "api_key=" + apiKeyValue + "&temp1=" + temp1
+                             + "&hum1=" + hum1 + "&laag1=" + gemgem + "";
     Serial.print("httpRequestData: ");
     Serial.println(httpRequestData);
 
